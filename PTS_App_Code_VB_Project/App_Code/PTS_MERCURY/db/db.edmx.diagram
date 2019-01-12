@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b3439ba4e43434f9345e076c197f3e7" Name="Diagram1">
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.aspnet_Membership" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.aspnet_Roles" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.aspnet_Users" Width="1.5" PointX="0.75" PointY="3.625" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.aspnet_UsersInRoles" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Addendum_UserRemarks" Width="1.5" PointX="7.5" PointY="47.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Addendums_ClientAdditional" Width="1.5" PointX="7.5" PointY="50.125" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Approval_PositionEmployee" Width="1.5" PointX="5.75" PointY="2.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Approval_Scenario" Width="1.5" PointX="5.75" PointY="5.875" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Approval_Scn_Prj_Users" Width="1.5" PointX="8" PointY="5.625" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Approval_UserPositionPrjJunction" Width="1.5" PointX="8" PointY="2.625" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Approval_UserRolePrjectJunction" Width="1.5" PointX="5.75" PointY="8.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_ApprUserExcpAccessToActiveUsers" Width="1.5" PointX="7.75" PointY="8.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contract_Addendum_TimeLimitApprovals" Width="1.5" PointX="9.75" PointY="8.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contract_CommentsRead" Width="1.5" PointX="7.75" PointY="11.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contract_ProjectIDforClient" Width="1.5" PointX="5.25" PointY="58.875" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_ContractControlExceptional" Width="1.5" PointX="9.75" PointY="11.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contracts_ClientAdditional" Width="1.5" PointX="5.25" PointY="56.25" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contracts_UserRemarks" Width="1.5" PointX="5.25" PointY="43.875" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Delivery_MatchingIndexes" Width="1.5" PointX="10.75" PointY="2.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_PaymentRequest_OverHeadCheck" Width="1.5" PointX="10.75" PointY="5.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_PO_Akt" Width="1.5" PointX="5.25" PointY="30.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_PO_Akt_To_Nak" Width="1.5" PointX="7.5" PointY="14.25" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_PO_Nakladnaya" Width="1.5" PointX="5.25" PointY="14" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Survey_OfficeParty" Width="1.5" PointX="11.75" PointY="8.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_UserPhotos" Width="1.5" PointX="11.75" PointY="12.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table1_ProjectInsurCertf" Width="1.5" PointX="3" PointY="20" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table3_Invoice" Width="1.5" PointX="5.25" PointY="22" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_AdditionalApprovalProjectUserMatrix" Width="1.5" PointX="12.75" PointY="2.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_AdditionalUserApprovals" Width="1.5" PointX="12.75" PointY="5.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_PDF" Width="1.5" PointX="7.5" PointY="28.375" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_PRrequestToPM" Width="1.5" PointX="7.5" PointY="25.375" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table4_PaymentRequest" Width="1.5" PointX="7.5" PointY="18.375" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table5_PayLog" Width="1.5" PointX="9.75" PointY="18.625" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table6_Supplier" Width="1.5" PointX="0.75" PointY="25.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contract_Offers" Width="1.5" PointX="5.25" PointY="41.125" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contract_User_Junction" Width="1.5" PointX="13.75" PointY="8.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contracts_Common" Width="1.5" PointX="5.25" PointY="36.625" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table1_InsurPolicyDocs" Width="1.5" PointX="13.75" PointY="11.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table6_SupplierDetails" Width="1.5" PointX="3" PointY="14.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.AddendumMissingApprovalBreakdown" Width="1.5" PointX="11.75" PointY="15.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.ContractMissingApprovalBreakdown" Width="1.5" PointX="13.75" PointY="14.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Notf_AddendumCommentsFromToWhomMatrix" Width="1.5" PointX="14.75" PointY="2.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Notf_AddendumCommentsUnRead" Width="1.5" PointX="14.75" PointY="5.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Notf_ContractCommentsFromToWhomMatrix" Width="1.5" PointX="15.75" PointY="8.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Notf_ContractCommentsUnRead" Width="1.5" PointX="15.75" PointY="11.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_CheckTolerance" Width="1.5" PointX="15.75" PointY="14.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_AddendumDetails" Width="1.5" PointX="11.75" PointY="18.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_ContractDetails" Width="1.5" PointX="13.75" PointY="18.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_GetFullUserNameFromUserName" Width="1.5" PointX="16.75" PointY="2.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_PaymentRequestApprovalStatus" Width="1.5" PointX="16.75" PointY="5.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_PendingListRev1" Width="1.5" PointX="15.75" PointY="18.5" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK__aspnet_Me__UserI__6D9742D9" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK__aspnet_Me__UserI__7849DB76" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK__aspnet_Us__RoleI__753864A1" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK__aspnet_Us__RoleI__7FEAFD3E" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK__aspnet_Us__UserI__00DF2177" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK__aspnet_Us__UserI__762C88DA" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice_PDF_Table3_Invoice" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice_PRrequestToPM_Table3_Invoice" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table4_PaymentRequest_Table3_Invoice" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table5_PayLog_Table4_PaymentRequest_" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table6_SupplierDetails_Table6_Supplier" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table7_CostDivision" Width="1.5" PointX="18.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table7_CostDivision2" Width="1.5" PointX="18.375" PointY="12.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_CostCodeSummary0" Width="1.5" PointX="18.375" PointY="15.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Budget" Width="1.5" PointX="3" PointY="31" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table2_PONo" Width="1.5" PointX="3" PointY="23.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table7_CostCode" Width="1.5" PointX="0.75" PointY="31.25" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Budget_Table7_CostCode" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_PO_Akt_Table2_PONo" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_PO_Nakladnaya_Table2_PONo" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table2_PONo__Table6_Supplier_" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table2_PONo_Table7_CostCode" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice__Table2_PONo_" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table7_CostCode_Table7_CostDivision" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Addendum_UsersApprv_IgnoreUser" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contract_UsersApprv_IgnoreUser" Width="1.5" PointX="19.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Addendums" Width="1.5" PointX="5.25" PointY="62.25" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contracts" Width="1.5" PointX="3" PointY="61.375" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Addendums_UserRemarks_Table_Addendums" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Addendums_ClientAdditional_Table_Addendums" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Addendums_Table_Contracts" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Contract_ProjectIDforClient_Table_Contracts" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Contract_Offers_Table_Contracts" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Contracts_ClientAdditional_Table_Contracts" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Contracts_Common_Table_Contracts" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Contracts_Table6_Supplier" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Contracts_UserRemarks_Table_Contracts" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table1_Project" Width="1.5" PointX="0.75" PointY="23.375" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Budget_Table1_Project" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table1_ProjectInsurCertf_Table1_Project" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table2_PONo__Table1_Project_" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contracts_IgnoreSearchFeed" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_SupplierType" Width="1.5" PointX="5.75" PointY="1.375" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_SupplierType_Junction" Width="1.5" PointX="8" PointY="32.375" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_SupplierType_Tags" Width="1.5" PointX="8" PointY="0.75" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Junction_Table_SupplierType" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Tags_Table_SupplierType" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Junction_Table6_Supplier" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table8_ExchangeRates" Width="1.5" PointX="19.375" PointY="6.875" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table5_PayLog_Table8_ExchangeRates" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_Contract_Addendum_NotApprovedPersonsForEmailNotification" Width="1.5" PointX="20.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_Type" Width="1.5" PointX="12.25" PointY="32.5" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_Type_Junction" Width="1.5" PointX="14.5" PointY="29.375" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice_Type_Junction_Table3_Invoice" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_ContractsAddendumsNonExecutedTotal" Width="1.5" PointX="20.375" PointY="12.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_FrameContractsBudgetStatus" Width="1.5" PointX="20.375" PointY="18.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_BudgetChangeLog" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Budget_PlannedToSpendConstraints" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table1_Project_LawyersCanEnterContract" Width="1.5" PointX="20.375" PointY="15.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.BodyText" Width="1.5" PointX="21.375" PointY="4.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Addendum_UsersApprv" Width="1.5" PointX="7.5" PointY="65.875" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Contract_UsersApprv" Width="1.5" PointX="5.25" PointY="72.5" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Addendum_UsersApprv_Table_Addendum" />
+        <AssociationConnector Association="SQL2008_794282_mercuryModel.FK_Table_Contract_UsersApprv_Table_Contracts" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_SupplierNamesForContracts" Width="1.5" PointX="22.375" PointY="7.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_ContractFilesMoveDOC" Width="1.5" PointX="22.375" PointY="13.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.Table_Required" Width="1.5" PointX="22.375" PointY="10.75" />
+        <EntityTypeShape EntityType="SQL2008_794282_mercuryModel.View_WhatToBePaidRevised" Width="1.5" PointX="22.375" PointY="17.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

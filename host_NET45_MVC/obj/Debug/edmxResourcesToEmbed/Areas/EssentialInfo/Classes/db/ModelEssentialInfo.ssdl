@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EssentialInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Level1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="level1_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Level2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="level1_id" Type="int" Nullable="false" />
+    <Property Name="level2_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Level3">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="level2_id" Type="int" Nullable="false" />
+    <Property Name="level3_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="level3_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="details" Type="nvarchar(max)" />
+    <Property Name="tag_cloud" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <Association Name="FK_Level2_Level1">
+    <End Role="Level1" Type="Self.Level1" Multiplicity="1" />
+    <End Role="Level2" Type="Self.Level2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Level1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Level2">
+        <PropertyRef Name="level1_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Level3_Level2">
+    <End Role="Level2" Type="Self.Level2" Multiplicity="1" />
+    <End Role="Level3" Type="Self.Level3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Level2">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Level3">
+        <PropertyRef Name="level2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_Level3">
+    <End Role="Level3" Type="Self.Level3" Multiplicity="1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Level3">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="level3_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EssentialInfoModelStoreContainer">
+    <EntitySet Name="Level1" EntityType="Self.Level1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Level2" EntityType="Self.Level2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Level3" EntityType="Self.Level3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Level2_Level1" Association="Self.FK_Level2_Level1">
+      <End Role="Level1" EntitySet="Level1" />
+      <End Role="Level2" EntitySet="Level2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Level3_Level2" Association="Self.FK_Level3_Level2">
+      <End Role="Level2" EntitySet="Level2" />
+      <End Role="Level3" EntitySet="Level3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_Level3" Association="Self.FK_Posts_Level3">
+      <End Role="Level3" EntitySet="Level3" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

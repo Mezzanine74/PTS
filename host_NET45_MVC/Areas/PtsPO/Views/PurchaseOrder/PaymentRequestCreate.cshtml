@@ -1,0 +1,106 @@
+﻿@model host_NET45_MVC.Areas.PtsPO.Controllers.PurchaseOrderController.PaymentRequestModel
+
+@{
+    ViewBag.Title = "PaymentRequestCreate";
+    Layout = "~/Areas/PtsPO/Views/Shared/_Layout.cshtml";
+}
+
+@*// Add header scripts*@
+@*// ..................*@
+@*// Add header scripts*@
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "FormPaymentRequest";
+
+    settings.Items.AddGroupItem(gr =>
+    {
+        gr.Caption = "Project and PO";
+        gr.GroupBoxDecoration = GroupBoxDecoration.Box;
+
+        gr.Items.Add(m => m.ProjectId, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write("<div id=\"inputProjects\" ></div>");
+                ViewContext.Writer.Write(Html.HiddenFor(m => m.ProjectId).ToHtmlString());
+                ViewContext.Writer.Write(Html.ValidationMessageFor(m => m.ProjectId).ToHtmlString());
+            });
+        });
+
+        gr.Items.Add(m => m.InvoiceId, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write(Html.DevExpress().TextBox(tb =>
+                {
+                    tb.Name = "asdf";
+                }).GetHtml());
+
+                ViewContext.Writer.Write("<div id=\"inputPO\" ></div>");
+                ViewContext.Writer.Write(Html.HiddenFor(m => m.InvoiceId).ToHtmlString());
+                ViewContext.Writer.Write(Html.ValidationMessageFor(m => m.InvoiceId).ToHtmlString());
+            });
+        });
+
+    });
+
+    settings.Items.AddGroupItem(gr =>
+    {
+        gr.Caption = "Request Details";
+        gr.GroupBoxDecoration = GroupBoxDecoration.Box;
+
+        gr.Items.Add(m => m.SiteRecordNo);
+        gr.Items.Add(m => m.PayReqDate); 
+        gr.Items.Add(m => m.RequestPDF, item =>
+        {
+            item.NestedExtension().UploadControl(uc =>
+            {
+                uc.Name = "RequestPDF";
+                uc.FileInputCount = 1;
+
+            });
+        });
+        gr.Items.Add(item =>
+        {
+            item.Caption = "";
+            item.NestedExtension().Button(bt =>
+            {
+                bt.Name = "btnSubmitPayReq";
+                bt.Text = "Send Request To PM";
+                bt.UseSubmitBehavior = true;
+            });
+        });
+        gr.Items.Add(item =>
+        {
+            item.Name = "SkipPM";
+            item.Caption = "Skip PM";
+            item.NestedExtension().CheckBox(cb =>
+            {
+                cb.Name = "cbxSkip";
+            });
+        });
+
+
+
+
+    });
+
+
+
+
+
+}).GetHtml()
+
+
+@*Hidden Fields*@
+
+@Html.Hidden("UserName", (string)System.Web.HttpContext.Current.User.Identity.Name)
+
+@section Scripts{
+    <script src="~/Areas/PtsPO/scripts/PurchaseOrder/PaymentRequestCreate.js"></script>
+}
+
+
+
+    

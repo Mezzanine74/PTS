@@ -1,0 +1,1724 @@
+﻿/* -----------------------------------------
+   Custom.css - put your own changes here 
+----------------------------------------- */
+
+/*body {
+  background: #ffffff;
+}
+
+.page-content-inner {
+    padding: 10px 20px 0px 20px!important;
+}*/
+
+/*.form-group form-control ddl_fxfnt {
+    font-family: Consolas!important;
+}*/
+
+/* This is fixing gridview font size problem. Original PTS was using this font*/
+body {
+    font-family: Verdana !important;
+}
+
+/* This is used in DDL where we have multiple columns to line up*/
+.ddl_fxfnt {
+    font-family: Consolas !important;
+}
+
+/* This is for bootstrap modal div. Automatically sizing modal. usage <div class="modal-content modal_inlineBlock"> */
+.modal_inlineBlock {
+    display: inline-block !important;
+}
+
+/* this adjust modal-dialog position on the screen*/
+.modal-dialog-center { 
+    margin: 0;
+    position: absolute;
+    top: 5%;
+    left: 1%;
+}
+
+/* this will bring datepicker to the top of the page if modal popup is open*/
+body.modal-open .datepicker {
+    z-index: 1500 !important;
+}
+
+/* this is for modals to show at top*/
+.zindexMax {
+    z-index: 1500 !important;
+}
+
+/* this is to position the gritter, see usage below */
+    /*<script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#gritter-error').on(ace.click_event, function () {
+                $.gritter.add({
+                    title: 'This is a warning notification',
+                    text: 'Just add a "gritter-light" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+                    class_name: 'gritter-error gritter-center' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+                });
+
+                return false;
+            });
+
+        });
+
+    </script>*/
+
+/* this is deactivated, because it is already built in, you can find a solution for gritter-top*/
+.gritter-top-center {
+  position: fixed;
+  left: 40%;
+  right: 40%;
+  top: 5%;
+
+}
+@media only screen and (max-width: 767px) {
+  .gritter-top-center {
+    left: 16%;
+    right: 16%;
+    top: 5%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .gritter-top-center {
+    left: 30px;
+    right: 30px;
+    top: 5%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .gritter-top-center {
+    left: 10px;
+    right: 10px;
+    top: 5%;
+  }
+}
+
+/* this can be used for any control which is initiating bootstrap modal*/
+.cursor_pointer {
+    cursor: pointer !important;
+}
+
+.cursor_notallowed {
+    cursor:not-allowed !important;
+}
+
+.add_datepicker {
+    /*Empty. Required for Jquery*/
+}
+
+.add_daterangepicker {
+    /*Empty. Required for Jquery*/
+}
+
+/* Pagination customized for Gridview because original bootstrap use ul and li*/
+.pager2 {
+    /*display: inline-block;*/
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+    .pager2 table > tbody > tr > td {
+        display: inline;
+    }
+
+        .pager2 table > tbody > tr > td > a,
+        .pager2 table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            color: #337ab7;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            margin-left: -1px;
+        }
+
+        .pager2 table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            margin-left: -1px;
+            z-index: 2;
+            color: #ffffff;
+            background-color: #337ab7;
+            border-color: #337ab7;
+            cursor: default;
+        }
+
+        .pager2 table > tbody > tr > td:first-child > a,
+        .pager2 table > tbody > tr > td:first-child > span {
+            margin-left: 0;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+        .pager2 table > tbody > tr > td:last-child > a,
+        .pager2 table > tbody > tr > td:last-child > span {
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .pager2 table > tbody > tr > td > a:hover,
+        .pager2 table > tbody > tr > td > span:hover,
+        .pager2 table > tbody > tr > td > a:focus,
+        .pager2 table > tbody > tr > td > span:focus {
+            color: #23527c;
+            background-color: #eeeeee;
+            border-color: #dddddd;
+        }
+
+    .pager2 td > table > tbody > tr > td {
+        border-style: hidden !important;
+    }
+
+    .pager2 td {
+        border-style: none !important;
+    }
+
+
+.TxtAlgLeft {
+    text-align: left !important;
+}
+
+.form-group {
+    margin: 2px !important;
+}
+
+.TextBoxGeneralRev {
+    font-size: 11px !important;
+    height: 20px !important;
+    padding:0px!important;
+}
+
+.TextBoxGeneralRevMultiline {
+    font-size: 11px !important;
+    padding:0px!important;
+    min-height:50px!important;
+}
+
+
+/* Mega Menu list style */
+.list-unstyled,
+.list-unstyled ul { min-width: 200px; font-size:small; }
+
+/*modal width should be limited on mobile devices. otherwise scroling not working on mobile chrome*/
+@media (max-width: 1200px) {
+    .modal-adjust-width-height-for-mobile {
+        height: 600px;
+        width: 900px;
+        overflow: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal-adjust-width-height-for-mobile {
+        height: 600px;
+        overflow: auto;
+    }
+}
+
+        /* automatically resize table class for gridview*/
+        .table-nonfluid {
+            width: auto !important;
+        }
+
+        .table.table-nonfluid > thead > tr > th,
+        .table.table-nonfluid > tbody > tr > th,
+        .table.table-nonfluid > tfoot > tr > th,
+        .table.table-nonfluid > thead > tr > td,
+        .table.table-nonfluid > tbody > tr > td,
+        .table.table-nonfluid > tfoot > tr > td {
+            padding: 5px!important;
+            font-size: 11px!important;
+        }
+
+/* apply table thead format to gridview header*/
+.headergridnew {
+
+    background-position: 0% 0%;
+    color: #707070 !important;
+    font-weight: normal !important;
+    background-repeat: repeat-x !important;
+    vertical-align: middle !important;
+    background-image: linear-gradient(to bottom, #ebf5ff 0%, #438eb9 100%) !important !important;
+    background-color: #dbedff !important;
+    background-attachment: scroll !important;
+}
+
+.headergridnew th, td {
+    vertical-align: middle !important;
+}
+
+#MainContent_GridViewPAckingListToday > tbody > tr.headergridnew  {
+   height: 50px !important;
+}
+
+.headergridnew th > a {
+    color: #707070 !important;
+}
+
+.userphoto {
+  margin: -4px 8px 0 0;
+  border-radius: 100%;
+  border: 2px solid #FFF;
+  max-width: 40px;
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
+
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
+
+
+
+
+label {
+    font-size: 11px !important;
+}
+
+.form-control {
+    font-size: 11px !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid #e9e9e9 !important;
+    transition-duration: .5s !important;
+}
+
+.btn {
+    cursor: pointer !important;
+    padding: 6px 12px !important;
+    border-radius: 0 !important;
+
+    border-bottom-width: 1px !important;
+    border-top-width: 1px !important;
+    border-left-width: 1px !important;
+    border-right-width: 1px !important;
+
+    font-size: 11px !important;
+    line-height: 1.42857 !important;
+    vertical-align: middle !important;
+    margin: 2px !important;
+
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  font-size: 11px !important;
+}
+
+input,
+button,
+select,
+textarea {
+  font-size: 11px !important;
+}
+
+.divcenterscreen{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    display:none;
+    background-color:lightgreen;
+}​
+
+ .add_timepicker{
+     /*empty*/
+     /*needed for timepicker js*/
+ }
+
+ /*MVC Validation CSS*/
+.field-validation-error {
+    color: #b10000;
+    font-size: smaller;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 2px ridge #ff0000;
+    background-color: #ffeeee !important;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.goog-te-banner-frame.skiptranslate {display: none !important;} 
+body { top: 0px !important; }
+
+
+
+/* ALL above new items*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* All below item coming from PTS styles.css file */
+
+.MenuControl {
+    font-size: 11px;
+    color: #C0C0C0;
+}
+
+.DynamicHoverStyle {
+    text-decoration: underline;
+}
+
+.DynamicMenuItemStyle {
+    padding: 2px;
+    height: 25px;
+    color: #C0C0C0;
+    background-image: url('images/Root_Pattern.PNG');
+    background-repeat: repeat-x;
+    font-size: 11px;
+}
+
+.FontSiteMap {
+    background-position: top;
+    font-size: 11px;
+    background-image: url('images/TreeViewTile.png');
+    background-repeat: repeat-x;
+}
+
+.GridBudget {
+    border: solid 1px #FFFFFF;
+    font-size: 10px;
+}
+
+    .GridBudget td {
+        border: solid 1px #FFFFFF;
+        margin: 1px 1px 1px 1px;
+        padding: 1px 1px 1px 1px;
+    }
+
+.Grid {
+    border: solid 1px #FFFFFF;
+    font-size: 11px;
+}
+
+    .Grid td {
+        border: solid 1px #E6E6FA;
+        margin: 1px 1px 1px 1px;
+        padding: 1px 1px 1px 1px;
+    }
+
+
+.GridPaymentTerm {
+    border: 1px solid #808080;
+    font-size: 9px;
+}
+
+    .GridPaymentTerm td {
+        border: 1px solid #808080;
+        margin: 1px 1px 1px 1px;
+        padding: 1px 1px 1px 1px;
+    }
+
+.GridPaymentTermRow {
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #808080;
+    background-color: #FFFFFF;
+    padding: 1px 1px 1px 1px;
+}
+
+.GridPaymentTermHeader {
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+
+
+.GridContractView {
+    border: solid 1px #FFFFFF;
+    font-size: 11px;
+}
+
+    .GridContractView td {
+        border: none;
+        margin: 1px 1px 1px 1px;
+        padding: 1px 1px 1px 1px;
+    }
+
+.GridHeader {
+    font-weight: bold;
+    background-image: url('/Images/TopContent_Pattern.PNG');
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    height: 70px;
+}
+
+    .GridHeader a {
+        color: #FFFFFF;
+    }
+
+.GridHeaderContract {
+    font-size: 8px;
+    background-color: #003399;
+    font-family: Tahoma;
+}
+
+
+.GridHeaderr {
+    font-weight: bold;
+    color: #FFFFFF;
+    background-image: url('/Images/TopContent_Pattern.PNG');
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+}
+
+
+
+.GridItem {
+    background-color: #FFFFFF;
+}
+
+.GridItemNakladnaya {
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #E6E6FA #E6E6FA #6A5ACD #E6E6FA;
+    background-color: #FFFFFF;
+    padding: 1px 1px 1px 1px;
+}
+
+.GridForecast {
+    border: 1px solid #C0C0C0;
+    font-size: 11px;
+    border-collapse: separate;
+}
+
+    .GridForecast td {
+        border: 1px solid #C0C0C0;
+        margin: 1px 1px 1px 1px;
+        padding: 5px 5px 5px 5px;
+    }
+
+.GridItemForecast {
+    border: 1px solid #C0C0C0;
+    padding: 5px;
+}
+
+.GridHeaderForecast {
+    border: 1px solid #C0C0C0;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #99CCFF;
+}
+
+.GridAgeing {
+    table-layout: fixed;
+    border: solid 1px #FFFFFF;
+    font-size: 11px;
+}
+
+    .GridAgeing td {
+        border: solid 1px #FFFFFF;
+        margin: 1px 1px 1px 1px;
+        padding: 5px 5px 5px 5px;
+        width: 200px;
+    }
+
+
+
+.GridItemAgeing {
+    padding: 5px;
+    background-color: #FFFFFF;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #CCCCCC;
+    width: 200px;
+}
+
+.GridHeaderAgeing {
+    width: 200px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #99CCFF;
+}
+
+
+.GridItemPayLog {
+    background-color: #C0C0C0;
+}
+
+.GridAltItem {
+    background-color: white;
+}
+
+.GridOnlineUser {
+    background-image: url('/Images/metallic.png');
+    background-repeat: repeat-x;
+}
+
+
+.FontSizeBGcolorForEditControls {
+    font-size: 11px;
+    background-color: #CCFFFF;
+}
+
+
+.hidepanel {
+    display: none;
+}
+
+.WithVATBold {
+    font-weight: bold;
+    color: #000099;
+}
+
+.TextBoxGeneral {
+    font-size: 11px;
+    height: 13px;
+}
+
+.TextBoxContract {
+    border: thin solid #003366 !important;
+    font-size: 11px !important;
+    color: #003366 !important;
+    height: 20px;
+}
+
+
+.EditContract {
+    border: thin solid #003366 !important;
+    font-size: 11px !important;
+    color: #003366 !important;
+    /*height: 16px!important;*/
+    background-color: #CCFFFF !important;
+}
+
+.DDLEditContract {
+    border: thin solid #003366;
+    font-size: 11px;
+    color: #003366;
+    height: 16px;
+}
+
+.ShowSent {
+    background-color: #FFFFFF;
+}
+
+.StyleBlack {
+    color: #CCCCCC;
+    background-color: #000000;
+    border: 1px solid #666666;
+    font-size: 10px;
+}
+
+
+.ButtonEditAddendum {
+    padding: 0px;
+    border: 1px solid #808080;
+    margin: 1px;
+    font-size: 11px;
+    height: 20px;
+    background-color: #53FF53;
+    color: #000000;
+    text-align: center;
+}
+
+.ButtonDeleteAddendum {
+    padding: 0px;
+    border: 1px solid #808080;
+    margin: 1px;
+    font-size: 11px;
+    height: 20px;
+    background-color: #FF8C8C;
+    color: #000000;
+    text-align: center;
+}
+
+.ButtonUpdateAddendum {
+    padding: 0px;
+    border: 1px solid #808080;
+    margin: 1px;
+    font-size: 11px;
+    height: 20px;
+    background-color: #9D9DFF;
+    color: #000000;
+    text-align: center;
+}
+
+.ButtonCancelAddendum {
+    padding: 0px;
+    border: 1px solid #808080;
+    margin: 1px;
+    font-size: 11px;
+    height: 20px;
+    background-color: #9F9F9F;
+    color: #000000;
+    text-align: center;
+}
+
+
+.ButtonEdit {
+    padding: 0px;
+    border: 1px solid #808080;
+    margin: 1px;
+    font-size: 11px;
+    height: 20px;
+    background-color: #008000;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.ButtonDelete {
+    padding: 0px;
+    border: 1px solid #808080;
+    margin: 1px;
+    font-size: 11px;
+    height: 20px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.ButtonUpdate {
+    padding: 0px;
+    border: 1px solid #808080;
+    margin: 1px;
+    font-size: 11px;
+    height: 20px;
+    background-color: #0000FF;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.ButtonCancel {
+    padding: 0px;
+    border: 1px solid #808080;
+    margin: 1px;
+    font-size: 11px;
+    height: 20px;
+    background-color: #333333;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.TextBoxDate {
+    border: thin solid #003366;
+    font-size: 12px;
+    color: #003366;
+    height: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #F0F8FF;
+}
+
+.DDLcontract {
+    margin: 2px;
+    border: thin solid #003366;
+    font-size: 11px;
+    color: #003366;
+    height: 16px;
+}
+
+.DDLprogress {
+    border: thin solid #003366;
+    font-size: 11px;
+    color: #003366;
+}
+
+
+.TextBoxWaterMarkSearch {
+    font-size: 10px;
+    font-style: italic;
+    color: #C0C0C0;
+}
+
+
+.TextBoxWaterMark {
+    font-size: 11px;
+    height: 13px;
+    font-style: italic;
+    color: #808080;
+}
+
+
+.watermarked_psw {
+    color: White;
+    font-family: Tahoma;
+    font-size: 11px;
+    border: solid 1px #a9a9a9;
+    text-indent: 2px;
+    vertical-align: middle;
+    text-align: right;
+    background-image: url('/images/psw_wMark.jpg');
+    background-repeat: no-repeat;
+}
+
+
+.LabelGeneral {
+    font-size: 11px;
+}
+
+
+.LabelContract {
+    padding: 2px !important;
+    border: thin solid #003366 !important;
+    font-size: 11px !important;
+    background-color: #3973AC !important;
+    color: #FFFFFF !important;
+    margin: 2px !important;
+}
+
+.LinkButtonContract {
+    padding: 2px;
+    border: thin solid #663300;
+    background-color: #FFFF00;
+    color: #000000;
+    height: 16px;
+    margin-right: 0px;
+}
+
+
+.LabelLoading {
+    font-size: 11px;
+    color: #FF0000;
+    background-color: #FFFF66;
+    font-weight: bold;
+}
+
+.LabelMessage {
+    font-size: 11px;
+    color: #FF0000;
+}
+
+
+.LabelPayReqSummary {
+    font-size: 12px;
+    color: #0000FF;
+    background-color: #FFFF99;
+    font-weight: bold;
+}
+
+
+.LabelSupplierPOcreate {
+    font-size: 11px;
+    background-color: #D2FFD2;
+    font-weight: bold;
+}
+
+.DrpDwnListGeneral {
+    font-size: 11px;
+    height: 20px;
+}
+
+.DrpDwnListOpenPO {
+    font-size: 11px;
+    height: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.ButtonGeneral {
+    font-size: 11px;
+    height: 20px;
+}
+
+.ButtonUpload {
+    border: 1px solid #FF0000;
+    font-size: 11px;
+    height: 20px;
+}
+
+
+.FrmViewSupplierPOcreate {
+    background-color: #EAFFEA;
+}
+
+.UserNameOnMaster {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.LoginStatus {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.ValueToPay {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.SelectedNodeStyle {
+    background-color: #99CCFF;
+}
+
+.RootNodeStyle {
+    padding: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-image: url('/Images/Root_Pattern.PNG');
+    width: 130px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.LeafNodeStyle {
+    font-family: Arial;
+    font-weight: normal;
+    color: #808080;
+}
+
+.NodeStyle {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+
+.LabelTenderMonitor {
+    font-size: 11px;
+    font-family: Tahoma;
+}
+
+.LabelTenderMonitor2 {
+    font-size: 11px;
+    font-family: Tahoma;
+    color: #0000FF;
+}
+
+.LabelTenderMonitor3 {
+    font-size: 11px;
+    font-family: Tahoma;
+    color: #FF0000;
+}
+
+
+.LabelTenderMonitorLarge {
+    font-size: 16px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+
+.LabelTenderMonitorMedium {
+    font-size: 13px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+
+.gvFixedHeader {
+    font-weight: bold;
+    background-color: Green;
+    position: relative;
+    top: expression(this.parentNode.parentNode.parentNode.scrollTop-1);
+}
+
+
+
+.cal_Theme1 .ajax__calendar_container {
+    background-color: #e2e2e2;
+    border: solid 1px #cccccc;
+}
+
+
+.cal_Theme1 .ajax__calendar_header {
+    background-color: #ffffff;
+    margin-bottom: 4px;
+}
+
+
+.cal_Theme1 .ajax__calendar_title,
+.cal_Theme1 .ajax__calendar_next,
+.cal_Theme1 .ajax__calendar_prev {
+    color: #004080;
+    padding-top: 3px;
+}
+
+
+.cal_Theme1 .ajax__calendar_body {
+    background-color: #e9e9e9;
+    border: solid 1px #cccccc;
+}
+
+
+.cal_Theme1 .ajax__calendar_dayname {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 2px;
+}
+
+
+.cal_Theme1 .ajax__calendar_day {
+    text-align: center;
+}
+
+
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_day,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_month,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_year,
+.cal_Theme1 .ajax__calendar_active {
+    color: #004080;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+
+.cal_Theme1 .ajax__calendar_today {
+    font-weight: bold;
+}
+
+
+.cal_Theme1 .ajax__calendar_other,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_today,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
+    color: #bbbbbb;
+}
+
+
+.flyOutDiv {
+    display: none;
+    width: 400px;
+    z-index: 3;
+    opacity: 0;
+    filter: (progid:DXImageTransform.Microsoft.Alpha(opacity=0));
+    font-size: 14px;
+    border: solid 4px #DF8600;
+    background-color: #FFFFFF;
+    padding: 5px;
+    position: absolute;
+}
+
+.flyOutDivCloseX {
+    background-color: #666666;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border: outset thin #FFFFFF;
+    padding: 5px;
+}
+
+
+.WaterMark {
+    font-size: 10px;
+    color: #808080;
+    font-style: italic;
+}
+
+.MyCalendar .ajax__calendar_container {
+    border: 1px solid #646464;
+    background-color: lemonchiffon;
+    color: red;
+}
+
+.MyCalendar .ajax__calendar_other .ajax__calendar_day,
+.MyCalendar .ajax__calendar_other .ajax__calendar_year {
+    color: black;
+}
+
+.MyCalendar .ajax__calendar_hover .ajax__calendar_day,
+.MyCalendar .ajax__calendar_hover .ajax__calendar_month,
+.MyCalendar .ajax__calendar_hover .ajax__calendar_year {
+    color: black;
+}
+
+.MyCalendar .ajax__calendar_active .ajax__calendar_day,
+.MyCalendar .ajax__calendar_active .ajax__calendar_month,
+.MyCalendar .ajax__calendar_active .ajax__calendar_year {
+    color: black;
+    font-weight: bold;
+}
+
+/* this is replaced with bootstrap. see the top*/
+/*.pager td {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.pager a {
+    border: 1px solid #6A5ACD;
+    background-color: #F8F8FF;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-weight: bold;
+    color: #0000FF;
+    text-decoration: none;
+}
+
+.pager span {
+    color: #FFFF00;
+    font-weight: bold;
+    background-color: #000000;
+    padding-right: 4px;
+    padding-left: 4px;
+    border: 1px solid #6A5ACD;
+}
+
+.pager tr td a:hover {
+    border: 1px solid #6A5ACD;
+    background-color: #0000FF;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+}*/
+
+
+.Hlink {
+    cursor: pointer!important;
+}
+
+.HlinkNotification {
+    border: medium solid #808080;
+    padding: 3px;
+    cursor: pointer!important;
+    font-size: small;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #FF0000;
+}
+
+.HlinkSeeInfo {
+    cursor: pointer!important;
+    border: Thin solid #808080;
+    padding: 1px;
+    font-size: 9px;
+    color: #000000;
+    background-color: #00FF00;
+}
+
+.HlinkAddInfo {
+    cursor: pointer!important;
+    border: Thin solid #808080;
+    padding: 1px;
+    font-size: 9px;
+    color: #FFFFFF;
+    background-color: #FF0000;
+}
+
+
+.mouseover {
+    border: thin solid #808080;
+}
+
+.mouseout {
+    border-style: solid;
+    border-color: #000000;
+}
+
+.TextBoxRemoveVerticalBar {
+    overflow: hidden;
+}
+
+.modalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.modalBackground2 {
+    background-color: Gray;
+}
+
+
+.PanelWarning {
+    padding: 5px;
+}
+
+#message_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #ffc;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    font-weight: bold;
+    width: 99%;
+}
+
+.DivPersonPRN {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #C0C0C0;
+    color: #0000FF;
+}
+
+.DivInvoiceNoPending {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #C0C0C0;
+    color: #0000FF;
+}
+
+.HyperlinkBannedPo {
+    color: White;
+    background-color: Red;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.GridColumn60 {
+    width: 60px;
+}
+
+.GridItemAlignRight {
+    text-align: right;
+}
+
+.LabelEuroWithVAT {
+    color: RoyalBlue;
+    background-color: Azure;
+}
+
+.LabelDollarWithVAT {
+    color: Green;
+    background-color: Honeydew;
+}
+
+.LabelRubleWithVAT {
+    color: Red;
+    background-color: LightGoldenrodYellow;
+}
+
+.FUR_InvoiceNo {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #C0C0C0;
+}
+
+.FUR_CostCode {
+    color: White;
+    background-color: #0033CC;
+    height: 20px;
+    text-align: left;
+}
+
+.FUR_POno {
+    background-color: #BFFFBF;
+    height: 20px;
+}
+
+.FUR_POnoDocs {
+    background-color: #E6E6FA;
+    height: 20px;
+}
+
+.DeliveryNotice {
+    border-style: dotted;
+    border-width: medium;
+    color: #9999FF;
+}
+
+.GridExcelExport {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10px;
+    color: #333333;
+}
+
+    .GridExcelExport th {
+        padding: 1px;
+        background-color: #3366FF;
+        color: #FFFFFF;
+        font-size: 11px;
+        font-weight: bold;
+        height: 50px;
+    }
+
+
+    .GridExcelExport tr {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #666666;
+    }
+
+    .GridExcelExport td {
+        padding: 1px;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-left-color: #666666;
+    }
+
+.PHeaderSepr {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #C0C0C0;
+}
+
+.PendingHeader {
+    font-weight: bold;
+    height: 100px;
+    background-color: #003399;
+    color: White;
+    font-size: 10px;
+}
+
+    .PendingHeader a {
+        color: #FFFFFF;
+    }
+
+.PHeaderTitleSum {
+    text-align: center;
+    font-family: Arial;
+    font-size: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.PHeaderTitleAppr {
+    text-align: right;
+    font-family: Arial;
+    font-size: 10px;
+    color: #008080;
+    font-weight: bold;
+}
+
+.PHeaderTitleTot {
+    text-align: right;
+    font-family: Arial;
+    font-size: 10px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.PHeaderTitleCurr {
+    text-align: center;
+    font-family: Arial;
+    font-size: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.PsummaryHdr {
+    background-color: #BBDDFF;
+    border: thin solid #666666;
+    text-align: center;
+    font-size: 10px;
+}
+
+.PsummaryRw {
+    background-color: #E9E9E9;
+    font-size: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.TablePoRequest {
+    border: thin solid #C0C0C0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: #666666;
+    font-weight: bolder;
+}
+
+    .TablePoRequest tr {
+        height: 50px;
+    }
+
+    .TablePoRequest td {
+        padding: 5px;
+        background-color: #F8F8FF;
+    }
+
+html input[type="text"].TextBoxPoReq {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    color: #333333;
+    text-align: center;
+}
+
+.ddlPoReq {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    color: #333333;
+}
+
+.TableExistingSession tr {
+    height: 60px;
+}
+
+.TableExistingSession td {
+    width: 300px;
+}
+
+.GridViewOffersRow td {
+    padding: 7px;
+    font-size: 11px;
+}
+
+.GridviewApprovalStatus {
+    font-size: 10px;
+}
+
+
+    .GridviewApprovalStatus th {
+        padding: 2px;
+        background-color: #3973AC;
+        color: White;
+    }
+
+    .GridviewApprovalStatus td {
+        background-color: White;
+        padding: 1px 2px 1px 2px;
+    }
+
+.GridviewMissingBeforeApproval {
+    font-size: 10px;
+}
+
+
+    .GridviewMissingBeforeApproval th {
+        padding: 2px;
+        background-color: #FF0066;
+        color: White;
+    }
+
+    .GridviewMissingBeforeApproval td {
+        background-color: #FFCACA;
+        padding: 1px 2px 1px 2px;
+    }
+
+.ProgressSection1 {
+    background-color: #FFFF00;
+    font-weight: bold;
+    height: 30px;
+}
+
+.ProgressSection2 {
+    background-color: #DCDCDC;
+    font-weight: bold;
+    height: 20px;
+}
+
+
+.ProgressPercent {
+    border: thin solid #0099FF;
+    width: 47px;
+    font-size: 10px;
+    text-align: right;
+}
+
+.pnlCSS {
+    font-weight: bold;
+    cursor: pointer;
+    border: solid 1px #c0c0c0;
+    width: 30%;
+}
+
+.GridProcess {
+    border: solid 1px #FFFFFF;
+    font-size: 11px;
+}
+
+.ColumnSeperator {
+    border-left-style: dashed;
+    border-left-width: 2px;
+    border-left-color: #FF0000;
+}
+
+.ColumnOpacity {
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #999999;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #999999;
+}
+
+.ValidationProgress {
+    margin: 3px;
+    padding: 3px;
+    border: thick dotted #FFFF00;
+    background: red;
+    color: White;
+    font-size: 10px;
+    display: block;
+    float: left;
+}
+
+.DivPoRequest {
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 14px !important;
+    color: #666666 !important;
+    font-weight: bolder !important;
+    left: 450px !important;
+    top: 150px !important;
+    position: relative !important;
+}
+
+.CommercialTitles {
+    padding: 2px;
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+    text-align: right;
+}
+
+.CommercialTermsHeading {
+    padding: 2px;
+    font-weight: bold;
+    background-color: Lavender;
+    text-align: center;
+}
+
+.PanelCommercialTerms {
+    background-color: #F8F8FF;
+    margin-top: 5px;
+    width: 1000px;
+    font-size: 10px;
+}
+
+.CommercialColumn {
+    padding: 2px;
+    width: 200px;
+}
+
+.PanelNominated {
+    font-style: italic;
+    color: Green;
+    font-size: large;
+}
+
+.PanelFrameContract {
+    font-style: italic;
+    color: Blue;
+    font-size: large;
+}
+
+.PanelAddendumType {
+    font-style: italic;
+    color: Red;
+    font-size: large;
+}
+
+.AddendumColumn {
+    font-weight: bold;
+    color: Blue;
+}
+
+.DataListFramePo {
+    font-size: 10px;
+}
+
+    .DataListFramePo th {
+        height: 50px;
+        background-color: #B9B9FF;
+        font-weight: bold;
+    }
+
+    .DataListFramePo tr {
+        height: 40px;
+    }
+
+    .DataListFramePo td {
+        padding: 2px;
+        margin: 1px;
+    }
+
+.wrap {
+    white-space: normal;
+}
+
+.ApprvPrs {
+    height: 35px;
+    background-color: #8CDFFF;
+    text-align: center;
+}
+
+.ContractRemarks {
+    border: thick solid #6699FF;
+    background-color: #FFFFFF;
+    padding: 10px;
+    font-size: 11px;
+    color: #333333;
+}
+
+.ContractEditTitles {
+    /*border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+    font-size: 10px;
+    color: #0000FF;
+    background-color: #FFFF00;
+}
+
+.GridviewSearchContract {
+    font-size: 10px;
+    background-color: ghostwhite;
+}
+
+    .GridviewSearchContract th {
+        padding: 4px;
+        background-color: #99CCFF;
+        color: White;
+        height: 40px;
+    }
+
+    .GridviewSearchContract tr {
+        height: 20px;
+    }
+
+    .GridviewSearchContract td {
+        padding: 4px;
+        height: 30px;
+        border-color: lightgray;
+        border-style: solid;
+        border-width: thin;
+    }
+
+a.LinkBrkDwn {
+    color: red;
+    background-color: yellow;
+}
+
+.CertificationDocumentEnterTable {
+    font-size: 12px;
+}
+
+    .CertificationDocumentEnterTable td {
+        height: 30px;
+    }
+
+.CertfDDLTable {
+    font-size: 12px;
+}
+
+    .CertfDDLTable .osman {
+        background-color: lightblue;
+    }
+
+    .CertfDDLTable td {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+
+/*THIS datalist COMING FROM NAKLADNAYA CSS*/
+._GridNakladnaya {
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 11px !important;
+    color: #333333 !important;
+    background-color: #FFFFFF !important;
+}
+
+    ._GridNakladnaya th {
+        background-color: #66CCFF !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+    }
+
+    ._GridNakladnaya tr {
+        border-bottom-style: solid !important;
+        border-bottom-width: medium !important;
+        border-bottom-color: #66CCFF !important;
+    }
+
+._GridNakladnayaPodetails {
+    border: thin solid #CCCCCC !important;
+    margin: 2px !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 11px !important;
+    color: #333333 !important;
+}
+
+    ._GridNakladnayaPodetails th {
+        background-color: #E2E2E2 !important;
+        font-size: 11px !important;
+    }
+
+    ._GridNakladnayaPodetails tr {
+        border-bottom-style: solid !important;
+        border-bottom-width: thin !important;
+        border-bottom-color: #CCCCCC !important;
+    }
+
+    ._GridNakladnayaPodetails td {
+        padding: 3px !important;
+    }
+
+.FontSizeMiddle {
+    font-size: 12px !important;
+}
+
+.TableNakladnayaEntry {
+    border: thick solid #6699FF !important;
+    background-color: #FFFFFF !important;
+    padding: 10px !important;
+    font-size: 11px !important;
+    color: #333333 !important;
+}
+
+.TableNakladnayaSep tr {
+    border-bottom-style: solid !important;
+    border-bottom-width: thin !important;
+    border-bottom-color: #66CCFF !important;
+}
+
+.span_title {
+    font-style: italic;
+    color: #333333 !important;
+}
+
+.span_detail {
+    font-weight: bold !important;
+    color: #FF0000 !important;
+}

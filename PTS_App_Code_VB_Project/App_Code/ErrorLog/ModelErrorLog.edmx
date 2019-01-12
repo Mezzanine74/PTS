@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_ErrorLogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Table_ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorID" />
+          </Key>
+          <Property Name="ErrorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="URL" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="UserEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="ExceptionType" Type="nvarchar(max)" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="ErrorHTML" Type="nvarchar(max)" />
+          <Property Name="ErrorTime" Type="smalldatetime" />
+          <Property Name="ip_adress" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="DB_ErrorLogModelStoreContainer">
+          <EntitySet Name="Table_ErrorLog" EntityType="Self.Table_ErrorLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_ErrorLogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DB_ErrorLogEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Table_ErrorLog" EntityType="DB_ErrorLogModel.Table_ErrorLog" />
+        </EntityContainer>
+        <EntityType Name="Table_ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorID" />
+          </Key>
+          <Property Name="ErrorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="UserEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ExceptionType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorHTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorTime" Type="DateTime" Precision="0" />
+          <Property Name="ip_adress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_ErrorLogModelStoreContainer" CdmEntityContainer="DB_ErrorLogEntities">
+          <EntitySetMapping Name="Table_ErrorLog">
+            <EntityTypeMapping TypeName="DB_ErrorLogModel.Table_ErrorLog">
+              <MappingFragment StoreEntitySet="Table_ErrorLog">
+                <ScalarProperty Name="ip_adress" ColumnName="ip_adress" />
+                <ScalarProperty Name="ErrorTime" ColumnName="ErrorTime" />
+                <ScalarProperty Name="ErrorHTML" ColumnName="ErrorHTML" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="4d89e6ecf819453b9ac8cfc301d04213" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_ErrorLogModel.Table_ErrorLog" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1EA9E8A6-C92C-49CC-B848-7BC1E26EECF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PTS_App_Code_VB_Project</RootNamespace>
+    <AssemblyName>PTS_App_Code_VB_Project</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PTS_App_Code_VB_Project.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PTS_App_Code_VB_Project.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\PTS_App_Code_VB_ProjectRC\bin\Debug\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\host_NET45_MVC\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\host_NET45_MVC\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\PTS_App_Code_VB_ProjectRC\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Admin\AdminPTS.vb" />
+    <Compile Include="App_Code\ApprMatrix\ApprovalMatrixCreateDataReader.vb" />
+    <Compile Include="App_Code\ApprMatrix\CalculateScenario.vb" />
+    <Compile Include="App_Code\ApprMatrix\ContractAndAddendumUpdateNotification.vb" />
+    <Compile Include="App_Code\ApprMatrix\ContractRemarksFromUser.vb" />
+    <Compile Include="App_Code\ApprMatrix\ContractView.vb" />
+    <Compile Include="App_Code\ApprMatrix\ApprovalMatrix.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApprovalMatrix.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ApprMatrix\ApprovalMatrixManageUsers.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApprovalMatrixManageUsers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ApprMatrix\NameOfLeadLawyer.vb" />
+    <Compile Include="App_Code\ApprMatrix\PaymentApproval.vb" />
+    <Compile Include="App_Code\ApprMatrix\PaymentRequest.vb" />
+    <Compile Include="App_Code\ApprMatrix\RemoveSessionsPoRequest.vb" />
+    <Compile Include="App_Code\ApprMatrix\SendEmailApprovalMatrix.vb" />
+    <Compile Include="App_Code\CommonClass\ConnectionStrings.vb" />
+    <Compile Include="App_Code\CommonClass\DomainPTS.vb" />
+    <Compile Include="App_Code\CommonClass\GetCountryByIp.vb" />
+    <Compile Include="App_Code\CommonClass\MaxExchRate.vb" />
+    <Compile Include="App_Code\ErrorLog\ErrorLog.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorLog.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ErrorLog\ModelErrorLog.Context1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelErrorLog.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ErrorLog\ModelErrorLog1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelErrorLog.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ErrorLog\ModelErrorLog1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelErrorLog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ErrorLog\Table_ErrorLog.vb">
+      <DependentUpon>ModelErrorLog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\InvoicePDF\InvoicePDF.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoicePDF.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\InvoicePDF\InvoicePDFTables.vb" />
+    <Compile Include="App_Code\PTS\CoreTables\aspnet_Users.vb" />
+    <Compile Include="App_Code\PTS\CoreTables\CreateDataReader.vb" />
+    <Compile Include="App_Code\PTS\CoreTables\Table1_Project.vb" />
+    <Compile Include="App_Code\PTS\CoreTables\Table_Addendums.vb" />
+    <Compile Include="App_Code\PTS\CoreTables\Table_Contracts.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\BL\BL.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\CustomClass.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\db\AddendumMissingApprovalBreakdown.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\ApprovalStatusAddendumEF_Result.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\ApprovalStatusContractEF_Result.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\aspnet_Membership.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\aspnet_Roles.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\aspnet_Users.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\aspnet_UsersInRoles.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\BodyText.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\ContractMissingApprovalBreakdown.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\DataAnnotations\Table6_Supplier.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\db\DataAnnotations\Table_Required.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\db\DataAnnotations\Table2_PONo.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\db\DataAnnotations\Table_BudgetChangeLog.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\db\db.Context1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\db1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\db1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Notf_AddendumCommentsFromToWhomMatrix.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Notf_AddendumCommentsUnRead.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Notf_ContractCommentsFromToWhomMatrix.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Notf_ContractCommentsUnRead.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\sp_DDLCostCodePOCreate_Result.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\sp_DDLProjectsPOCreate_Result.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\sp_DDLRequestedByPOCreate_Result.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\sp_FrameContractBudgetPoDetails_Result.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\sp_FrameContractBudgetPoDetails_Result1.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\SP_MissingApprovalsOnContractsAndAddendums_Result.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table1_InsurPolicyDocs.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table1_Project.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table1_ProjectInsurCertf.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table1_Project_LawyersCanEnterContract.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table2_PONo.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table3_Invoice.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table3_Invoice_AdditionalApprovalProjectUserMatrix.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table3_Invoice_AdditionalUserApprovals.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table3_Invoice_PDF.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table3_Invoice_PRrequestToPM.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table3_Invoice_Type.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table3_Invoice_Type_Junction.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table4_PaymentRequest.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table5_PayLog.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table6_Supplier.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table6_SupplierDetails.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table7_CostCode.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table7_CostDivision.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table7_CostDivision2.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table8_ExchangeRates.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Addendums.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Addendums_ClientAdditional.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Addendum_UserRemarks.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Addendum_UsersApprv.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Addendum_UsersApprv_IgnoreUser.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Approval_PositionEmployee.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Approval_Scenario.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Approval_Scn_Prj_Users.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Approval_UserPositionPrjJunction.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Approval_UserRolePrjectJunction.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_ApprUserExcpAccessToActiveUsers.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Budget.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_BudgetChangeLog.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Budget_PlannedToSpendConstraints.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_ContractControlExceptional.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contracts.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contracts_ClientAdditional.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contracts_Common.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contracts_IgnoreSearchFeed.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contracts_UserRemarks.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contract_Addendum_TimeLimitApprovals.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contract_CommentsRead.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contract_Offers.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contract_ProjectIDforClient.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contract_UsersApprv.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contract_UsersApprv_IgnoreUser.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Contract_User_Junction.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Delivery_MatchingIndexes.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_PaymentRequest_OverHeadCheck.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_PO_Akt.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_PO_Akt_To_Nak.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_PO_Nakladnaya.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Required.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_SupplierType.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_SupplierType_Junction.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_SupplierType_Tags.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_Survey_OfficeParty.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\Table_UserPhotos.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_AddendumDetails.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_CheckTolerance.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_ContractDetails.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_ContractFilesMoveDOC.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_ContractsAddendumsNonExecutedTotal.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_Contract_Addendum_NotApprovedPersonsForEmailNotification.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_CostCodeSummary0.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_FrameContractsBudgetStatus.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_GetFullUserNameFromUserName.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_PaymentRequestApprovalStatus.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_PendingListRev1.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_SupplierNamesForContracts.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\db\View_WhatToBePaidRevised.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\PTS_MERCURY\helper\aspnet_Membership.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\aspnet_Users.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\BodyText.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Currency.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\EmailGenerator.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Garbage.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table1_Project.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table1_ProjectInsurCertf.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table2_PONo.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table3_Invoice.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table3_Invoice_AdditionalApprovalProjectUserMatrix.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table3_Invoice_AdditionalUserApprovals.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table3_Invoice_PDF.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table3_Invoice_PRrequestToPM.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table3_Invoice_Type.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table3_Invoice_Type_Junction.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table4_PaymentRequest.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table5_PayLog.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table6_Supplier.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table7_CostCode.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table7_CostDivision.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table7_CostDivision2.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table8_ExchangeRates.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Addendums.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Addendums_ClientAdditional.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Addendum_UserRemarks.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Addendum_UsersApprv.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Addendum_UsersApprv_IgnoreUser.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Approval_PositionEmployee.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Approval_Scenario.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Approval_Scn_Prj_Users.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Approval_UserPositionPrjJunction.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Approval_UserRolePrjectJunction.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_ApprUserExcpAccessToActiveUsers.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Budget.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Budget_PlannedToSpendConstraints.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_ContractControlExceptional.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Contracts.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Contracts_ClientAdditional.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Contracts_UserRemarks.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Contract_Addendum_TimeLimitApprovals.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Contract_CommentsRead.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Contract_ProjectIDforClient.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Contract_UsersApprv.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Contract_UsersApprv_IgnoreUser.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Delivery_MatchingIndexes.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_PaymentRequest_OverHeadCheck.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_PO_Akt.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_PO_Akt_To_Nak.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_PO_Nakladnaya.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_SupplierType.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_SupplierType_Junction.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_SupplierType_Tags.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_Survey_OfficeParty.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\Table_UserPhotos.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\View_CheckTolerance.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\View_ContractsAddendumsNonExecutedTotal.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\View_Contract_Addendum_NotApprovedPersonsForEmailNotification.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\View_GetFullUserNameFromUserName.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\helper\View_PaymentRequestApprovalStatus.vb" />
+    <Compile Include="App_Code\PTS_MERCURY\QuickTables.vb" />
+    <Compile Include="App_Code\Vacation\Vacation.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vacation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Vacation\VacationSendEmail.vb" />
+    <Compile Include="App_Code\Vacation\VacationSendEmailScheduledNotifications.vb" />
+    <Compile Include="App_Code\Vacation\VacationTables.vb" />
+    <Compile Include="App_Code\VisitorsLog\db\ModelVisitorsLog.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelVisitorsLog.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\VisitorsLog\db\ModelVisitorsLog.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelVisitorsLog.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\VisitorsLog\db\ModelVisitorsLog.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelVisitorsLog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\VisitorsLog\db\Table_VisitorLogs.vb">
+      <DependentUpon>ModelVisitorsLog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\VisitorsLog\helper\Table_VisitorLogs.vb" />
+    <Compile Include="App_Code\_Misc\AddContractGirlsToEmailLoop.vb" />
+    <Compile Include="App_Code\_Misc\AutoComplete.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="App_Code\_Misc\CheckBrowser.vb" />
+    <Compile Include="App_Code\_Misc\Certification.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Certification.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\_Misc\ExchangeRatesFeed.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExchangeRatesFeed.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\_Misc\Delivery.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delivery.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\_Misc\EditInvoice.vb" />
+    <Compile Include="App_Code\_Misc\EditPaymentRequest.vb" />
+    <Compile Include="App_Code\_Misc\EnterPaymentsFrom1S.vb" />
+    <Compile Include="App_Code\_Misc\ExportToExcel.vb" />
+    <Compile Include="App_Code\_Misc\GetPostBackControl.vb" />
+    <Compile Include="App_Code\_Misc\LocalTime.vb" />
+    <Compile Include="App_Code\_Misc\Mercury.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mercury.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\_Misc\MyCommonTasks.vb" />
+    <Compile Include="App_Code\_Misc\Notification.vb" />
+    <Compile Include="App_Code\_Misc\OpenPo.vb" />
+    <Compile Include="App_Code\_Misc\PreventMultipleClick.vb" />
+    <Compile Include="App_Code\_Misc\PTSMainClass.vb" />
+    <Compile Include="App_Code\_Misc\RenderReport.vb" />
+    <Compile Include="App_Code\_Misc\ReplaceAddendumCheck.vb" />
+    <Compile Include="App_Code\_Misc\ReportCredentials.vb" />
+    <Compile Include="App_Code\_Misc\SavasEmailCredentials.vb" />
+    <Compile Include="App_Code\_Misc\SearchContract.vb" />
+    <Compile Include="App_Code\_Misc\ShowModalPopUpMessage.vb" />
+    <Compile Include="App_Code\_Misc\SQL2008_794282_mercuryDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQL2008_794282_mercuryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\_Misc\Table2_PONo.vb" />
+    <Compile Include="App_Code\_Misc\test.vb" />
+    <Compile Include="App_Code\_Misc\test2.vb" />
+    <Compile Include="App_Code\_Misc\ValidateInvoiceValueAgainstContractAdvance.vb" />
+    <Compile Include="App_Code\_Misc\YahooFinance.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\PTS_App_Code_VB_Project.Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="App_Code\ApprMatrix\ApprovalMatrix.xsc">
+      <DependentUpon>ApprovalMatrix.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\ApprMatrix\ApprovalMatrix.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ApprovalMatrix.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\ApprMatrix\ApprovalMatrix.xss">
+      <DependentUpon>ApprovalMatrix.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\ApprMatrix\ApprovalMatrixManageUsers.xsc">
+      <DependentUpon>ApprovalMatrixManageUsers.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\ApprMatrix\ApprovalMatrixManageUsers.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ApprovalMatrixManageUsers.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\ApprMatrix\ApprovalMatrixManageUsers.xss">
+      <DependentUpon>ApprovalMatrixManageUsers.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\ErrorLog\ErrorLog.xsc">
+      <DependentUpon>ErrorLog.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\ErrorLog\ErrorLog.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ErrorLog.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\ErrorLog\ErrorLog.xss">
+      <DependentUpon>ErrorLog.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\ErrorLog\ModelErrorLog.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelErrorLog.Context1.vb</LastGenOutput>
+    </None>
+    <EntityDeploy Include="App_Code\ErrorLog\ModelErrorLog.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelErrorLog1.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App_Code\ErrorLog\ModelErrorLog.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelErrorLog1.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\InvoicePDF\InvoicePDF.xsc">
+      <DependentUpon>InvoicePDF.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\InvoicePDF\InvoicePDF.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoicePDF.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\InvoicePDF\InvoicePDF.xss">
+      <DependentUpon>InvoicePDF.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\PTS_MERCURY\db\db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>db.Context1.vb</LastGenOutput>
+    </None>
+    <EntityDeploy Include="App_Code\PTS_MERCURY\db\db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db1.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App_Code\PTS_MERCURY\db\db.edmx.diagram">
+      <DependentUpon>db.edmx</DependentUpon>
+    </None>
+    <None Include="App_Code\PTS_MERCURY\db\db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>db1.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\Vacation\Vacation.xsc">
+      <DependentUpon>Vacation.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Vacation\Vacation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Vacation.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\Vacation\Vacation.xss">
+      <DependentUpon>Vacation.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="App_Code\VisitorsLog\db\ModelVisitorsLog.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelVisitorsLog.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App_Code\VisitorsLog\db\ModelVisitorsLog.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelVisitorsLog.edmx</DependentUpon>
+      <LastGenOutput>ModelVisitorsLog.Context.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\VisitorsLog\db\ModelVisitorsLog.edmx.diagram">
+      <DependentUpon>ModelVisitorsLog.edmx</DependentUpon>
+    </None>
+    <None Include="App_Code\VisitorsLog\db\ModelVisitorsLog.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelVisitorsLog.edmx</DependentUpon>
+      <LastGenOutput>ModelVisitorsLog.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\_Misc\ClassDiagram.cd" />
+    <None Include="App_Code\_Misc\ClassDiagram2.cd" />
+    <None Include="App_Code\_Misc\ClassDiagram3.cd" />
+    <None Include="App_Code\_Misc\Certification.xsc">
+      <DependentUpon>Certification.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\Certification.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Certification.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\_Misc\Certification.xss">
+      <DependentUpon>Certification.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\ExchangeRatesFeed.xsc">
+      <DependentUpon>ExchangeRatesFeed.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\ExchangeRatesFeed.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExchangeRatesFeed.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\_Misc\ExchangeRatesFeed.xss">
+      <DependentUpon>ExchangeRatesFeed.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\Delivery.xsc">
+      <DependentUpon>Delivery.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\Delivery.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Delivery.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\_Misc\Delivery.xss">
+      <DependentUpon>Delivery.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\Mercury.xsc">
+      <DependentUpon>Mercury.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\Mercury.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Mercury.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\_Misc\Mercury.xss">
+      <DependentUpon>Mercury.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\SQL2008_794282_mercuryDataSet.xsc">
+      <DependentUpon>SQL2008_794282_mercuryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\_Misc\SQL2008_794282_mercuryDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SQL2008_794282_mercuryDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\_Misc\SQL2008_794282_mercuryDataSet.xss">
+      <DependentUpon>SQL2008_794282_mercuryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\CodestInspection\model\ModelCodestInspection.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\CodestInspection\model\ModelCodestInspection.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\CodestInspection\model\ModelCodestInspection.ssdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\ErrorLog\ModelErrorLog.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\ErrorLog\ModelErrorLog.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\ErrorLog\ModelErrorLog.ssdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\L\db\Model1.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\L\db\Model1.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\L\db\Model1.ssdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\PTS_MERCURY\db\db.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\PTS_MERCURY\db\db.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\PTS_MERCURY\db\db.ssdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\VisitorsLog\db\ModelVisitorsLog.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\VisitorsLog\db\ModelVisitorsLog.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\App_Code\VisitorsLog\db\ModelVisitorsLog.ssdl" />
+    <None Include="obj\Debug\PTS_App_Code_VB_Project.vbproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\PTS_App_Code_VB_Project.vbprojResolveAssemblyReference.cache" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\PTS_App_Code_VB_Project.dll" />
+    <Content Include="bin\Debug\PTS_App_Code_VB_Project.pdb" />
+    <Content Include="obj\Debug\PTS_App_Code_VB_Project.vbproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TempPE\App_Code.ApprMatrix.ApprovalMatrix.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.ApprMatrix.ApprovalMatrixManageUsers.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.CodestInspection.model.ModelCodestInspection1.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.CodestInspection.model.ModelCodestInspection1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.ErrorLog.ErrorLog.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.ErrorLog.errorTest.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.ErrorLog.ModelErrorLog.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.ErrorLog.ModelErrorLog.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.InvoicePDF.InvoicePDF.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.L.db.Model1.Context1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.L.db.Model1.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.L.db.Model1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.L.db.Model11.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.L.db.Model11.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.PTS_MERCURY.db.db1.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.PTS_MERCURY.db.db1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.Vacation.Vacation.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.VisitorsLog.db.ModelVisitorLog.Context.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.VisitorsLog.db.ModelVisitorLog.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.VisitorsLog.db.ModelVisitorLog.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.VisitorsLog.db.ModelVisitorsLog.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code.VisitorsLog.db.ModelVisitorsLog.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code._Misc.Certification.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code._Misc.Certification_.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code._Misc.Delivery.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code._Misc.ExchangeRatesFeed.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code._Misc.Mercury.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\App_Code._Misc.SQL2008_794282_mercuryDataSet.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\DataSet1.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Model1.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Model1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

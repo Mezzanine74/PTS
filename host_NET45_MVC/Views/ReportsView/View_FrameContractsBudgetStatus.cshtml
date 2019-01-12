@@ -1,0 +1,56 @@
+﻿@model IEnumerable<PTS_App_Code_VB_Project.PTS_MERCURY.db.View_FrameContractsBudgetStatus>
+
+@{
+    ViewBag.Title = "View_FrameContractsBudgetStatus";
+}
+
+<h2>View_FrameContractsBudgetStatus - @ViewBag.ProjectName</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BudgetWithVAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPoWithVAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableBudgetForNewPoWithVAT)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    string style = Request.QueryString["ContractID"].ToString() == item.ContractID.ToString() ? "background-color:red; color:white;" : null;
+    
+    <tr style="@style" >
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractDate)
+        </td>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.BudgetWithVAT)
+        </td>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.TotalPoWithVAT)
+        </td>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.AvailableBudgetForNewPoWithVAT)
+        </td>
+    </tr>
+}
+
+</table>

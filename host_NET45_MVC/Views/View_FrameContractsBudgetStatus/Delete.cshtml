@@ -1,0 +1,56 @@
+﻿@model PTS_App_Code_VB_Project.PTS_MERCURY.db.View_FrameContractsBudgetStatus
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>View_FrameContractsBudgetStatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvailableBudgetForNewPoWithVAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableBudgetForNewPoWithVAT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

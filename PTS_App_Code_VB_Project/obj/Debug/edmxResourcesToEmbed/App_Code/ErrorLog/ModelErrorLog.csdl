@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_ErrorLogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_ErrorLogEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Table_ErrorLog" EntityType="DB_ErrorLogModel.Table_ErrorLog" />
+  </EntityContainer>
+  <EntityType Name="Table_ErrorLog">
+    <Key>
+      <PropertyRef Name="ErrorID" />
+    </Key>
+    <Property Name="ErrorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="UserEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ExceptionType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorHTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorTime" Type="DateTime" Precision="0" />
+    <Property Name="ip_adress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

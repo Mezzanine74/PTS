@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KitaplarimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="KitaplarimEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alintilars" EntityType="KitaplarimModel.Alintilar" />
+    <EntitySet Name="Okumalars" EntityType="KitaplarimModel.Okumalar" />
+    <EntitySet Name="Yazarlars" EntityType="KitaplarimModel.Yazarlar" />
+    <EntitySet Name="Kitaplars" EntityType="KitaplarimModel.Kitaplar" />
+    <AssociationSet Name="FK_Alintilar_Kitaplar" Association="KitaplarimModel.FK_Alintilar_Kitaplar">
+      <End Role="Kitaplar" EntitySet="Kitaplars" />
+      <End Role="Alintilar" EntitySet="Alintilars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kitaplar_Yazarlar" Association="KitaplarimModel.FK_Kitaplar_Yazarlar">
+      <End Role="Yazarlar" EntitySet="Yazarlars" />
+      <End Role="Kitaplar" EntitySet="Kitaplars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Okumalar_Kitaplar" Association="KitaplarimModel.FK_Okumalar_Kitaplar">
+      <End Role="Kitaplar" EntitySet="Kitaplars" />
+      <End Role="Okumalar" EntitySet="Okumalars" />
+    </AssociationSet>
+    <EntitySet Name="View_Kitap_Tahmini_Bitis" EntityType="KitaplarimModel.View_Kitap_Tahmini_Bitis" />
+    <AssociationSet Name="KitaplarView_Kitap_Tahmini_Bitis" Association="KitaplarimModel.KitaplarView_Kitap_Tahmini_Bitis">
+      <End Role="Kitaplar" EntitySet="Kitaplars" />
+      <End Role="View_Kitap_Tahmini_Bitis" EntitySet="View_Kitap_Tahmini_Bitis" />
+    </AssociationSet>
+    <EntitySet Name="View_Okumalar_performans" EntityType="KitaplarimModel.View_Okumalar_performans" />
+    <AssociationSet Name="OkumalarView_Okumalar_performans" Association="KitaplarimModel.OkumalarView_Okumalar_performans">
+      <End Role="Okumalar" EntitySet="Okumalars" />
+      <End Role="View_Okumalar_performans" EntitySet="View_Okumalar_performans" />
+    </AssociationSet>
+    <EntitySet Name="View_okunan_kitaplar" EntityType="KitaplarimModel.View_okunan_kitaplar" />
+    <AssociationSet Name="KitaplarView_okunan_kitaplar" Association="KitaplarimModel.KitaplarView_okunan_kitaplar">
+      <End Role="Kitaplar" EntitySet="Kitaplars" />
+      <End Role="View_okunan_kitaplar" EntitySet="View_okunan_kitaplar" />
+    </AssociationSet>
+    <EntitySet Name="Kitaplar_hacked" EntityType="KitaplarimModel.Kitaplar_hacked" />
+    <EntitySet Name="Yazarlar_hacked" EntityType="KitaplarimModel.Yazarlar_hacked" />
+    <EntitySet Name="View_Yazar_Kitap_Sayisi" EntityType="KitaplarimModel.View_Yazar_Kitap_Sayisi" />
+    <AssociationSet Name="FK_Kitaplar_hacked_Yazarlar_hacked" Association="KitaplarimModel.FK_Kitaplar_hacked_Yazarlar_hacked">
+      <End Role="Yazarlar_hacked" EntitySet="Yazarlar_hacked" />
+      <End Role="Kitaplar_hacked" EntitySet="Kitaplar_hacked" />
+    </AssociationSet>
+    <EntitySet Name="View_KitaplarHacked" EntityType="KitaplarimModel.View_KitaplarHacked" />
+  </EntityContainer>
+  <EntityType Name="Alintilar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kitap_id" Type="Int32" Nullable="false" />
+    <Property Name="resim" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sayfa" Type="Int32" />
+    <NavigationProperty Name="Kitaplar" Relationship="KitaplarimModel.FK_Alintilar_Kitaplar" FromRole="Alintilar" ToRole="Kitaplar" />
+  </EntityType>
+  <EntityType Name="Okumalar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kitap_id" Type="Int32" Nullable="false" />
+    <Property Name="kalinan_sayfa" Type="Int32" Nullable="false" />
+    <Property Name="hangi_gun" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Kitaplar" Relationship="KitaplarimModel.FK_Okumalar_Kitaplar" FromRole="Okumalar" ToRole="Kitaplar" />
+    <NavigationProperty Name="View_Okumalar_performans" Relationship="KitaplarimModel.OkumalarView_Okumalar_performans" FromRole="Okumalar" ToRole="View_Okumalar_performans" />
+  </EntityType>
+  <EntityType Name="Yazarlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="resmi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kitaplars" Relationship="KitaplarimModel.FK_Kitaplar_Yazarlar" FromRole="Yazarlar" ToRole="Kitaplar" />
+  </EntityType>
+  <EntityType Name="Kitaplar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yazar_id" Type="Int32" Nullable="false" />
+    <Property Name="kac_sayfa" Type="Int16" Nullable="false" />
+    <Property Name="baslama_gunu" Type="DateTime" Precision="0" />
+    <Property Name="bitirme_gunu" Type="DateTime" Precision="0" />
+    <Property Name="kapak_resmi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Alintilars" Relationship="KitaplarimModel.FK_Alintilar_Kitaplar" FromRole="Kitaplar" ToRole="Alintilar" />
+    <NavigationProperty Name="Yazarlar" Relationship="KitaplarimModel.FK_Kitaplar_Yazarlar" FromRole="Kitaplar" ToRole="Yazarlar" />
+    <NavigationProperty Name="Okumalars" Relationship="KitaplarimModel.FK_Okumalar_Kitaplar" FromRole="Kitaplar" ToRole="Okumalar" />
+    <NavigationProperty Name="View_Kitap_Tahmini_Bitis" Relationship="KitaplarimModel.KitaplarView_Kitap_Tahmini_Bitis" FromRole="Kitaplar" ToRole="View_Kitap_Tahmini_Bitis" />
+    <NavigationProperty Name="View_okunan_kitaplar" Relationship="KitaplarimModel.KitaplarView_okunan_kitaplar" FromRole="Kitaplar" ToRole="View_okunan_kitaplar" />
+  </EntityType>
+  <Association Name="FK_Alintilar_Kitaplar">
+    <End Type="KitaplarimModel.Kitaplar" Role="Kitaplar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="KitaplarimModel.Alintilar" Role="Alintilar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kitaplar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Alintilar">
+        <PropertyRef Name="kitap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kitaplar_Yazarlar">
+    <End Type="KitaplarimModel.Yazarlar" Role="Yazarlar" Multiplicity="1" />
+    <End Type="KitaplarimModel.Kitaplar" Role="Kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yazarlar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Kitaplar">
+        <PropertyRef Name="yazar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Okumalar_Kitaplar">
+    <End Type="KitaplarimModel.Kitaplar" Role="Kitaplar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="KitaplarimModel.Okumalar" Role="Okumalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kitaplar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Okumalar">
+        <PropertyRef Name="kitap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_Kitap_Tahmini_Bitis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="uniqueId" Type="Guid" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="min_gun" Type="DateTime" Precision="0" />
+    <Property Name="max_gun" Type="DateTime" Precision="0" />
+    <Property Name="max_page" Type="Int32" />
+    <Property Name="min_page" Type="Int32" />
+    <Property Name="date_diff" Type="Int32" />
+    <Property Name="page_diff" Type="Int32" />
+    <Property Name="average_page_per_day" Type="Int32" />
+    <Property Name="kac_sayfa_kaldi" Type="Int32" />
+    <Property Name="kac_gun_kaldi" Type="Int32" />
+    <Property Name="tahmini_bitis_gunu" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Kitaplar" Relationship="KitaplarimModel.KitaplarView_Kitap_Tahmini_Bitis" FromRole="View_Kitap_Tahmini_Bitis" ToRole="Kitaplar" />
+  </EntityType>
+  <Association Name="KitaplarView_Kitap_Tahmini_Bitis">
+    <End Type="KitaplarimModel.Kitaplar" Role="Kitaplar" Multiplicity="1" />
+    <End Type="KitaplarimModel.View_Kitap_Tahmini_Bitis" Role="View_Kitap_Tahmini_Bitis" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Kitaplar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="View_Kitap_Tahmini_Bitis">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_Okumalar_performans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="son_okuma_sayfa_araligi" Type="Int32" />
+    <Property Name="average_page_per_day" Type="Int32" />
+    <Property Name="tahmini_bitis_gunu" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Okumalar" Relationship="KitaplarimModel.OkumalarView_Okumalar_performans" FromRole="View_Okumalar_performans" ToRole="Okumalar" />
+  </EntityType>
+  <Association Name="OkumalarView_Okumalar_performans">
+    <End Type="KitaplarimModel.Okumalar" Role="Okumalar" Multiplicity="1" />
+    <End Type="KitaplarimModel.View_Okumalar_performans" Role="View_Okumalar_performans" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Okumalar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="View_Okumalar_performans">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_okunan_kitaplar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Kitaplar" Relationship="KitaplarimModel.KitaplarView_okunan_kitaplar" FromRole="View_okunan_kitaplar" ToRole="Kitaplar" />
+  </EntityType>
+  <Association Name="KitaplarView_okunan_kitaplar">
+    <End Type="KitaplarimModel.Kitaplar" Role="Kitaplar" Multiplicity="1" />
+    <End Type="KitaplarimModel.View_okunan_kitaplar" Role="View_okunan_kitaplar" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Kitaplar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="View_okunan_kitaplar">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Kitaplar_hacked">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tanitim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="yazar_id" Type="Int32" Nullable="false" />
+    <Property Name="kitapismi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="yayinci" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="turu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="linki" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="download_tried" Type="Boolean" Nullable="false" />
+    <Property Name="download_failed" Type="Boolean" Nullable="false" />
+    <Property Name="kapak_tried" Type="Boolean" />
+    <Property Name="kapak_failed" Type="Boolean" />
+    <NavigationProperty Name="Yazarlar_hacked" Relationship="KitaplarimModel.FK_Kitaplar_hacked_Yazarlar_hacked" FromRole="Kitaplar_hacked" ToRole="Yazarlar_hacked" />
+  </EntityType>
+  <EntityType Name="Yazarlar_hacked">
+    <Key>
+      <PropertyRef Name="yazar_id" />
+    </Key>
+    <Property Name="yazar_id" Type="Int32" Nullable="false" />
+    <Property Name="yazar" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kitaplar_hacked" Relationship="KitaplarimModel.FK_Kitaplar_hacked_Yazarlar_hacked" FromRole="Yazarlar_hacked" ToRole="Kitaplar_hacked" />
+  </EntityType>
+  <EntityType Name="View_Yazar_Kitap_Sayisi">
+    <Key>
+      <PropertyRef Name="yazar_id" />
+    </Key>
+    <Property Name="yazar_id" Type="Int32" Nullable="false" />
+    <Property Name="yazar" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="YazarKitapSayisi" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Kitaplar_hacked_Yazarlar_hacked">
+    <End Type="KitaplarimModel.Yazarlar_hacked" Role="Yazarlar_hacked" Multiplicity="1" />
+    <End Type="KitaplarimModel.Kitaplar_hacked" Role="Kitaplar_hacked" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yazarlar_hacked">
+        <PropertyRef Name="yazar_id" />
+      </Principal>
+      <Dependent Role="Kitaplar_hacked">
+        <PropertyRef Name="yazar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_KitaplarHacked">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tanitim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="yazar_id" Type="Int32" Nullable="false" />
+    <Property Name="kitapismi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="yayinci" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="turu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

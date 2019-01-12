@@ -1,0 +1,13 @@
+﻿@model host_NET45_MVC.Areas.PtsPO.Controllers.PurchaseOrderController.Table6_SupplierViewModel
+
+<div id="_partialResultFormSupplierEnter">
+
+    @if (@ViewBag.Success == "1") { <h1 id="h1success" style="color:green">Successfully added!</h1> }
+
+    <span style="color:red">@ViewBag.ValidationMessageINN</span>
+
+    @Html.Hidden("Success", (string)ViewBag.Success)
+    @Html.Hidden("SupplierIDreturn", (string)ViewBag.SupplierID)
+    @Html.Hidden("SupplierNamereturn", (string)ViewBag.SupplierName)
+
+</div>

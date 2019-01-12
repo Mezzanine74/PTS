@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_ErrorLogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Table_ErrorLog">
+    <Key>
+      <PropertyRef Name="ErrorID" />
+    </Key>
+    <Property Name="ErrorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URL" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+    <Property Name="UserEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="ExceptionType" Type="nvarchar(max)" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="ErrorHTML" Type="nvarchar(max)" />
+    <Property Name="ErrorTime" Type="smalldatetime" />
+    <Property Name="ip_adress" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="DB_ErrorLogModelStoreContainer">
+    <EntitySet Name="Table_ErrorLog" EntityType="Self.Table_ErrorLog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

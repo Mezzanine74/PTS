@@ -1,0 +1,2621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SQL2008_794282_mercuryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="sex" Type="nchar" MaxLength="1" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+    <Property Name="password_text" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+    <Property Name="flag" Type="nvarchar" MaxLength="16" />
+    <Property Name="AccessToAllProjects" Type="bit" />
+    <Property Name="SendEmailPaymentReq" Type="bit" />
+    <Property Name="SendEmailApproval" Type="bit" />
+    <Property Name="SendEmailContract" Type="bit" />
+    <Property Name="SendEmailPayments" Type="bit" />
+    <Property Name="SendEmailDailyReport" Type="bit" />
+    <Property Name="SendEmailWeeklyProjectSummary" Type="bit" />
+    <Property Name="SendEmailPendingFollow" Type="bit" />
+    <Property Name="SendEmailPaymentsSinceJan" Type="bit" />
+    <Property Name="SendEmailClientContracts" Type="bit" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Vote_Xmas" Type="bit" />
+    <Property Name="Vote_Time" Type="datetime" />
+    <Property Name="SendInvitation" Type="bit" />
+    <Property Name="PasswordKnown" Type="bit" />
+    <Property Name="ApproveFramePo" Type="bit" />
+    <Property Name="ContractGirlApprovalEmail" Type="bit" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthorizedForExceptionalApprove" Type="bit" />
+    <Property Name="AuthorizedForPaymentRequest" Type="bit" />
+    <Property Name="SendNotificationInsuranceUpdate" Type="bit" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BodyText">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ref" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Eng" Type="nvarchar(max)" />
+    <Property Name="Rus" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Table_Addendum_UserRemarks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddendumID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_Addendum_UsersApprv">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddendumID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="WhenApproved" Type="smalldatetime" Nullable="false" />
+    <Property Name="Exception" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Addendum_UsersApprv_IgnoreUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddendumID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Addendums">
+    <Key>
+      <PropertyRef Name="AddendumID" />
+    </Key>
+    <Property Name="AddendumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="PO_No" Type="nchar" MaxLength="11" />
+    <Property Name="AddendumNo" Type="nchar" MaxLength="60" Nullable="false" />
+    <Property Name="AddendumDate" Type="smalldatetime" />
+    <Property Name="AddendumValue_woVAT" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="AddendumValue_WithVAT" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="VATpercent" Type="smallint" />
+    <Property Name="AddendumDescription" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="CostCode" Type="nchar" MaxLength="30" />
+    <Property Name="AddendumLinkToTemplatefile_DOC" Type="nchar" MaxLength="250" />
+    <Property Name="AddendumLinkToTemplatefile_DOCBackUp" Type="nchar" MaxLength="250" />
+    <Property Name="AddendumSignBySupplier" Type="bit" />
+    <Property Name="AddendumSignByMercury" Type="bit" />
+    <Property Name="AddendumCollectionBySupplier" Type="bit" />
+    <Property Name="AddendumGivenTo" Type="nchar" MaxLength="100" />
+    <Property Name="AddendumLinkToPDFcopy" Type="nchar" MaxLength="250" />
+    <Property Name="AddendumLinkToPDFcopyBackUp" Type="nchar" MaxLength="250" />
+    <Property Name="AddendumArchivedByMercury" Type="bit" />
+    <Property Name="AddendumRetention" Type="numeric" Precision="3" Scale="1" />
+    <Property Name="AddendumNote" Type="nchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="DeletedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonUpdated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonDeleted" Type="nchar" MaxLength="50" />
+    <Property Name="AttachmentExist" Type="bit" />
+    <Property Name="NewGeneration" Type="bit" />
+    <Property Name="RequestedBy" Type="nchar" MaxLength="50" />
+    <Property Name="Penalties" Type="bit" Nullable="false" />
+    <Property Name="PenaltiesNote" Type="nvarchar(max)" />
+    <Property Name="PenaltiesToSupplier" Type="bit" Nullable="false" />
+    <Property Name="PenaltiesToSupplierNote" Type="nvarchar(max)" />
+    <Property Name="Budget" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="BudgetLinkToPDF" Type="nvarchar" MaxLength="250" />
+    <Property Name="Advance" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="Interim" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="Shipment" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="Delivery" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="FinishDate" Type="smalldatetime" />
+    <Property Name="DeliveryTerms" Type="nvarchar(max)" />
+    <Property Name="GuaranteePeriod" Type="nvarchar(max)" />
+    <Property Name="AddendumTypes" Type="smallint" Nullable="false" />
+    <Property Name="Scenario" Type="smallint" Nullable="false" />
+    <Property Name="POexecuted" Type="bit" Nullable="false" />
+    <Property Name="Exceptional" Type="bit" />
+  </EntityType>
+  <EntityType Name="Table_Addendums_ClientAdditional">
+    <Key>
+      <PropertyRef Name="AddendumID" />
+    </Key>
+    <Property Name="AddendumID" Type="int" Nullable="false" />
+    <Property Name="CompletionDate" Type="datetime" />
+    <Property Name="AktOfWork" Type="bit" Nullable="false" />
+    <Property Name="LinkToAktOfWork" Type="nchar" MaxLength="250" />
+    <Property Name="AktOfWorkWhen" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_Approval_PositionEmployee">
+    <Key>
+      <PropertyRef Name="PositionID" />
+    </Key>
+    <Property Name="PositionID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PositionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rank" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Approval_Scenario">
+    <Key>
+      <PropertyRef Name="Scenario" />
+    </Key>
+    <Property Name="Scenario" Type="smallint" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Table_Approval_Scn_Prj_Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Scenario" Type="smallint" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="ToleratedDay" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Approval_UserPositionPrjJunction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="PositionID" Type="smallint" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Approval_UserRolePrjectJunction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_ApprUserExcpAccessToActiveUsers">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Budget">
+    <Key>
+      <PropertyRef Name="BudgetID" />
+    </Key>
+    <Property Name="BudgetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="CostCode" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Budget" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="PlannedToSpend" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="PlannedToSpendCO" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="Currency" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="UpdatedPlannedRevenue" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="OriginalBOQ" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="VCO" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="CostToGoBOQ" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="CostToGoVCO" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="Recovery" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="OriginalSelling" Type="numeric" Precision="11" Scale="2" />
+  </EntityType>
+  <EntityType Name="Table_Budget_PlannedToSpendConstraints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BudgetID" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_BudgetChangeLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="smallint" Nullable="false" />
+    <Property Name="CostCode" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OldValue" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="NewValue" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+    <Property Name="Attachment" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="LogTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Table_Contract_Addendum_TimeLimitApprovals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ContractId" Type="int" Nullable="false" />
+    <Property Name="AddendumId" Type="int" Nullable="false" />
+    <Property Name="ActionTime" Type="smalldatetime" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Action" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Table_Contract_CommentsRead">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="C_Or_A" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="id_comment" Type="int" Nullable="false" />
+    <Property Name="FromWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ReadWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="WhenRead" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.Table_Contract_Offers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table_Contract_Offers">
+    <Key>
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="OfferValueWithVAT" />
+      <PropertyRef Name="Currency" />
+      <PropertyRef Name="Attachment" />
+    </Key>
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="SupplierID" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="OfferValueWithVAT" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="Currency" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Attachment" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contract_ProjectIDforClient">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.Table_Contract_User_Junction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table_Contract_User_Junction">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contract_UsersApprv">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="WhenApproved" Type="smalldatetime" Nullable="false" />
+    <Property Name="Exception" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contract_UsersApprv_IgnoreUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_ContractControlExceptional">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contracts">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="PO_No" Type="nchar" MaxLength="11" />
+    <Property Name="ContractNo" Type="nchar" MaxLength="65" />
+    <Property Name="ContractDate" Type="smalldatetime" />
+    <Property Name="ContractValue_woVAT" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="ContractValue_withVAT" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="VATpercent" Type="smallint" />
+    <Property Name="CostCode" Type="nchar" MaxLength="30" />
+    <Property Name="ContractCurrency" Type="nchar" MaxLength="10" />
+    <Property Name="SupplierID" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="ContractDescription" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="ContractType" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="LinkToTemplatefile_DOC" Type="nchar" MaxLength="250" />
+    <Property Name="LinkToTemplatefile_DOCBackUp" Type="nchar" MaxLength="250" />
+    <Property Name="SentToSupplier" Type="bit" />
+    <Property Name="SignBySupplier" Type="bit" />
+    <Property Name="SignByMercury" Type="bit" />
+    <Property Name="CollectionBySupplier" Type="bit" />
+    <Property Name="ContractGivenTo" Type="nchar" MaxLength="100" />
+    <Property Name="LinkToPDFcopy" Type="nchar" MaxLength="250" />
+    <Property Name="LinkToPDFcopyBackUp" Type="nchar" MaxLength="250" />
+    <Property Name="ArchivedByMercury" Type="bit" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="DeletedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonUpdated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonDeleted" Type="nchar" MaxLength="50" />
+    <Property Name="RequestedBy" Type="nchar" MaxLength="50" />
+    <Property Name="Retention" Type="numeric" Precision="3" Scale="1" />
+    <Property Name="Note" Type="nchar" MaxLength="255" />
+    <Property Name="AttachmentExist" Type="bit" />
+    <Property Name="Scenario" Type="smallint" Nullable="false" />
+    <Property Name="Penalties" Type="bit" Nullable="false" />
+    <Property Name="PenaltiesNote" Type="nvarchar(max)" />
+    <Property Name="PenaltiesToSupplier" Type="bit" Nullable="false" />
+    <Property Name="PenaltiesToSupplierNote" Type="nvarchar(max)" />
+    <Property Name="Budget" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="BudgetLinkToPDF" Type="nvarchar" MaxLength="250" />
+    <Property Name="Advance" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="Interim" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="Shipment" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="Delivery" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="FinishDate" Type="smalldatetime" />
+    <Property Name="DeliveryTerms" Type="nvarchar(max)" />
+    <Property Name="GuaranteePeriod" Type="nvarchar(max)" />
+    <Property Name="Nominated" Type="bit" Nullable="false" />
+    <Property Name="FrameContract" Type="bit" Nullable="false" />
+    <Property Name="POexecuted" Type="bit" Nullable="false" />
+    <Property Name="Exceptional" Type="bit" />
+    <Property Name="NominatedApprovedByESTM" Type="smallint" Nullable="false" />
+    <Property Name="NominatedWhenApprovedByESTM" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_Contracts_ClientAdditional">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="CompletionDate" Type="smalldatetime" />
+    <Property Name="AktOfWork" Type="bit" Nullable="false" />
+    <Property Name="LinkToAktOfWork" Type="nchar" MaxLength="250" />
+    <Property Name="AktOfWorkWhen" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.Table_Contracts_Common' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table_Contracts_Common">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contracts_IgnoreSearchFeed">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contracts_UserRemarks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_Delivery_MatchingIndexes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PTS_Or_1S" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Index_PTS_Or_1S" Type="nvarchar" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_PaymentRequest_OverHeadCheck">
+    <Key>
+      <PropertyRef Name="PayReqNo" />
+    </Key>
+    <Property Name="PayReqNo" Type="int" Nullable="false" />
+    <Property Name="WhoChecked" Type="nvarchar" MaxLength="256" />
+    <Property Name="Status" Type="nchar" MaxLength="256" />
+    <Property Name="WhenChecked" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_PO_Akt">
+    <Key>
+      <PropertyRef Name="ID_Akt" />
+    </Key>
+    <Property Name="ID_Akt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PO_No" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="AktNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Akt_Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="Akt_Rub_WithVAT" Type="numeric" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="SF" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="payreqno" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
+    <Property Name="PDF" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Table_PO_Akt_To_Nak">
+    <Key>
+      <PropertyRef Name="ID_Akt_To_Nak" />
+    </Key>
+    <Property Name="ID_Akt_To_Nak" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Nak" Type="int" Nullable="false" />
+    <Property Name="AktNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Akt_Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="Akt_Rub_WithVAT" Type="numeric" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="payreqno" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Table_PO_Nakladnaya">
+    <Key>
+      <PropertyRef Name="ID_Nak" />
+    </Key>
+    <Property Name="ID_Nak" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PO_No" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="Inv_ContrNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NakNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nak_Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="Nak_Rub_WithVAT" Type="numeric" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="SF" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="payreqno" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
+    <Property Name="PDF" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Table_Required">
+    <Key>
+      <PropertyRef Name="RequiredId" />
+    </Key>
+    <Property Name="RequiredId" Type="int" Nullable="false" />
+    <Property Name="RequiredText" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_SupplierType">
+    <Key>
+      <PropertyRef Name="SupplierTypeId" />
+    </Key>
+    <Property Name="SupplierTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SupplierDiscipline" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Table_SupplierType_Junction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierID" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="SupplierTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_SupplierType_Tags">
+    <Key>
+      <PropertyRef Name="TagId" />
+    </Key>
+    <Property Name="TagId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TagSourceIndex" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SourceType" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SupplierTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Survey_OfficeParty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Surname" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name_Surname_Russian" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sex" Type="nchar" MaxLength="1" />
+    <Property Name="Pass" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Response" Type="nchar" MaxLength="5" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+    <Property Name="LastLogIn" Type="smalldatetime" />
+    <Property Name="MoneyCanAfford" Type="int" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Table_UserPhotos">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.Table1_InsurPolicyDocs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table1_InsurPolicyDocs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="InsrPolicyDoc1" Type="nvarchar" MaxLength="100" />
+    <Property Name="InsrPolicyDoc2" Type="nvarchar" MaxLength="100" />
+    <Property Name="InsrPolicyDoc3" Type="nvarchar" MaxLength="100" />
+    <Property Name="InsrPolicyDoc4" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Table1_Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="ProjectName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectManager" Type="nchar" MaxLength="50" />
+    <Property Name="ProjectAdress" Type="nchar" MaxLength="100" />
+    <Property Name="PM_email" Type="nchar" MaxLength="50" />
+    <Property Name="CurrentStatus" Type="bit" Nullable="false" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="FromAccess" Type="int" />
+    <Property Name="Type" Type="nchar" MaxLength="10" />
+    <Property Name="Report" Type="bit" />
+    <Property Name="BackUpRequired" Type="bit" />
+    <Property Name="InsuranceStart" Type="smalldatetime" />
+    <Property Name="InsuranceFinish" Type="smalldatetime" />
+    <Property Name="POcreate" Type="bit" />
+    <Property Name="CompletionDate" Type="smalldatetime" />
+    <Property Name="ContractCurrency" Type="nchar" MaxLength="10" />
+    <Property Name="ContractAmount" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="Margin" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="NakladnayaEnabled" Type="bit" />
+    <Property Name="BackColor" Type="nchar" MaxLength="7" />
+    <Property Name="ForeColor" Type="nchar" MaxLength="7" />
+    <Property Name="PendingSummary" Type="bit" />
+    <Property Name="ApproveRequired" Type="bit" />
+    <Property Name="RequestedRequired" Type="bit" />
+    <Property Name="DontShowContractPoAssistance" Type="bit" />
+    <Property Name="ChangeOrderSignedExcVAT" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="SendEmailsNonZeroBalance" Type="bit" />
+    <Property Name="NewGeneration" Type="bit" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="100" />
+    <Property Name="NewPoPolicy" Type="bit" />
+    <Property Name="PoMakerNewGeneration" Type="bit" Nullable="false" />
+    <Property Name="PR_Coverpage_Approval_Allowed" Type="bit" Nullable="false" />
+    <Property Name="PR_Coverpage_Approval_Compulsory" Type="bit" Nullable="false" />
+    <Property Name="PM_SignaturesLink" Type="nvarchar" MaxLength="256" />
+    <Property Name="AutoCCApproval" Type="bit" />
+    <Property Name="ExtraApprovalIfNoSignedClientContract" Type="bit" Nullable="false" />
+    <Property Name="BudgetEmailControl" Type="bit" Nullable="false" />
+    <Property Name="FrameBudgetEmailControl" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table1_Project_LawyersCanEnterContract">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table1_ProjectInsurCertf">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+    <Property Name="InsuranceStart" Type="smalldatetime" />
+    <Property Name="InsuranceFinish" Type="smalldatetime" />
+    <Property Name="DocumentReference" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Table2_PONo">
+    <Key>
+      <PropertyRef Name="PO_No" />
+    </Key>
+    <Property Name="PO_No" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="Project_ID" Type="smallint" Nullable="false" />
+    <Property Name="SupplierID" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="Description" Type="nchar" MaxLength="290" Nullable="false" />
+    <Property Name="TotalPrice" Type="numeric" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="PO_Currency" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="VATpercent" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="CostCode" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Notes" Type="nchar" MaxLength="100" />
+    <Property Name="PO_Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="DeletedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonUpdated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonDeleted" Type="nchar" MaxLength="50" />
+    <Property Name="FromAccess" Type="smallint" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="PersonApproved" Type="nchar" MaxLength="21" />
+    <Property Name="RequestedBy" Type="nchar" MaxLength="21" />
+    <Property Name="CO" Type="bit" Nullable="false" />
+    <Property Name="Scenario" Type="smallint" Nullable="false" />
+    <Property Name="FrameContractPO" Type="bit" Nullable="false" />
+    <Property Name="FrameContractID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invoice_No" Type="nchar" MaxLength="35" Nullable="false" />
+    <Property Name="Invoice_Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="PO_No" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="InvoiceValue" Type="numeric" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="DeadlineToPay" Type="smalldatetime" />
+    <Property Name="Notes" Type="nchar" MaxLength="160" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="DeletedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonUpdated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonDeleted" Type="nchar" MaxLength="50" />
+    <Property Name="FromAccess" Type="int" />
+    <Property Name="ContractReference" Type="nchar" MaxLength="30" />
+    <Property Name="Scenario" Type="smallint" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_AdditionalApprovalProjectUserMatrix">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="smallint" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_AdditionalUserApprovals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="WhenApproved" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_PDF">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="LinkPDF" Type="nvarchar" MaxLength="90" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_PRrequestToPM">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="SiteReqNo" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="WhoRequested" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ApprovedOrNot" Type="bit" Nullable="false" />
+    <Property Name="WhenApproved" Type="smalldatetime" />
+    <Property Name="WhoApproved" Type="nvarchar" MaxLength="256" />
+    <Property Name="PayReqDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_Type">
+    <Key>
+      <PropertyRef Name="Type_id" />
+    </Key>
+    <Property Name="Type_id" Type="int" Nullable="false" />
+    <Property Name="Type_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_Type_Junction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="Type_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table4_PaymentRequest">
+    <Key>
+      <PropertyRef Name="PayReqNo" />
+    </Key>
+    <Property Name="PayReqNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteRecordNo" Type="nchar" MaxLength="15" />
+    <Property Name="ActivityCode" Type="nchar" MaxLength="10" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="PayReqDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Notes" Type="nchar" MaxLength="40" />
+    <Property Name="LinkToInvoice" Type="nchar" MaxLength="90" />
+    <Property Name="Urgency" Type="nchar" MaxLength="10" />
+    <Property Name="Approved" Type="nchar" MaxLength="15" />
+    <Property Name="PersonApprove" Type="nchar" MaxLength="10" />
+    <Property Name="LastAction" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="DeletedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonUpdated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonDeleted" Type="nchar" MaxLength="50" />
+    <Property Name="FromAccess" Type="int" />
+    <Property Name="AttachmentChange" Type="bit" />
+    <Property Name="AttachmentChangeWhen" Type="smalldatetime" />
+    <Property Name="PersonChangedAttachment" Type="nchar" MaxLength="50" />
+    <Property Name="PaymentTerm" Type="smalldatetime" />
+    <Property Name="AttachmentExist" Type="bit" />
+    <Property Name="PersonResponsibleID" Type="smallint" />
+    <Property Name="Transport" Type="bit" />
+    <Property Name="ContractReference" Type="nchar" MaxLength="30" />
+    <Property Name="Priority" Type="smallint" />
+    <Property Name="ToList" Type="bit" />
+    <Property Name="ApproveNewGen" Type="bit" />
+    <Property Name="PrintPDF" Type="bit" />
+  </EntityType>
+  <EntityType Name="Table5_PayLog">
+    <Key>
+      <PropertyRef Name="PayReqNo" />
+    </Key>
+    <Property Name="PayReqNo" Type="int" Nullable="false" />
+    <Property Name="FinanceNo" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="PaymentDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Amount" Type="numeric" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="Currency" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Note" Type="nchar" MaxLength="50" />
+    <Property Name="RubbleDollar" Type="numeric" Precision="8" Scale="4" Nullable="false" />
+    <Property Name="RubbleEuro" Type="numeric" Precision="8" Scale="4" Nullable="false" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="DeletedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonUpdated" Type="nchar" MaxLength="50" />
+    <Property Name="PersonDeleted" Type="nchar" MaxLength="50" />
+    <Property Name="Nakladnaya" Type="bit" Nullable="false" />
+    <Property Name="Nakladnaya_EnteredWhen" Type="smalldatetime" />
+    <Property Name="Akt" Type="bit" Nullable="false" />
+    <Property Name="Akt_EnteredWhen" Type="smalldatetime" />
+    <Property Name="ShotFaktura" Type="bit" Nullable="false" />
+    <Property Name="ShotFaktura_EnteredWhen" Type="smalldatetime" />
+    <Property Name="Var1Required" Type="bit" Nullable="false" />
+    <Property Name="Nak_Akt_Notes" Type="nchar" MaxLength="100" />
+    <Property Name="Status" Type="smallint" Nullable="false" />
+    <Property Name="StatusNote" Type="nchar" MaxLength="70" />
+    <Property Name="GetCollection" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="CollectedValue" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="CollectionHistory" Type="nvarchar(max)" />
+    <Property Name="FromAccess" Type="int" />
+  </EntityType>
+  <EntityType Name="Table6_Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="SupplierName" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="SupplierNameEng" Type="nchar" MaxLength="100" />
+    <Property Name="PhoneNumber1" Type="nchar" MaxLength="50" />
+    <Property Name="PhoneNumber2" Type="nchar" MaxLength="50" />
+    <Property Name="FaxNumber1" Type="nchar" MaxLength="50" />
+    <Property Name="FaxNumber2" Type="nchar" MaxLength="50" />
+    <Property Name="WebAdress" Type="nchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nchar" MaxLength="50" />
+    <Property Name="Adress" Type="nchar" MaxLength="500" />
+    <Property Name="VAT_Free" Type="bit" Nullable="false" />
+    <Property Name="Notes" Type="nchar" MaxLength="250" />
+    <Property Name="FromAccess" Type="int" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="PersonCreated" Type="nchar" MaxLength="50" />
+    <Property Name="Discount" Type="nchar" MaxLength="50" />
+    <Property Name="PaymentTerms" Type="nchar" MaxLength="50" />
+    <Property Name="CreditAmount" Type="nchar" MaxLength="50" />
+    <Property Name="Client" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.Table6_SupplierDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table6_SupplierDetails">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="SupplierAdressDetails_ENG" />
+      <PropertyRef Name="SupplierAdressDetails_RUS" />
+      <PropertyRef Name="SupplierBankDetails_ENG" />
+      <PropertyRef Name="SupplierBankDetails_RUS" />
+    </Key>
+    <Property Name="SupplierID" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="SupplierAdressDetails_ENG" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="SupplierAdressDetails_RUS" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="SupplierBankDetails_ENG" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="SupplierBankDetails_RUS" Type="nvarchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table7_CostCode">
+    <Key>
+      <PropertyRef Name="CostCode" />
+    </Key>
+    <Property Name="CostCode" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="CostVidisionID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodeDescription" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="UpdatedBy" Type="smalldatetime" />
+    <Property Name="DataCenter" Type="bit" />
+    <Property Name="FromAccess" Type="int" />
+    <Property Name="Type" Type="nchar" MaxLength="10" />
+    <Property Name="Note" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Table7_CostDivision">
+    <Key>
+      <PropertyRef Name="CostVidisionID" />
+    </Key>
+    <Property Name="CostVidisionID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CostDivisionDescription" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="CostDivision2ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table7_CostDivision2">
+    <Key>
+      <PropertyRef Name="CostDivision2ID" />
+    </Key>
+    <Property Name="CostDivision2ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CostDivision2Description" Type="nchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table8_ExchangeRates">
+    <Key>
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="RubbleDollar" Type="numeric" Precision="8" Scale="4" Nullable="false" />
+    <Property Name="RubbleEuro" Type="numeric" Precision="8" Scale="4" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.ApprMx.AddendumMissingApprovalBreakdown' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AddendumMissingApprovalBreakdown">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="AddendumID" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="AddendumID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.ApprMx.ContractMissingApprovalBreakdown' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ContractMissingApprovalBreakdown">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.ApprMx.Notf_AddendumCommentsFromToWhomMatrix' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Notf_AddendumCommentsFromToWhomMatrix">
+    <Key>
+      <PropertyRef Name="C_or_A" />
+      <PropertyRef Name="C_or_A_id" />
+      <PropertyRef Name="id_comment" />
+      <PropertyRef Name="FromWho" />
+      <PropertyRef Name="ForWho" />
+    </Key>
+    <Property Name="C_or_A" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="C_or_A_id" Type="int" Nullable="false" />
+    <Property Name="id_comment" Type="int" Nullable="false" />
+    <Property Name="FromWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ForWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.ApprMx.Notf_AddendumCommentsUnRead' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Notf_AddendumCommentsUnRead">
+    <Key>
+      <PropertyRef Name="C_or_A" />
+      <PropertyRef Name="C_or_A_id" />
+      <PropertyRef Name="id_comment" />
+      <PropertyRef Name="FromWho" />
+      <PropertyRef Name="ForWho" />
+    </Key>
+    <Property Name="C_or_A" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="C_or_A_id" Type="int" Nullable="false" />
+    <Property Name="id_comment" Type="int" Nullable="false" />
+    <Property Name="FromWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ForWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.ApprMx.Notf_ContractCommentsFromToWhomMatrix' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Notf_ContractCommentsFromToWhomMatrix">
+    <Key>
+      <PropertyRef Name="C_or_A" />
+      <PropertyRef Name="C_or_A_id" />
+      <PropertyRef Name="id_comment" />
+      <PropertyRef Name="FromWho" />
+      <PropertyRef Name="ForWho" />
+    </Key>
+    <Property Name="C_or_A" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="C_or_A_id" Type="int" Nullable="false" />
+    <Property Name="id_comment" Type="int" Nullable="false" />
+    <Property Name="FromWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ForWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.ApprMx.Notf_ContractCommentsUnRead' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Notf_ContractCommentsUnRead">
+    <Key>
+      <PropertyRef Name="C_or_A" />
+      <PropertyRef Name="C_or_A_id" />
+      <PropertyRef Name="id_comment" />
+      <PropertyRef Name="FromWho" />
+      <PropertyRef Name="ForWho" />
+    </Key>
+    <Property Name="C_or_A" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="C_or_A_id" Type="int" Nullable="false" />
+    <Property Name="id_comment" Type="int" Nullable="false" />
+    <Property Name="FromWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ForWho" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.ApprMx.View_CheckTolerance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_CheckTolerance">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="AddendumId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="Scenario" />
+      <PropertyRef Name="_Now" />
+      <PropertyRef Name="ToleratedDay" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="AddendumId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="Scenario" Type="smallint" Nullable="false" />
+    <Property Name="CreatedBy" Type="smalldatetime" />
+    <Property Name="_Now" Type="datetime" Nullable="false" />
+    <Property Name="ToleratedDay" Type="int" Nullable="false" />
+    <Property Name="DayDiff" Type="int" />
+    <Property Name="CheckTolerance" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.ApprMx.View_Contract_Addendum_NotApprovedPersonsForEmailNotification' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Contract_Addendum_NotApprovedPersonsForEmailNotification">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Count_Contract" />
+      <PropertyRef Name="Count_Addendum" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="Count_Contract" Type="int" Nullable="false" />
+    <Property Name="Count_Addendum" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_AddendumDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_AddendumDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="AddendumID" />
+      <PropertyRef Name="ProjectNameTitle" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="PoNoTitle" />
+      <PropertyRef Name="SupplierNameTitle" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="AddendumTypeTitle" />
+      <PropertyRef Name="ContractNoTitle" />
+      <PropertyRef Name="ContractDateTitle" />
+      <PropertyRef Name="ContractValueTitle" />
+      <PropertyRef Name="ContractCurrencyTitle" />
+      <PropertyRef Name="ContractTypeTitle" />
+      <PropertyRef Name="ContractType" />
+      <PropertyRef Name="ContractDescriptionTitle" />
+      <PropertyRef Name="ContractDescription" />
+      <PropertyRef Name="CostCodeTitle" />
+      <PropertyRef Name="AddnNoTitle" />
+      <PropertyRef Name="AddendumNo" />
+      <PropertyRef Name="AddnDateTitle" />
+      <PropertyRef Name="AddendumValueTitle" />
+      <PropertyRef Name="VATpercentTitle" />
+      <PropertyRef Name="BudgetValueWithVATTitle" />
+      <PropertyRef Name="RequestedByTitle" />
+      <PropertyRef Name="PenaltyToMercuryTitle" />
+      <PropertyRef Name="Penalties" />
+      <PropertyRef Name="PenaltyToSupplierTitle" />
+      <PropertyRef Name="PenaltiesToSupplier" />
+      <PropertyRef Name="DeliveryTermsTitle" />
+      <PropertyRef Name="AddnDescriptionTitle" />
+      <PropertyRef Name="AddendumDescription" />
+      <PropertyRef Name="StartDateTitle" />
+      <PropertyRef Name="FinishDateTitle" />
+      <PropertyRef Name="AdvanceTitle" />
+      <PropertyRef Name="InterimTitle" />
+      <PropertyRef Name="ShipmentTitle" />
+      <PropertyRef Name="DeliveryTitle" />
+      <PropertyRef Name="RetentionTitle" />
+      <PropertyRef Name="PenallyToMercuryNoteTitle" />
+      <PropertyRef Name="PenaltyToSupplierNoteTitle" />
+      <PropertyRef Name="GuaranteePeriodTitle" />
+      <PropertyRef Name="CreationInfo" />
+      <PropertyRef Name="CompletionDateTitle" />
+      <PropertyRef Name="AktOfWorkTitle" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AddendumID" Type="int" Nullable="false" />
+    <Property Name="ProjectNameTitle" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="ProjectName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="PoNoTitle" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="PO_No" Type="nchar" MaxLength="11" />
+    <Property Name="SupplierNameTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="SupplierName" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="AddendumTypeTitle" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="AddendumType" Type="nvarchar" MaxLength="24" />
+    <Property Name="ContractNoTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="ContractNo" Type="nchar" MaxLength="65" />
+    <Property Name="ContractDateTitle" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="ContractDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContractValueTitle" Type="nvarchar" MaxLength="27" Nullable="false" />
+    <Property Name="ContractValue_withVAT" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ContractCurrencyTitle" Type="nvarchar" MaxLength="17" Nullable="false" />
+    <Property Name="ContractCurrency" Type="nchar" MaxLength="10" />
+    <Property Name="ContractTypeTitle" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="ContractType" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ContractDescriptionTitle" Type="nvarchar" MaxLength="19" Nullable="false" />
+    <Property Name="ContractDescription" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="CostCodeTitle" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="CodeDescription" Type="nchar" MaxLength="200" />
+    <Property Name="AddnNoTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="AddendumNo" Type="nchar" MaxLength="60" Nullable="false" />
+    <Property Name="AddnDateTitle" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="AddendumDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddendumValueTitle" Type="nvarchar" MaxLength="27" Nullable="false" />
+    <Property Name="AddendumValue_WithVAT" Type="nvarchar" MaxLength="4000" />
+    <Property Name="VATpercentTitle" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="VATpercent" Type="smallint" />
+    <Property Name="BudgetValueWithVATTitle" Type="nvarchar" MaxLength="21" Nullable="false" />
+    <Property Name="Budget" Type="nvarchar" MaxLength="4000" />
+    <Property Name="RequestedByTitle" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="RequestedBy" Type="nchar" MaxLength="50" />
+    <Property Name="PenaltyToMercuryTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Penalties" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="PenaltyToSupplierTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="PenaltiesToSupplier" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DeliveryTermsTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="DeliveryTerms" Type="nvarchar(max)" />
+    <Property Name="AddnDescriptionTitle" Type="nvarchar" MaxLength="19" Nullable="false" />
+    <Property Name="AddendumDescription" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="StartDateTitle" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FinishDateTitle" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="FinishDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="AdvanceTitle" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="Advance" Type="nvarchar" MaxLength="4000" />
+    <Property Name="InterimTitle" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Interim" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ShipmentTitle" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Shipment" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DeliveryTitle" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Delivery" Type="nvarchar" MaxLength="4000" />
+    <Property Name="RetentionTitle" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Retention" Type="nvarchar" MaxLength="4000" />
+    <Property Name="PenallyToMercuryNoteTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="PenaltiesNote" Type="nvarchar(max)" />
+    <Property Name="PenaltyToSupplierNoteTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="PenaltiesToSupplierNote" Type="nvarchar(max)" />
+    <Property Name="GuaranteePeriodTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="GuaranteePeriod" Type="nvarchar(max)" />
+    <Property Name="CreationInfo" Type="nvarchar" MaxLength="322" Nullable="false" />
+    <Property Name="CompletionDateTitle" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="CompletionDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="AktOfWorkTitle" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="AktOfWork" Type="nvarchar" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_ContractDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_ContractDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="ProjectNameTitle" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="SupplierNameTitle" />
+      <PropertyRef Name="ContractNoTitle" />
+      <PropertyRef Name="ContractDateTitle" />
+      <PropertyRef Name="ContractValueTitle" />
+      <PropertyRef Name="VATpercent" />
+      <PropertyRef Name="VATpercentTitle" />
+      <PropertyRef Name="BudgetTitle" />
+      <PropertyRef Name="ContractCurrencyTitle" />
+      <PropertyRef Name="CostCodeTitle" />
+      <PropertyRef Name="PenaltiesToMercuryTitle" />
+      <PropertyRef Name="PenaltiesToSupplierTitle" />
+      <PropertyRef Name="RequestedByTitle" />
+      <PropertyRef Name="ContractType" />
+      <PropertyRef Name="ContractTypeTitle" />
+      <PropertyRef Name="ContractDescription" />
+      <PropertyRef Name="ContractDescriptionTitle" />
+      <PropertyRef Name="StartDateTitle" />
+      <PropertyRef Name="FinishDateTitle" />
+      <PropertyRef Name="Advance" />
+      <PropertyRef Name="AdvanceTitle" />
+      <PropertyRef Name="Interim" />
+      <PropertyRef Name="InterimTitle" />
+      <PropertyRef Name="Shipment" />
+      <PropertyRef Name="ShipmentTitle" />
+      <PropertyRef Name="Delivery" />
+      <PropertyRef Name="DeliveryTitle" />
+      <PropertyRef Name="Retention" />
+      <PropertyRef Name="RetentionTitle" />
+      <PropertyRef Name="PenaltiesToMercuryNoteTitle" />
+      <PropertyRef Name="PenaltiesToSupplierNoteTitle" />
+      <PropertyRef Name="DeliveryTermsTitle" />
+      <PropertyRef Name="GuaranteePeriodTitle" />
+      <PropertyRef Name="CreationInfo" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="153" />
+    <Property Name="ProjectNameTitle" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="SupplierName" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="SupplierNameTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="ContractNo" Type="nchar" MaxLength="65" />
+    <Property Name="ContractNoTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="ContractDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContractDateTitle" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="ContractValue" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ContractValueTitle" Type="nvarchar" MaxLength="27" Nullable="false" />
+    <Property Name="VATpercent" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="VATpercentTitle" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Budget" Type="nvarchar" MaxLength="4000" />
+    <Property Name="BudgetTitle" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="ContractCurrency" Type="nchar" MaxLength="10" />
+    <Property Name="ContractCurrencyTitle" Type="nvarchar" MaxLength="17" Nullable="false" />
+    <Property Name="CostCode" Type="nvarchar" MaxLength="233" />
+    <Property Name="CostCodeTitle" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="PenaltiesToMercury" Type="nvarchar" MaxLength="3" />
+    <Property Name="PenaltiesToMercuryTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="PenaltiesToSupplier" Type="nvarchar" MaxLength="3" />
+    <Property Name="PenaltiesToSupplierTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="RequestedBy" Type="nchar" MaxLength="50" />
+    <Property Name="RequestedByTitle" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="ContractType" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ContractTypeTitle" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="ContractDescription" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="ContractDescriptionTitle" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="StartDateTitle" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="FinishDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FinishDateTitle" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="Advance" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="AdvanceTitle" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Interim" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="InterimTitle" Type="nvarchar" MaxLength="7" Nullable="false" />
+    <Property Name="Shipment" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="ShipmentTitle" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Delivery" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="DeliveryTitle" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Retention" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="RetentionTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="PenaltiesToMercuryNote" Type="nvarchar(max)" />
+    <Property Name="PenaltiesToMercuryNoteTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="PenaltiesToSupplierNote" Type="nvarchar(max)" />
+    <Property Name="PenaltiesToSupplierNoteTitle" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="DeliveryTerms" Type="nvarchar(max)" />
+    <Property Name="DeliveryTermsTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="GuaranteePeriod" Type="nvarchar(max)" />
+    <Property Name="GuaranteePeriodTitle" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="CreationInfo" Type="nvarchar" MaxLength="322" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_ContractFilesMoveDOC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_ContractFilesMoveDOC">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastSlash" Type="int" />
+    <Property Name="LastDot" Type="int" />
+    <Property Name="Path1" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreateFolder" Type="nvarchar" MaxLength="250" />
+    <Property Name="Path2" Type="nvarchar" MaxLength="501" />
+    <Property Name="extension" Type="nvarchar" MaxLength="250" />
+    <Property Name="FileNameItself" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_ContractsAddendumsNonExecutedTotal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_ContractsAddendumsNonExecutedTotal">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="CostCode" Type="nchar" MaxLength="30" />
+    <Property Name="TotalNotExcecutedValueExcVAT_Rub" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="TotalNotExcecutedValueExcVAT_Euro" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="TotalNotExcecutedValueExcVAT_Dollar" Type="numeric" Precision="38" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_CostCodeSummary0' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_CostCodeSummary0">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="CostCodeAlias" Type="nvarchar" MaxLength="30" />
+    <Property Name="CostCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="CostCode1" Type="nvarchar" MaxLength="233" />
+    <Property Name="CostCode2" Type="nvarchar" MaxLength="233" />
+    <Property Name="TotalDollarPendingExcVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalEuroPendingExcVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalRublePendingExcVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalDollarPaidExcVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalEuroPaidExcVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalRublePaidExcVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalPoTotalDollarExcVAT" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="TotalPoTotalEuroExcVAT" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="TotalPoTotalRubleExcVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalBalanceDollarExcVAT" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="TotalBalanceEuroExcVAT" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="TotalBalanceRubleExcVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalCollectedDocDollarExcVAT" Type="numeric" Precision="38" Scale="6" />
+    <Property Name="TotalCollectedDocEuroExcVAT" Type="numeric" Precision="38" Scale="6" />
+    <Property Name="TotalCollectedDocRubleExcVAT" Type="decimal" Precision="38" Scale="6" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_FrameContractsBudgetStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_FrameContractsBudgetStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="BudgetWithVAT" />
+      <PropertyRef Name="TotalPoWithVAT" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContractNo" Type="nvarchar" MaxLength="65" />
+    <Property Name="ContractDate" Type="smalldatetime" />
+    <Property Name="ContractID" Type="int" Nullable="false" />
+    <Property Name="BudgetWithVAT" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="TotalPoWithVAT" Type="numeric" Precision="38" Scale="2" Nullable="false" />
+    <Property Name="AvailableBudgetForNewPoWithVAT" Type="numeric" Precision="38" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_GetFullUserNameFromUserName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_GetFullUserNameFromUserName">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="UserNameSurnameFromEmail" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_PaymentRequestApprovalStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_PaymentRequestApprovalStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="InvoiceID" />
+      <PropertyRef Name="ApprovedOrNot" />
+      <PropertyRef Name="Position" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="ProjectName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApprovalRequiredPersons" Type="nvarchar" MaxLength="256" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="ApprovedOrNot" Type="int" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_PendingListRev1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_PendingListRev1">
+    <Key>
+      <PropertyRef Name="PayReqDate" />
+      <PropertyRef Name="Invoice_Date" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="PO_No" />
+      <PropertyRef Name="PayReqNo" />
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PayReqDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Urgency" Type="nvarchar" MaxLength="10" />
+    <Property Name="Invoice_Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="Invoice_No" Type="nvarchar" MaxLength="500" />
+    <Property Name="SiteRecordNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="PO_Currency" Type="nvarchar" MaxLength="10" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="453" />
+    <Property Name="LinkToInvoice" Type="nvarchar" MaxLength="90" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="Approved" Type="nvarchar" MaxLength="8" />
+    <Property Name="PersonApprove" Type="nvarchar" MaxLength="10" />
+    <Property Name="SupplierID" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="PersonCreated" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttachmentChange" Type="bit" />
+    <Property Name="AttachmentChangeWhen" Type="smalldatetime" />
+    <Property Name="PersonChangedAttachment" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttachmentExist" Type="bit" />
+    <Property Name="PoTotalWithVAT" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="TotalPaidWithVAT" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="TotalBalanceWithVAT" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="OrderCurrency" Type="int" />
+    <Property Name="PendingWithVAT" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="Diff_Paid_Collect" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="Percantage_To_Paid" Type="numeric" Precision="38" Scale="6" />
+    <Property Name="PO_No" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="BalanceAfterPending" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="PayReqNo" Type="int" Nullable="false" />
+    <Property Name="ApproveNewGen" Type="bit" />
+    <Property Name="PrintPDF" Type="bit" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="CreatedByPaymentRequest" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_SupplierNamesForContracts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_SupplierNamesForContracts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SupplierID" Type="nvarchar" MaxLength="12" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SQL2008_794282_mercury.dbo.View_WhatToBePaidRevised' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_WhatToBePaidRevised">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Invoice_Date" />
+      <PropertyRef Name="PayReqNo" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="RubbleDollar" />
+      <PropertyRef Name="RubbleEuro" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="453" />
+    <Property Name="PO_No" Type="nvarchar" MaxLength="11" />
+    <Property Name="Invoice_No" Type="nvarchar" MaxLength="500" />
+    <Property Name="Invoice_Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="Wo_VAT" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="PO_Currency" Type="nvarchar" MaxLength="10" />
+    <Property Name="WithVAT" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="PayReqNo" Type="int" Nullable="false" />
+    <Property Name="Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="LinkToInvoice" Type="nvarchar" MaxLength="90" />
+    <Property Name="Approved" Type="nchar" MaxLength="10" />
+    <Property Name="ProjectID" Type="smallint" Nullable="false" />
+    <Property Name="RubbleDollar" Type="numeric" Precision="8" Scale="4" Nullable="false" />
+    <Property Name="RubbleEuro" Type="numeric" Precision="8" Scale="4" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__UserI__6D9742D9">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__7849DB76">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__753864A1">
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__7FEAFD3E">
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__00DF2177">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__762C88DA">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Addendum_UsersApprv_Table_Addendum">
+    <End Role="Table_Addendums" Type="Self.Table_Addendums" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Addendum_UsersApprv" Type="Self.Table_Addendum_UsersApprv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Addendums">
+        <PropertyRef Name="AddendumID" />
+      </Principal>
+      <Dependent Role="Table_Addendum_UsersApprv">
+        <PropertyRef Name="AddendumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Addendums_ClientAdditional_Table_Addendums">
+    <End Role="Table_Addendums" Type="Self.Table_Addendums" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Addendums_ClientAdditional" Type="Self.Table_Addendums_ClientAdditional" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Addendums">
+        <PropertyRef Name="AddendumID" />
+      </Principal>
+      <Dependent Role="Table_Addendums_ClientAdditional">
+        <PropertyRef Name="AddendumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Addendums_Table_Contracts">
+    <End Role="Table_Contracts" Type="Self.Table_Contracts" Multiplicity="1" />
+    <End Role="Table_Addendums" Type="Self.Table_Addendums" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Addendums">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Addendums_UserRemarks_Table_Addendums">
+    <End Role="Table_Addendums" Type="Self.Table_Addendums" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Addendum_UserRemarks" Type="Self.Table_Addendum_UserRemarks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Addendums">
+        <PropertyRef Name="AddendumID" />
+      </Principal>
+      <Dependent Role="Table_Addendum_UserRemarks">
+        <PropertyRef Name="AddendumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Table_Approval_Scn_Prj_Users_aspnet_Users' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Table_Approval_Scn_Prj_Users_aspnet_Users" />-->
+  <Association Name="FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario">
+    <End Role="Table_Approval_Scenario" Type="Self.Table_Approval_Scenario" Multiplicity="1" />
+    <End Role="Table_Approval_Scn_Prj_Users" Type="Self.Table_Approval_Scn_Prj_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Approval_Scenario">
+        <PropertyRef Name="Scenario" />
+      </Principal>
+      <Dependent Role="Table_Approval_Scn_Prj_Users">
+        <PropertyRef Name="Scenario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Table_Approval_UserPositionPrjJunction_aspnet_Users' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Table_Approval_UserPositionPrjJunction_aspnet_Users" />-->
+  <Association Name="FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee">
+    <End Role="Table_Approval_PositionEmployee" Type="Self.Table_Approval_PositionEmployee" Multiplicity="1" />
+    <End Role="Table_Approval_UserPositionPrjJunction" Type="Self.Table_Approval_UserPositionPrjJunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Approval_PositionEmployee">
+        <PropertyRef Name="PositionID" />
+      </Principal>
+      <Dependent Role="Table_Approval_UserPositionPrjJunction">
+        <PropertyRef Name="PositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Table_Approval_UserRolePrjectJunction_aspnet_Users' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Table_Approval_UserRolePrjectJunction_aspnet_Users" />-->
+  <Association Name="FK_Table_Budget_Table1_Project">
+    <End Role="Table1_Project" Type="Self.Table1_Project" Multiplicity="1" />
+    <End Role="Table_Budget" Type="Self.Table_Budget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Table_Budget">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Budget_Table7_CostCode">
+    <End Role="Table7_CostCode" Type="Self.Table7_CostCode" Multiplicity="1" />
+    <End Role="Table_Budget" Type="Self.Table_Budget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table7_CostCode">
+        <PropertyRef Name="CostCode" />
+      </Principal>
+      <Dependent Role="Table_Budget">
+        <PropertyRef Name="CostCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contract_Offers_Table_Contracts">
+    <End Role="Table_Contracts" Type="Self.Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Contract_Offers" Type="Self.Table_Contract_Offers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contract_Offers">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contract_ProjectIDforClient_Table_Contracts">
+    <End Role="Table_Contracts" Type="Self.Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Contract_ProjectIDforClient" Type="Self.Table_Contract_ProjectIDforClient" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contract_ProjectIDforClient">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Table_Contract_User_Junction_aspnet_Users' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Table_Contract_User_Junction_aspnet_Users" />-->
+  <Association Name="FK_Table_Contract_UsersApprv_Table_Contracts">
+    <End Role="Table_Contracts" Type="Self.Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Contract_UsersApprv" Type="Self.Table_Contract_UsersApprv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contract_UsersApprv">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Table_ContractControlExceptional_aspnet_Users' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Table_ContractControlExceptional_aspnet_Users" />-->
+  <Association Name="FK_Table_Contracts_ClientAdditional_Table_Contracts">
+    <End Role="Table_Contracts" Type="Self.Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Contracts_ClientAdditional" Type="Self.Table_Contracts_ClientAdditional" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contracts_ClientAdditional">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contracts_Common_Table_Contracts">
+    <End Role="Table_Contracts" Type="Self.Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Contracts_Common" Type="Self.Table_Contracts_Common" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contracts_Common">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contracts_Table6_Supplier">
+    <End Role="Table6_Supplier" Type="Self.Table6_Supplier" Multiplicity="1" />
+    <End Role="Table_Contracts" Type="Self.Table_Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Table_Contracts">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contracts_UserRemarks_Table_Contracts">
+    <End Role="Table_Contracts" Type="Self.Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Contracts_UserRemarks" Type="Self.Table_Contracts_UserRemarks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contracts_UserRemarks">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_PO_Akt_Table2_PONo">
+    <End Role="Table2_PONo" Type="Self.Table2_PONo" Multiplicity="1" />
+    <End Role="Table_PO_Akt" Type="Self.Table_PO_Akt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table2_PONo">
+        <PropertyRef Name="PO_No" />
+      </Principal>
+      <Dependent Role="Table_PO_Akt">
+        <PropertyRef Name="PO_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya">
+    <End Role="Table_PO_Nakladnaya" Type="Self.Table_PO_Nakladnaya" Multiplicity="1" />
+    <End Role="Table_PO_Akt_To_Nak" Type="Self.Table_PO_Akt_To_Nak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_PO_Nakladnaya">
+        <PropertyRef Name="ID_Nak" />
+      </Principal>
+      <Dependent Role="Table_PO_Akt_To_Nak">
+        <PropertyRef Name="ID_Nak" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_PO_Nakladnaya_Table2_PONo">
+    <End Role="Table2_PONo" Type="Self.Table2_PONo" Multiplicity="1" />
+    <End Role="Table_PO_Nakladnaya" Type="Self.Table_PO_Nakladnaya" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table2_PONo">
+        <PropertyRef Name="PO_No" />
+      </Principal>
+      <Dependent Role="Table_PO_Nakladnaya">
+        <PropertyRef Name="PO_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_SupplierType_Junction_Table_SupplierType">
+    <End Role="Table_SupplierType" Type="Self.Table_SupplierType" Multiplicity="1" />
+    <End Role="Table_SupplierType_Junction" Type="Self.Table_SupplierType_Junction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_SupplierType">
+        <PropertyRef Name="SupplierTypeId" />
+      </Principal>
+      <Dependent Role="Table_SupplierType_Junction">
+        <PropertyRef Name="SupplierTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_SupplierType_Junction_Table6_Supplier">
+    <End Role="Table6_Supplier" Type="Self.Table6_Supplier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_SupplierType_Junction" Type="Self.Table_SupplierType_Junction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Table_SupplierType_Junction">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_SupplierType_Tags_Table_SupplierType">
+    <End Role="Table_SupplierType" Type="Self.Table_SupplierType" Multiplicity="1" />
+    <End Role="Table_SupplierType_Tags" Type="Self.Table_SupplierType_Tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_SupplierType">
+        <PropertyRef Name="SupplierTypeId" />
+      </Principal>
+      <Dependent Role="Table_SupplierType_Tags">
+        <PropertyRef Name="SupplierTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Table_UserPhotos_aspnet_Users' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Table_UserPhotos_aspnet_Users" />-->
+  <Association Name="FK_Table1_ProjectInsurCertf_Table1_Project">
+    <End Role="Table1_Project" Type="Self.Table1_Project" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table1_ProjectInsurCertf" Type="Self.Table1_ProjectInsurCertf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Table1_ProjectInsurCertf">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table2_PONo__Table1_Project_">
+    <End Role="Table1_Project" Type="Self.Table1_Project" Multiplicity="1" />
+    <End Role="Table2_PONo" Type="Self.Table2_PONo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Table2_PONo">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table2_PONo__Table6_Supplier_">
+    <End Role="Table6_Supplier" Type="Self.Table6_Supplier" Multiplicity="1" />
+    <End Role="Table2_PONo" Type="Self.Table2_PONo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Table2_PONo">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table2_PONo_Table7_CostCode">
+    <End Role="Table7_CostCode" Type="Self.Table7_CostCode" Multiplicity="1" />
+    <End Role="Table2_PONo" Type="Self.Table2_PONo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table7_CostCode">
+        <PropertyRef Name="CostCode" />
+      </Principal>
+      <Dependent Role="Table2_PONo">
+        <PropertyRef Name="CostCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice__Table2_PONo_">
+    <End Role="Table2_PONo" Type="Self.Table2_PONo" Multiplicity="1" />
+    <End Role="Table3_Invoice" Type="Self.Table3_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table2_PONo">
+        <PropertyRef Name="PO_No" />
+      </Principal>
+      <Dependent Role="Table3_Invoice">
+        <PropertyRef Name="PO_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice_PDF_Table3_Invoice">
+    <End Role="Table3_Invoice" Type="Self.Table3_Invoice" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table3_Invoice_PDF" Type="Self.Table3_Invoice_PDF" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Table3_Invoice_PDF">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice_PRrequestToPM_Table3_Invoice">
+    <End Role="Table3_Invoice" Type="Self.Table3_Invoice" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table3_Invoice_PRrequestToPM" Type="Self.Table3_Invoice_PRrequestToPM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Table3_Invoice_PRrequestToPM">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice_Type_Junction_Table3_Invoice">
+    <End Role="Table3_Invoice" Type="Self.Table3_Invoice" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table3_Invoice_Type_Junction" Type="Self.Table3_Invoice_Type_Junction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Table3_Invoice_Type_Junction">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type">
+    <End Role="Table3_Invoice_Type" Type="Self.Table3_Invoice_Type" Multiplicity="1" />
+    <End Role="Table3_Invoice_Type_Junction" Type="Self.Table3_Invoice_Type_Junction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice_Type">
+        <PropertyRef Name="Type_id" />
+      </Principal>
+      <Dependent Role="Table3_Invoice_Type_Junction">
+        <PropertyRef Name="Type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table4_PaymentRequest_Table3_Invoice">
+    <End Role="Table3_Invoice" Type="Self.Table3_Invoice" Multiplicity="1" />
+    <End Role="Table4_PaymentRequest" Type="Self.Table4_PaymentRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Table4_PaymentRequest">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table5_PayLog_Table4_PaymentRequest_">
+    <End Role="Table4_PaymentRequest" Type="Self.Table4_PaymentRequest" Multiplicity="1" />
+    <End Role="Table5_PayLog" Type="Self.Table5_PayLog" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table4_PaymentRequest">
+        <PropertyRef Name="PayReqNo" />
+      </Principal>
+      <Dependent Role="Table5_PayLog">
+        <PropertyRef Name="PayReqNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table5_PayLog_Table8_ExchangeRates">
+    <End Role="Table8_ExchangeRates" Type="Self.Table8_ExchangeRates" Multiplicity="1" />
+    <End Role="Table5_PayLog" Type="Self.Table5_PayLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table8_ExchangeRates">
+        <PropertyRef Name="Date" />
+      </Principal>
+      <Dependent Role="Table5_PayLog">
+        <PropertyRef Name="PaymentDate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table6_SupplierDetails_Table6_Supplier">
+    <End Role="Table6_Supplier" Type="Self.Table6_Supplier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table6_SupplierDetails" Type="Self.Table6_SupplierDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Table6_SupplierDetails">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table7_CostCode_Table7_CostDivision">
+    <End Role="Table7_CostDivision" Type="Self.Table7_CostDivision" Multiplicity="1" />
+    <End Role="Table7_CostCode" Type="Self.Table7_CostCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table7_CostDivision">
+        <PropertyRef Name="CostVidisionID" />
+      </Principal>
+      <Dependent Role="Table7_CostCode">
+        <PropertyRef Name="CostVidisionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_EmailListEverybodyApprovedAddendum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ApprMx">
+    <Parameter Name="ContractId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_EmailListEverybodyApprovedContract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ApprMx">
+    <Parameter Name="ContractId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_EmailListLawyersApprovedAddendum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ApprMx">
+    <Parameter Name="AddendumId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_EmailListLawyersApprovedContract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ApprMx">
+    <Parameter Name="ContractId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_MissingApprovalsOnContractsAndAddendums" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ApprMx">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ApprovalStatusAddendumAllApprovedEF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AddendumId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ApprovalStatusAddendumEF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AddendumId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ApprovalStatusContractAllApprovedEF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContractID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ApprovalStatusContractEF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContractID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetPoNoFromMakerNewGeneration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DDLCostCodePOCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DDLProjectsPOCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DDLRequestedByPOCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_FrameContractBudgetPoDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FrameContractId" Type="int" Mode="In" />
+    <Parameter Name="ToleranceLimit" Type="numeric" Mode="In" />
+    <Parameter Name="OldValue" Type="numeric" Mode="In" />
+    <Parameter Name="NewValue" Type="numeric" Mode="In" />
+  </Function>
+  <EntityContainer Name="SQL2008_794282_mercuryModelStoreContainer">
+    <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="Self.aspnet_UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BodyText" EntityType="Self.BodyText" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Addendum_UserRemarks" EntityType="Self.Table_Addendum_UserRemarks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Addendum_UsersApprv" EntityType="Self.Table_Addendum_UsersApprv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Addendum_UsersApprv_IgnoreUser" EntityType="Self.Table_Addendum_UsersApprv_IgnoreUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Addendums" EntityType="Self.Table_Addendums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Addendums_ClientAdditional" EntityType="Self.Table_Addendums_ClientAdditional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Approval_PositionEmployee" EntityType="Self.Table_Approval_PositionEmployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Approval_Scenario" EntityType="Self.Table_Approval_Scenario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Approval_Scn_Prj_Users" EntityType="Self.Table_Approval_Scn_Prj_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Approval_UserPositionPrjJunction" EntityType="Self.Table_Approval_UserPositionPrjJunction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Approval_UserRolePrjectJunction" EntityType="Self.Table_Approval_UserRolePrjectJunction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_ApprUserExcpAccessToActiveUsers" EntityType="Self.Table_ApprUserExcpAccessToActiveUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Budget" EntityType="Self.Table_Budget" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Budget_PlannedToSpendConstraints" EntityType="Self.Table_Budget_PlannedToSpendConstraints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_BudgetChangeLog" EntityType="Self.Table_BudgetChangeLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contract_Addendum_TimeLimitApprovals" EntityType="Self.Table_Contract_Addendum_TimeLimitApprovals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contract_CommentsRead" EntityType="Self.Table_Contract_CommentsRead" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contract_ProjectIDforClient" EntityType="Self.Table_Contract_ProjectIDforClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contract_UsersApprv" EntityType="Self.Table_Contract_UsersApprv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contract_UsersApprv_IgnoreUser" EntityType="Self.Table_Contract_UsersApprv_IgnoreUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_ContractControlExceptional" EntityType="Self.Table_ContractControlExceptional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contracts" EntityType="Self.Table_Contracts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contracts_ClientAdditional" EntityType="Self.Table_Contracts_ClientAdditional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contracts_IgnoreSearchFeed" EntityType="Self.Table_Contracts_IgnoreSearchFeed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contracts_UserRemarks" EntityType="Self.Table_Contracts_UserRemarks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Delivery_MatchingIndexes" EntityType="Self.Table_Delivery_MatchingIndexes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_PaymentRequest_OverHeadCheck" EntityType="Self.Table_PaymentRequest_OverHeadCheck" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_PO_Akt" EntityType="Self.Table_PO_Akt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_PO_Akt_To_Nak" EntityType="Self.Table_PO_Akt_To_Nak" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_PO_Nakladnaya" EntityType="Self.Table_PO_Nakladnaya" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Required" EntityType="Self.Table_Required" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_SupplierType" EntityType="Self.Table_SupplierType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_SupplierType_Junction" EntityType="Self.Table_SupplierType_Junction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_SupplierType_Tags" EntityType="Self.Table_SupplierType_Tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Survey_OfficeParty" EntityType="Self.Table_Survey_OfficeParty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_UserPhotos" EntityType="Self.Table_UserPhotos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table1_Project" EntityType="Self.Table1_Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table1_Project_LawyersCanEnterContract" EntityType="Self.Table1_Project_LawyersCanEnterContract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table1_ProjectInsurCertf" EntityType="Self.Table1_ProjectInsurCertf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table2_PONo" EntityType="Self.Table2_PONo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3_Invoice" EntityType="Self.Table3_Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3_Invoice_AdditionalApprovalProjectUserMatrix" EntityType="Self.Table3_Invoice_AdditionalApprovalProjectUserMatrix" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3_Invoice_AdditionalUserApprovals" EntityType="Self.Table3_Invoice_AdditionalUserApprovals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3_Invoice_PDF" EntityType="Self.Table3_Invoice_PDF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3_Invoice_PRrequestToPM" EntityType="Self.Table3_Invoice_PRrequestToPM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3_Invoice_Type" EntityType="Self.Table3_Invoice_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3_Invoice_Type_Junction" EntityType="Self.Table3_Invoice_Type_Junction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table4_PaymentRequest" EntityType="Self.Table4_PaymentRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table5_PayLog" EntityType="Self.Table5_PayLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table6_Supplier" EntityType="Self.Table6_Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table7_CostCode" EntityType="Self.Table7_CostCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table7_CostDivision" EntityType="Self.Table7_CostDivision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table7_CostDivision2" EntityType="Self.Table7_CostDivision2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table8_ExchangeRates" EntityType="Self.Table8_ExchangeRates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Contract_Offers" EntityType="Self.Table_Contract_Offers" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table_Contract_Offers].[ContractID] AS [ContractID], 
+    [Table_Contract_Offers].[SupplierID] AS [SupplierID], 
+    [Table_Contract_Offers].[OfferValueWithVAT] AS [OfferValueWithVAT], 
+    [Table_Contract_Offers].[Currency] AS [Currency], 
+    [Table_Contract_Offers].[Attachment] AS [Attachment]
+    FROM [dbo].[Table_Contract_Offers] AS [Table_Contract_Offers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Table_Contract_User_Junction" EntityType="Self.Table_Contract_User_Junction" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table_Contract_User_Junction].[UserName] AS [UserName], 
+    [Table_Contract_User_Junction].[ProjectID] AS [ProjectID]
+    FROM [dbo].[Table_Contract_User_Junction] AS [Table_Contract_User_Junction]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Table_Contracts_Common" EntityType="Self.Table_Contracts_Common" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table_Contracts_Common].[ContractID] AS [ContractID]
+    FROM [dbo].[Table_Contracts_Common] AS [Table_Contracts_Common]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Table1_InsurPolicyDocs" EntityType="Self.Table1_InsurPolicyDocs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table1_InsurPolicyDocs].[id] AS [id], 
+    [Table1_InsurPolicyDocs].[InsrPolicyDoc1] AS [InsrPolicyDoc1], 
+    [Table1_InsurPolicyDocs].[InsrPolicyDoc2] AS [InsrPolicyDoc2], 
+    [Table1_InsurPolicyDocs].[InsrPolicyDoc3] AS [InsrPolicyDoc3], 
+    [Table1_InsurPolicyDocs].[InsrPolicyDoc4] AS [InsrPolicyDoc4]
+    FROM [dbo].[Table1_InsurPolicyDocs] AS [Table1_InsurPolicyDocs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Table6_SupplierDetails" EntityType="Self.Table6_SupplierDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table6_SupplierDetails].[SupplierID] AS [SupplierID], 
+    [Table6_SupplierDetails].[SupplierAdressDetails_ENG] AS [SupplierAdressDetails_ENG], 
+    [Table6_SupplierDetails].[SupplierAdressDetails_RUS] AS [SupplierAdressDetails_RUS], 
+    [Table6_SupplierDetails].[SupplierBankDetails_ENG] AS [SupplierBankDetails_ENG], 
+    [Table6_SupplierDetails].[SupplierBankDetails_RUS] AS [SupplierBankDetails_RUS]
+    FROM [dbo].[Table6_SupplierDetails] AS [Table6_SupplierDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AddendumMissingApprovalBreakdown" EntityType="Self.AddendumMissingApprovalBreakdown" store:Type="Views" store:Schema="ApprMx">
+      <DefiningQuery>SELECT 
+    [AddendumMissingApprovalBreakdown].[Id] AS [Id], 
+    [AddendumMissingApprovalBreakdown].[ContractID] AS [ContractID], 
+    [AddendumMissingApprovalBreakdown].[AddendumID] AS [AddendumID], 
+    [AddendumMissingApprovalBreakdown].[UserName] AS [UserName]
+    FROM [ApprMx].[AddendumMissingApprovalBreakdown] AS [AddendumMissingApprovalBreakdown]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ContractMissingApprovalBreakdown" EntityType="Self.ContractMissingApprovalBreakdown" store:Type="Views" store:Schema="ApprMx">
+      <DefiningQuery>SELECT 
+    [ContractMissingApprovalBreakdown].[Id] AS [Id], 
+    [ContractMissingApprovalBreakdown].[ContractID] AS [ContractID], 
+    [ContractMissingApprovalBreakdown].[UserName] AS [UserName]
+    FROM [ApprMx].[ContractMissingApprovalBreakdown] AS [ContractMissingApprovalBreakdown]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Notf_AddendumCommentsFromToWhomMatrix" EntityType="Self.Notf_AddendumCommentsFromToWhomMatrix" store:Type="Views" store:Schema="ApprMx">
+      <DefiningQuery>SELECT 
+    [Notf_AddendumCommentsFromToWhomMatrix].[C_or_A] AS [C_or_A], 
+    [Notf_AddendumCommentsFromToWhomMatrix].[C_or_A_id] AS [C_or_A_id], 
+    [Notf_AddendumCommentsFromToWhomMatrix].[id_comment] AS [id_comment], 
+    [Notf_AddendumCommentsFromToWhomMatrix].[FromWho] AS [FromWho], 
+    [Notf_AddendumCommentsFromToWhomMatrix].[ForWho] AS [ForWho]
+    FROM [ApprMx].[Notf_AddendumCommentsFromToWhomMatrix] AS [Notf_AddendumCommentsFromToWhomMatrix]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Notf_AddendumCommentsUnRead" EntityType="Self.Notf_AddendumCommentsUnRead" store:Type="Views" store:Schema="ApprMx">
+      <DefiningQuery>SELECT 
+    [Notf_AddendumCommentsUnRead].[C_or_A] AS [C_or_A], 
+    [Notf_AddendumCommentsUnRead].[C_or_A_id] AS [C_or_A_id], 
+    [Notf_AddendumCommentsUnRead].[id_comment] AS [id_comment], 
+    [Notf_AddendumCommentsUnRead].[FromWho] AS [FromWho], 
+    [Notf_AddendumCommentsUnRead].[ForWho] AS [ForWho]
+    FROM [ApprMx].[Notf_AddendumCommentsUnRead] AS [Notf_AddendumCommentsUnRead]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Notf_ContractCommentsFromToWhomMatrix" EntityType="Self.Notf_ContractCommentsFromToWhomMatrix" store:Type="Views" store:Schema="ApprMx">
+      <DefiningQuery>SELECT 
+    [Notf_ContractCommentsFromToWhomMatrix].[C_or_A] AS [C_or_A], 
+    [Notf_ContractCommentsFromToWhomMatrix].[C_or_A_id] AS [C_or_A_id], 
+    [Notf_ContractCommentsFromToWhomMatrix].[id_comment] AS [id_comment], 
+    [Notf_ContractCommentsFromToWhomMatrix].[FromWho] AS [FromWho], 
+    [Notf_ContractCommentsFromToWhomMatrix].[ForWho] AS [ForWho]
+    FROM [ApprMx].[Notf_ContractCommentsFromToWhomMatrix] AS [Notf_ContractCommentsFromToWhomMatrix]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Notf_ContractCommentsUnRead" EntityType="Self.Notf_ContractCommentsUnRead" store:Type="Views" store:Schema="ApprMx">
+      <DefiningQuery>SELECT 
+    [Notf_ContractCommentsUnRead].[C_or_A] AS [C_or_A], 
+    [Notf_ContractCommentsUnRead].[C_or_A_id] AS [C_or_A_id], 
+    [Notf_ContractCommentsUnRead].[id_comment] AS [id_comment], 
+    [Notf_ContractCommentsUnRead].[FromWho] AS [FromWho], 
+    [Notf_ContractCommentsUnRead].[ForWho] AS [ForWho]
+    FROM [ApprMx].[Notf_ContractCommentsUnRead] AS [Notf_ContractCommentsUnRead]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_CheckTolerance" EntityType="Self.View_CheckTolerance" store:Type="Views" store:Schema="ApprMx">
+      <DefiningQuery>SELECT 
+    [View_CheckTolerance].[Id] AS [Id], 
+    [View_CheckTolerance].[ContractID] AS [ContractID], 
+    [View_CheckTolerance].[AddendumId] AS [AddendumId], 
+    [View_CheckTolerance].[UserName] AS [UserName], 
+    [View_CheckTolerance].[ProjectID] AS [ProjectID], 
+    [View_CheckTolerance].[Scenario] AS [Scenario], 
+    [View_CheckTolerance].[CreatedBy] AS [CreatedBy], 
+    [View_CheckTolerance].[_Now] AS [_Now], 
+    [View_CheckTolerance].[ToleratedDay] AS [ToleratedDay], 
+    [View_CheckTolerance].[DayDiff] AS [DayDiff], 
+    [View_CheckTolerance].[CheckTolerance] AS [CheckTolerance]
+    FROM [ApprMx].[View_CheckTolerance] AS [View_CheckTolerance]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Contract_Addendum_NotApprovedPersonsForEmailNotification" EntityType="Self.View_Contract_Addendum_NotApprovedPersonsForEmailNotification" store:Type="Views" store:Schema="ApprMx">
+      <DefiningQuery>SELECT 
+    [View_Contract_Addendum_NotApprovedPersonsForEmailNotification].[Id] AS [Id], 
+    [View_Contract_Addendum_NotApprovedPersonsForEmailNotification].[UserName] AS [UserName], 
+    [View_Contract_Addendum_NotApprovedPersonsForEmailNotification].[LoweredEmail] AS [LoweredEmail], 
+    [View_Contract_Addendum_NotApprovedPersonsForEmailNotification].[Count_Contract] AS [Count_Contract], 
+    [View_Contract_Addendum_NotApprovedPersonsForEmailNotification].[Count_Addendum] AS [Count_Addendum]
+    FROM [ApprMx].[View_Contract_Addendum_NotApprovedPersonsForEmailNotification] AS [View_Contract_Addendum_NotApprovedPersonsForEmailNotification]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_AddendumDetails" EntityType="Self.View_AddendumDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_AddendumDetails].[Id] AS [Id], 
+    [View_AddendumDetails].[AddendumID] AS [AddendumID], 
+    [View_AddendumDetails].[ProjectNameTitle] AS [ProjectNameTitle], 
+    [View_AddendumDetails].[ProjectName] AS [ProjectName], 
+    [View_AddendumDetails].[PoNoTitle] AS [PoNoTitle], 
+    [View_AddendumDetails].[PO_No] AS [PO_No], 
+    [View_AddendumDetails].[SupplierNameTitle] AS [SupplierNameTitle], 
+    [View_AddendumDetails].[SupplierName] AS [SupplierName], 
+    [View_AddendumDetails].[AddendumTypeTitle] AS [AddendumTypeTitle], 
+    [View_AddendumDetails].[AddendumType] AS [AddendumType], 
+    [View_AddendumDetails].[ContractNoTitle] AS [ContractNoTitle], 
+    [View_AddendumDetails].[ContractNo] AS [ContractNo], 
+    [View_AddendumDetails].[ContractDateTitle] AS [ContractDateTitle], 
+    [View_AddendumDetails].[ContractDate] AS [ContractDate], 
+    [View_AddendumDetails].[ContractValueTitle] AS [ContractValueTitle], 
+    [View_AddendumDetails].[ContractValue_withVAT] AS [ContractValue_withVAT], 
+    [View_AddendumDetails].[ContractCurrencyTitle] AS [ContractCurrencyTitle], 
+    [View_AddendumDetails].[ContractCurrency] AS [ContractCurrency], 
+    [View_AddendumDetails].[ContractTypeTitle] AS [ContractTypeTitle], 
+    [View_AddendumDetails].[ContractType] AS [ContractType], 
+    [View_AddendumDetails].[ContractDescriptionTitle] AS [ContractDescriptionTitle], 
+    [View_AddendumDetails].[ContractDescription] AS [ContractDescription], 
+    [View_AddendumDetails].[CostCodeTitle] AS [CostCodeTitle], 
+    [View_AddendumDetails].[CodeDescription] AS [CodeDescription], 
+    [View_AddendumDetails].[AddnNoTitle] AS [AddnNoTitle], 
+    [View_AddendumDetails].[AddendumNo] AS [AddendumNo], 
+    [View_AddendumDetails].[AddnDateTitle] AS [AddnDateTitle], 
+    [View_AddendumDetails].[AddendumDate] AS [AddendumDate], 
+    [View_AddendumDetails].[AddendumValueTitle] AS [AddendumValueTitle], 
+    [View_AddendumDetails].[AddendumValue_WithVAT] AS [AddendumValue_WithVAT], 
+    [View_AddendumDetails].[VATpercentTitle] AS [VATpercentTitle], 
+    [View_AddendumDetails].[VATpercent] AS [VATpercent], 
+    [View_AddendumDetails].[BudgetValueWithVATTitle] AS [BudgetValueWithVATTitle], 
+    [View_AddendumDetails].[Budget] AS [Budget], 
+    [View_AddendumDetails].[RequestedByTitle] AS [RequestedByTitle], 
+    [View_AddendumDetails].[RequestedBy] AS [RequestedBy], 
+    [View_AddendumDetails].[PenaltyToMercuryTitle] AS [PenaltyToMercuryTitle], 
+    [View_AddendumDetails].[Penalties] AS [Penalties], 
+    [View_AddendumDetails].[PenaltyToSupplierTitle] AS [PenaltyToSupplierTitle], 
+    [View_AddendumDetails].[PenaltiesToSupplier] AS [PenaltiesToSupplier], 
+    [View_AddendumDetails].[DeliveryTermsTitle] AS [DeliveryTermsTitle], 
+    [View_AddendumDetails].[DeliveryTerms] AS [DeliveryTerms], 
+    [View_AddendumDetails].[AddnDescriptionTitle] AS [AddnDescriptionTitle], 
+    [View_AddendumDetails].[AddendumDescription] AS [AddendumDescription], 
+    [View_AddendumDetails].[StartDateTitle] AS [StartDateTitle], 
+    [View_AddendumDetails].[StartDate] AS [StartDate], 
+    [View_AddendumDetails].[FinishDateTitle] AS [FinishDateTitle], 
+    [View_AddendumDetails].[FinishDate] AS [FinishDate], 
+    [View_AddendumDetails].[AdvanceTitle] AS [AdvanceTitle], 
+    [View_AddendumDetails].[Advance] AS [Advance], 
+    [View_AddendumDetails].[InterimTitle] AS [InterimTitle], 
+    [View_AddendumDetails].[Interim] AS [Interim], 
+    [View_AddendumDetails].[ShipmentTitle] AS [ShipmentTitle], 
+    [View_AddendumDetails].[Shipment] AS [Shipment], 
+    [View_AddendumDetails].[DeliveryTitle] AS [DeliveryTitle], 
+    [View_AddendumDetails].[Delivery] AS [Delivery], 
+    [View_AddendumDetails].[RetentionTitle] AS [RetentionTitle], 
+    [View_AddendumDetails].[Retention] AS [Retention], 
+    [View_AddendumDetails].[PenallyToMercuryNoteTitle] AS [PenallyToMercuryNoteTitle], 
+    [View_AddendumDetails].[PenaltiesNote] AS [PenaltiesNote], 
+    [View_AddendumDetails].[PenaltyToSupplierNoteTitle] AS [PenaltyToSupplierNoteTitle], 
+    [View_AddendumDetails].[PenaltiesToSupplierNote] AS [PenaltiesToSupplierNote], 
+    [View_AddendumDetails].[GuaranteePeriodTitle] AS [GuaranteePeriodTitle], 
+    [View_AddendumDetails].[GuaranteePeriod] AS [GuaranteePeriod], 
+    [View_AddendumDetails].[CreationInfo] AS [CreationInfo], 
+    [View_AddendumDetails].[CompletionDateTitle] AS [CompletionDateTitle], 
+    [View_AddendumDetails].[CompletionDate] AS [CompletionDate], 
+    [View_AddendumDetails].[AktOfWorkTitle] AS [AktOfWorkTitle], 
+    [View_AddendumDetails].[AktOfWork] AS [AktOfWork]
+    FROM [dbo].[View_AddendumDetails] AS [View_AddendumDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_ContractDetails" EntityType="Self.View_ContractDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_ContractDetails].[Id] AS [Id], 
+    [View_ContractDetails].[ContractID] AS [ContractID], 
+    [View_ContractDetails].[ProjectName] AS [ProjectName], 
+    [View_ContractDetails].[ProjectNameTitle] AS [ProjectNameTitle], 
+    [View_ContractDetails].[SupplierName] AS [SupplierName], 
+    [View_ContractDetails].[SupplierNameTitle] AS [SupplierNameTitle], 
+    [View_ContractDetails].[ContractNo] AS [ContractNo], 
+    [View_ContractDetails].[ContractNoTitle] AS [ContractNoTitle], 
+    [View_ContractDetails].[ContractDate] AS [ContractDate], 
+    [View_ContractDetails].[ContractDateTitle] AS [ContractDateTitle], 
+    [View_ContractDetails].[ContractValue] AS [ContractValue], 
+    [View_ContractDetails].[ContractValueTitle] AS [ContractValueTitle], 
+    [View_ContractDetails].[VATpercent] AS [VATpercent], 
+    [View_ContractDetails].[VATpercentTitle] AS [VATpercentTitle], 
+    [View_ContractDetails].[Budget] AS [Budget], 
+    [View_ContractDetails].[BudgetTitle] AS [BudgetTitle], 
+    [View_ContractDetails].[ContractCurrency] AS [ContractCurrency], 
+    [View_ContractDetails].[ContractCurrencyTitle] AS [ContractCurrencyTitle], 
+    [View_ContractDetails].[CostCode] AS [CostCode], 
+    [View_ContractDetails].[CostCodeTitle] AS [CostCodeTitle], 
+    [View_ContractDetails].[PenaltiesToMercury] AS [PenaltiesToMercury], 
+    [View_ContractDetails].[PenaltiesToMercuryTitle] AS [PenaltiesToMercuryTitle], 
+    [View_ContractDetails].[PenaltiesToSupplier] AS [PenaltiesToSupplier], 
+    [View_ContractDetails].[PenaltiesToSupplierTitle] AS [PenaltiesToSupplierTitle], 
+    [View_ContractDetails].[RequestedBy] AS [RequestedBy], 
+    [View_ContractDetails].[RequestedByTitle] AS [RequestedByTitle], 
+    [View_ContractDetails].[ContractType] AS [ContractType], 
+    [View_ContractDetails].[ContractTypeTitle] AS [ContractTypeTitle], 
+    [View_ContractDetails].[ContractDescription] AS [ContractDescription], 
+    [View_ContractDetails].[ContractDescriptionTitle] AS [ContractDescriptionTitle], 
+    [View_ContractDetails].[StartDate] AS [StartDate], 
+    [View_ContractDetails].[StartDateTitle] AS [StartDateTitle], 
+    [View_ContractDetails].[FinishDate] AS [FinishDate], 
+    [View_ContractDetails].[FinishDateTitle] AS [FinishDateTitle], 
+    [View_ContractDetails].[Advance] AS [Advance], 
+    [View_ContractDetails].[AdvanceTitle] AS [AdvanceTitle], 
+    [View_ContractDetails].[Interim] AS [Interim], 
+    [View_ContractDetails].[InterimTitle] AS [InterimTitle], 
+    [View_ContractDetails].[Shipment] AS [Shipment], 
+    [View_ContractDetails].[ShipmentTitle] AS [ShipmentTitle], 
+    [View_ContractDetails].[Delivery] AS [Delivery], 
+    [View_ContractDetails].[DeliveryTitle] AS [DeliveryTitle], 
+    [View_ContractDetails].[Retention] AS [Retention], 
+    [View_ContractDetails].[RetentionTitle] AS [RetentionTitle], 
+    [View_ContractDetails].[PenaltiesToMercuryNote] AS [PenaltiesToMercuryNote], 
+    [View_ContractDetails].[PenaltiesToMercuryNoteTitle] AS [PenaltiesToMercuryNoteTitle], 
+    [View_ContractDetails].[PenaltiesToSupplierNote] AS [PenaltiesToSupplierNote], 
+    [View_ContractDetails].[PenaltiesToSupplierNoteTitle] AS [PenaltiesToSupplierNoteTitle], 
+    [View_ContractDetails].[DeliveryTerms] AS [DeliveryTerms], 
+    [View_ContractDetails].[DeliveryTermsTitle] AS [DeliveryTermsTitle], 
+    [View_ContractDetails].[GuaranteePeriod] AS [GuaranteePeriod], 
+    [View_ContractDetails].[GuaranteePeriodTitle] AS [GuaranteePeriodTitle], 
+    [View_ContractDetails].[CreationInfo] AS [CreationInfo]
+    FROM [dbo].[View_ContractDetails] AS [View_ContractDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_ContractFilesMoveDOC" EntityType="Self.View_ContractFilesMoveDOC" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_ContractFilesMoveDOC].[Id] AS [Id], 
+    [View_ContractFilesMoveDOC].[ContractID] AS [ContractID], 
+    [View_ContractFilesMoveDOC].[LastSlash] AS [LastSlash], 
+    [View_ContractFilesMoveDOC].[LastDot] AS [LastDot], 
+    [View_ContractFilesMoveDOC].[Path1] AS [Path1], 
+    [View_ContractFilesMoveDOC].[CreateFolder] AS [CreateFolder], 
+    [View_ContractFilesMoveDOC].[Path2] AS [Path2], 
+    [View_ContractFilesMoveDOC].[extension] AS [extension], 
+    [View_ContractFilesMoveDOC].[FileNameItself] AS [FileNameItself]
+    FROM [dbo].[View_ContractFilesMoveDOC] AS [View_ContractFilesMoveDOC]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_ContractsAddendumsNonExecutedTotal" EntityType="Self.View_ContractsAddendumsNonExecutedTotal" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_ContractsAddendumsNonExecutedTotal].[id] AS [id], 
+    [View_ContractsAddendumsNonExecutedTotal].[ProjectID] AS [ProjectID], 
+    [View_ContractsAddendumsNonExecutedTotal].[CostCode] AS [CostCode], 
+    [View_ContractsAddendumsNonExecutedTotal].[TotalNotExcecutedValueExcVAT_Rub] AS [TotalNotExcecutedValueExcVAT_Rub], 
+    [View_ContractsAddendumsNonExecutedTotal].[TotalNotExcecutedValueExcVAT_Euro] AS [TotalNotExcecutedValueExcVAT_Euro], 
+    [View_ContractsAddendumsNonExecutedTotal].[TotalNotExcecutedValueExcVAT_Dollar] AS [TotalNotExcecutedValueExcVAT_Dollar]
+    FROM [dbo].[View_ContractsAddendumsNonExecutedTotal] AS [View_ContractsAddendumsNonExecutedTotal]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_CostCodeSummary0" EntityType="Self.View_CostCodeSummary0" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_CostCodeSummary0].[Id] AS [Id], 
+    [View_CostCodeSummary0].[ProjectID] AS [ProjectID], 
+    [View_CostCodeSummary0].[CostCodeAlias] AS [CostCodeAlias], 
+    [View_CostCodeSummary0].[CostCode] AS [CostCode], 
+    [View_CostCodeSummary0].[CostCode1] AS [CostCode1], 
+    [View_CostCodeSummary0].[CostCode2] AS [CostCode2], 
+    [View_CostCodeSummary0].[TotalDollarPendingExcVAT] AS [TotalDollarPendingExcVAT], 
+    [View_CostCodeSummary0].[TotalEuroPendingExcVAT] AS [TotalEuroPendingExcVAT], 
+    [View_CostCodeSummary0].[TotalRublePendingExcVAT] AS [TotalRublePendingExcVAT], 
+    [View_CostCodeSummary0].[TotalDollarPaidExcVAT] AS [TotalDollarPaidExcVAT], 
+    [View_CostCodeSummary0].[TotalEuroPaidExcVAT] AS [TotalEuroPaidExcVAT], 
+    [View_CostCodeSummary0].[TotalRublePaidExcVAT] AS [TotalRublePaidExcVAT], 
+    [View_CostCodeSummary0].[TotalPoTotalDollarExcVAT] AS [TotalPoTotalDollarExcVAT], 
+    [View_CostCodeSummary0].[TotalPoTotalEuroExcVAT] AS [TotalPoTotalEuroExcVAT], 
+    [View_CostCodeSummary0].[TotalPoTotalRubleExcVAT] AS [TotalPoTotalRubleExcVAT], 
+    [View_CostCodeSummary0].[TotalBalanceDollarExcVAT] AS [TotalBalanceDollarExcVAT], 
+    [View_CostCodeSummary0].[TotalBalanceEuroExcVAT] AS [TotalBalanceEuroExcVAT], 
+    [View_CostCodeSummary0].[TotalBalanceRubleExcVAT] AS [TotalBalanceRubleExcVAT], 
+    [View_CostCodeSummary0].[TotalCollectedDocDollarExcVAT] AS [TotalCollectedDocDollarExcVAT], 
+    [View_CostCodeSummary0].[TotalCollectedDocEuroExcVAT] AS [TotalCollectedDocEuroExcVAT], 
+    [View_CostCodeSummary0].[TotalCollectedDocRubleExcVAT] AS [TotalCollectedDocRubleExcVAT]
+    FROM [dbo].[View_CostCodeSummary0] AS [View_CostCodeSummary0]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_FrameContractsBudgetStatus" EntityType="Self.View_FrameContractsBudgetStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_FrameContractsBudgetStatus].[Id] AS [Id], 
+    [View_FrameContractsBudgetStatus].[ProjectID] AS [ProjectID], 
+    [View_FrameContractsBudgetStatus].[SupplierName] AS [SupplierName], 
+    [View_FrameContractsBudgetStatus].[ContractNo] AS [ContractNo], 
+    [View_FrameContractsBudgetStatus].[ContractDate] AS [ContractDate], 
+    [View_FrameContractsBudgetStatus].[ContractID] AS [ContractID], 
+    [View_FrameContractsBudgetStatus].[BudgetWithVAT] AS [BudgetWithVAT], 
+    [View_FrameContractsBudgetStatus].[TotalPoWithVAT] AS [TotalPoWithVAT], 
+    [View_FrameContractsBudgetStatus].[AvailableBudgetForNewPoWithVAT] AS [AvailableBudgetForNewPoWithVAT]
+    FROM [dbo].[View_FrameContractsBudgetStatus] AS [View_FrameContractsBudgetStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_GetFullUserNameFromUserName" EntityType="Self.View_GetFullUserNameFromUserName" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_GetFullUserNameFromUserName].[UserName] AS [UserName], 
+    [View_GetFullUserNameFromUserName].[UserNameSurnameFromEmail] AS [UserNameSurnameFromEmail]
+    FROM [dbo].[View_GetFullUserNameFromUserName] AS [View_GetFullUserNameFromUserName]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_PaymentRequestApprovalStatus" EntityType="Self.View_PaymentRequestApprovalStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_PaymentRequestApprovalStatus].[Id] AS [Id], 
+    [View_PaymentRequestApprovalStatus].[ProjectID] AS [ProjectID], 
+    [View_PaymentRequestApprovalStatus].[ProjectName] AS [ProjectName], 
+    [View_PaymentRequestApprovalStatus].[ApprovalRequiredPersons] AS [ApprovalRequiredPersons], 
+    [View_PaymentRequestApprovalStatus].[InvoiceID] AS [InvoiceID], 
+    [View_PaymentRequestApprovalStatus].[ApprovedOrNot] AS [ApprovedOrNot], 
+    [View_PaymentRequestApprovalStatus].[Position] AS [Position], 
+    [View_PaymentRequestApprovalStatus].[email] AS [email]
+    FROM [dbo].[View_PaymentRequestApprovalStatus] AS [View_PaymentRequestApprovalStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_PendingListRev1" EntityType="Self.View_PendingListRev1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_PendingListRev1].[ProjectName] AS [ProjectName], 
+    [View_PendingListRev1].[PayReqDate] AS [PayReqDate], 
+    [View_PendingListRev1].[Urgency] AS [Urgency], 
+    [View_PendingListRev1].[Invoice_Date] AS [Invoice_Date], 
+    [View_PendingListRev1].[Invoice_No] AS [Invoice_No], 
+    [View_PendingListRev1].[SiteRecordNo] AS [SiteRecordNo], 
+    [View_PendingListRev1].[PO_Currency] AS [PO_Currency], 
+    [View_PendingListRev1].[SupplierName] AS [SupplierName], 
+    [View_PendingListRev1].[Description] AS [Description], 
+    [View_PendingListRev1].[LinkToInvoice] AS [LinkToInvoice], 
+    [View_PendingListRev1].[ProjectID] AS [ProjectID], 
+    [View_PendingListRev1].[Approved] AS [Approved], 
+    [View_PendingListRev1].[PersonApprove] AS [PersonApprove], 
+    [View_PendingListRev1].[SupplierID] AS [SupplierID], 
+    [View_PendingListRev1].[PersonCreated] AS [PersonCreated], 
+    [View_PendingListRev1].[AttachmentChange] AS [AttachmentChange], 
+    [View_PendingListRev1].[AttachmentChangeWhen] AS [AttachmentChangeWhen], 
+    [View_PendingListRev1].[PersonChangedAttachment] AS [PersonChangedAttachment], 
+    [View_PendingListRev1].[AttachmentExist] AS [AttachmentExist], 
+    [View_PendingListRev1].[PoTotalWithVAT] AS [PoTotalWithVAT], 
+    [View_PendingListRev1].[TotalPaidWithVAT] AS [TotalPaidWithVAT], 
+    [View_PendingListRev1].[TotalBalanceWithVAT] AS [TotalBalanceWithVAT], 
+    [View_PendingListRev1].[OrderCurrency] AS [OrderCurrency], 
+    [View_PendingListRev1].[PendingWithVAT] AS [PendingWithVAT], 
+    [View_PendingListRev1].[Diff_Paid_Collect] AS [Diff_Paid_Collect], 
+    [View_PendingListRev1].[Percantage_To_Paid] AS [Percantage_To_Paid], 
+    [View_PendingListRev1].[PO_No] AS [PO_No], 
+    [View_PendingListRev1].[BalanceAfterPending] AS [BalanceAfterPending], 
+    [View_PendingListRev1].[PayReqNo] AS [PayReqNo], 
+    [View_PendingListRev1].[ApproveNewGen] AS [ApproveNewGen], 
+    [View_PendingListRev1].[PrintPDF] AS [PrintPDF], 
+    [View_PendingListRev1].[InvoiceID] AS [InvoiceID], 
+    [View_PendingListRev1].[CreatedByPaymentRequest] AS [CreatedByPaymentRequest]
+    FROM [dbo].[View_PendingListRev1] AS [View_PendingListRev1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_SupplierNamesForContracts" EntityType="Self.View_SupplierNamesForContracts" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_SupplierNamesForContracts].[id] AS [id], 
+    [View_SupplierNamesForContracts].[SupplierID] AS [SupplierID], 
+    [View_SupplierNamesForContracts].[SupplierName] AS [SupplierName]
+    FROM [dbo].[View_SupplierNamesForContracts] AS [View_SupplierNamesForContracts]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_WhatToBePaidRevised" EntityType="Self.View_WhatToBePaidRevised" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_WhatToBePaidRevised].[Id] AS [Id], 
+    [View_WhatToBePaidRevised].[SupplierName] AS [SupplierName], 
+    [View_WhatToBePaidRevised].[Description] AS [Description], 
+    [View_WhatToBePaidRevised].[PO_No] AS [PO_No], 
+    [View_WhatToBePaidRevised].[Invoice_No] AS [Invoice_No], 
+    [View_WhatToBePaidRevised].[Invoice_Date] AS [Invoice_Date], 
+    [View_WhatToBePaidRevised].[Wo_VAT] AS [Wo_VAT], 
+    [View_WhatToBePaidRevised].[PO_Currency] AS [PO_Currency], 
+    [View_WhatToBePaidRevised].[WithVAT] AS [WithVAT], 
+    [View_WhatToBePaidRevised].[PayReqNo] AS [PayReqNo], 
+    [View_WhatToBePaidRevised].[Date] AS [Date], 
+    [View_WhatToBePaidRevised].[LinkToInvoice] AS [LinkToInvoice], 
+    [View_WhatToBePaidRevised].[Approved] AS [Approved], 
+    [View_WhatToBePaidRevised].[ProjectID] AS [ProjectID], 
+    [View_WhatToBePaidRevised].[RubbleDollar] AS [RubbleDollar], 
+    [View_WhatToBePaidRevised].[RubbleEuro] AS [RubbleEuro]
+    FROM [dbo].[View_WhatToBePaidRevised] AS [View_WhatToBePaidRevised]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__6D9742D9" Association="Self.FK__aspnet_Me__UserI__6D9742D9">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__7849DB76" Association="Self.FK__aspnet_Me__UserI__7849DB76">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__753864A1" Association="Self.FK__aspnet_Us__RoleI__753864A1">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__7FEAFD3E" Association="Self.FK__aspnet_Us__RoleI__7FEAFD3E">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__00DF2177" Association="Self.FK__aspnet_Us__UserI__00DF2177">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__762C88DA" Association="Self.FK__aspnet_Us__UserI__762C88DA">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Addendum_UsersApprv_Table_Addendum" Association="Self.FK_Table_Addendum_UsersApprv_Table_Addendum">
+      <End Role="Table_Addendums" EntitySet="Table_Addendums" />
+      <End Role="Table_Addendum_UsersApprv" EntitySet="Table_Addendum_UsersApprv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Addendums_ClientAdditional_Table_Addendums" Association="Self.FK_Table_Addendums_ClientAdditional_Table_Addendums">
+      <End Role="Table_Addendums" EntitySet="Table_Addendums" />
+      <End Role="Table_Addendums_ClientAdditional" EntitySet="Table_Addendums_ClientAdditional" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Addendums_Table_Contracts" Association="Self.FK_Table_Addendums_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Addendums" EntitySet="Table_Addendums" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Addendums_UserRemarks_Table_Addendums" Association="Self.FK_Table_Addendums_UserRemarks_Table_Addendums">
+      <End Role="Table_Addendums" EntitySet="Table_Addendums" />
+      <End Role="Table_Addendum_UserRemarks" EntitySet="Table_Addendum_UserRemarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario" Association="Self.FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario">
+      <End Role="Table_Approval_Scenario" EntitySet="Table_Approval_Scenario" />
+      <End Role="Table_Approval_Scn_Prj_Users" EntitySet="Table_Approval_Scn_Prj_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee" Association="Self.FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee">
+      <End Role="Table_Approval_PositionEmployee" EntitySet="Table_Approval_PositionEmployee" />
+      <End Role="Table_Approval_UserPositionPrjJunction" EntitySet="Table_Approval_UserPositionPrjJunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Budget_Table1_Project" Association="Self.FK_Table_Budget_Table1_Project">
+      <End Role="Table1_Project" EntitySet="Table1_Project" />
+      <End Role="Table_Budget" EntitySet="Table_Budget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Budget_Table7_CostCode" Association="Self.FK_Table_Budget_Table7_CostCode">
+      <End Role="Table7_CostCode" EntitySet="Table7_CostCode" />
+      <End Role="Table_Budget" EntitySet="Table_Budget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contract_Offers_Table_Contracts" Association="Self.FK_Table_Contract_Offers_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contract_Offers" EntitySet="Table_Contract_Offers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contract_ProjectIDforClient_Table_Contracts" Association="Self.FK_Table_Contract_ProjectIDforClient_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contract_ProjectIDforClient" EntitySet="Table_Contract_ProjectIDforClient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contract_UsersApprv_Table_Contracts" Association="Self.FK_Table_Contract_UsersApprv_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contract_UsersApprv" EntitySet="Table_Contract_UsersApprv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contracts_ClientAdditional_Table_Contracts" Association="Self.FK_Table_Contracts_ClientAdditional_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contracts_ClientAdditional" EntitySet="Table_Contracts_ClientAdditional" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contracts_Common_Table_Contracts" Association="Self.FK_Table_Contracts_Common_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contracts_Common" EntitySet="Table_Contracts_Common" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contracts_Table6_Supplier" Association="Self.FK_Table_Contracts_Table6_Supplier">
+      <End Role="Table6_Supplier" EntitySet="Table6_Supplier" />
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contracts_UserRemarks_Table_Contracts" Association="Self.FK_Table_Contracts_UserRemarks_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contracts_UserRemarks" EntitySet="Table_Contracts_UserRemarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_PO_Akt_Table2_PONo" Association="Self.FK_Table_PO_Akt_Table2_PONo">
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+      <End Role="Table_PO_Akt" EntitySet="Table_PO_Akt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya" Association="Self.FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya">
+      <End Role="Table_PO_Nakladnaya" EntitySet="Table_PO_Nakladnaya" />
+      <End Role="Table_PO_Akt_To_Nak" EntitySet="Table_PO_Akt_To_Nak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_PO_Nakladnaya_Table2_PONo" Association="Self.FK_Table_PO_Nakladnaya_Table2_PONo">
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+      <End Role="Table_PO_Nakladnaya" EntitySet="Table_PO_Nakladnaya" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_SupplierType_Junction_Table_SupplierType" Association="Self.FK_Table_SupplierType_Junction_Table_SupplierType">
+      <End Role="Table_SupplierType" EntitySet="Table_SupplierType" />
+      <End Role="Table_SupplierType_Junction" EntitySet="Table_SupplierType_Junction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_SupplierType_Junction_Table6_Supplier" Association="Self.FK_Table_SupplierType_Junction_Table6_Supplier">
+      <End Role="Table6_Supplier" EntitySet="Table6_Supplier" />
+      <End Role="Table_SupplierType_Junction" EntitySet="Table_SupplierType_Junction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_SupplierType_Tags_Table_SupplierType" Association="Self.FK_Table_SupplierType_Tags_Table_SupplierType">
+      <End Role="Table_SupplierType" EntitySet="Table_SupplierType" />
+      <End Role="Table_SupplierType_Tags" EntitySet="Table_SupplierType_Tags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table1_ProjectInsurCertf_Table1_Project" Association="Self.FK_Table1_ProjectInsurCertf_Table1_Project">
+      <End Role="Table1_Project" EntitySet="Table1_Project" />
+      <End Role="Table1_ProjectInsurCertf" EntitySet="Table1_ProjectInsurCertf" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table2_PONo__Table1_Project_" Association="Self.FK_Table2_PONo__Table1_Project_">
+      <End Role="Table1_Project" EntitySet="Table1_Project" />
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table2_PONo__Table6_Supplier_" Association="Self.FK_Table2_PONo__Table6_Supplier_">
+      <End Role="Table6_Supplier" EntitySet="Table6_Supplier" />
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table2_PONo_Table7_CostCode" Association="Self.FK_Table2_PONo_Table7_CostCode">
+      <End Role="Table7_CostCode" EntitySet="Table7_CostCode" />
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice__Table2_PONo_" Association="Self.FK_Table3_Invoice__Table2_PONo_">
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice_PDF_Table3_Invoice" Association="Self.FK_Table3_Invoice_PDF_Table3_Invoice">
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+      <End Role="Table3_Invoice_PDF" EntitySet="Table3_Invoice_PDF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice_PRrequestToPM_Table3_Invoice" Association="Self.FK_Table3_Invoice_PRrequestToPM_Table3_Invoice">
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+      <End Role="Table3_Invoice_PRrequestToPM" EntitySet="Table3_Invoice_PRrequestToPM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice_Type_Junction_Table3_Invoice" Association="Self.FK_Table3_Invoice_Type_Junction_Table3_Invoice">
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+      <End Role="Table3_Invoice_Type_Junction" EntitySet="Table3_Invoice_Type_Junction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type" Association="Self.FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type">
+      <End Role="Table3_Invoice_Type" EntitySet="Table3_Invoice_Type" />
+      <End Role="Table3_Invoice_Type_Junction" EntitySet="Table3_Invoice_Type_Junction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table4_PaymentRequest_Table3_Invoice" Association="Self.FK_Table4_PaymentRequest_Table3_Invoice">
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+      <End Role="Table4_PaymentRequest" EntitySet="Table4_PaymentRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table5_PayLog_Table4_PaymentRequest_" Association="Self.FK_Table5_PayLog_Table4_PaymentRequest_">
+      <End Role="Table4_PaymentRequest" EntitySet="Table4_PaymentRequest" />
+      <End Role="Table5_PayLog" EntitySet="Table5_PayLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table5_PayLog_Table8_ExchangeRates" Association="Self.FK_Table5_PayLog_Table8_ExchangeRates">
+      <End Role="Table8_ExchangeRates" EntitySet="Table8_ExchangeRates" />
+      <End Role="Table5_PayLog" EntitySet="Table5_PayLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table6_SupplierDetails_Table6_Supplier" Association="Self.FK_Table6_SupplierDetails_Table6_Supplier">
+      <End Role="Table6_Supplier" EntitySet="Table6_Supplier" />
+      <End Role="Table6_SupplierDetails" EntitySet="Table6_SupplierDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table7_CostCode_Table7_CostDivision" Association="Self.FK_Table7_CostCode_Table7_CostDivision">
+      <End Role="Table7_CostDivision" EntitySet="Table7_CostDivision" />
+      <End Role="Table7_CostCode" EntitySet="Table7_CostCode" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

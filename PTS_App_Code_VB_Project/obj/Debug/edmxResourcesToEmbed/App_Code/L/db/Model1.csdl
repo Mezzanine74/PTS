@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="aspnetdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="aspnetdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Table1_Isim" EntityType="aspnetdbModel.Table1_Isim" />
+    <EntitySet Name="Table2_Tanisma" EntityType="aspnetdbModel.Table2_Tanisma" />
+    <EntitySet Name="Table4_BulusmaPlani" EntityType="aspnetdbModel.Table4_BulusmaPlani" />
+    <EntitySet Name="Table5_Iletisim" EntityType="aspnetdbModel.Table5_Iletisim" />
+    <EntitySet Name="Table6_neticeTipi" EntityType="aspnetdbModel.Table6_neticeTipi" />
+    <EntitySet Name="View_Isim" EntityType="aspnetdbModel.View_Isim" />
+    <AssociationSet Name="FK_Table2_Tanisma_Table1_Isim" Association="aspnetdbModel.FK_Table2_Tanisma_Table1_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="Table2_Tanisma" EntitySet="Table2_Tanisma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table4_BulusmaPlani_Table1_Isim" Association="aspnetdbModel.FK_Table4_BulusmaPlani_Table1_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="Table4_BulusmaPlani" EntitySet="Table4_BulusmaPlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table5_Iletisim_Table1_Isim" Association="aspnetdbModel.FK_Table5_Iletisim_Table1_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="Table5_Iletisim" EntitySet="Table5_Iletisim" />
+    </AssociationSet>
+    <EntitySet Name="Table3_BulusmaDetaylari" EntityType="aspnetdbModel.Table3_BulusmaDetaylari" />
+    <AssociationSet Name="FK_Table3_BulusmaDetaylari_Table1_Isim" Association="aspnetdbModel.FK_Table3_BulusmaDetaylari_Table1_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="Table3_BulusmaDetaylari" EntitySet="Table3_BulusmaDetaylari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_BulusmaDetaylari_Table6_neticeTipi" Association="aspnetdbModel.FK_Table3_BulusmaDetaylari_Table6_neticeTipi">
+      <End Role="Table6_neticeTipi" EntitySet="Table6_neticeTipi" />
+      <End Role="Table3_BulusmaDetaylari" EntitySet="Table3_BulusmaDetaylari" />
+    </AssociationSet>
+    <EntitySet Name="View_Report1" EntityType="aspnetdbModel.View_Report1" />
+    <EntitySet Name="View_HicBulusmamisIlkIletisimGunOnce" EntityType="aspnetdbModel.View_HicBulusmamisIlkIletisimGunOnce" />
+    <AssociationSet Name="View_IsimView_HicBulusmamisIlkIletisimGunOnce" Association="aspnetdbModel.View_IsimView_HicBulusmamisIlkIletisimGunOnce">
+      <End Role="View_Isim" EntitySet="View_Isim" />
+      <End Role="View_HicBulusmamisIlkIletisimGunOnce" EntitySet="View_HicBulusmamisIlkIletisimGunOnce" />
+    </AssociationSet>
+    <AssociationSet Name="Table1_IsimView_Isim" Association="aspnetdbModel.Table1_IsimView_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="View_Isim" EntitySet="View_Isim" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Table1_Isim">
+    <Key>
+      <PropertyRef Name="IsimId" />
+    </Key>
+    <Property Name="IsimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rumuz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yas" Type="Int16" />
+    <Property Name="Telefon" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Yakinlik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhotoUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InternetUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowInReport" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Table2_Tanisma" Relationship="aspnetdbModel.FK_Table2_Tanisma_Table1_Isim" FromRole="Table1_Isim" ToRole="Table2_Tanisma" />
+    <NavigationProperty Name="Table4_BulusmaPlani" Relationship="aspnetdbModel.FK_Table4_BulusmaPlani_Table1_Isim" FromRole="Table1_Isim" ToRole="Table4_BulusmaPlani" />
+    <NavigationProperty Name="Table5_Iletisim" Relationship="aspnetdbModel.FK_Table5_Iletisim_Table1_Isim" FromRole="Table1_Isim" ToRole="Table5_Iletisim" />
+    <NavigationProperty Name="Table3_BulusmaDetaylari" Relationship="aspnetdbModel.FK_Table3_BulusmaDetaylari_Table1_Isim" FromRole="Table1_Isim" ToRole="Table3_BulusmaDetaylari" />
+    <NavigationProperty Name="View_Isim" Relationship="aspnetdbModel.Table1_IsimView_Isim" FromRole="Table1_Isim" ToRole="View_Isim" />
+  </EntityType>
+  <EntityType Name="Table2_Tanisma">
+    <Key>
+      <PropertyRef Name="TanismaId" />
+    </Key>
+    <Property Name="TanismaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsimId" Type="Int32" Nullable="false" />
+    <Property Name="NeZaman" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nasil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table1_Isim" Relationship="aspnetdbModel.FK_Table2_Tanisma_Table1_Isim" FromRole="Table2_Tanisma" ToRole="Table1_Isim" />
+  </EntityType>
+  <EntityType Name="Table4_BulusmaPlani">
+    <Key>
+      <PropertyRef Name="BulusmaPlanId" />
+    </Key>
+    <Property Name="BulusmaPlanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsimId" Type="Int32" Nullable="false" />
+    <Property Name="NeZaman" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Butce" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="Hedef" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table1_Isim" Relationship="aspnetdbModel.FK_Table4_BulusmaPlani_Table1_Isim" FromRole="Table4_BulusmaPlani" ToRole="Table1_Isim" />
+  </EntityType>
+  <EntityType Name="Table5_Iletisim">
+    <Key>
+      <PropertyRef Name="IletisimID" />
+    </Key>
+    <Property Name="IletisimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsimId" Type="Int32" Nullable="false" />
+    <Property Name="NeZaman" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Table1_Isim" Relationship="aspnetdbModel.FK_Table5_Iletisim_Table1_Isim" FromRole="Table5_Iletisim" ToRole="Table1_Isim" />
+  </EntityType>
+  <EntityType Name="Table6_neticeTipi">
+    <Key>
+      <PropertyRef Name="id_neticeTipi" />
+    </Key>
+    <Property Name="id_neticeTipi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="netice_tipi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table3_BulusmaDetaylari" Relationship="aspnetdbModel.FK_Table3_BulusmaDetaylari_Table6_neticeTipi" FromRole="Table6_neticeTipi" ToRole="Table3_BulusmaDetaylari" />
+  </EntityType>
+  <EntityType Name="View_Isim">
+    <Key>
+      <PropertyRef Name="IsimId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IsimId" Type="Int32" Nullable="false" />
+    <Property Name="Isim" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Yas" Type="Int16" />
+    <Property Name="Telefon" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ResimURL" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ShowInReport" Type="Boolean" Nullable="false" />
+    <Property Name="LastContact" Type="Int32" Nullable="false" />
+    <Property Name="LastBulusma" Type="Int32" Nullable="false" />
+    <Property Name="LastLove" Type="Int32" Nullable="false" />
+    <Property Name="LastMeetingNetice" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="View_HicBulusmamisIlkIletisimGunOnce" Relationship="aspnetdbModel.View_IsimView_HicBulusmamisIlkIletisimGunOnce" FromRole="View_Isim" ToRole="View_HicBulusmamisIlkIletisimGunOnce" />
+    <NavigationProperty Name="Table1_Isim" Relationship="aspnetdbModel.Table1_IsimView_Isim" FromRole="View_Isim" ToRole="Table1_Isim" />
+  </EntityType>
+  <Association Name="FK_Table2_Tanisma_Table1_Isim">
+    <End Type="aspnetdbModel.Table1_Isim" Role="Table1_Isim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="aspnetdbModel.Table2_Tanisma" Role="Table2_Tanisma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="Table2_Tanisma">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table4_BulusmaPlani_Table1_Isim">
+    <End Type="aspnetdbModel.Table1_Isim" Role="Table1_Isim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="aspnetdbModel.Table4_BulusmaPlani" Role="Table4_BulusmaPlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="Table4_BulusmaPlani">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table5_Iletisim_Table1_Isim">
+    <End Type="aspnetdbModel.Table1_Isim" Role="Table1_Isim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="aspnetdbModel.Table5_Iletisim" Role="Table5_Iletisim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="Table5_Iletisim">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Table3_BulusmaDetaylari">
+    <Key>
+      <PropertyRef Name="BulusmaId" />
+    </Key>
+    <Property Name="BulusmaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BulusmaPlanId" Type="Int32" />
+    <Property Name="IsimId" Type="Int32" Nullable="false" />
+    <Property Name="NeZaman" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nerede" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HarcananRuble" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="id_netice" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table1_Isim" Relationship="aspnetdbModel.FK_Table3_BulusmaDetaylari_Table1_Isim" FromRole="Table3_BulusmaDetaylari" ToRole="Table1_Isim" />
+    <NavigationProperty Name="Table6_neticeTipi" Relationship="aspnetdbModel.FK_Table3_BulusmaDetaylari_Table6_neticeTipi" FromRole="Table3_BulusmaDetaylari" ToRole="Table6_neticeTipi" />
+  </EntityType>
+  <Association Name="FK_Table3_BulusmaDetaylari_Table1_Isim">
+    <End Type="aspnetdbModel.Table1_Isim" Role="Table1_Isim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="aspnetdbModel.Table3_BulusmaDetaylari" Role="Table3_BulusmaDetaylari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="Table3_BulusmaDetaylari">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_BulusmaDetaylari_Table6_neticeTipi">
+    <End Type="aspnetdbModel.Table6_neticeTipi" Role="Table6_neticeTipi" Multiplicity="1" />
+    <End Type="aspnetdbModel.Table3_BulusmaDetaylari" Role="Table3_BulusmaDetaylari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_neticeTipi">
+        <PropertyRef Name="id_neticeTipi" />
+      </Principal>
+      <Dependent Role="Table3_BulusmaDetaylari">
+        <PropertyRef Name="id_netice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_Report1">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsimId" />
+      <PropertyRef Name="NeZaman" />
+      <PropertyRef Name="netice_tipi" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IsimId" Type="Int32" Nullable="false" />
+    <Property Name="ResimURL" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="NeZaman" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DayBefore" Type="Int32" />
+    <Property Name="netice_tipi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_HicBulusmamisIlkIletisimGunOnce">
+    <Key>
+      <PropertyRef Name="IsimId" />
+    </Key>
+    <Property Name="IsimId" Type="Int32" Nullable="false" />
+    <Property Name="Rumuz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GunOnce" Type="Int32" />
+    <Property Name="iletisim_frekans" Type="Int32" />
+    <NavigationProperty Name="View_Isim" Relationship="aspnetdbModel.View_IsimView_HicBulusmamisIlkIletisimGunOnce" FromRole="View_HicBulusmamisIlkIletisimGunOnce" ToRole="View_Isim" />
+  </EntityType>
+  <Association Name="View_IsimView_HicBulusmamisIlkIletisimGunOnce">
+    <End Type="aspnetdbModel.View_Isim" Role="View_Isim" Multiplicity="1" />
+    <End Type="aspnetdbModel.View_HicBulusmamisIlkIletisimGunOnce" Role="View_HicBulusmamisIlkIletisimGunOnce" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="View_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="View_HicBulusmamisIlkIletisimGunOnce">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Table1_IsimView_Isim">
+    <End Type="aspnetdbModel.Table1_Isim" Role="Table1_Isim" Multiplicity="1" />
+    <End Type="aspnetdbModel.View_Isim" Role="View_Isim" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="View_Isim">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="aspnetdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Table1_Isim">
+    <Key>
+      <PropertyRef Name="IsimId" />
+    </Key>
+    <Property Name="IsimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rumuz" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Yas" Type="smallint" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="25" />
+    <Property Name="Yakinlik" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhotoUrl" Type="nvarchar" MaxLength="100" />
+    <Property Name="InternetUrl" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShowInReport" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table2_Tanisma">
+    <Key>
+      <PropertyRef Name="TanismaId" />
+    </Key>
+    <Property Name="TanismaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsimId" Type="int" Nullable="false" />
+    <Property Name="NeZaman" Type="smalldatetime" Nullable="false" />
+    <Property Name="Nasil" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table3_BulusmaDetaylari">
+    <Key>
+      <PropertyRef Name="BulusmaId" />
+    </Key>
+    <Property Name="BulusmaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BulusmaPlanId" Type="int" />
+    <Property Name="IsimId" Type="int" Nullable="false" />
+    <Property Name="NeZaman" Type="smalldatetime" Nullable="false" />
+    <Property Name="Nerede" Type="nvarchar" MaxLength="50" />
+    <Property Name="HarcananRuble" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="id_netice" Type="int" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Table4_BulusmaPlani">
+    <Key>
+      <PropertyRef Name="BulusmaPlanId" />
+    </Key>
+    <Property Name="BulusmaPlanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsimId" Type="int" Nullable="false" />
+    <Property Name="NeZaman" Type="smalldatetime" Nullable="false" />
+    <Property Name="Butce" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="Hedef" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table5_Iletisim">
+    <Key>
+      <PropertyRef Name="IletisimID" />
+    </Key>
+    <Property Name="IletisimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsimId" Type="int" Nullable="false" />
+    <Property Name="NeZaman" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table6_neticeTipi">
+    <Key>
+      <PropertyRef Name="id_neticeTipi" />
+    </Key>
+    <Property Name="id_neticeTipi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="netice_tipi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'L.dbo.View_HicBulusmamisIlkIletisimGunOnce' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_HicBulusmamisIlkIletisimGunOnce">
+    <Key>
+      <PropertyRef Name="IsimId" />
+    </Key>
+    <Property Name="IsimId" Type="int" Nullable="false" />
+    <Property Name="Rumuz" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GunOnce" Type="int" />
+    <Property Name="iletisim_frekans" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'L.dbo.View_Isim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Isim">
+    <Key>
+      <PropertyRef Name="IsimId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsimId" Type="int" Nullable="false" />
+    <Property Name="Isim" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Yas" Type="smallint" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="25" />
+    <Property Name="ResimURL" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ShowInReport" Type="bit" Nullable="false" />
+    <Property Name="LastContact" Type="int" Nullable="false" />
+    <Property Name="LastBulusma" Type="int" Nullable="false" />
+    <Property Name="LastLove" Type="int" Nullable="false" />
+    <Property Name="LastMeetingNetice" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'L.dbo.View_Report1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Report1">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsimId" />
+      <PropertyRef Name="NeZaman" />
+      <PropertyRef Name="netice_tipi" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsimId" Type="int" Nullable="false" />
+    <Property Name="ResimURL" Type="nvarchar" MaxLength="4000" />
+    <Property Name="NeZaman" Type="smalldatetime" Nullable="false" />
+    <Property Name="DayBefore" Type="int" />
+    <Property Name="netice_tipi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Table2_Tanisma_Table1_Isim">
+    <End Role="Table1_Isim" Type="Self.Table1_Isim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table2_Tanisma" Type="Self.Table2_Tanisma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="Table2_Tanisma">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_BulusmaDetaylari_Table1_Isim">
+    <End Role="Table1_Isim" Type="Self.Table1_Isim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table3_BulusmaDetaylari" Type="Self.Table3_BulusmaDetaylari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="Table3_BulusmaDetaylari">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_BulusmaDetaylari_Table6_neticeTipi">
+    <End Role="Table6_neticeTipi" Type="Self.Table6_neticeTipi" Multiplicity="1" />
+    <End Role="Table3_BulusmaDetaylari" Type="Self.Table3_BulusmaDetaylari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_neticeTipi">
+        <PropertyRef Name="id_neticeTipi" />
+      </Principal>
+      <Dependent Role="Table3_BulusmaDetaylari">
+        <PropertyRef Name="id_netice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table4_BulusmaPlani_Table1_Isim">
+    <End Role="Table1_Isim" Type="Self.Table1_Isim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table4_BulusmaPlani" Type="Self.Table4_BulusmaPlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="Table4_BulusmaPlani">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table5_Iletisim_Table1_Isim">
+    <End Role="Table1_Isim" Type="Self.Table1_Isim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table5_Iletisim" Type="Self.Table5_Iletisim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Isim">
+        <PropertyRef Name="IsimId" />
+      </Principal>
+      <Dependent Role="Table5_Iletisim">
+        <PropertyRef Name="IsimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="aspnetdbModelStoreContainer">
+    <EntitySet Name="Table1_Isim" EntityType="Self.Table1_Isim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table2_Tanisma" EntityType="Self.Table2_Tanisma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3_BulusmaDetaylari" EntityType="Self.Table3_BulusmaDetaylari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table4_BulusmaPlani" EntityType="Self.Table4_BulusmaPlani" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table5_Iletisim" EntityType="Self.Table5_Iletisim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table6_neticeTipi" EntityType="Self.Table6_neticeTipi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_HicBulusmamisIlkIletisimGunOnce" EntityType="Self.View_HicBulusmamisIlkIletisimGunOnce" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_HicBulusmamisIlkIletisimGunOnce].[IsimId] AS [IsimId], 
+    [View_HicBulusmamisIlkIletisimGunOnce].[Rumuz] AS [Rumuz], 
+    [View_HicBulusmamisIlkIletisimGunOnce].[GunOnce] AS [GunOnce], 
+    [View_HicBulusmamisIlkIletisimGunOnce].[iletisim_frekans] AS [iletisim_frekans]
+    FROM [dbo].[View_HicBulusmamisIlkIletisimGunOnce] AS [View_HicBulusmamisIlkIletisimGunOnce]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Isim" EntityType="Self.View_Isim" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Isim].[Id] AS [Id], 
+    [View_Isim].[IsimId] AS [IsimId], 
+    [View_Isim].[Isim] AS [Isim], 
+    [View_Isim].[Yas] AS [Yas], 
+    [View_Isim].[Telefon] AS [Telefon], 
+    [View_Isim].[ResimURL] AS [ResimURL], 
+    [View_Isim].[ShowInReport] AS [ShowInReport], 
+    [View_Isim].[LastContact] AS [LastContact], 
+    [View_Isim].[LastBulusma] AS [LastBulusma], 
+    [View_Isim].[LastLove] AS [LastLove], 
+    [View_Isim].[LastMeetingNetice] AS [LastMeetingNetice]
+    FROM [dbo].[View_Isim] AS [View_Isim]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Report1" EntityType="Self.View_Report1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Report1].[Id] AS [Id], 
+    [View_Report1].[IsimId] AS [IsimId], 
+    [View_Report1].[ResimURL] AS [ResimURL], 
+    [View_Report1].[NeZaman] AS [NeZaman], 
+    [View_Report1].[DayBefore] AS [DayBefore], 
+    [View_Report1].[netice_tipi] AS [netice_tipi]
+    FROM [dbo].[View_Report1] AS [View_Report1]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Table2_Tanisma_Table1_Isim" Association="Self.FK_Table2_Tanisma_Table1_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="Table2_Tanisma" EntitySet="Table2_Tanisma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_BulusmaDetaylari_Table1_Isim" Association="Self.FK_Table3_BulusmaDetaylari_Table1_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="Table3_BulusmaDetaylari" EntitySet="Table3_BulusmaDetaylari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_BulusmaDetaylari_Table6_neticeTipi" Association="Self.FK_Table3_BulusmaDetaylari_Table6_neticeTipi">
+      <End Role="Table6_neticeTipi" EntitySet="Table6_neticeTipi" />
+      <End Role="Table3_BulusmaDetaylari" EntitySet="Table3_BulusmaDetaylari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table4_BulusmaPlani_Table1_Isim" Association="Self.FK_Table4_BulusmaPlani_Table1_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="Table4_BulusmaPlani" EntitySet="Table4_BulusmaPlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table5_Iletisim_Table1_Isim" Association="Self.FK_Table5_Iletisim_Table1_Isim">
+      <End Role="Table1_Isim" EntitySet="Table1_Isim" />
+      <End Role="Table5_Iletisim" EntitySet="Table5_Iletisim" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

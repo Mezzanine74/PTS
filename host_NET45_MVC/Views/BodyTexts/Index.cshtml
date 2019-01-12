@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="float:left;">
+    <form id="formEngEnter" data-bind="submit: model1.addBodyText " style="background-color:lightgray; width:500px;">
+        <textarea cols="50" rows="6" name="Eng" id="Eng" data-bind="textinput: model1.Eng, event: {keydown: model1.altEnterSubmit}"></textarea>
+        <input type="hidden" name="Rus" data-bind="value: model1.Rus" />
+        <input type="hidden" name="Ref" data-bind="value: model1.Ref" />
+        <button id="btnSubmit" type="submit" class="btn btn-success">Enter</button>
+    </form>
+</div>
+
+<table class="" >
+    <tr style="background-color:black; color:white">
+        <th>
+            Ref
+        </th>
+        <th>
+            Eng
+            <img src="https://www.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-united-kingdom2x.png" />
+        </th>
+        <th>
+            Rus
+            <img src="https://www.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-russia2x.png" />
+        </th>
+        <th></th>
+    </tr>
+
+@*@foreach (var item in Model) {*@
+    <tbody data-bind="foreach: model2.BodyTexts">
+        <tr style="border-bottom:thin; border-bottom-style:solid; border-bottom-color:lightgray;">
+            <td style="color:gray; max-width:550px !important; padding:5px;" >
+                <input type="hidden" data-bind="value: Ref" />
+
+                    <input class="clickselect" type="text" id="generateCodeASPX"
+                           style=" margin-bottom:10px; height:40px; width:500px; font-size:larger"
+                           data-bind="value: GenerateCodeASPX, click: function(){event.target.select(); document.execCommand('copy')}" />
+
+                <input class="clickselect" type="text" id="generateCodeVB"
+                       style="height:40px; width:500px; font-size:larger"
+                       data-bind="value: GenerateCodeVB, click: function(){event.target.select(); document.execCommand('copy')}" />
+
+            </td>
+            <td style="font-weight:bold; max-width: 400px!important;">
+                <span class="dbclck" data-bind="text: Eng, event: {dblclick: function(){$data.Rus(event.target.innerText); $root.model1.updateBodyText($data)} }"></span>
+                <br />
+                <textarea rows="3" cols="50" style="margin-top:20px;" data-bind="value: Eng"></textarea>
+            </td>
+            <td style="color:gray; max-width:380px; padding:5px;">
+                <textarea rows="3" cols="50" data-bind="textInput: Rus"></textarea>
+            </td>
+            <td style="width: 200px !important; padding:5px;">
+                <a class="btn btn-success" data-bind="click: function(){$root.model1.updateBodyText($data)}">Update</a>
+                <a class="btn btn-danger" data-bind="click: function(){if (confirm('delete! ?')){ $root.model2.RemoveBodyText($data)  ;}}">Delete</a>
+                @*<a class="update btn bt-success" id="@item.id" href="/BodyTexts/Update/@item.id">Update</a>
+                    <a class="delete" id="@item.id" href="/BodyTexts/Delete/@item.id">Delete</a>*@
+            </td>
+        </tr>
+    </tbody>
+@*}*@
+
+</table>
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //Scripts goes here
+            //$('#Eng').keydown(function (e) {
+            //    if (e.ctrlKey && e.keyCode == 13) {
+            //        // submit form on Ctl + Enter
+            //        console.log("Ctrl + enter")
+            //        $("#formEngEnter").submit();
+            //    }
+            //});
+
+            $('.clickselect').on("click", function () {
+                console.log("clicked");
+                
+            })
+
+            //// DELETE Item
+            //$("table > tbody > tr > td > a.delete").on('click', function (e) {
+            //    var clickedItem = $(this);
+            //    var id = clickedItem.attr("id");
+
+            //    if (confirm('Are you sure to delete ?')) {
+
+            //        $.ajax({
+            //            type: "POST",
+            //            url: '/BodyTexts/Delete/' + id,
+            //            //data: '{ApprovalParameters: ' + JSON.stringify(ApprovalParameters) + '}',
+            //            contentType: "application/text; charset=utf-8",
+            //            dataType: "text",
+            //            success: function (response) {
+            //                clickedItem.closest('td').closest('tr').fadeOut("fast", function () {
+            //                    console.log('deleted and faded out')
+            //                })
+            //            }
+            //        });
+            //    }
+            //    e.preventDefault();
+            //    return false;
+            //})
+
+            // UPDATE Item
+            //$("table > tbody > tr > td > a.update").on('click', function (e) {
+            //    var clickedItem = $(this);
+
+            //    var id = clickedItem.attr("id");
+            //    var Rus = clickedItem.closest('td').prev('td').find("textarea").val();
+            //    var Eng = clickedItem.closest('td').prev('td').prev('td').find("textarea").val();
+            //    var Ref = clickedItem.closest('td').prev('td').prev('td').prev('td').find("input").val();
+
+            //    var bodyText = {
+            //        id: id,
+            //        Ref: Ref,
+            //        Eng: Eng,
+            //        Rus: Rus
+            //    }
+
+            //    clickedItem.closest('td').closest('tr').fadeOut(100);
+
+            //    $.ajax({
+            //        type: "POST",
+            //        url: '/BodyTexts/Edit/',
+            //        data: '{bodyText: ' + JSON.stringify(bodyText) + '}',
+            //        contentType: "application/json; charset=utf-8",
+            //        dataType: "json",
+            //        success: function (response) {
+            //            clickedItem.closest('td').closest('tr').fadeIn(100);
+            //            $.gritter.add({
+            //                title: 'Updated',
+            //                text: 'Thanks for your support (:',
+            //                time: '1500',
+            //                class_name: 'gritter-info gritter-top-center'
+            //            })
+            //        },
+            //        error: function (error) {
+            //            clickedItem.closest('td').closest('tr').fadeIn(100);
+            //            $.gritter.add({
+            //                title: 'Error',
+            //                text: 'Something went wrong',
+            //                time: '1500',
+            //                class_name: 'gritter-error gritter-top-center'
+            //            })
+
+            //        }
+            //    });
+
+            //    e.preventDefault();
+            //    return false;
+            //})
+
+            //$("table > tbody > tr > td > span.dbclck").dblclick(function () {
+            //    var me = $(this);
+            //    console.log('click');
+            //    console.log(me.text().trim())
+            //    me.closest('td').next('td').find("textarea").val(me.text().trim());
+
+            //    me.closest('td').next('td').next('td').find('a.update').click();
+
+            //});
+        })
+    </script>
+
+<script src="~/Scripts/KnockoutScripts/bodyTextsModels.js"></script>
+
+}

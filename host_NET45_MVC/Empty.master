@@ -1,0 +1,71 @@
+﻿<%@ Master Language="VB" CodeFile="Empty.master.vb" Inherits="Empty" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form2" runat="server">
+        <div id="topContent">
+
+            <div style="text-align: left; float: left;">
+
+            </div>
+            <div style="float: right;">
+            <asp:ImageButton ID="ImageButtonMaster" runat="server" 
+             ImageUrl="~/Images/TopContent_Logo.PNG"
+             CausesValidation="False" PostBackUrl="~/default.aspx" />
+             </div>
+        </div>
+    
+        <div id="mainContent2">
+            <asp:ContentPlaceHolder id="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <div id="footerContent">
+
+        </div>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX THIS CODE FOLLOW USER  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+
+    <asp:SqlDataSource ID="SqlDataSourceFollowUsers" runat="server"
+    ConnectionString="<%$ ConnectionStrings:MERCURYConnectionStringVisitorsLog %>" 
+    InsertCommand=" INSERT INTO [Table_VisitorLogs]
+           ([UserName],[VisitTime],[IpAdress],[PageName],[Country], [BrowserType], [BrowserPlatform])
+     VALUES
+           (@UserName,@VisitTime, @IpAdress, @PageName, @Country, @BrowserType, @BrowserPlatform)"
+           >
+        <InsertParameters>
+            <asp:Parameter Name="UserName" Type="String"/>
+            <asp:Parameter Name="PageName" Type="String"/>
+            <asp:Parameter Name="VisitTime" />
+            <asp:Parameter Name="IpAdress" Type="String"/>
+            <asp:Parameter Name="Country" Type="String"/>
+            <asp:Parameter Name="BrowserType" Type="String"/>
+            <asp:Parameter Name="BrowserPlatform" Type="String"/>
+        </InsertParameters>
+        </asp:SqlDataSource>
+
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX //THIS CODE FOLLOW USER  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+        
+    </form>
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-11067821-1");
+    pageTracker._trackPageview();
+  } catch (err) { }</script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KitaplarimModelStoreContainer" CdmEntityContainer="KitaplarimEntities">
+    <EntitySetMapping Name="Alintilars">
+      <EntityTypeMapping TypeName="KitaplarimModel.Alintilar">
+        <MappingFragment StoreEntitySet="Alintilar">
+          <ScalarProperty Name="sayfa" ColumnName="sayfa" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="kitap_id" ColumnName="kitap_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Okumalars">
+      <EntityTypeMapping TypeName="KitaplarimModel.Okumalar">
+        <MappingFragment StoreEntitySet="Okumalar">
+          <ScalarProperty Name="hangi_gun" ColumnName="hangi_gun" />
+          <ScalarProperty Name="kalinan_sayfa" ColumnName="kalinan_sayfa" />
+          <ScalarProperty Name="kitap_id" ColumnName="kitap_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yazarlars">
+      <EntityTypeMapping TypeName="KitaplarimModel.Yazarlar">
+        <MappingFragment StoreEntitySet="Yazarlar">
+          <ScalarProperty Name="resmi" ColumnName="resmi" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kitaplars">
+      <EntityTypeMapping TypeName="KitaplarimModel.Kitaplar">
+        <MappingFragment StoreEntitySet="Kitaplar">
+          <ScalarProperty Name="kapak_resmi" ColumnName="kapak_resmi" />
+          <ScalarProperty Name="bitirme_gunu" ColumnName="bitirme_gunu" />
+          <ScalarProperty Name="baslama_gunu" ColumnName="baslama_gunu" />
+          <ScalarProperty Name="kac_sayfa" ColumnName="kac_sayfa" />
+          <ScalarProperty Name="yazar_id" ColumnName="yazar_id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Kitap_Tahmini_Bitis">
+      <EntityTypeMapping TypeName="KitaplarimModel.View_Kitap_Tahmini_Bitis">
+        <MappingFragment StoreEntitySet="View_Kitap_Tahmini_Bitis">
+          <ScalarProperty Name="tahmini_bitis_gunu" ColumnName="tahmini_bitis_gunu" />
+          <ScalarProperty Name="kac_gun_kaldi" ColumnName="kac_gun_kaldi" />
+          <ScalarProperty Name="kac_sayfa_kaldi" ColumnName="kac_sayfa_kaldi" />
+          <ScalarProperty Name="average_page_per_day" ColumnName="average_page_per_day" />
+          <ScalarProperty Name="page_diff" ColumnName="page_diff" />
+          <ScalarProperty Name="date_diff" ColumnName="date_diff" />
+          <ScalarProperty Name="min_page" ColumnName="min_page" />
+          <ScalarProperty Name="max_page" ColumnName="max_page" />
+          <ScalarProperty Name="max_gun" ColumnName="max_gun" />
+          <ScalarProperty Name="min_gun" ColumnName="min_gun" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uniqueId" ColumnName="uniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Okumalar_performans">
+      <EntityTypeMapping TypeName="KitaplarimModel.View_Okumalar_performans">
+        <MappingFragment StoreEntitySet="View_Okumalar_performans">
+          <ScalarProperty Name="tahmini_bitis_gunu" ColumnName="tahmini_bitis_gunu" />
+          <ScalarProperty Name="average_page_per_day" ColumnName="average_page_per_day" />
+          <ScalarProperty Name="son_okuma_sayfa_araligi" ColumnName="son_okuma_sayfa_araligi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_okunan_kitaplar">
+      <EntityTypeMapping TypeName="KitaplarimModel.View_okunan_kitaplar">
+        <MappingFragment StoreEntitySet="View_okunan_kitaplar">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kitaplar_hacked">
+      <EntityTypeMapping TypeName="KitaplarimModel.Kitaplar_hacked">
+        <MappingFragment StoreEntitySet="Kitaplar_hacked">
+          <ScalarProperty Name="kapak_failed" ColumnName="kapak_failed" />
+          <ScalarProperty Name="kapak_tried" ColumnName="kapak_tried" />
+          <ScalarProperty Name="download_failed" ColumnName="download_failed" />
+          <ScalarProperty Name="download_tried" ColumnName="download_tried" />
+          <ScalarProperty Name="linki" ColumnName="linki" />
+          <ScalarProperty Name="turu" ColumnName="turu" />
+          <ScalarProperty Name="yayinci" ColumnName="yayinci" />
+          <ScalarProperty Name="kitapismi" ColumnName="kitapismi" />
+          <ScalarProperty Name="yazar_id" ColumnName="yazar_id" />
+          <ScalarProperty Name="tanitim" ColumnName="tanitim" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yazarlar_hacked">
+      <EntityTypeMapping TypeName="KitaplarimModel.Yazarlar_hacked">
+        <MappingFragment StoreEntitySet="Yazarlar_hacked">
+          <ScalarProperty Name="yazar" ColumnName="yazar" />
+          <ScalarProperty Name="yazar_id" ColumnName="yazar_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Yazar_Kitap_Sayisi">
+      <EntityTypeMapping TypeName="KitaplarimModel.View_Yazar_Kitap_Sayisi">
+        <MappingFragment StoreEntitySet="View_Yazar_Kitap_Sayisi">
+          <ScalarProperty Name="YazarKitapSayisi" ColumnName="YazarKitapSayisi" />
+          <ScalarProperty Name="yazar" ColumnName="yazar" />
+          <ScalarProperty Name="yazar_id" ColumnName="yazar_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_KitaplarHacked">
+      <EntityTypeMapping TypeName="KitaplarimModel.View_KitaplarHacked">
+        <MappingFragment StoreEntitySet="View_KitaplarHacked">
+          <ScalarProperty Name="turu" ColumnName="turu" />
+          <ScalarProperty Name="yayinci" ColumnName="yayinci" />
+          <ScalarProperty Name="kitapismi" ColumnName="kitapismi" />
+          <ScalarProperty Name="yazar_id" ColumnName="yazar_id" />
+          <ScalarProperty Name="tanitim" ColumnName="tanitim" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

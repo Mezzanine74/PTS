@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/Content/bundle")
+    @Styles.Render("~/Content/DevExtremeBundle")
+    @Scripts.Render("~/Scripts/bundle")
+    @Scripts.Render("~/Scripts/DevExtremeBundle")
+
+    @Html.DevExpress().GetStyleSheets(
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Icons },
+        new StyleSheet { ExtensionType = ExtensionType.Menu }
+    )
+
+    @Html.DevExpress().GetScriptsEx(
+        new Script { ExtensionSuite = ExtensionSuite.Icons },
+        new Script { ExtensionType = ExtensionType.Menu }
+    )
+
+    @RenderSection("Header", required: false)
+
+</head>
+<body>
+
+    <div id="body-header" >
+        <div style="float: left">
+
+           @Html.DevExpress().Menu(settings =>
+           {
+               settings.Name = "menuPTS";
+               settings.Styles.Style.Border.BorderStyle = System.Web.UI.WebControls.BorderStyle.None;
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "PTS";
+                   item.ItemStyle.Width = 200;
+                   //item.Image.IconID = "businessobjects_boorderitem_32x32";
+                   item.Image.Url = "~/images/pts_logo.png";
+               });
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "PO";
+                   item.Image.IconID = "businessobjects_boorderitem_32x32";
+                   item.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_16x16";
+                   item.Items.Add("Create Invoice").Image.IconID = "print_salesinvoice_16x16devav";
+                   item.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_16x16";
+                   item.Items.Add(i =>
+                   {
+                       i.BeginGroup = true;
+                       i.Text = "Edit PO";
+                       i.Image.IconID = "businessobjects_boorderitem_16x16";
+                   });
+                   item.Items.Add("Edit Invoice").Image.IconID = "print_salesinvoice_16x16devav";
+                   item.Items.Add("Edit Payment Request").Image.IconID = "businessobjects_botask_16x16";
+               });
+           }).GetHtml()
+        </div>
+        <div style="float: right">
+            @Html.DevExpress().Menu(settings =>
+            {
+                settings.Name = "MenuLog";
+                settings.Styles.Style.Border.BorderStyle = System.Web.UI.WebControls.BorderStyle.None;
+                settings.Items.Add(item =>
+                {
+                    item.Text = "Hello ...";
+                    item.Image.IconID = "businessobjects_boperson_32x32";
+                    item.ItemStyle.Width = 200;
+                    item.Items.Add("Site Settings").Image.IconID = "actions_viewsetting_16x16devav";
+                    item.Items.Add("Sign Out").Image.IconID = "actions_remove_16x16";
+                });
+
+            }).GetHtml()
+        </div>
+        <div style="clear: both">
+        </div>
+    </div>
+
+    <div class="body-content">
+
+        @RenderBody()
+
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+    <script>
+        // Hidden kontrollerin validationi icin gerekli
+        // $(function(){}) icine koyulmamasi gerek !
+        $.validator.setDefaults({
+            ignore: ""
+        });
+    </script>
+
+</body>
+</html>

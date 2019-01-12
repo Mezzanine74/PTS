@@ -1,0 +1,1282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CodestInspectionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CodestInspectionEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_DeleteAllSupervisorApprovalsFromInspection">
+      <Parameter Name="InspectionId" Mode="In" Type="Int32" />
+      <Parameter Name="SupervisorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertAllSupervisorApprovalResponseToInspection">
+      <Parameter Name="InspectionId" Mode="In" Type="Int32" />
+      <Parameter Name="SupervisorId" Mode="In" Type="Int32" />
+      <Parameter Name="ResponseId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteAllTeknazorApprovalsFromInspection">
+      <Parameter Name="InspectionId" Mode="In" Type="Int32" />
+      <Parameter Name="TeknazorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertAllTeknazorApprovalResponseToInspection">
+      <Parameter Name="InspectionId" Mode="In" Type="Int32" />
+      <Parameter Name="TeknazorId" Mode="In" Type="Int32" />
+      <Parameter Name="ResponseId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Table_Activity" EntityType="CodestInspectionModel.Table_Activity" />
+    <EntitySet Name="Table_Activity_Layer_1" EntityType="CodestInspectionModel.Table_Activity_Layer_1" />
+    <EntitySet Name="Table_Activity_Layer_2" EntityType="CodestInspectionModel.Table_Activity_Layer_2" />
+    <EntitySet Name="Table_Building" EntityType="CodestInspectionModel.Table_Building" />
+    <EntitySet Name="Table_Category_In_BoQ" EntityType="CodestInspectionModel.Table_Category_In_BoQ" />
+    <EntitySet Name="Table_Discipline" EntityType="CodestInspectionModel.Table_Discipline" />
+    <EntitySet Name="Table_Floor" EntityType="CodestInspectionModel.Table_Floor" />
+    <EntitySet Name="Table_Inspection_Activity" EntityType="CodestInspectionModel.Table_Inspection_Activity" />
+    <EntitySet Name="Table_Inspection_Room" EntityType="CodestInspectionModel.Table_Inspection_Room" />
+    <EntitySet Name="Table_ResponseKey" EntityType="CodestInspectionModel.Table_ResponseKey" />
+    <EntitySet Name="Table_Room" EntityType="CodestInspectionModel.Table_Room" />
+    <EntitySet Name="Table_Room_Name" EntityType="CodestInspectionModel.Table_Room_Name" />
+    <EntitySet Name="Table_Room_No" EntityType="CodestInspectionModel.Table_Room_No" />
+    <EntitySet Name="Table_Supervisor" EntityType="CodestInspectionModel.Table_Supervisor" />
+    <EntitySet Name="Table_Supervisor_Approval" EntityType="CodestInspectionModel.Table_Supervisor_Approval" />
+    <EntitySet Name="Table_Supervisor_Bldg_Discp" EntityType="CodestInspectionModel.Table_Supervisor_Bldg_Discp" />
+    <EntitySet Name="Table_System" EntityType="CodestInspectionModel.Table_System" />
+    <EntitySet Name="Table_Teknazor" EntityType="CodestInspectionModel.Table_Teknazor" />
+    <EntitySet Name="Table_Teknazor_Approval" EntityType="CodestInspectionModel.Table_Teknazor_Approval" />
+    <EntitySet Name="Table_Teknazor_Bldg_Discp" EntityType="CodestInspectionModel.Table_Teknazor_Bldg_Discp" />
+    <EntitySet Name="View_Inspection_Room_Activity_Supervisor" EntityType="CodestInspectionModel.View_Inspection_Room_Activity_Supervisor" />
+    <EntitySet Name="View_Inspection_Room_Activity_Supervisor_Response" EntityType="CodestInspectionModel.View_Inspection_Room_Activity_Supervisor_Response" />
+    <EntitySet Name="View_Inspection_Room_Activity_Teknazor" EntityType="CodestInspectionModel.View_Inspection_Room_Activity_Teknazor" />
+    <EntitySet Name="View_Inspection_Room_Activity_Teknazor_Response" EntityType="CodestInspectionModel.View_Inspection_Room_Activity_Teknazor_Response" />
+    <EntitySet Name="View_Inspection_SupervisorApprovalStatus" EntityType="CodestInspectionModel.View_Inspection_SupervisorApprovalStatus" />
+    <EntitySet Name="View_Inspection_SupervisorFullApprovalResponse" EntityType="CodestInspectionModel.View_Inspection_SupervisorFullApprovalResponse" />
+    <EntitySet Name="View_Inspection_TeknazorApprovalStatus" EntityType="CodestInspectionModel.View_Inspection_TeknazorApprovalStatus" />
+    <EntitySet Name="View_Inspection_TeknazorFullApprovalResponse" EntityType="CodestInspectionModel.View_Inspection_TeknazorFullApprovalResponse" />
+    <EntitySet Name="View_InspectionInitiated" EntityType="CodestInspectionModel.View_InspectionInitiated" />
+    <EntitySet Name="View_InspectionInitiated_AllSupervisorApproved" EntityType="CodestInspectionModel.View_InspectionInitiated_AllSupervisorApproved" />
+    <EntitySet Name="View_InspectionInitiated_AllTeknazorApproved" EntityType="CodestInspectionModel.View_InspectionInitiated_AllTeknazorApproved" />
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Activity" Association="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity">
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+      <End Role="Table_Inspection_Activity" EntitySet="Table_Inspection_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Activity_Layer_1" Association="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity_Layer_1">
+      <End Role="Table_Activity_Layer_1" EntitySet="Table_Activity_Layer_1" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Activity_Layer_2" Association="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity_Layer_2">
+      <End Role="Table_Activity_Layer_2" EntitySet="Table_Activity_Layer_2" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Building" Association="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Discipline" Association="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_System" Association="CodestInspectionModel.FK_Table_Inspection_Activity_Table_System">
+      <End Role="Table_System" EntitySet="Table_System" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Building" Association="CodestInspectionModel.FK_Table_Room_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Bldg_Discp_Table_Building" Association="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Supervisor_Bldg_Discp" EntitySet="Table_Supervisor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Bldg_Discp_Table_Building" Association="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Teknazor_Bldg_Discp" EntitySet="Table_Teknazor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Category_In_BoQ" Association="CodestInspectionModel.FK_Table_Room_Table_Category_In_BoQ">
+      <End Role="Table_Category_In_BoQ" EntitySet="Table_Category_In_BoQ" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Bldg_Discp_Table_Discipline" Association="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Supervisor_Bldg_Discp" EntitySet="Table_Supervisor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Bldg_Discp_Table_Discipline" Association="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Teknazor_Bldg_Discp" EntitySet="Table_Teknazor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Floor" Association="CodestInspectionModel.FK_Table_Room_Table_Floor">
+      <End Role="Table_Floor" EntitySet="Table_Floor" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Room_Table_Room" Association="CodestInspectionModel.FK_Table_Inspection_Room_Table_Room">
+      <End Role="Table_Room" EntitySet="Table_Room" />
+      <End Role="Table_Inspection_Room" EntitySet="Table_Inspection_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Approval_Table_ResponseKey1" Association="CodestInspectionModel.FK_Table_Supervisor_Approval_Table_ResponseKey1">
+      <End Role="Table_ResponseKey" EntitySet="Table_ResponseKey" />
+      <End Role="Table_Supervisor_Approval" EntitySet="Table_Supervisor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Approval_Table_ResponseKey1" Association="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_ResponseKey1">
+      <End Role="Table_ResponseKey" EntitySet="Table_ResponseKey" />
+      <End Role="Table_Teknazor_Approval" EntitySet="Table_Teknazor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Room_Name" Association="CodestInspectionModel.FK_Table_Room_Table_Room_Name">
+      <End Role="Table_Room_Name" EntitySet="Table_Room_Name" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Room_No" Association="CodestInspectionModel.FK_Table_Room_Table_Room_No">
+      <End Role="Table_Room_No" EntitySet="Table_Room_No" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Bldg_Discp_Table_Supervisor" Association="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Supervisor">
+      <End Role="Table_Supervisor" EntitySet="Table_Supervisor" />
+      <End Role="Table_Supervisor_Bldg_Discp" EntitySet="Table_Supervisor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Approval_Table_Teknazor" Association="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_Teknazor">
+      <End Role="Table_Teknazor" EntitySet="Table_Teknazor" />
+      <End Role="Table_Teknazor_Approval" EntitySet="Table_Teknazor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Bldg_Discp_Table_Teknazor" Association="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Teknazor">
+      <End Role="Table_Teknazor" EntitySet="Table_Teknazor" />
+      <End Role="Table_Teknazor_Bldg_Discp" EntitySet="Table_Teknazor_Bldg_Discp" />
+    </AssociationSet>
+    <EntitySet Name="Table_Inspection" EntityType="CodestInspectionModel.Table_Inspection" />
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Inspection" Association="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Inspection_Activity" EntitySet="Table_Inspection_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Room_Table_Inspection" Association="CodestInspectionModel.FK_Table_Inspection_Room_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Inspection_Room" EntitySet="Table_Inspection_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Approval_Table_Inspection" Association="CodestInspectionModel.FK_Table_Supervisor_Approval_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Supervisor_Approval" EntitySet="Table_Supervisor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Approval_Table_Inspection" Association="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Teknazor_Approval" EntitySet="Table_Teknazor_Approval" />
+    </AssociationSet>
+    <EntitySet Name="Table_Client_Representative" EntityType="CodestInspectionModel.Table_Client_Representative" />
+    <EntitySet Name="Table_Client_Representative_Bldg_Discp" EntityType="CodestInspectionModel.Table_Client_Representative_Bldg_Discp" />
+    <EntitySet Name="Table_Inspection_Client_Response" EntityType="CodestInspectionModel.Table_Inspection_Client_Response" />
+    <EntitySet Name="Table_Inspection_Initiater" EntityType="CodestInspectionModel.Table_Inspection_Initiater" />
+    <EntitySet Name="Table_Inspection_Initiater_Bldg_Discp" EntityType="CodestInspectionModel.Table_Inspection_Initiater_Bldg_Discp" />
+    <EntitySet Name="Table_Inspection_Initiation" EntityType="CodestInspectionModel.Table_Inspection_Initiation" />
+    <AssociationSet Name="FK_Table_Client_Representative_Bldg_Discp_Table_Building" Association="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Client_Representative_Bldg_Discp" EntitySet="Table_Client_Representative_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Building" Association="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Inspection_Initiater_Bldg_Discp" EntitySet="Table_Inspection_Initiater_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Client_Representative_Bldg_Discp_Table_Client_Representative" Association="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Client_Representative">
+      <End Role="Table_Client_Representative" EntitySet="Table_Client_Representative" />
+      <End Role="Table_Client_Representative_Bldg_Discp" EntitySet="Table_Client_Representative_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Client_Response_Table_Client_Representative" Association="CodestInspectionModel.FK_Table_Inspection_Client_Response_Table_Client_Representative">
+      <End Role="Table_Client_Representative" EntitySet="Table_Client_Representative" />
+      <End Role="Table_Inspection_Client_Response" EntitySet="Table_Inspection_Client_Response" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Client_Representative_Bldg_Discp_Table_Discipline" Association="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Client_Representative_Bldg_Discp" EntitySet="Table_Client_Representative_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Discipline" Association="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Inspection_Initiater_Bldg_Discp" EntitySet="Table_Inspection_Initiater_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Client_Response_Table_Inspection" Association="CodestInspectionModel.FK_Table_Inspection_Client_Response_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Inspection_Client_Response" EntitySet="Table_Inspection_Client_Response" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiation_Table_Inspection" Association="CodestInspectionModel.FK_Table_Inspection_Initiation_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Inspection_Initiation" EntitySet="Table_Inspection_Initiation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Inspection_Initiater" Association="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Inspection_Initiater">
+      <End Role="Table_Inspection_Initiater" EntitySet="Table_Inspection_Initiater" />
+      <End Role="Table_Inspection_Initiater_Bldg_Discp" EntitySet="Table_Inspection_Initiater_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiation_Table_Inspection_Initiater" Association="CodestInspectionModel.FK_Table_Inspection_Initiation_Table_Inspection_Initiater">
+      <End Role="Table_Inspection_Initiater" EntitySet="Table_Inspection_Initiater" />
+      <End Role="Table_Inspection_Initiation" EntitySet="Table_Inspection_Initiation" />
+    </AssociationSet>
+    <EntitySet Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved" EntityType="CodestInspectionModel.View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved" />
+    <EntitySet Name="View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved" EntityType="CodestInspectionModel.View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved" />
+    <EntitySet Name="View_EmailsClientRepresentativesOnInspection" EntityType="CodestInspectionModel.View_EmailsClientRepresentativesOnInspection" />
+    <EntitySet Name="View_EmailsInspectionInitiaterOnInspection" EntityType="CodestInspectionModel.View_EmailsInspectionInitiaterOnInspection" />
+    <EntitySet Name="View_EmailsSupervisorsOnInspection" EntityType="CodestInspectionModel.View_EmailsSupervisorsOnInspection" />
+    <EntitySet Name="View_EmailsTeknazorsOnInspection" EntityType="CodestInspectionModel.View_EmailsTeknazorsOnInspection" />
+    <EntitySet Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded" EntityType="CodestInspectionModel.View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded" />
+    <EntitySet Name="Table_Inspection_Result" EntityType="CodestInspectionModel.Table_Inspection_Result" />
+    <EntitySet Name="Table_Result" EntityType="CodestInspectionModel.Table_Result" />
+    <EntitySet Name="Table_Result_Docs" EntityType="CodestInspectionModel.Table_Result_Docs" />
+    <AssociationSet Name="FK_Table_Inspection_Result_Table_Inspection_Client_Response" Association="CodestInspectionModel.FK_Table_Inspection_Result_Table_Inspection_Client_Response">
+      <End Role="Table_Inspection_Client_Response" EntitySet="Table_Inspection_Client_Response" />
+      <End Role="Table_Inspection_Result" EntitySet="Table_Inspection_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Result_Table_Result" Association="CodestInspectionModel.FK_Table_Inspection_Result_Table_Result">
+      <End Role="Table_Result" EntitySet="Table_Result" />
+      <End Role="Table_Inspection_Result" EntitySet="Table_Inspection_Result" />
+    </AssociationSet>
+    <EntitySet Name="Table_Inspection_Result_Docs" EntityType="CodestInspectionModel.Table_Inspection_Result_Docs" />
+    <EntitySet Name="Table_Inspection_Result_Docs_List" EntityType="CodestInspectionModel.Table_Inspection_Result_Docs_List" />
+    <AssociationSet Name="FK_Table_Inspection_Result_Docs_Table_Inspection_Result" Association="CodestInspectionModel.FK_Table_Inspection_Result_Docs_Table_Inspection_Result">
+      <End Role="Table_Inspection_Result" EntitySet="Table_Inspection_Result" />
+      <End Role="Table_Inspection_Result_Docs" EntitySet="Table_Inspection_Result_Docs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Result_Docs_List_Table_Inspection_Result_Docs" Association="CodestInspectionModel.FK_Table_Inspection_Result_Docs_List_Table_Inspection_Result_Docs">
+      <End Role="Table_Inspection_Result_Docs" EntitySet="Table_Inspection_Result_Docs" />
+      <End Role="Table_Inspection_Result_Docs_List" EntitySet="Table_Inspection_Result_Docs_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Result_Docs_Table_Result_Docs" Association="CodestInspectionModel.FK_Table_Inspection_Result_Docs_Table_Result_Docs">
+      <End Role="Table_Result_Docs" EntitySet="Table_Result_Docs" />
+      <End Role="Table_Inspection_Result_Docs" EntitySet="Table_Inspection_Result_Docs" />
+    </AssociationSet>
+    <EntitySet Name="View_Result_Docs_Restricted" EntityType="CodestInspectionModel.View_Result_Docs_Restricted" />
+    <FunctionImport Name="sp_DeleteAllTable_Inspection_Result_Docs">
+      <Parameter Name="InspectionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Table_Activity">
+    <Key>
+      <PropertyRef Name="ActivityId" />
+    </Key>
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="BuildingId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <Property Name="SystemId" Type="Int32" Nullable="false" />
+    <Property Name="Activity_Layer_1Id" Type="Int32" Nullable="false" />
+    <Property Name="Activity_Layer_2Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Inspection_Activity" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity" FromRole="Table_Activity" ToRole="Table_Inspection_Activity" />
+    <NavigationProperty Name="Table_Activity_Layer_1" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity_Layer_1" FromRole="Table_Activity" ToRole="Table_Activity_Layer_1" />
+    <NavigationProperty Name="Table_Activity_Layer_2" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity_Layer_2" FromRole="Table_Activity" ToRole="Table_Activity_Layer_2" />
+    <NavigationProperty Name="Table_Building" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Building" FromRole="Table_Activity" ToRole="Table_Building" />
+    <NavigationProperty Name="Table_Discipline" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Discipline" FromRole="Table_Activity" ToRole="Table_Discipline" />
+    <NavigationProperty Name="Table_System" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_System" FromRole="Table_Activity" ToRole="Table_System" />
+  </EntityType>
+  <EntityType Name="Table_Activity_Layer_1">
+    <Key>
+      <PropertyRef Name="Activity_Layer_1Id" />
+    </Key>
+    <Property Name="Activity_Layer_1Id" Type="Int32" Nullable="false" />
+    <Property Name="Activity_Layer_1_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Activity" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity_Layer_1" FromRole="Table_Activity_Layer_1" ToRole="Table_Activity" />
+  </EntityType>
+  <EntityType Name="Table_Activity_Layer_2">
+    <Key>
+      <PropertyRef Name="Activity_Layer_2Id" />
+    </Key>
+    <Property Name="Activity_Layer_2Id" Type="Int32" Nullable="false" />
+    <Property Name="Activity_Layer_2_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Activity" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity_Layer_2" FromRole="Table_Activity_Layer_2" ToRole="Table_Activity" />
+  </EntityType>
+  <EntityType Name="Table_Building">
+    <Key>
+      <PropertyRef Name="BuildingId" />
+    </Key>
+    <Property Name="BuildingId" Type="Int32" Nullable="false" />
+    <Property Name="BuildingName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Activity" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Building" FromRole="Table_Building" ToRole="Table_Activity" />
+    <NavigationProperty Name="Table_Room" Relationship="CodestInspectionModel.FK_Table_Room_Table_Building" FromRole="Table_Building" ToRole="Table_Room" />
+    <NavigationProperty Name="Table_Supervisor_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Building" FromRole="Table_Building" ToRole="Table_Supervisor_Bldg_Discp" />
+    <NavigationProperty Name="Table_Teknazor_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Building" FromRole="Table_Building" ToRole="Table_Teknazor_Bldg_Discp" />
+    <NavigationProperty Name="Table_Client_Representative_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Building" FromRole="Table_Building" ToRole="Table_Client_Representative_Bldg_Discp" />
+    <NavigationProperty Name="Table_Inspection_Initiater_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Building" FromRole="Table_Building" ToRole="Table_Inspection_Initiater_Bldg_Discp" />
+  </EntityType>
+  <EntityType Name="Table_Category_In_BoQ">
+    <Key>
+      <PropertyRef Name="CategoryInBOQId" />
+    </Key>
+    <Property Name="CategoryInBOQId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryInBOQName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Room" Relationship="CodestInspectionModel.FK_Table_Room_Table_Category_In_BoQ" FromRole="Table_Category_In_BoQ" ToRole="Table_Room" />
+  </EntityType>
+  <EntityType Name="Table_Discipline">
+    <Key>
+      <PropertyRef Name="DisciplineId" />
+    </Key>
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Activity" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Discipline" FromRole="Table_Discipline" ToRole="Table_Activity" />
+    <NavigationProperty Name="Table_Supervisor_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Discipline" FromRole="Table_Discipline" ToRole="Table_Supervisor_Bldg_Discp" />
+    <NavigationProperty Name="Table_Teknazor_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Discipline" FromRole="Table_Discipline" ToRole="Table_Teknazor_Bldg_Discp" />
+    <NavigationProperty Name="Table_Client_Representative_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Discipline" FromRole="Table_Discipline" ToRole="Table_Client_Representative_Bldg_Discp" />
+    <NavigationProperty Name="Table_Inspection_Initiater_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Discipline" FromRole="Table_Discipline" ToRole="Table_Inspection_Initiater_Bldg_Discp" />
+  </EntityType>
+  <EntityType Name="Table_Floor">
+    <Key>
+      <PropertyRef Name="FloorId" />
+    </Key>
+    <Property Name="FloorId" Type="Int32" Nullable="false" />
+    <Property Name="FloorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Room" Relationship="CodestInspectionModel.FK_Table_Room_Table_Floor" FromRole="Table_Floor" ToRole="Table_Room" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Activity">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Activity" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Activity" FromRole="Table_Inspection_Activity" ToRole="Table_Activity" />
+    <NavigationProperty Name="Table_Inspection" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Inspection" FromRole="Table_Inspection_Activity" ToRole="Table_Inspection" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Room">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Room" Relationship="CodestInspectionModel.FK_Table_Inspection_Room_Table_Room" FromRole="Table_Inspection_Room" ToRole="Table_Room" />
+    <NavigationProperty Name="Table_Inspection" Relationship="CodestInspectionModel.FK_Table_Inspection_Room_Table_Inspection" FromRole="Table_Inspection_Room" ToRole="Table_Inspection" />
+  </EntityType>
+  <EntityType Name="Table_ResponseKey">
+    <Key>
+      <PropertyRef Name="ResponseId" />
+    </Key>
+    <Property Name="ResponseId" Type="Int32" Nullable="false" />
+    <Property Name="Response_Key" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Supervisor_Approval" Relationship="CodestInspectionModel.FK_Table_Supervisor_Approval_Table_ResponseKey1" FromRole="Table_ResponseKey" ToRole="Table_Supervisor_Approval" />
+    <NavigationProperty Name="Table_Teknazor_Approval" Relationship="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_ResponseKey1" FromRole="Table_ResponseKey" ToRole="Table_Teknazor_Approval" />
+  </EntityType>
+  <EntityType Name="Table_Room">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="BuildingId" Type="Int32" Nullable="false" />
+    <Property Name="FloorId" Type="Int32" Nullable="false" />
+    <Property Name="RoomNoId" Type="Int32" Nullable="false" />
+    <Property Name="RoomNameId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryInBOQId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Building" Relationship="CodestInspectionModel.FK_Table_Room_Table_Building" FromRole="Table_Room" ToRole="Table_Building" />
+    <NavigationProperty Name="Table_Category_In_BoQ" Relationship="CodestInspectionModel.FK_Table_Room_Table_Category_In_BoQ" FromRole="Table_Room" ToRole="Table_Category_In_BoQ" />
+    <NavigationProperty Name="Table_Floor" Relationship="CodestInspectionModel.FK_Table_Room_Table_Floor" FromRole="Table_Room" ToRole="Table_Floor" />
+    <NavigationProperty Name="Table_Inspection_Room" Relationship="CodestInspectionModel.FK_Table_Inspection_Room_Table_Room" FromRole="Table_Room" ToRole="Table_Inspection_Room" />
+    <NavigationProperty Name="Table_Room_Name" Relationship="CodestInspectionModel.FK_Table_Room_Table_Room_Name" FromRole="Table_Room" ToRole="Table_Room_Name" />
+    <NavigationProperty Name="Table_Room_No" Relationship="CodestInspectionModel.FK_Table_Room_Table_Room_No" FromRole="Table_Room" ToRole="Table_Room_No" />
+  </EntityType>
+  <EntityType Name="Table_Room_Name">
+    <Key>
+      <PropertyRef Name="RoomNameId" />
+    </Key>
+    <Property Name="RoomNameId" Type="Int32" Nullable="false" />
+    <Property Name="RoomName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Room" Relationship="CodestInspectionModel.FK_Table_Room_Table_Room_Name" FromRole="Table_Room_Name" ToRole="Table_Room" />
+  </EntityType>
+  <EntityType Name="Table_Room_No">
+    <Key>
+      <PropertyRef Name="RoomNoId" />
+    </Key>
+    <Property Name="RoomNoId" Type="Int32" Nullable="false" />
+    <Property Name="RoomNo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Room" Relationship="CodestInspectionModel.FK_Table_Room_Table_Room_No" FromRole="Table_Room_No" ToRole="Table_Room" />
+  </EntityType>
+  <EntityType Name="Table_Supervisor">
+    <Key>
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+    <Property Name="SupervisorName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Supervisor_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Supervisor" FromRole="Table_Supervisor" ToRole="Table_Supervisor_Bldg_Discp" />
+  </EntityType>
+  <EntityType Name="Table_Supervisor_Approval">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="ResponseId" Type="Int32" Nullable="false" />
+    <Property Name="WhenResponded" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_ResponseKey" Relationship="CodestInspectionModel.FK_Table_Supervisor_Approval_Table_ResponseKey1" FromRole="Table_Supervisor_Approval" ToRole="Table_ResponseKey" />
+    <NavigationProperty Name="Table_Inspection" Relationship="CodestInspectionModel.FK_Table_Supervisor_Approval_Table_Inspection" FromRole="Table_Supervisor_Approval" ToRole="Table_Inspection" />
+  </EntityType>
+  <EntityType Name="Table_Supervisor_Bldg_Discp">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+    <Property Name="BuildingId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Building" Relationship="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Building" FromRole="Table_Supervisor_Bldg_Discp" ToRole="Table_Building" />
+    <NavigationProperty Name="Table_Discipline" Relationship="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Discipline" FromRole="Table_Supervisor_Bldg_Discp" ToRole="Table_Discipline" />
+    <NavigationProperty Name="Table_Supervisor" Relationship="CodestInspectionModel.FK_Table_Supervisor_Bldg_Discp_Table_Supervisor" FromRole="Table_Supervisor_Bldg_Discp" ToRole="Table_Supervisor" />
+  </EntityType>
+  <EntityType Name="Table_System">
+    <Key>
+      <PropertyRef Name="SystemId" />
+    </Key>
+    <Property Name="SystemId" Type="Int32" Nullable="false" />
+    <Property Name="SystemName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Activity" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_System" FromRole="Table_System" ToRole="Table_Activity" />
+  </EntityType>
+  <EntityType Name="Table_Teknazor">
+    <Key>
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="TeknazorId" Type="Int32" Nullable="false" />
+    <Property Name="TeknazorName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Teknazor_Approval" Relationship="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_Teknazor" FromRole="Table_Teknazor" ToRole="Table_Teknazor_Approval" />
+    <NavigationProperty Name="Table_Teknazor_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Teknazor" FromRole="Table_Teknazor" ToRole="Table_Teknazor_Bldg_Discp" />
+  </EntityType>
+  <EntityType Name="Table_Teknazor_Approval">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="TeknazorId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="ResponseId" Type="Int32" Nullable="false" />
+    <Property Name="WhenResponded" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_ResponseKey" Relationship="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_ResponseKey1" FromRole="Table_Teknazor_Approval" ToRole="Table_ResponseKey" />
+    <NavigationProperty Name="Table_Teknazor" Relationship="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_Teknazor" FromRole="Table_Teknazor_Approval" ToRole="Table_Teknazor" />
+    <NavigationProperty Name="Table_Inspection" Relationship="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_Inspection" FromRole="Table_Teknazor_Approval" ToRole="Table_Inspection" />
+  </EntityType>
+  <EntityType Name="Table_Teknazor_Bldg_Discp">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeknazorId" Type="Int32" Nullable="false" />
+    <Property Name="BuildingId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Building" Relationship="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Building" FromRole="Table_Teknazor_Bldg_Discp" ToRole="Table_Building" />
+    <NavigationProperty Name="Table_Discipline" Relationship="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Discipline" FromRole="Table_Teknazor_Bldg_Discp" ToRole="Table_Discipline" />
+    <NavigationProperty Name="Table_Teknazor" Relationship="CodestInspectionModel.FK_Table_Teknazor_Bldg_Discp_Table_Teknazor" FromRole="Table_Teknazor_Bldg_Discp" ToRole="Table_Teknazor" />
+  </EntityType>
+  <EntityType Name="View_Inspection_Room_Activity_Supervisor">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="ActivityId" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_Inspection_Room_Activity_Supervisor_Response">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="ActivityId" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+    <Property Name="ResponseId" Type="Int32" />
+    <Property Name="Response_Key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WhenResponded" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="View_Inspection_Room_Activity_Teknazor">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="ActivityId" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="TeknazorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_Inspection_Room_Activity_Teknazor_Response">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="ActivityId" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="TeknazorId" Type="Int32" Nullable="false" />
+    <Property Name="ResponseId" Type="Int32" />
+    <Property Name="Response_Key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WhenResponded" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="View_Inspection_SupervisorApprovalStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="SupervisorName" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="SupervisorName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_Inspection_SupervisorFullApprovalResponse">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+    <Property Name="ResponseId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_Inspection_TeknazorApprovalStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="TeknazorName" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="TeknazorName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="TeknazorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_Inspection_TeknazorFullApprovalResponse">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="TeknazorId" Type="Int32" Nullable="false" />
+    <Property Name="ResponseId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_InspectionInitiated">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_InspectionInitiated_AllSupervisorApproved">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_InspectionInitiated_AllTeknazorApproved">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Table_Inspection_Activity_Table_Activity">
+    <End Type="CodestInspectionModel.Table_Activity" Role="Table_Activity" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Activity" Role="Table_Inspection_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Activity">
+        <PropertyRef Name="ActivityId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Activity">
+        <PropertyRef Name="ActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Activity_Layer_1">
+    <End Type="CodestInspectionModel.Table_Activity_Layer_1" Role="Table_Activity_Layer_1" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Activity" Role="Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Activity_Layer_1">
+        <PropertyRef Name="Activity_Layer_1Id" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="Activity_Layer_1Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Activity_Layer_2">
+    <End Type="CodestInspectionModel.Table_Activity_Layer_2" Role="Table_Activity_Layer_2" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Activity" Role="Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Activity_Layer_2">
+        <PropertyRef Name="Activity_Layer_2Id" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="Activity_Layer_2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Building">
+    <End Type="CodestInspectionModel.Table_Building" Role="Table_Building" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Activity" Role="Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Discipline">
+    <End Type="CodestInspectionModel.Table_Discipline" Role="Table_Discipline" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Activity" Role="Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_System">
+    <End Type="CodestInspectionModel.Table_System" Role="Table_System" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Activity" Role="Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_System">
+        <PropertyRef Name="SystemId" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="SystemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Building">
+    <End Type="CodestInspectionModel.Table_Building" Role="Table_Building" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Room" Role="Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Bldg_Discp_Table_Building">
+    <End Type="CodestInspectionModel.Table_Building" Role="Table_Building" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Supervisor_Bldg_Discp" Role="Table_Supervisor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Bldg_Discp">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Bldg_Discp_Table_Building">
+    <End Type="CodestInspectionModel.Table_Building" Role="Table_Building" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Teknazor_Bldg_Discp" Role="Table_Teknazor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Bldg_Discp">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Category_In_BoQ">
+    <End Type="CodestInspectionModel.Table_Category_In_BoQ" Role="Table_Category_In_BoQ" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Room" Role="Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Category_In_BoQ">
+        <PropertyRef Name="CategoryInBOQId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="CategoryInBOQId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Bldg_Discp_Table_Discipline">
+    <End Type="CodestInspectionModel.Table_Discipline" Role="Table_Discipline" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Supervisor_Bldg_Discp" Role="Table_Supervisor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Bldg_Discp">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Bldg_Discp_Table_Discipline">
+    <End Type="CodestInspectionModel.Table_Discipline" Role="Table_Discipline" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Teknazor_Bldg_Discp" Role="Table_Teknazor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Bldg_Discp">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Floor">
+    <End Type="CodestInspectionModel.Table_Floor" Role="Table_Floor" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Room" Role="Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Floor">
+        <PropertyRef Name="FloorId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="FloorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Room_Table_Room">
+    <End Type="CodestInspectionModel.Table_Room" Role="Table_Room" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Room" Role="Table_Inspection_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Room">
+        <PropertyRef Name="RoomId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Room">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Approval_Table_ResponseKey1">
+    <End Type="CodestInspectionModel.Table_ResponseKey" Role="Table_ResponseKey" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Supervisor_Approval" Role="Table_Supervisor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ResponseKey">
+        <PropertyRef Name="ResponseId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Approval">
+        <PropertyRef Name="ResponseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Approval_Table_ResponseKey1">
+    <End Type="CodestInspectionModel.Table_ResponseKey" Role="Table_ResponseKey" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Teknazor_Approval" Role="Table_Teknazor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ResponseKey">
+        <PropertyRef Name="ResponseId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Approval">
+        <PropertyRef Name="ResponseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Room_Name">
+    <End Type="CodestInspectionModel.Table_Room_Name" Role="Table_Room_Name" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Room" Role="Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Room_Name">
+        <PropertyRef Name="RoomNameId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="RoomNameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Room_No">
+    <End Type="CodestInspectionModel.Table_Room_No" Role="Table_Room_No" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Room" Role="Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Room_No">
+        <PropertyRef Name="RoomNoId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="RoomNoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Bldg_Discp_Table_Supervisor">
+    <End Type="CodestInspectionModel.Table_Supervisor" Role="Table_Supervisor" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Supervisor_Bldg_Discp" Role="Table_Supervisor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Supervisor">
+        <PropertyRef Name="SupervisorId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Bldg_Discp">
+        <PropertyRef Name="SupervisorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Approval_Table_Teknazor">
+    <End Type="CodestInspectionModel.Table_Teknazor" Role="Table_Teknazor" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Teknazor_Approval" Role="Table_Teknazor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Teknazor">
+        <PropertyRef Name="TeknazorId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Approval">
+        <PropertyRef Name="TeknazorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Bldg_Discp_Table_Teknazor">
+    <End Type="CodestInspectionModel.Table_Teknazor" Role="Table_Teknazor" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Teknazor_Bldg_Discp" Role="Table_Teknazor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Teknazor">
+        <PropertyRef Name="TeknazorId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Bldg_Discp">
+        <PropertyRef Name="TeknazorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Table_Inspection">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="InspectionNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkingDrawingNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Inspection_Activity" Relationship="CodestInspectionModel.FK_Table_Inspection_Activity_Table_Inspection" FromRole="Table_Inspection" ToRole="Table_Inspection_Activity" />
+    <NavigationProperty Name="Table_Inspection_Room" Relationship="CodestInspectionModel.FK_Table_Inspection_Room_Table_Inspection" FromRole="Table_Inspection" ToRole="Table_Inspection_Room" />
+    <NavigationProperty Name="Table_Supervisor_Approval" Relationship="CodestInspectionModel.FK_Table_Supervisor_Approval_Table_Inspection" FromRole="Table_Inspection" ToRole="Table_Supervisor_Approval" />
+    <NavigationProperty Name="Table_Teknazor_Approval" Relationship="CodestInspectionModel.FK_Table_Teknazor_Approval_Table_Inspection" FromRole="Table_Inspection" ToRole="Table_Teknazor_Approval" />
+    <NavigationProperty Name="Table_Inspection_Client_Response" Relationship="CodestInspectionModel.FK_Table_Inspection_Client_Response_Table_Inspection" FromRole="Table_Inspection" ToRole="Table_Inspection_Client_Response" />
+    <NavigationProperty Name="Table_Inspection_Initiation" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiation_Table_Inspection" FromRole="Table_Inspection" ToRole="Table_Inspection_Initiation" />
+  </EntityType>
+  <Association Name="FK_Table_Inspection_Activity_Table_Inspection">
+    <End Type="CodestInspectionModel.Table_Inspection" Role="Table_Inspection" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Activity" Role="Table_Inspection_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Activity">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Room_Table_Inspection">
+    <End Type="CodestInspectionModel.Table_Inspection" Role="Table_Inspection" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Room" Role="Table_Inspection_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Room">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Approval_Table_Inspection">
+    <End Type="CodestInspectionModel.Table_Inspection" Role="Table_Inspection" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Supervisor_Approval" Role="Table_Supervisor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Approval">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Approval_Table_Inspection">
+    <End Type="CodestInspectionModel.Table_Inspection" Role="Table_Inspection" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Teknazor_Approval" Role="Table_Teknazor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Approval">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Table_Client_Representative">
+    <Key>
+      <PropertyRef Name="ClientRepresentativeId" />
+    </Key>
+    <Property Name="ClientRepresentativeId" Type="Int32" Nullable="false" />
+    <Property Name="ClientRepresentativeName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Client_Representative_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Client_Representative" FromRole="Table_Client_Representative" ToRole="Table_Client_Representative_Bldg_Discp" />
+    <NavigationProperty Name="Table_Inspection_Client_Response" Relationship="CodestInspectionModel.FK_Table_Inspection_Client_Response_Table_Client_Representative" FromRole="Table_Client_Representative" ToRole="Table_Inspection_Client_Response" />
+  </EntityType>
+  <EntityType Name="Table_Client_Representative_Bldg_Discp">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientRepresentativeId" Type="Int32" Nullable="false" />
+    <Property Name="BuildingId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Building" Relationship="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Building" FromRole="Table_Client_Representative_Bldg_Discp" ToRole="Table_Building" />
+    <NavigationProperty Name="Table_Client_Representative" Relationship="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Client_Representative" FromRole="Table_Client_Representative_Bldg_Discp" ToRole="Table_Client_Representative" />
+    <NavigationProperty Name="Table_Discipline" Relationship="CodestInspectionModel.FK_Table_Client_Representative_Bldg_Discp_Table_Discipline" FromRole="Table_Client_Representative_Bldg_Discp" ToRole="Table_Discipline" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Client_Response">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Hour" Type="Time" Precision="7" />
+    <Property Name="ClientRepresentativeId" Type="Int32" />
+    <Property Name="WhenResponded" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_Client_Representative" Relationship="CodestInspectionModel.FK_Table_Inspection_Client_Response_Table_Client_Representative" FromRole="Table_Inspection_Client_Response" ToRole="Table_Client_Representative" />
+    <NavigationProperty Name="Table_Inspection" Relationship="CodestInspectionModel.FK_Table_Inspection_Client_Response_Table_Inspection" FromRole="Table_Inspection_Client_Response" ToRole="Table_Inspection" />
+    <NavigationProperty Name="Table_Inspection_Result" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Table_Inspection_Client_Response" FromRole="Table_Inspection_Client_Response" ToRole="Table_Inspection_Result" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Initiater">
+    <Key>
+      <PropertyRef Name="InspectionInitiaterId" />
+    </Key>
+    <Property Name="InspectionInitiaterId" Type="Int32" Nullable="false" />
+    <Property Name="InspectionInitiaterName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Inspection_Initiater_Bldg_Discp" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Inspection_Initiater" FromRole="Table_Inspection_Initiater" ToRole="Table_Inspection_Initiater_Bldg_Discp" />
+    <NavigationProperty Name="Table_Inspection_Initiation" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiation_Table_Inspection_Initiater" FromRole="Table_Inspection_Initiater" ToRole="Table_Inspection_Initiation" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Initiater_Bldg_Discp">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InspectionInitiaterId" Type="Int32" Nullable="false" />
+    <Property Name="BuildingId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Building" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Building" FromRole="Table_Inspection_Initiater_Bldg_Discp" ToRole="Table_Building" />
+    <NavigationProperty Name="Table_Discipline" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Discipline" FromRole="Table_Inspection_Initiater_Bldg_Discp" ToRole="Table_Discipline" />
+    <NavigationProperty Name="Table_Inspection_Initiater" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Inspection_Initiater" FromRole="Table_Inspection_Initiater_Bldg_Discp" ToRole="Table_Inspection_Initiater" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Initiation">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="InspectionInitiaterId" Type="Int32" />
+    <Property Name="When_Initiated" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_Inspection" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiation_Table_Inspection" FromRole="Table_Inspection_Initiation" ToRole="Table_Inspection" />
+    <NavigationProperty Name="Table_Inspection_Initiater" Relationship="CodestInspectionModel.FK_Table_Inspection_Initiation_Table_Inspection_Initiater" FromRole="Table_Inspection_Initiation" ToRole="Table_Inspection_Initiater" />
+  </EntityType>
+  <Association Name="FK_Table_Client_Representative_Bldg_Discp_Table_Building">
+    <End Type="CodestInspectionModel.Table_Building" Role="Table_Building" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Client_Representative_Bldg_Discp" Role="Table_Client_Representative_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Client_Representative_Bldg_Discp">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Building">
+    <End Type="CodestInspectionModel.Table_Building" Role="Table_Building" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Initiater_Bldg_Discp" Role="Table_Inspection_Initiater_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiater_Bldg_Discp">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Client_Representative_Bldg_Discp_Table_Client_Representative">
+    <End Type="CodestInspectionModel.Table_Client_Representative" Role="Table_Client_Representative" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Client_Representative_Bldg_Discp" Role="Table_Client_Representative_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Client_Representative">
+        <PropertyRef Name="ClientRepresentativeId" />
+      </Principal>
+      <Dependent Role="Table_Client_Representative_Bldg_Discp">
+        <PropertyRef Name="ClientRepresentativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Client_Response_Table_Client_Representative">
+    <End Type="CodestInspectionModel.Table_Client_Representative" Role="Table_Client_Representative" Multiplicity="0..1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Client_Response" Role="Table_Inspection_Client_Response" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Client_Representative">
+        <PropertyRef Name="ClientRepresentativeId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Client_Response">
+        <PropertyRef Name="ClientRepresentativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Client_Representative_Bldg_Discp_Table_Discipline">
+    <End Type="CodestInspectionModel.Table_Discipline" Role="Table_Discipline" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Client_Representative_Bldg_Discp" Role="Table_Client_Representative_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Client_Representative_Bldg_Discp">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Discipline">
+    <End Type="CodestInspectionModel.Table_Discipline" Role="Table_Discipline" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Initiater_Bldg_Discp" Role="Table_Inspection_Initiater_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiater_Bldg_Discp">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Client_Response_Table_Inspection">
+    <End Type="CodestInspectionModel.Table_Inspection" Role="Table_Inspection" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Client_Response" Role="Table_Inspection_Client_Response" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Client_Response">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiation_Table_Inspection">
+    <End Type="CodestInspectionModel.Table_Inspection" Role="Table_Inspection" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Initiation" Role="Table_Inspection_Initiation" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiation">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Inspection_Initiater">
+    <End Type="CodestInspectionModel.Table_Inspection_Initiater" Role="Table_Inspection_Initiater" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Initiater_Bldg_Discp" Role="Table_Inspection_Initiater_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Initiater">
+        <PropertyRef Name="InspectionInitiaterId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiater_Bldg_Discp">
+        <PropertyRef Name="InspectionInitiaterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiation_Table_Inspection_Initiater">
+    <End Type="CodestInspectionModel.Table_Inspection_Initiater" Role="Table_Inspection_Initiater" Multiplicity="0..1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Initiation" Role="Table_Inspection_Initiation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Initiater">
+        <PropertyRef Name="InspectionInitiaterId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiation">
+        <PropertyRef Name="InspectionInitiaterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_EmailsClientRepresentativesOnInspection">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="ClientRepresentativeName" />
+      <PropertyRef Name="ClientRepresentativeId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ClientRepresentativeName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ClientRepresentativeId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_EmailsInspectionInitiaterOnInspection">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="InspectionInitiaterName" />
+      <PropertyRef Name="InspectionInitiaterId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="InspectionInitiaterName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InspectionInitiaterId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_EmailsSupervisorsOnInspection">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="SupervisorName" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="SupervisorName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_EmailsTeknazorsOnInspection">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="TeknazorName" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="TeknazorName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TeknazorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="InspectionNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Result">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="ResultId" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Inspection_Client_Response" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Table_Inspection_Client_Response" FromRole="Table_Inspection_Result" ToRole="Table_Inspection_Client_Response" />
+    <NavigationProperty Name="Table_Result" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Table_Result" FromRole="Table_Inspection_Result" ToRole="Table_Result" />
+    <NavigationProperty Name="Table_Inspection_Result_Docs" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Docs_Table_Inspection_Result" FromRole="Table_Inspection_Result" ToRole="Table_Inspection_Result_Docs" />
+  </EntityType>
+  <EntityType Name="Table_Result">
+    <Key>
+      <PropertyRef Name="ResultId" />
+    </Key>
+    <Property Name="ResultId" Type="Int32" Nullable="false" />
+    <Property Name="ResultName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Inspection_Result" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Table_Result" FromRole="Table_Result" ToRole="Table_Inspection_Result" />
+  </EntityType>
+  <EntityType Name="Table_Result_Docs">
+    <Key>
+      <PropertyRef Name="DocTypeId" />
+    </Key>
+    <Property Name="DocTypeId" Type="Int32" Nullable="false" />
+    <Property Name="DocType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Inspection_Result_Docs" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Docs_Table_Result_Docs" FromRole="Table_Result_Docs" ToRole="Table_Inspection_Result_Docs" />
+  </EntityType>
+  <Association Name="FK_Table_Inspection_Result_Table_Inspection_Client_Response">
+    <End Type="CodestInspectionModel.Table_Inspection_Client_Response" Role="Table_Inspection_Client_Response" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Result" Role="Table_Inspection_Result" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Client_Response">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Result_Table_Result">
+    <End Type="CodestInspectionModel.Table_Result" Role="Table_Result" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Result" Role="Table_Inspection_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Result">
+        <PropertyRef Name="ResultId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result">
+        <PropertyRef Name="ResultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Table_Inspection_Result_Docs">
+    <Key>
+      <PropertyRef Name="Inspection_Result_Docs_Id" />
+    </Key>
+    <Property Name="Inspection_Result_Docs_Id" Type="Int32" Nullable="false" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+    <Property Name="DocTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Inspection_Result" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Docs_Table_Inspection_Result" FromRole="Table_Inspection_Result_Docs" ToRole="Table_Inspection_Result" />
+    <NavigationProperty Name="Table_Inspection_Result_Docs_List" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Docs_List_Table_Inspection_Result_Docs" FromRole="Table_Inspection_Result_Docs" ToRole="Table_Inspection_Result_Docs_List" />
+    <NavigationProperty Name="Table_Result_Docs" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Docs_Table_Result_Docs" FromRole="Table_Inspection_Result_Docs" ToRole="Table_Result_Docs" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Result_Docs_List">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Inspection_Result_Docs_Id" Type="Int32" Nullable="false" />
+    <Property Name="File_Link" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Inspection_Result_Docs" Relationship="CodestInspectionModel.FK_Table_Inspection_Result_Docs_List_Table_Inspection_Result_Docs" FromRole="Table_Inspection_Result_Docs_List" ToRole="Table_Inspection_Result_Docs" />
+  </EntityType>
+  <Association Name="FK_Table_Inspection_Result_Docs_Table_Inspection_Result">
+    <End Type="CodestInspectionModel.Table_Inspection_Result" Role="Table_Inspection_Result" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Result_Docs" Role="Table_Inspection_Result_Docs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Result">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result_Docs">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Result_Docs_List_Table_Inspection_Result_Docs">
+    <End Type="CodestInspectionModel.Table_Inspection_Result_Docs" Role="Table_Inspection_Result_Docs" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Result_Docs_List" Role="Table_Inspection_Result_Docs_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Result_Docs">
+        <PropertyRef Name="Inspection_Result_Docs_Id" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result_Docs_List">
+        <PropertyRef Name="Inspection_Result_Docs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Result_Docs_Table_Result_Docs">
+    <End Type="CodestInspectionModel.Table_Result_Docs" Role="Table_Result_Docs" Multiplicity="1" />
+    <End Type="CodestInspectionModel.Table_Inspection_Result_Docs" Role="Table_Inspection_Result_Docs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Result_Docs">
+        <PropertyRef Name="DocTypeId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result_Docs">
+        <PropertyRef Name="DocTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_Result_Docs_Restricted">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="DocTypeId" />
+      <PropertyRef Name="DocType" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocTypeId" Type="Int32" Nullable="false" />
+    <Property Name="DocType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InspectionId" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

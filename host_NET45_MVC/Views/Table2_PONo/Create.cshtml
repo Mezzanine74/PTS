@@ -1,0 +1,138 @@
+﻿@model PTS_App_Code_VB_Project.PTS_MERCURY.db.Table2_PONo
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/PtsPO/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "PurchaseOrder", FormMethod.Post))
+{
+
+    @Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "FormPoCreate";
+    settings.ColCount = 3;
+
+    settings.Items.AddGroupItem(setting =>
+    {
+        setting.GroupBoxDecoration = GroupBoxDecoration.Box;
+        setting.Caption = "Project and Supplier";
+        setting.ColSpan = 3;
+        setting.ColCount = 2;
+
+        setting.Items.Add(m => m.Project_ID, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write(Html.Hidden("Project_ID").ToHtmlString());
+                ViewContext.Writer.Write("<div id=\"inputProjects\"></div>");
+            });
+
+        });
+
+        setting.Items.Add(m => m.SupplierID, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write(Html.Hidden("SupplierID").ToHtmlString());
+                ViewContext.Writer.Write("<div id=\"inputSuppliers\"></div>");
+            });
+
+        });
+
+    }
+    );
+
+    settings.Items.AddGroupItem(s =>
+    {
+        s.ColSpan = 3;
+        s.ColCount = 3;
+
+        s.Caption = "Other parameters";
+
+        s.Items.Add(i => i.Description, item =>
+        {
+            item.ColSpan = 3;
+            item.NestedExtension().Memo(m =>
+            {
+                m.ShowModelErrors = true;
+                m.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                m.Properties.ValidationSettings.Display = Display.Dynamic;
+                m.Height = System.Web.UI.WebControls.Unit.Pixel(100);
+                m.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+            });
+        });
+
+        s.Items.Add(i => i.PO_Date); s.Items.AddEmptyItem(); s.Items.AddEmptyItem();
+
+        s.Items.Add(i => i.CostCode); ; s.Items.AddEmptyItem(); s.Items.AddEmptyItem();
+
+        s.Items.Add(i => i.TotalPrice);
+
+        s.Items.Add(i => i.PO_Currency, item =>
+        {
+            item.NestedExtension().ComboBox(cb =>
+            {
+                cb.Properties.TextField = "Text";
+                cb.Properties.ValueField = "Value";
+                cb.Properties.ValueType = typeof(string);
+                cb.Properties.DataSource = ViewBag.CurrencyDll;
+            });
+        });
+
+        s.Items.Add(i => i.VATpercent);
+
+        s.Items.Add(i =>
+        {
+            i.Caption = "";
+            i.NestedExtension().Button(se =>
+            {
+                se.Name = "myname";
+                se.UseSubmitBehavior = true;
+                se.Text = "Create";
+            });
+        });
+
+    });
+
+}).GetHtml()
+
+}
+
+@section Scripts{
+
+    <script>
+       
+        $(function () {
+
+            $("#inputProjects").dxSelectBox({
+                dataSource: '/PtsPO/JSON/DDLProjectsPOCreate',
+                searchEnabled: true,
+                searchExpr: ['ProjectName'],
+                valueExpr: 'ProjectID',
+                displayExpr: 'ProjectName',
+                onItemClick: function (e) {
+                    $("#Project_ID").val(e.itemData.ProjectID)
+                    console.log(e.itemData.ProjectID);
+                }
+            });
+
+            $("#inputSuppliers").dxAutocomplete({
+                dataSource: '/PtsPO/JSON/DDLSupplierPOCreate',
+                searchEnabled: true,
+                searchExpr: ['SupplierName'],
+                valueExpr: 'SupplierName',
+                searchTimeout: 250,
+                placeholder: 'Type supplier name or INN',
+                onItemClick: function (e) {
+                    $("#SupplierID").val(e.itemData.SupplierID)
+                    console.log(e.itemData.SupplierID);
+                }
+
+            });
+
+        })
+    </script>
+}
+
+

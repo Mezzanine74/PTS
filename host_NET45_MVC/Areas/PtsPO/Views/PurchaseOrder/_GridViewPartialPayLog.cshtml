@@ -1,0 +1,173 @@
+@{
+    var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "GridViewPayLog";
+        settings.Width = 1500;
+        settings.CallbackRouteValues = new { Controller = "PurchaseOrder", Action = "GridViewPartialPayLog"};
+        settings.ClientSideEvents.BeginCallback = "function(s,e){onGridViewPayLogBeginCallback(s,e)}";
+
+        settings.KeyFieldName = "Id";
+
+        settings.Settings.ShowFilterRow = true;
+        settings.Settings.ShowHeaderFilterButton = true;
+
+        settings.SettingsPager.Mode = GridViewPagerMode.ShowAllRecords;
+
+        settings.SettingsLoadingPanel.Mode = GridViewLoadingPanelMode.ShowAsPopup;
+
+        settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.Off;
+        settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+        settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+        settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+        settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+        //PO_No
+        settings.Columns.Add(column => {
+            column.FieldName = "PO_No";
+            column.Width = 100;
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "Description";
+            column.Width = 300;
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "Invoice_No";
+            column.Width = 100;
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "Invoice_Date";
+            column.Width = 100;
+            column.PropertiesEdit.DisplayFormatString = "dd/MM/yyyy";
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "SupplierName";
+            column.Width = 150;
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "WithVAT";
+            column.Width = 100;
+            column.SetDataItemTemplateContent(sDataItem =>
+            {
+                GridViewDataItemTemplateContainer container = sDataItem as GridViewDataItemTemplateContainer;
+                Html.DevExpress().Label(lblSettings =>
+                {
+                    lblSettings.Properties.ClientInstanceName = string.Format("withVAT{0}", sDataItem.VisibleIndex);
+                    lblSettings.Name = string.Format("WithVAT{0}", sDataItem.VisibleIndex);
+                    lblSettings.Text = DataBinder.Eval(sDataItem.DataItem, sDataItem.Column.FieldName).ToString();
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.Caption = "";
+            column.Width = 40;
+            column.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().Button(b =>
+                {
+                    var visibleIndex = c.VisibleIndex;
+                    b.Name = "Button" + c.VisibleIndex;
+                    b.Text = " > ";
+                    b.ClientSideEvents.Click = string.Format(" function(s,e){{ btnMoveClick(s, e, '{0}') }}",visibleIndex);
+                }).GetHtml();
+            });
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.Caption = "Payment Value";
+            column.Width = 100;
+            column.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().TextBox(b =>
+                {
+                    b.Width = 100;
+                    var visibleIndex = c.VisibleIndex;
+                    b.Name = "TextBoxPayment" + c.VisibleIndex;
+                    b.Properties.ClientSideEvents.TextChanged = string.Format("function(s, e) {{paymentTextChanged(s, e, '{0}') }}", visibleIndex);
+                    b.Properties.ClientSideEvents.GotFocus = string.Format("function(s, e) {{paymentGotFocus(s, e, '{0}') }}", visibleIndex);
+                }).GetHtml();
+
+            });
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.Caption = "Finance No";
+            column.Width = 50;
+
+            column.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().TextBox(b =>
+                {
+                    var visibleIndex = c.VisibleIndex;
+                    b.Name = "TextBoxFinance" + c.VisibleIndex;
+                    b.Width = 50;
+                    b.Properties.ClientSideEvents.TextChanged = string.Format( " function(s,e) {{financeTextChanged(s, e, '{0}')}}", visibleIndex);
+                    b.Properties.ClientSideEvents.GotFocus = string.Format(" function(s,e) {{financeGotFocus(s, e, '{0}')}}", visibleIndex);
+                }).GetHtml();
+            });
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.Caption = "";
+            column.Width = 50;
+            column.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().Button(b =>
+                {
+                    var visibleIndex = c.VisibleIndex;
+                    b.Name = "btnPayRow" + c.VisibleIndex;
+                    b.Text = " Pay Me ";
+                    b.ClientSideEvents.Click = string.Format(" function(s,e){{ btnPayRowClick(s, e, '{0}') }}", visibleIndex);
+                }).GetHtml();
+            });
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "RubbleDollar";
+            column.Width = 50;
+            column.SetDataItemTemplateContent(sDataItem =>
+            {
+                GridViewDataItemTemplateContainer container = sDataItem as GridViewDataItemTemplateContainer;
+                Html.DevExpress().TextBox(txtSettings =>
+                {
+                    txtSettings.Width = 50;
+                    txtSettings.Name = string.Format("txtRubbleDollar_{0}", sDataItem.VisibleIndex);
+                    txtSettings.Text = DataBinder.Eval(sDataItem.DataItem, sDataItem.Column.FieldName).ToString();
+                    txtSettings.Properties.ClientSideEvents.GotFocus = string.Format("function(s, e) {{dollarGotFocus(s, e, '{0}'); }}", sDataItem.VisibleIndex);
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "RubbleEuro";
+            column.Width = 50;
+            column.SetDataItemTemplateContent(sDataItem =>
+            {
+                GridViewDataItemTemplateContainer container = sDataItem as GridViewDataItemTemplateContainer;
+                Html.DevExpress().TextBox(txtSettings =>
+                {
+                    txtSettings.Width = 50;
+                    txtSettings.Name = string.Format("txtRubbleEuro_{0}", sDataItem.VisibleIndex);
+                    txtSettings.Text = DataBinder.Eval(sDataItem.DataItem, sDataItem.Column.FieldName).ToString();
+                    txtSettings.Properties.ClientSideEvents.GotFocus = string.Format("function(s, e) {{euroGotFocus(s, e, '{0}'); }}", sDataItem.VisibleIndex);
+                }).Render();
+            });
+        });
+
+    });
+}
+@grid.Bind(Model).GetHtml()

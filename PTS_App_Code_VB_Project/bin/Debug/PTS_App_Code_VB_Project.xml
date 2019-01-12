@@ -1,0 +1,1561 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PTS_App_Code_VB_Project
+</name>
+</assembly>
+<members>
+<member name="T:PTS_App_Code_VB_Project.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:PTS_App_Code_VB_Project.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:PTS_App_Code_VB_Project.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrix">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrix.Table_Approval_UserRolePrjectJunctionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrix.Table_Approval_UserRolePrjectJunctionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrix.Table_Approval_UserRolePrjectJunctionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixTableAdapters.Table_Approval_UserRolePrjectJunctionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixTableAdapters.QueriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_UserPositionPrjJunctionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_PositionEmployeeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_ContractControlExceptionalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_PersonRequestPoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_Scn_Prj_UsersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_ScenarioDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_UserRolePrjectJunctionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_ProjectDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_UserPositionPrjJunctionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_PositionEmployeeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_ContractControlExceptionalRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_PersonRequestPoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_Scn_Prj_UsersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_ScenarioRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_UserRolePrjectJunctionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_ProjectRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_UserPositionPrjJunctionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_PositionEmployeeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_ContractControlExceptionalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_PersonRequestPoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_Scn_Prj_UsersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_ScenarioRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_Approval_UserRolePrjectJunctionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsers.Table_ProjectRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsersTableAdapters.Table_Approval_UserPositionPrjJunctionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsersTableAdapters.Table_Approval_PositionEmployeeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsersTableAdapters.Table_ContractControlExceptionalTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsersTableAdapters.Table_PersonRequestPoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsersTableAdapters.Table_Approval_Scn_Prj_UsersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsersTableAdapters.Table_Approval_ScenarioTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsersTableAdapters.Table_Approval_UserRolePrjectJunctionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ApprovalMatrixManageUsersTableAdapters.Table_ProjectTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLog">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLog.Table_ErrorLogDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLog.Table_ApprMatrixPerformanceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLog.Table_ErrorLogRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLog.Table_ApprMatrixPerformanceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLog.Table_ErrorLogRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLog.Table_ApprMatrixPerformanceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLogTableAdapters.Table_ErrorLogTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ErrorLogTableAdapters.Table_ApprMatrixPerformanceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDF">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDF.Table3_Invoice_PDFDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDF.PayReqEmailBodyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDF.Table3_Invoice_PDFRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDF.PayReqEmailBodyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDF.Table3_Invoice_PDFRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDF.PayReqEmailBodyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDFTableAdapters.Table3_Invoice_PDFTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDFTableAdapters.PayReqEmailBodyTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.InvoicePDFTableAdapters.QueriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_DepartmentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmplyRankDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_PositionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_DivisionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmployeeJunctionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.aspnet_UsersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_InjectionFromExcelDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.aspnet_MembershipDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_PaidOrUnpaidDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_TypeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_HRCommentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_ApprvCommentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_RequestDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_ApprvMxDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmplyCommentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.SP_EmployeePositionDetailsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_DepartmentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmplyRankRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_PositionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_DivisionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmployeeJunctionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.aspnet_UsersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_InjectionFromExcelRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.aspnet_MembershipRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_PaidOrUnpaidRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_TypeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_HRCommentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_ApprvCommentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_RequestRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_ApprvMxRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmplyCommentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.SP_EmployeePositionDetailsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_DepartmentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmplyRankRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_PositionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_DivisionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmployeeJunctionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.aspnet_UsersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_InjectionFromExcelRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.aspnet_MembershipRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_PaidOrUnpaidRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_TypeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_HRCommentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_ApprvCommentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_RequestRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_ApprvMxRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.Table_EmplyCommentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Vacation.SP_EmployeePositionDetailsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_DepartmentTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_EmplyRankTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_PositionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_DivisionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_EmployeeJunctionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.aspnet_UsersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_InjectionFromExcelTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.aspnet_MembershipTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_PaidOrUnpaidTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_TypeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_HRCommentTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_ApprvCommentTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_RequestTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_ApprvMxTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.Table_EmplyCommentTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.SP_EmployeePositionDetailsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.VacationTableAdapters.CommonQueriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_InvoiceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_PaymentsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_FxRateTypeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_DocumentTypeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_AccountsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_DocumentsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionPrjNameDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionClientNameDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.DataTableDocsIDForDDLDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.DataTableInvoiceIDForDDLDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_Contract_ProjectIDforClientDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ContractsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_AddendumsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_InvoiceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_PaymentsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_FxRateTypeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_DocumentTypeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_AccountsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_DocumentsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionPrjNameRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionClientNameRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.DataTableDocsIDForDDLRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.DataTableInvoiceIDForDDLRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_Contract_ProjectIDforClientRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ContractsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_AddendumsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_InvoiceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_PaymentsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_FxRateTypeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_DocumentTypeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_AccountsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_DocumentsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionPrjNameRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ProjectClientJunctionClientNameRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.DataTableDocsIDForDDLRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.DataTableInvoiceIDForDDLRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_Contract_ProjectIDforClientRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_ContractsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Certification.Table_AddendumsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_InvoiceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_PaymentsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_FxRateTypeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_DocumentTypeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_AccountsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_DocumentsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_ProjectClientJunctionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_ProjectClientJunctionPrjNameAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_ProjectClientJunctionClientNameAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.DataTableDocsIDForDDLTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.DataTableInvoiceIDForDDLTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_Contract_ProjectIDforClientTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_ContractsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.Table_AddendumsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.CertificationTableAdapters.QueriesTableAdapterTotalSums">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeed">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeed.Table8_ExchangeRatesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeed.Table9_DateDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeed.Table8_ExchangeRatesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeed.Table9_DateRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeed.Table8_ExchangeRatesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeed.Table9_DateRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeedTableAdapters.Table8_ExchangeRatesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.ExchangeRatesFeedTableAdapters.Table9_DateTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Delivery">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Delivery.Table_Delivery_MatchingIndexesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Delivery.Table_Delivery_MatchingIndexesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Delivery.Table_Delivery_MatchingIndexesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.DeliveryTableAdapters.Table_Delivery_MatchingIndexesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.PackingListTodayDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PayReq_UsersApprvDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTable_PaymentApprovalPersonsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Contracts_UserRemarksDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Addendum_UserRemarksDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PayReq_UsersPayRequestDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PaymentRequestersCurrentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table2_PONoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ValidateInvoiceValueAgainstContractAdvanceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.NameOfLeadLawyerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Payments_1SDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.View_Payments_PTS_1SDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ContractMissingNominatedConfirmationDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTableFixRatesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.SP_FixRateSubReportDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.View_Payments_PTS_1S_SumDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Contract_BrkdwnDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTableSerachContractDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table6_SupplierDetailsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_UserFaceBoookResponseDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_SearchHistoryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ViewPONoNextDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table6_SupplierDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table1_ProjectInsurCertfDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table1_InsurPolicyDocsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table3_Invoice_PRrequestToPMDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.PackingListTodayRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PayReq_UsersApprvRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTable_PaymentApprovalPersonsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Contracts_UserRemarksRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Addendum_UserRemarksRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PayReq_UsersPayRequestRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PaymentRequestersCurrentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table2_PONoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ValidateInvoiceValueAgainstContractAdvanceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.NameOfLeadLawyerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Payments_1SRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.View_Payments_PTS_1SRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ContractMissingNominatedConfirmationRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTableFixRatesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.SP_FixRateSubReportRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.View_Payments_PTS_1S_SumRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Contract_BrkdwnRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTableSerachContractRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table6_SupplierDetailsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_UserFaceBoookResponseRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_SearchHistoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ViewPONoNextRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table6_SupplierRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table1_ProjectInsurCertfRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table1_InsurPolicyDocsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table3_Invoice_PRrequestToPMRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.PackingListTodayRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PayReq_UsersApprvRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTable_PaymentApprovalPersonsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Contracts_UserRemarksRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Addendum_UserRemarksRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PayReq_UsersPayRequestRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_PaymentRequestersCurrentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table2_PONoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ValidateInvoiceValueAgainstContractAdvanceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.NameOfLeadLawyerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Payments_1SRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.View_Payments_PTS_1SRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ContractMissingNominatedConfirmationRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTableFixRatesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.SP_FixRateSubReportRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.View_Payments_PTS_1S_SumRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_Contract_BrkdwnRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.DataTableSerachContractRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table6_SupplierDetailsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_UserFaceBoookResponseRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table_SearchHistoryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.ViewPONoNextRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table6_SupplierRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table1_ProjectInsurCertfRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table1_InsurPolicyDocsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.Mercury.Table3_Invoice_PRrequestToPMRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.PackingListTodayTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_PayReq_UsersApprvTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.DataTable_PaymentApprovalPersonsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_Contracts_UserRemarksTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_Addendum_UserRemarksTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_PayReq_UsersPayRequestTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_PaymentRequestersCurrentTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table2_PONoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.ValidateInvoiceValueAgainstContractAdvanceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.NameOfLeadLawyerTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_Payments_1STableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.PaymentsPTS_1S_Comparison_TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.ContractMissingNominatedConfirmationTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.DataTableFixRatesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.SP_FixRateSubReportTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.View_Payments_PTS_1S_SumTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_Contract_BrkdwnTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.DataTableSerachContractTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table6_SupplierDetailsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_UserFaceBoookResponseTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table_SearchHistoryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.ViewPONoNextTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table6_SupplierTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table1_ProjectInsurCertfTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table1_InsurPolicyDocsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.Table3_Invoice_PRrequestToPMTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.MercuryTableAdapters.QueriesTableAdapterCommon">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.SQL2008_794282_mercuryDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.SQL2008_794282_mercuryDataSet.Table2_PONoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.SQL2008_794282_mercuryDataSet.Table2_PONoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.SQL2008_794282_mercuryDataSet.Table2_PONoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PTS_App_Code_VB_Project.SQL2008_794282_mercuryDataSetTableAdapters.Table2_PONoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VisitorsLogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Table_VisitorLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="30" />
+    <Property Name="PageName" Type="nchar" MaxLength="200" />
+    <Property Name="VisitTime" Type="smalldatetime" />
+    <Property Name="IpAdress" Type="nchar" MaxLength="20" />
+    <Property Name="Country" Type="nchar" MaxLength="50" />
+    <Property Name="BrowserType" Type="nchar" MaxLength="30" />
+    <Property Name="BrowserPlatform" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="VisitorsLogModelStoreContainer">
+    <EntitySet Name="Table_VisitorLogs" EntityType="Self.Table_VisitorLogs" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

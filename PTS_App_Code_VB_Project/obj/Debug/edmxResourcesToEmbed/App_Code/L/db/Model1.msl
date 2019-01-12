@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="aspnetdbModelStoreContainer" CdmEntityContainer="aspnetdbEntities">
+    <EntitySetMapping Name="Table1_Isim">
+      <EntityTypeMapping TypeName="aspnetdbModel.Table1_Isim">
+        <MappingFragment StoreEntitySet="Table1_Isim">
+          <ScalarProperty Name="ShowInReport" ColumnName="ShowInReport" />
+          <ScalarProperty Name="InternetUrl" ColumnName="InternetUrl" />
+          <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+          <ScalarProperty Name="Yakinlik" ColumnName="Yakinlik" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Yas" ColumnName="Yas" />
+          <ScalarProperty Name="Rumuz" ColumnName="Rumuz" />
+          <ScalarProperty Name="IsimId" ColumnName="IsimId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table2_Tanisma">
+      <EntityTypeMapping TypeName="aspnetdbModel.Table2_Tanisma">
+        <MappingFragment StoreEntitySet="Table2_Tanisma">
+          <ScalarProperty Name="Nasil" ColumnName="Nasil" />
+          <ScalarProperty Name="NeZaman" ColumnName="NeZaman" />
+          <ScalarProperty Name="IsimId" ColumnName="IsimId" />
+          <ScalarProperty Name="TanismaId" ColumnName="TanismaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table4_BulusmaPlani">
+      <EntityTypeMapping TypeName="aspnetdbModel.Table4_BulusmaPlani">
+        <MappingFragment StoreEntitySet="Table4_BulusmaPlani">
+          <ScalarProperty Name="Hedef" ColumnName="Hedef" />
+          <ScalarProperty Name="Butce" ColumnName="Butce" />
+          <ScalarProperty Name="NeZaman" ColumnName="NeZaman" />
+          <ScalarProperty Name="IsimId" ColumnName="IsimId" />
+          <ScalarProperty Name="BulusmaPlanId" ColumnName="BulusmaPlanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table5_Iletisim">
+      <EntityTypeMapping TypeName="aspnetdbModel.Table5_Iletisim">
+        <MappingFragment StoreEntitySet="Table5_Iletisim">
+          <ScalarProperty Name="NeZaman" ColumnName="NeZaman" />
+          <ScalarProperty Name="IsimId" ColumnName="IsimId" />
+          <ScalarProperty Name="IletisimID" ColumnName="IletisimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table6_neticeTipi">
+      <EntityTypeMapping TypeName="aspnetdbModel.Table6_neticeTipi">
+        <MappingFragment StoreEntitySet="Table6_neticeTipi">
+          <ScalarProperty Name="netice_tipi" ColumnName="netice_tipi" />
+          <ScalarProperty Name="id_neticeTipi" ColumnName="id_neticeTipi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Isim">
+      <EntityTypeMapping TypeName="aspnetdbModel.View_Isim">
+        <MappingFragment StoreEntitySet="View_Isim">
+          <ScalarProperty Name="LastMeetingNetice" ColumnName="LastMeetingNetice" />
+          <ScalarProperty Name="LastLove" ColumnName="LastLove" />
+          <ScalarProperty Name="LastBulusma" ColumnName="LastBulusma" />
+          <ScalarProperty Name="LastContact" ColumnName="LastContact" />
+          <ScalarProperty Name="ShowInReport" ColumnName="ShowInReport" />
+          <ScalarProperty Name="ResimURL" ColumnName="ResimURL" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Yas" ColumnName="Yas" />
+          <ScalarProperty Name="Isim" ColumnName="Isim" />
+          <ScalarProperty Name="IsimId" ColumnName="IsimId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table3_BulusmaDetaylari">
+      <EntityTypeMapping TypeName="aspnetdbModel.Table3_BulusmaDetaylari">
+        <MappingFragment StoreEntitySet="Table3_BulusmaDetaylari">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="id_netice" ColumnName="id_netice" />
+          <ScalarProperty Name="HarcananRuble" ColumnName="HarcananRuble" />
+          <ScalarProperty Name="Nerede" ColumnName="Nerede" />
+          <ScalarProperty Name="NeZaman" ColumnName="NeZaman" />
+          <ScalarProperty Name="IsimId" ColumnName="IsimId" />
+          <ScalarProperty Name="BulusmaPlanId" ColumnName="BulusmaPlanId" />
+          <ScalarProperty Name="BulusmaId" ColumnName="BulusmaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Report1">
+      <EntityTypeMapping TypeName="aspnetdbModel.View_Report1">
+        <MappingFragment StoreEntitySet="View_Report1">
+          <ScalarProperty Name="netice_tipi" ColumnName="netice_tipi" />
+          <ScalarProperty Name="DayBefore" ColumnName="DayBefore" />
+          <ScalarProperty Name="NeZaman" ColumnName="NeZaman" />
+          <ScalarProperty Name="ResimURL" ColumnName="ResimURL" />
+          <ScalarProperty Name="IsimId" ColumnName="IsimId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_HicBulusmamisIlkIletisimGunOnce">
+      <EntityTypeMapping TypeName="aspnetdbModel.View_HicBulusmamisIlkIletisimGunOnce">
+        <MappingFragment StoreEntitySet="View_HicBulusmamisIlkIletisimGunOnce">
+          <ScalarProperty Name="iletisim_frekans" ColumnName="iletisim_frekans" />
+          <ScalarProperty Name="GunOnce" ColumnName="GunOnce" />
+          <ScalarProperty Name="Rumuz" ColumnName="Rumuz" />
+          <ScalarProperty Name="IsimId" ColumnName="IsimId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

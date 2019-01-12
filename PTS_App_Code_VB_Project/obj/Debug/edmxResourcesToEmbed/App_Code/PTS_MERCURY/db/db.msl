@@ -1,0 +1,1398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SQL2008_794282_mercuryModelStoreContainer" CdmEntityContainer="SQL2008_794282_mercuryEntities">
+    <FunctionImportMapping FunctionImportName="GetPoNoFromMakerNewGeneration" FunctionName="SQL2008_794282_mercuryModel.Store.GetPoNoFromMakerNewGeneration" />
+    <EntitySetMapping Name="aspnet_Membership">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.aspnet_Membership">
+        <MappingFragment StoreEntitySet="aspnet_Membership">
+          <ScalarProperty Name="password_text" ColumnName="password_text" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Roles">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.aspnet_Roles">
+        <MappingFragment StoreEntitySet="aspnet_Roles">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Users">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.aspnet_Users">
+        <MappingFragment StoreEntitySet="aspnet_Users">
+          <ScalarProperty Name="SendNotificationInsuranceUpdate" ColumnName="SendNotificationInsuranceUpdate" />
+          <ScalarProperty Name="AuthorizedForPaymentRequest" ColumnName="AuthorizedForPaymentRequest" />
+          <ScalarProperty Name="AuthorizedForExceptionalApprove" ColumnName="AuthorizedForExceptionalApprove" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="ContractGirlApprovalEmail" ColumnName="ContractGirlApprovalEmail" />
+          <ScalarProperty Name="ApproveFramePo" ColumnName="ApproveFramePo" />
+          <ScalarProperty Name="PasswordKnown" ColumnName="PasswordKnown" />
+          <ScalarProperty Name="SendInvitation" ColumnName="SendInvitation" />
+          <ScalarProperty Name="Vote_Time" ColumnName="Vote_Time" />
+          <ScalarProperty Name="Vote_Xmas" ColumnName="Vote_Xmas" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="SendEmailClientContracts" ColumnName="SendEmailClientContracts" />
+          <ScalarProperty Name="SendEmailPaymentsSinceJan" ColumnName="SendEmailPaymentsSinceJan" />
+          <ScalarProperty Name="SendEmailPendingFollow" ColumnName="SendEmailPendingFollow" />
+          <ScalarProperty Name="SendEmailWeeklyProjectSummary" ColumnName="SendEmailWeeklyProjectSummary" />
+          <ScalarProperty Name="SendEmailDailyReport" ColumnName="SendEmailDailyReport" />
+          <ScalarProperty Name="SendEmailPayments" ColumnName="SendEmailPayments" />
+          <ScalarProperty Name="SendEmailContract" ColumnName="SendEmailContract" />
+          <ScalarProperty Name="SendEmailApproval" ColumnName="SendEmailApproval" />
+          <ScalarProperty Name="SendEmailPaymentReq" ColumnName="SendEmailPaymentReq" />
+          <ScalarProperty Name="AccessToAllProjects" ColumnName="AccessToAllProjects" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_UsersInRoles">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.aspnet_UsersInRoles">
+        <MappingFragment StoreEntitySet="aspnet_UsersInRoles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Addendum_UserRemarks">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Addendum_UserRemarks">
+        <MappingFragment StoreEntitySet="Table_Addendum_UserRemarks">
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AddendumID" ColumnName="AddendumID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Addendums_ClientAdditional">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Addendums_ClientAdditional">
+        <MappingFragment StoreEntitySet="Table_Addendums_ClientAdditional">
+          <ScalarProperty Name="AktOfWorkWhen" ColumnName="AktOfWorkWhen" />
+          <ScalarProperty Name="LinkToAktOfWork" ColumnName="LinkToAktOfWork" />
+          <ScalarProperty Name="AktOfWork" ColumnName="AktOfWork" />
+          <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+          <ScalarProperty Name="AddendumID" ColumnName="AddendumID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Approval_PositionEmployee">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Approval_PositionEmployee">
+        <MappingFragment StoreEntitySet="Table_Approval_PositionEmployee">
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Approval_Scenario">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Approval_Scenario">
+        <MappingFragment StoreEntitySet="Table_Approval_Scenario">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Scenario" ColumnName="Scenario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Approval_Scn_Prj_Users">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Approval_Scn_Prj_Users">
+        <MappingFragment StoreEntitySet="Table_Approval_Scn_Prj_Users">
+          <ScalarProperty Name="ToleratedDay" ColumnName="ToleratedDay" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Scenario" ColumnName="Scenario" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Approval_UserPositionPrjJunction">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Approval_UserPositionPrjJunction">
+        <MappingFragment StoreEntitySet="Table_Approval_UserPositionPrjJunction">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Approval_UserRolePrjectJunction">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Approval_UserRolePrjectJunction">
+        <MappingFragment StoreEntitySet="Table_Approval_UserRolePrjectJunction">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_ApprUserExcpAccessToActiveUsers">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_ApprUserExcpAccessToActiveUsers">
+        <MappingFragment StoreEntitySet="Table_ApprUserExcpAccessToActiveUsers">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contract_Addendum_TimeLimitApprovals">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contract_Addendum_TimeLimitApprovals">
+        <MappingFragment StoreEntitySet="Table_Contract_Addendum_TimeLimitApprovals">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ActionTime" ColumnName="ActionTime" />
+          <ScalarProperty Name="AddendumId" ColumnName="AddendumId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contract_CommentsRead">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contract_CommentsRead">
+        <MappingFragment StoreEntitySet="Table_Contract_CommentsRead">
+          <ScalarProperty Name="WhenRead" ColumnName="WhenRead" />
+          <ScalarProperty Name="ReadWho" ColumnName="ReadWho" />
+          <ScalarProperty Name="FromWho" ColumnName="FromWho" />
+          <ScalarProperty Name="id_comment" ColumnName="id_comment" />
+          <ScalarProperty Name="C_Or_A" ColumnName="C_Or_A" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contract_ProjectIDforClient">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contract_ProjectIDforClient">
+        <MappingFragment StoreEntitySet="Table_Contract_ProjectIDforClient">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_ContractControlExceptional">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_ContractControlExceptional">
+        <MappingFragment StoreEntitySet="Table_ContractControlExceptional">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contracts_ClientAdditional">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contracts_ClientAdditional">
+        <MappingFragment StoreEntitySet="Table_Contracts_ClientAdditional">
+          <ScalarProperty Name="AktOfWorkWhen" ColumnName="AktOfWorkWhen" />
+          <ScalarProperty Name="LinkToAktOfWork" ColumnName="LinkToAktOfWork" />
+          <ScalarProperty Name="AktOfWork" ColumnName="AktOfWork" />
+          <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contracts_UserRemarks">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contracts_UserRemarks">
+        <MappingFragment StoreEntitySet="Table_Contracts_UserRemarks">
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Delivery_MatchingIndexes">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Delivery_MatchingIndexes">
+        <MappingFragment StoreEntitySet="Table_Delivery_MatchingIndexes">
+          <ScalarProperty Name="Index_PTS_Or_1S" ColumnName="Index_PTS_Or_1S" />
+          <ScalarProperty Name="PTS_Or_1S" ColumnName="PTS_Or_1S" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_PaymentRequest_OverHeadCheck">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_PaymentRequest_OverHeadCheck">
+        <MappingFragment StoreEntitySet="Table_PaymentRequest_OverHeadCheck">
+          <ScalarProperty Name="WhenChecked" ColumnName="WhenChecked" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="WhoChecked" ColumnName="WhoChecked" />
+          <ScalarProperty Name="PayReqNo" ColumnName="PayReqNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_PO_Akt">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_PO_Akt">
+        <MappingFragment StoreEntitySet="Table_PO_Akt">
+          <ScalarProperty Name="PDF" ColumnName="PDF" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="payreqno" ColumnName="payreqno" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SF" ColumnName="SF" />
+          <ScalarProperty Name="Akt_Rub_WithVAT" ColumnName="Akt_Rub_WithVAT" />
+          <ScalarProperty Name="Akt_Date" ColumnName="Akt_Date" />
+          <ScalarProperty Name="AktNo" ColumnName="AktNo" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+          <ScalarProperty Name="ID_Akt" ColumnName="ID_Akt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_PO_Akt_To_Nak">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_PO_Akt_To_Nak">
+        <MappingFragment StoreEntitySet="Table_PO_Akt_To_Nak">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="payreqno" ColumnName="payreqno" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Akt_Rub_WithVAT" ColumnName="Akt_Rub_WithVAT" />
+          <ScalarProperty Name="Akt_Date" ColumnName="Akt_Date" />
+          <ScalarProperty Name="AktNo" ColumnName="AktNo" />
+          <ScalarProperty Name="ID_Nak" ColumnName="ID_Nak" />
+          <ScalarProperty Name="ID_Akt_To_Nak" ColumnName="ID_Akt_To_Nak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_PO_Nakladnaya">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_PO_Nakladnaya">
+        <MappingFragment StoreEntitySet="Table_PO_Nakladnaya">
+          <ScalarProperty Name="PDF" ColumnName="PDF" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="payreqno" ColumnName="payreqno" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SF" ColumnName="SF" />
+          <ScalarProperty Name="Nak_Rub_WithVAT" ColumnName="Nak_Rub_WithVAT" />
+          <ScalarProperty Name="Nak_Date" ColumnName="Nak_Date" />
+          <ScalarProperty Name="NakNo" ColumnName="NakNo" />
+          <ScalarProperty Name="Inv_ContrNo" ColumnName="Inv_ContrNo" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+          <ScalarProperty Name="ID_Nak" ColumnName="ID_Nak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Survey_OfficeParty">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Survey_OfficeParty">
+        <MappingFragment StoreEntitySet="Table_Survey_OfficeParty">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="MoneyCanAfford" ColumnName="MoneyCanAfford" />
+          <ScalarProperty Name="LastLogIn" ColumnName="LastLogIn" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name_Surname_Russian" ColumnName="Name_Surname_Russian" />
+          <ScalarProperty Name="Name_Surname" ColumnName="Name_Surname" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_UserPhotos">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_UserPhotos">
+        <MappingFragment StoreEntitySet="Table_UserPhotos">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table1_ProjectInsurCertf">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table1_ProjectInsurCertf">
+        <MappingFragment StoreEntitySet="Table1_ProjectInsurCertf">
+          <ScalarProperty Name="DocumentReference" ColumnName="DocumentReference" />
+          <ScalarProperty Name="InsuranceFinish" ColumnName="InsuranceFinish" />
+          <ScalarProperty Name="InsuranceStart" ColumnName="InsuranceStart" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table3_Invoice">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table3_Invoice">
+        <MappingFragment StoreEntitySet="Table3_Invoice">
+          <ScalarProperty Name="Scenario" ColumnName="Scenario" />
+          <ScalarProperty Name="ContractReference" ColumnName="ContractReference" />
+          <ScalarProperty Name="FromAccess" ColumnName="FromAccess" />
+          <ScalarProperty Name="PersonDeleted" ColumnName="PersonDeleted" />
+          <ScalarProperty Name="PersonUpdated" ColumnName="PersonUpdated" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="DeadlineToPay" ColumnName="DeadlineToPay" />
+          <ScalarProperty Name="InvoiceValue" ColumnName="InvoiceValue" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+          <ScalarProperty Name="Invoice_Date" ColumnName="Invoice_Date" />
+          <ScalarProperty Name="Invoice_No" ColumnName="Invoice_No" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table3_Invoice_AdditionalApprovalProjectUserMatrix">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table3_Invoice_AdditionalApprovalProjectUserMatrix">
+        <MappingFragment StoreEntitySet="Table3_Invoice_AdditionalApprovalProjectUserMatrix">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table3_Invoice_AdditionalUserApprovals">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table3_Invoice_AdditionalUserApprovals">
+        <MappingFragment StoreEntitySet="Table3_Invoice_AdditionalUserApprovals">
+          <ScalarProperty Name="WhenApproved" ColumnName="WhenApproved" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table3_Invoice_PDF">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table3_Invoice_PDF">
+        <MappingFragment StoreEntitySet="Table3_Invoice_PDF">
+          <ScalarProperty Name="LinkPDF" ColumnName="LinkPDF" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table3_Invoice_PRrequestToPM">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table3_Invoice_PRrequestToPM">
+        <MappingFragment StoreEntitySet="Table3_Invoice_PRrequestToPM">
+          <ScalarProperty Name="PayReqDate" ColumnName="PayReqDate" />
+          <ScalarProperty Name="WhoApproved" ColumnName="WhoApproved" />
+          <ScalarProperty Name="WhenApproved" ColumnName="WhenApproved" />
+          <ScalarProperty Name="ApprovedOrNot" ColumnName="ApprovedOrNot" />
+          <ScalarProperty Name="WhoRequested" ColumnName="WhoRequested" />
+          <ScalarProperty Name="SiteReqNo" ColumnName="SiteReqNo" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table4_PaymentRequest">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table4_PaymentRequest">
+        <MappingFragment StoreEntitySet="Table4_PaymentRequest">
+          <ScalarProperty Name="PrintPDF" ColumnName="PrintPDF" />
+          <ScalarProperty Name="ApproveNewGen" ColumnName="ApproveNewGen" />
+          <ScalarProperty Name="ToList" ColumnName="ToList" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="ContractReference" ColumnName="ContractReference" />
+          <ScalarProperty Name="Transport" ColumnName="Transport" />
+          <ScalarProperty Name="PersonResponsibleID" ColumnName="PersonResponsibleID" />
+          <ScalarProperty Name="AttachmentExist" ColumnName="AttachmentExist" />
+          <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+          <ScalarProperty Name="PersonChangedAttachment" ColumnName="PersonChangedAttachment" />
+          <ScalarProperty Name="AttachmentChangeWhen" ColumnName="AttachmentChangeWhen" />
+          <ScalarProperty Name="AttachmentChange" ColumnName="AttachmentChange" />
+          <ScalarProperty Name="FromAccess" ColumnName="FromAccess" />
+          <ScalarProperty Name="PersonDeleted" ColumnName="PersonDeleted" />
+          <ScalarProperty Name="PersonUpdated" ColumnName="PersonUpdated" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastAction" ColumnName="LastAction" />
+          <ScalarProperty Name="PersonApprove" ColumnName="PersonApprove" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="Urgency" ColumnName="Urgency" />
+          <ScalarProperty Name="LinkToInvoice" ColumnName="LinkToInvoice" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="PayReqDate" ColumnName="PayReqDate" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+          <ScalarProperty Name="SiteRecordNo" ColumnName="SiteRecordNo" />
+          <ScalarProperty Name="PayReqNo" ColumnName="PayReqNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table5_PayLog">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table5_PayLog">
+        <MappingFragment StoreEntitySet="Table5_PayLog">
+          <ScalarProperty Name="FromAccess" ColumnName="FromAccess" />
+          <ScalarProperty Name="CollectionHistory" ColumnName="CollectionHistory" />
+          <ScalarProperty Name="CollectedValue" ColumnName="CollectedValue" />
+          <ScalarProperty Name="GetCollection" ColumnName="GetCollection" />
+          <ScalarProperty Name="StatusNote" ColumnName="StatusNote" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Nak_Akt_Notes" ColumnName="Nak_Akt_Notes" />
+          <ScalarProperty Name="Var1Required" ColumnName="Var1Required" />
+          <ScalarProperty Name="ShotFaktura_EnteredWhen" ColumnName="ShotFaktura_EnteredWhen" />
+          <ScalarProperty Name="ShotFaktura" ColumnName="ShotFaktura" />
+          <ScalarProperty Name="Akt_EnteredWhen" ColumnName="Akt_EnteredWhen" />
+          <ScalarProperty Name="Akt" ColumnName="Akt" />
+          <ScalarProperty Name="Nakladnaya_EnteredWhen" ColumnName="Nakladnaya_EnteredWhen" />
+          <ScalarProperty Name="Nakladnaya" ColumnName="Nakladnaya" />
+          <ScalarProperty Name="PersonDeleted" ColumnName="PersonDeleted" />
+          <ScalarProperty Name="PersonUpdated" ColumnName="PersonUpdated" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="RubbleEuro" ColumnName="RubbleEuro" />
+          <ScalarProperty Name="RubbleDollar" ColumnName="RubbleDollar" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="FinanceNo" ColumnName="FinanceNo" />
+          <ScalarProperty Name="PayReqNo" ColumnName="PayReqNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table6_Supplier">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table6_Supplier">
+        <MappingFragment StoreEntitySet="Table6_Supplier">
+          <ScalarProperty Name="SupplierNameEng" ColumnName="SupplierNameEng" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="PaymentTerms" ColumnName="PaymentTerms" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="FromAccess" ColumnName="FromAccess" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="VAT_Free" ColumnName="VAT_Free" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="WebAdress" ColumnName="WebAdress" />
+          <ScalarProperty Name="FaxNumber2" ColumnName="FaxNumber2" />
+          <ScalarProperty Name="FaxNumber1" ColumnName="FaxNumber1" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contract_Offers">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contract_Offers">
+        <MappingFragment StoreEntitySet="Table_Contract_Offers">
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="OfferValueWithVAT" ColumnName="OfferValueWithVAT" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contract_User_Junction">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contract_User_Junction">
+        <MappingFragment StoreEntitySet="Table_Contract_User_Junction">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contracts_Common">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contracts_Common">
+        <MappingFragment StoreEntitySet="Table_Contracts_Common">
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table1_InsurPolicyDocs">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table1_InsurPolicyDocs">
+        <MappingFragment StoreEntitySet="Table1_InsurPolicyDocs">
+          <ScalarProperty Name="InsrPolicyDoc4" ColumnName="InsrPolicyDoc4" />
+          <ScalarProperty Name="InsrPolicyDoc3" ColumnName="InsrPolicyDoc3" />
+          <ScalarProperty Name="InsrPolicyDoc2" ColumnName="InsrPolicyDoc2" />
+          <ScalarProperty Name="InsrPolicyDoc1" ColumnName="InsrPolicyDoc1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table6_SupplierDetails">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table6_SupplierDetails">
+        <MappingFragment StoreEntitySet="Table6_SupplierDetails">
+          <ScalarProperty Name="SupplierBankDetails_RUS" ColumnName="SupplierBankDetails_RUS" />
+          <ScalarProperty Name="SupplierBankDetails_ENG" ColumnName="SupplierBankDetails_ENG" />
+          <ScalarProperty Name="SupplierAdressDetails_RUS" ColumnName="SupplierAdressDetails_RUS" />
+          <ScalarProperty Name="SupplierAdressDetails_ENG" ColumnName="SupplierAdressDetails_ENG" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AddendumMissingApprovalBreakdowns">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.AddendumMissingApprovalBreakdown">
+        <MappingFragment StoreEntitySet="AddendumMissingApprovalBreakdown">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AddendumID" ColumnName="AddendumID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractMissingApprovalBreakdowns">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.ContractMissingApprovalBreakdown">
+        <MappingFragment StoreEntitySet="ContractMissingApprovalBreakdown">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notf_AddendumCommentsFromToWhomMatrix">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Notf_AddendumCommentsFromToWhomMatrix">
+        <MappingFragment StoreEntitySet="Notf_AddendumCommentsFromToWhomMatrix">
+          <ScalarProperty Name="ForWho" ColumnName="ForWho" />
+          <ScalarProperty Name="FromWho" ColumnName="FromWho" />
+          <ScalarProperty Name="id_comment" ColumnName="id_comment" />
+          <ScalarProperty Name="C_or_A_id" ColumnName="C_or_A_id" />
+          <ScalarProperty Name="C_or_A" ColumnName="C_or_A" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notf_AddendumCommentsUnRead">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Notf_AddendumCommentsUnRead">
+        <MappingFragment StoreEntitySet="Notf_AddendumCommentsUnRead">
+          <ScalarProperty Name="ForWho" ColumnName="ForWho" />
+          <ScalarProperty Name="FromWho" ColumnName="FromWho" />
+          <ScalarProperty Name="id_comment" ColumnName="id_comment" />
+          <ScalarProperty Name="C_or_A_id" ColumnName="C_or_A_id" />
+          <ScalarProperty Name="C_or_A" ColumnName="C_or_A" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notf_ContractCommentsFromToWhomMatrix">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Notf_ContractCommentsFromToWhomMatrix">
+        <MappingFragment StoreEntitySet="Notf_ContractCommentsFromToWhomMatrix">
+          <ScalarProperty Name="ForWho" ColumnName="ForWho" />
+          <ScalarProperty Name="FromWho" ColumnName="FromWho" />
+          <ScalarProperty Name="id_comment" ColumnName="id_comment" />
+          <ScalarProperty Name="C_or_A_id" ColumnName="C_or_A_id" />
+          <ScalarProperty Name="C_or_A" ColumnName="C_or_A" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notf_ContractCommentsUnRead">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Notf_ContractCommentsUnRead">
+        <MappingFragment StoreEntitySet="Notf_ContractCommentsUnRead">
+          <ScalarProperty Name="ForWho" ColumnName="ForWho" />
+          <ScalarProperty Name="FromWho" ColumnName="FromWho" />
+          <ScalarProperty Name="id_comment" ColumnName="id_comment" />
+          <ScalarProperty Name="C_or_A_id" ColumnName="C_or_A_id" />
+          <ScalarProperty Name="C_or_A" ColumnName="C_or_A" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_CheckTolerance">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_CheckTolerance">
+        <MappingFragment StoreEntitySet="View_CheckTolerance">
+          <ScalarProperty Name="CheckTolerance" ColumnName="CheckTolerance" />
+          <ScalarProperty Name="DayDiff" ColumnName="DayDiff" />
+          <ScalarProperty Name="ToleratedDay" ColumnName="ToleratedDay" />
+          <ScalarProperty Name="C_Now" ColumnName="_Now" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Scenario" ColumnName="Scenario" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AddendumId" ColumnName="AddendumId" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_AddendumDetails">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_AddendumDetails">
+        <MappingFragment StoreEntitySet="View_AddendumDetails">
+          <ScalarProperty Name="AktOfWork" ColumnName="AktOfWork" />
+          <ScalarProperty Name="AktOfWorkTitle" ColumnName="AktOfWorkTitle" />
+          <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+          <ScalarProperty Name="CompletionDateTitle" ColumnName="CompletionDateTitle" />
+          <ScalarProperty Name="CreationInfo" ColumnName="CreationInfo" />
+          <ScalarProperty Name="GuaranteePeriod" ColumnName="GuaranteePeriod" />
+          <ScalarProperty Name="GuaranteePeriodTitle" ColumnName="GuaranteePeriodTitle" />
+          <ScalarProperty Name="PenaltiesToSupplierNote" ColumnName="PenaltiesToSupplierNote" />
+          <ScalarProperty Name="PenaltyToSupplierNoteTitle" ColumnName="PenaltyToSupplierNoteTitle" />
+          <ScalarProperty Name="PenaltiesNote" ColumnName="PenaltiesNote" />
+          <ScalarProperty Name="PenallyToMercuryNoteTitle" ColumnName="PenallyToMercuryNoteTitle" />
+          <ScalarProperty Name="Retention" ColumnName="Retention" />
+          <ScalarProperty Name="RetentionTitle" ColumnName="RetentionTitle" />
+          <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+          <ScalarProperty Name="DeliveryTitle" ColumnName="DeliveryTitle" />
+          <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+          <ScalarProperty Name="ShipmentTitle" ColumnName="ShipmentTitle" />
+          <ScalarProperty Name="Interim" ColumnName="Interim" />
+          <ScalarProperty Name="InterimTitle" ColumnName="InterimTitle" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="AdvanceTitle" ColumnName="AdvanceTitle" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="FinishDateTitle" ColumnName="FinishDateTitle" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StartDateTitle" ColumnName="StartDateTitle" />
+          <ScalarProperty Name="AddendumDescription" ColumnName="AddendumDescription" />
+          <ScalarProperty Name="AddnDescriptionTitle" ColumnName="AddnDescriptionTitle" />
+          <ScalarProperty Name="DeliveryTerms" ColumnName="DeliveryTerms" />
+          <ScalarProperty Name="DeliveryTermsTitle" ColumnName="DeliveryTermsTitle" />
+          <ScalarProperty Name="PenaltiesToSupplier" ColumnName="PenaltiesToSupplier" />
+          <ScalarProperty Name="PenaltyToSupplierTitle" ColumnName="PenaltyToSupplierTitle" />
+          <ScalarProperty Name="Penalties" ColumnName="Penalties" />
+          <ScalarProperty Name="PenaltyToMercuryTitle" ColumnName="PenaltyToMercuryTitle" />
+          <ScalarProperty Name="RequestedBy" ColumnName="RequestedBy" />
+          <ScalarProperty Name="RequestedByTitle" ColumnName="RequestedByTitle" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="BudgetValueWithVATTitle" ColumnName="BudgetValueWithVATTitle" />
+          <ScalarProperty Name="VATpercent" ColumnName="VATpercent" />
+          <ScalarProperty Name="VATpercentTitle" ColumnName="VATpercentTitle" />
+          <ScalarProperty Name="AddendumValue_WithVAT" ColumnName="AddendumValue_WithVAT" />
+          <ScalarProperty Name="AddendumValueTitle" ColumnName="AddendumValueTitle" />
+          <ScalarProperty Name="AddendumDate" ColumnName="AddendumDate" />
+          <ScalarProperty Name="AddnDateTitle" ColumnName="AddnDateTitle" />
+          <ScalarProperty Name="AddendumNo" ColumnName="AddendumNo" />
+          <ScalarProperty Name="AddnNoTitle" ColumnName="AddnNoTitle" />
+          <ScalarProperty Name="CodeDescription" ColumnName="CodeDescription" />
+          <ScalarProperty Name="CostCodeTitle" ColumnName="CostCodeTitle" />
+          <ScalarProperty Name="ContractDescription" ColumnName="ContractDescription" />
+          <ScalarProperty Name="ContractDescriptionTitle" ColumnName="ContractDescriptionTitle" />
+          <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+          <ScalarProperty Name="ContractTypeTitle" ColumnName="ContractTypeTitle" />
+          <ScalarProperty Name="ContractCurrency" ColumnName="ContractCurrency" />
+          <ScalarProperty Name="ContractCurrencyTitle" ColumnName="ContractCurrencyTitle" />
+          <ScalarProperty Name="ContractValue_withVAT" ColumnName="ContractValue_withVAT" />
+          <ScalarProperty Name="ContractValueTitle" ColumnName="ContractValueTitle" />
+          <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+          <ScalarProperty Name="ContractDateTitle" ColumnName="ContractDateTitle" />
+          <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+          <ScalarProperty Name="ContractNoTitle" ColumnName="ContractNoTitle" />
+          <ScalarProperty Name="AddendumType" ColumnName="AddendumType" />
+          <ScalarProperty Name="AddendumTypeTitle" ColumnName="AddendumTypeTitle" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierNameTitle" ColumnName="SupplierNameTitle" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+          <ScalarProperty Name="PoNoTitle" ColumnName="PoNoTitle" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectNameTitle" ColumnName="ProjectNameTitle" />
+          <ScalarProperty Name="AddendumID" ColumnName="AddendumID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_ContractDetails">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_ContractDetails">
+        <MappingFragment StoreEntitySet="View_ContractDetails">
+          <ScalarProperty Name="CreationInfo" ColumnName="CreationInfo" />
+          <ScalarProperty Name="GuaranteePeriodTitle" ColumnName="GuaranteePeriodTitle" />
+          <ScalarProperty Name="GuaranteePeriod" ColumnName="GuaranteePeriod" />
+          <ScalarProperty Name="DeliveryTermsTitle" ColumnName="DeliveryTermsTitle" />
+          <ScalarProperty Name="DeliveryTerms" ColumnName="DeliveryTerms" />
+          <ScalarProperty Name="PenaltiesToSupplierNoteTitle" ColumnName="PenaltiesToSupplierNoteTitle" />
+          <ScalarProperty Name="PenaltiesToSupplierNote" ColumnName="PenaltiesToSupplierNote" />
+          <ScalarProperty Name="PenaltiesToMercuryNoteTitle" ColumnName="PenaltiesToMercuryNoteTitle" />
+          <ScalarProperty Name="PenaltiesToMercuryNote" ColumnName="PenaltiesToMercuryNote" />
+          <ScalarProperty Name="RetentionTitle" ColumnName="RetentionTitle" />
+          <ScalarProperty Name="Retention" ColumnName="Retention" />
+          <ScalarProperty Name="DeliveryTitle" ColumnName="DeliveryTitle" />
+          <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+          <ScalarProperty Name="ShipmentTitle" ColumnName="ShipmentTitle" />
+          <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+          <ScalarProperty Name="InterimTitle" ColumnName="InterimTitle" />
+          <ScalarProperty Name="Interim" ColumnName="Interim" />
+          <ScalarProperty Name="AdvanceTitle" ColumnName="AdvanceTitle" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="FinishDateTitle" ColumnName="FinishDateTitle" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="StartDateTitle" ColumnName="StartDateTitle" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="ContractDescriptionTitle" ColumnName="ContractDescriptionTitle" />
+          <ScalarProperty Name="ContractDescription" ColumnName="ContractDescription" />
+          <ScalarProperty Name="ContractTypeTitle" ColumnName="ContractTypeTitle" />
+          <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+          <ScalarProperty Name="RequestedByTitle" ColumnName="RequestedByTitle" />
+          <ScalarProperty Name="RequestedBy" ColumnName="RequestedBy" />
+          <ScalarProperty Name="PenaltiesToSupplierTitle" ColumnName="PenaltiesToSupplierTitle" />
+          <ScalarProperty Name="PenaltiesToSupplier" ColumnName="PenaltiesToSupplier" />
+          <ScalarProperty Name="PenaltiesToMercuryTitle" ColumnName="PenaltiesToMercuryTitle" />
+          <ScalarProperty Name="PenaltiesToMercury" ColumnName="PenaltiesToMercury" />
+          <ScalarProperty Name="CostCodeTitle" ColumnName="CostCodeTitle" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="ContractCurrencyTitle" ColumnName="ContractCurrencyTitle" />
+          <ScalarProperty Name="ContractCurrency" ColumnName="ContractCurrency" />
+          <ScalarProperty Name="BudgetTitle" ColumnName="BudgetTitle" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="VATpercentTitle" ColumnName="VATpercentTitle" />
+          <ScalarProperty Name="VATpercent" ColumnName="VATpercent" />
+          <ScalarProperty Name="ContractValueTitle" ColumnName="ContractValueTitle" />
+          <ScalarProperty Name="ContractValue" ColumnName="ContractValue" />
+          <ScalarProperty Name="ContractDateTitle" ColumnName="ContractDateTitle" />
+          <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+          <ScalarProperty Name="ContractNoTitle" ColumnName="ContractNoTitle" />
+          <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+          <ScalarProperty Name="SupplierNameTitle" ColumnName="SupplierNameTitle" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="ProjectNameTitle" ColumnName="ProjectNameTitle" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_GetFullUserNameFromUserName">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_GetFullUserNameFromUserName">
+        <MappingFragment StoreEntitySet="View_GetFullUserNameFromUserName">
+          <ScalarProperty Name="UserNameSurnameFromEmail" ColumnName="UserNameSurnameFromEmail" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_PaymentRequestApprovalStatus">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_PaymentRequestApprovalStatus">
+        <MappingFragment StoreEntitySet="View_PaymentRequestApprovalStatus">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="ApprovedOrNot" ColumnName="ApprovedOrNot" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="ApprovalRequiredPersons" ColumnName="ApprovalRequiredPersons" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_PendingListRev1">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_PendingListRev1">
+        <MappingFragment StoreEntitySet="View_PendingListRev1">
+          <ScalarProperty Name="CreatedByPaymentRequest" ColumnName="CreatedByPaymentRequest" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="PrintPDF" ColumnName="PrintPDF" />
+          <ScalarProperty Name="ApproveNewGen" ColumnName="ApproveNewGen" />
+          <ScalarProperty Name="PayReqNo" ColumnName="PayReqNo" />
+          <ScalarProperty Name="BalanceAfterPending" ColumnName="BalanceAfterPending" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+          <ScalarProperty Name="Percantage_To_Paid" ColumnName="Percantage_To_Paid" />
+          <ScalarProperty Name="Diff_Paid_Collect" ColumnName="Diff_Paid_Collect" />
+          <ScalarProperty Name="PendingWithVAT" ColumnName="PendingWithVAT" />
+          <ScalarProperty Name="OrderCurrency" ColumnName="OrderCurrency" />
+          <ScalarProperty Name="TotalBalanceWithVAT" ColumnName="TotalBalanceWithVAT" />
+          <ScalarProperty Name="TotalPaidWithVAT" ColumnName="TotalPaidWithVAT" />
+          <ScalarProperty Name="PoTotalWithVAT" ColumnName="PoTotalWithVAT" />
+          <ScalarProperty Name="AttachmentExist" ColumnName="AttachmentExist" />
+          <ScalarProperty Name="PersonChangedAttachment" ColumnName="PersonChangedAttachment" />
+          <ScalarProperty Name="AttachmentChangeWhen" ColumnName="AttachmentChangeWhen" />
+          <ScalarProperty Name="AttachmentChange" ColumnName="AttachmentChange" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="PersonApprove" ColumnName="PersonApprove" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="LinkToInvoice" ColumnName="LinkToInvoice" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="PO_Currency" ColumnName="PO_Currency" />
+          <ScalarProperty Name="SiteRecordNo" ColumnName="SiteRecordNo" />
+          <ScalarProperty Name="Invoice_No" ColumnName="Invoice_No" />
+          <ScalarProperty Name="Invoice_Date" ColumnName="Invoice_Date" />
+          <ScalarProperty Name="Urgency" ColumnName="Urgency" />
+          <ScalarProperty Name="PayReqDate" ColumnName="PayReqDate" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table7_CostDivision">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table7_CostDivision">
+        <MappingFragment StoreEntitySet="Table7_CostDivision">
+          <ScalarProperty Name="CostDivision2ID" ColumnName="CostDivision2ID" />
+          <ScalarProperty Name="CostDivisionDescription" ColumnName="CostDivisionDescription" />
+          <ScalarProperty Name="CostVidisionID" ColumnName="CostVidisionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table7_CostDivision2">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table7_CostDivision2">
+        <MappingFragment StoreEntitySet="Table7_CostDivision2">
+          <ScalarProperty Name="CostDivision2Description" ColumnName="CostDivision2Description" />
+          <ScalarProperty Name="CostDivision2ID" ColumnName="CostDivision2ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_CostCodeSummary0">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_CostCodeSummary0">
+        <MappingFragment StoreEntitySet="View_CostCodeSummary0">
+          <ScalarProperty Name="TotalCollectedDocRubleExcVAT" ColumnName="TotalCollectedDocRubleExcVAT" />
+          <ScalarProperty Name="TotalCollectedDocEuroExcVAT" ColumnName="TotalCollectedDocEuroExcVAT" />
+          <ScalarProperty Name="TotalCollectedDocDollarExcVAT" ColumnName="TotalCollectedDocDollarExcVAT" />
+          <ScalarProperty Name="TotalBalanceRubleExcVAT" ColumnName="TotalBalanceRubleExcVAT" />
+          <ScalarProperty Name="TotalBalanceEuroExcVAT" ColumnName="TotalBalanceEuroExcVAT" />
+          <ScalarProperty Name="TotalBalanceDollarExcVAT" ColumnName="TotalBalanceDollarExcVAT" />
+          <ScalarProperty Name="TotalPoTotalRubleExcVAT" ColumnName="TotalPoTotalRubleExcVAT" />
+          <ScalarProperty Name="TotalPoTotalEuroExcVAT" ColumnName="TotalPoTotalEuroExcVAT" />
+          <ScalarProperty Name="TotalPoTotalDollarExcVAT" ColumnName="TotalPoTotalDollarExcVAT" />
+          <ScalarProperty Name="TotalRublePaidExcVAT" ColumnName="TotalRublePaidExcVAT" />
+          <ScalarProperty Name="TotalEuroPaidExcVAT" ColumnName="TotalEuroPaidExcVAT" />
+          <ScalarProperty Name="TotalDollarPaidExcVAT" ColumnName="TotalDollarPaidExcVAT" />
+          <ScalarProperty Name="TotalRublePendingExcVAT" ColumnName="TotalRublePendingExcVAT" />
+          <ScalarProperty Name="TotalEuroPendingExcVAT" ColumnName="TotalEuroPendingExcVAT" />
+          <ScalarProperty Name="TotalDollarPendingExcVAT" ColumnName="TotalDollarPendingExcVAT" />
+          <ScalarProperty Name="CostCode2" ColumnName="CostCode2" />
+          <ScalarProperty Name="CostCode1" ColumnName="CostCode1" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="CostCodeAlias" ColumnName="CostCodeAlias" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Budget">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Budget">
+        <MappingFragment StoreEntitySet="Table_Budget">
+          <ScalarProperty Name="OriginalSelling" ColumnName="OriginalSelling" />
+          <ScalarProperty Name="Recovery" ColumnName="Recovery" />
+          <ScalarProperty Name="CostToGoVCO" ColumnName="CostToGoVCO" />
+          <ScalarProperty Name="CostToGoBOQ" ColumnName="CostToGoBOQ" />
+          <ScalarProperty Name="VCO" ColumnName="VCO" />
+          <ScalarProperty Name="OriginalBOQ" ColumnName="OriginalBOQ" />
+          <ScalarProperty Name="UpdatedPlannedRevenue" ColumnName="UpdatedPlannedRevenue" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="PlannedToSpendCO" ColumnName="PlannedToSpendCO" />
+          <ScalarProperty Name="PlannedToSpend" ColumnName="PlannedToSpend" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="BudgetID" ColumnName="BudgetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table2_PONo">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table2_PONo">
+        <MappingFragment StoreEntitySet="Table2_PONo">
+          <ScalarProperty Name="FrameContractID" ColumnName="FrameContractID" />
+          <ScalarProperty Name="FrameContractPO" ColumnName="FrameContractPO" />
+          <ScalarProperty Name="Scenario" ColumnName="Scenario" />
+          <ScalarProperty Name="CO" ColumnName="CO" />
+          <ScalarProperty Name="RequestedBy" ColumnName="RequestedBy" />
+          <ScalarProperty Name="PersonApproved" ColumnName="PersonApproved" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="FromAccess" ColumnName="FromAccess" />
+          <ScalarProperty Name="PersonDeleted" ColumnName="PersonDeleted" />
+          <ScalarProperty Name="PersonUpdated" ColumnName="PersonUpdated" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PO_Date" ColumnName="PO_Date" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="VATpercent" ColumnName="VATpercent" />
+          <ScalarProperty Name="PO_Currency" ColumnName="PO_Currency" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table7_CostCode">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table7_CostCode">
+        <MappingFragment StoreEntitySet="Table7_CostCode">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FromAccess" ColumnName="FromAccess" />
+          <ScalarProperty Name="DataCenter" ColumnName="DataCenter" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CodeDescription" ColumnName="CodeDescription" />
+          <ScalarProperty Name="CostVidisionID" ColumnName="CostVidisionID" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Addendum_UsersApprv_IgnoreUser">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Addendum_UsersApprv_IgnoreUser">
+        <MappingFragment StoreEntitySet="Table_Addendum_UsersApprv_IgnoreUser">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AddendumID" ColumnName="AddendumID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contract_UsersApprv_IgnoreUser">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contract_UsersApprv_IgnoreUser">
+        <MappingFragment StoreEntitySet="Table_Contract_UsersApprv_IgnoreUser">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Addendums">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Addendums">
+        <MappingFragment StoreEntitySet="Table_Addendums">
+          <ScalarProperty Name="AddendumLinkToPDFcopyBackUp" ColumnName="AddendumLinkToPDFcopyBackUp" />
+          <ScalarProperty Name="AddendumLinkToTemplatefile_DOCBackUp" ColumnName="AddendumLinkToTemplatefile_DOCBackUp" />
+          <ScalarProperty Name="Exceptional" ColumnName="Exceptional" />
+          <ScalarProperty Name="POexecuted" ColumnName="POexecuted" />
+          <ScalarProperty Name="Scenario" ColumnName="Scenario" />
+          <ScalarProperty Name="AddendumTypes" ColumnName="AddendumTypes" />
+          <ScalarProperty Name="GuaranteePeriod" ColumnName="GuaranteePeriod" />
+          <ScalarProperty Name="DeliveryTerms" ColumnName="DeliveryTerms" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+          <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+          <ScalarProperty Name="Interim" ColumnName="Interim" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="BudgetLinkToPDF" ColumnName="BudgetLinkToPDF" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="PenaltiesToSupplierNote" ColumnName="PenaltiesToSupplierNote" />
+          <ScalarProperty Name="PenaltiesToSupplier" ColumnName="PenaltiesToSupplier" />
+          <ScalarProperty Name="PenaltiesNote" ColumnName="PenaltiesNote" />
+          <ScalarProperty Name="Penalties" ColumnName="Penalties" />
+          <ScalarProperty Name="RequestedBy" ColumnName="RequestedBy" />
+          <ScalarProperty Name="NewGeneration" ColumnName="NewGeneration" />
+          <ScalarProperty Name="AttachmentExist" ColumnName="AttachmentExist" />
+          <ScalarProperty Name="PersonDeleted" ColumnName="PersonDeleted" />
+          <ScalarProperty Name="PersonUpdated" ColumnName="PersonUpdated" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="AddendumNote" ColumnName="AddendumNote" />
+          <ScalarProperty Name="AddendumRetention" ColumnName="AddendumRetention" />
+          <ScalarProperty Name="AddendumArchivedByMercury" ColumnName="AddendumArchivedByMercury" />
+          <ScalarProperty Name="AddendumLinkToPDFcopy" ColumnName="AddendumLinkToPDFcopy" />
+          <ScalarProperty Name="AddendumGivenTo" ColumnName="AddendumGivenTo" />
+          <ScalarProperty Name="AddendumCollectionBySupplier" ColumnName="AddendumCollectionBySupplier" />
+          <ScalarProperty Name="AddendumSignByMercury" ColumnName="AddendumSignByMercury" />
+          <ScalarProperty Name="AddendumSignBySupplier" ColumnName="AddendumSignBySupplier" />
+          <ScalarProperty Name="AddendumLinkToTemplatefile_DOC" ColumnName="AddendumLinkToTemplatefile_DOC" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="AddendumDescription" ColumnName="AddendumDescription" />
+          <ScalarProperty Name="VATpercent" ColumnName="VATpercent" />
+          <ScalarProperty Name="AddendumValue_WithVAT" ColumnName="AddendumValue_WithVAT" />
+          <ScalarProperty Name="AddendumValue_woVAT" ColumnName="AddendumValue_woVAT" />
+          <ScalarProperty Name="AddendumDate" ColumnName="AddendumDate" />
+          <ScalarProperty Name="AddendumNo" ColumnName="AddendumNo" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="AddendumID" ColumnName="AddendumID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contracts">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contracts">
+        <MappingFragment StoreEntitySet="Table_Contracts">
+          <ScalarProperty Name="LinkToPDFcopyBackUp" ColumnName="LinkToPDFcopyBackUp" />
+          <ScalarProperty Name="LinkToTemplatefile_DOCBackUp" ColumnName="LinkToTemplatefile_DOCBackUp" />
+          <ScalarProperty Name="NominatedWhenApprovedByESTM" ColumnName="NominatedWhenApprovedByESTM" />
+          <ScalarProperty Name="NominatedApprovedByESTM" ColumnName="NominatedApprovedByESTM" />
+          <ScalarProperty Name="Exceptional" ColumnName="Exceptional" />
+          <ScalarProperty Name="POexecuted" ColumnName="POexecuted" />
+          <ScalarProperty Name="FrameContract" ColumnName="FrameContract" />
+          <ScalarProperty Name="Nominated" ColumnName="Nominated" />
+          <ScalarProperty Name="GuaranteePeriod" ColumnName="GuaranteePeriod" />
+          <ScalarProperty Name="DeliveryTerms" ColumnName="DeliveryTerms" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+          <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+          <ScalarProperty Name="Interim" ColumnName="Interim" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="BudgetLinkToPDF" ColumnName="BudgetLinkToPDF" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="PenaltiesToSupplierNote" ColumnName="PenaltiesToSupplierNote" />
+          <ScalarProperty Name="PenaltiesToSupplier" ColumnName="PenaltiesToSupplier" />
+          <ScalarProperty Name="PenaltiesNote" ColumnName="PenaltiesNote" />
+          <ScalarProperty Name="Penalties" ColumnName="Penalties" />
+          <ScalarProperty Name="Scenario" ColumnName="Scenario" />
+          <ScalarProperty Name="AttachmentExist" ColumnName="AttachmentExist" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Retention" ColumnName="Retention" />
+          <ScalarProperty Name="RequestedBy" ColumnName="RequestedBy" />
+          <ScalarProperty Name="PersonDeleted" ColumnName="PersonDeleted" />
+          <ScalarProperty Name="PersonUpdated" ColumnName="PersonUpdated" />
+          <ScalarProperty Name="PersonCreated" ColumnName="PersonCreated" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ArchivedByMercury" ColumnName="ArchivedByMercury" />
+          <ScalarProperty Name="LinkToPDFcopy" ColumnName="LinkToPDFcopy" />
+          <ScalarProperty Name="ContractGivenTo" ColumnName="ContractGivenTo" />
+          <ScalarProperty Name="CollectionBySupplier" ColumnName="CollectionBySupplier" />
+          <ScalarProperty Name="SignByMercury" ColumnName="SignByMercury" />
+          <ScalarProperty Name="SignBySupplier" ColumnName="SignBySupplier" />
+          <ScalarProperty Name="SentToSupplier" ColumnName="SentToSupplier" />
+          <ScalarProperty Name="LinkToTemplatefile_DOC" ColumnName="LinkToTemplatefile_DOC" />
+          <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+          <ScalarProperty Name="ContractDescription" ColumnName="ContractDescription" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ContractCurrency" ColumnName="ContractCurrency" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="VATpercent" ColumnName="VATpercent" />
+          <ScalarProperty Name="ContractValue_withVAT" ColumnName="ContractValue_withVAT" />
+          <ScalarProperty Name="ContractValue_woVAT" ColumnName="ContractValue_woVAT" />
+          <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+          <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table1_Project">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table1_Project">
+        <MappingFragment StoreEntitySet="Table1_Project">
+          <ScalarProperty Name="FrameBudgetEmailControl" ColumnName="FrameBudgetEmailControl" />
+          <ScalarProperty Name="BudgetEmailControl" ColumnName="BudgetEmailControl" />
+          <ScalarProperty Name="ExtraApprovalIfNoSignedClientContract" ColumnName="ExtraApprovalIfNoSignedClientContract" />
+          <ScalarProperty Name="AutoCCApproval" ColumnName="AutoCCApproval" />
+          <ScalarProperty Name="PM_SignaturesLink" ColumnName="PM_SignaturesLink" />
+          <ScalarProperty Name="PR_Coverpage_Approval_Compulsory" ColumnName="PR_Coverpage_Approval_Compulsory" />
+          <ScalarProperty Name="PR_Coverpage_Approval_Allowed" ColumnName="PR_Coverpage_Approval_Allowed" />
+          <ScalarProperty Name="PoMakerNewGeneration" ColumnName="PoMakerNewGeneration" />
+          <ScalarProperty Name="NewPoPolicy" ColumnName="NewPoPolicy" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="NewGeneration" ColumnName="NewGeneration" />
+          <ScalarProperty Name="SendEmailsNonZeroBalance" ColumnName="SendEmailsNonZeroBalance" />
+          <ScalarProperty Name="ChangeOrderSignedExcVAT" ColumnName="ChangeOrderSignedExcVAT" />
+          <ScalarProperty Name="DontShowContractPoAssistance" ColumnName="DontShowContractPoAssistance" />
+          <ScalarProperty Name="RequestedRequired" ColumnName="RequestedRequired" />
+          <ScalarProperty Name="ApproveRequired" ColumnName="ApproveRequired" />
+          <ScalarProperty Name="PendingSummary" ColumnName="PendingSummary" />
+          <ScalarProperty Name="ForeColor" ColumnName="ForeColor" />
+          <ScalarProperty Name="BackColor" ColumnName="BackColor" />
+          <ScalarProperty Name="NakladnayaEnabled" ColumnName="NakladnayaEnabled" />
+          <ScalarProperty Name="Margin" ColumnName="Margin" />
+          <ScalarProperty Name="ContractAmount" ColumnName="ContractAmount" />
+          <ScalarProperty Name="ContractCurrency" ColumnName="ContractCurrency" />
+          <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+          <ScalarProperty Name="POcreate" ColumnName="POcreate" />
+          <ScalarProperty Name="InsuranceFinish" ColumnName="InsuranceFinish" />
+          <ScalarProperty Name="InsuranceStart" ColumnName="InsuranceStart" />
+          <ScalarProperty Name="BackUpRequired" ColumnName="BackUpRequired" />
+          <ScalarProperty Name="Report" ColumnName="Report" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FromAccess" ColumnName="FromAccess" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+          <ScalarProperty Name="PM_email" ColumnName="PM_email" />
+          <ScalarProperty Name="ProjectAdress" ColumnName="ProjectAdress" />
+          <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_FrameContractBudgetPoDetails" FunctionName="SQL2008_794282_mercuryModel.Store.sp_FrameContractBudgetPoDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SQL2008_794282_mercuryModel.sp_FrameContractBudgetPoDetails_Result1">
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="TotalPO" ColumnName="TotalPO" />
+          <ScalarProperty Name="PercentTotalPO_To_Budget" ColumnName="PercentTotalPO_To_Budget" />
+          <ScalarProperty Name="BudgetAboutToExceedWarning" ColumnName="BudgetAboutToExceedWarning" />
+          <ScalarProperty Name="BudgetExceeded" ColumnName="BudgetExceeded" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Table_Contracts_IgnoreSearchFeed">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contracts_IgnoreSearchFeed">
+        <MappingFragment StoreEntitySet="Table_Contracts_IgnoreSearchFeed">
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_SupplierType">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_SupplierType">
+        <MappingFragment StoreEntitySet="Table_SupplierType">
+          <ScalarProperty Name="SupplierDiscipline" ColumnName="SupplierDiscipline" />
+          <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+          <ScalarProperty Name="SupplierTypeId" ColumnName="SupplierTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_SupplierType_Junction">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_SupplierType_Junction">
+        <MappingFragment StoreEntitySet="Table_SupplierType_Junction">
+          <ScalarProperty Name="SupplierTypeId" ColumnName="SupplierTypeId" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_SupplierType_Tags">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_SupplierType_Tags">
+        <MappingFragment StoreEntitySet="Table_SupplierType_Tags">
+          <ScalarProperty Name="SupplierTypeId" ColumnName="SupplierTypeId" />
+          <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+          <ScalarProperty Name="TagSourceIndex" ColumnName="TagSourceIndex" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table8_ExchangeRates">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table8_ExchangeRates">
+        <MappingFragment StoreEntitySet="Table8_ExchangeRates">
+          <ScalarProperty Name="RubbleEuro" ColumnName="RubbleEuro" />
+          <ScalarProperty Name="RubbleDollar" ColumnName="RubbleDollar" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Contract_Addendum_NotApprovedPersonsForEmailNotification">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_Contract_Addendum_NotApprovedPersonsForEmailNotification">
+        <MappingFragment StoreEntitySet="View_Contract_Addendum_NotApprovedPersonsForEmailNotification">
+          <ScalarProperty Name="Count_Addendum" ColumnName="Count_Addendum" />
+          <ScalarProperty Name="Count_Contract" ColumnName="Count_Contract" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table3_Invoice_Type">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table3_Invoice_Type">
+        <MappingFragment StoreEntitySet="Table3_Invoice_Type">
+          <ScalarProperty Name="Type_name" ColumnName="Type_name" />
+          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table3_Invoice_Type_Junction">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table3_Invoice_Type_Junction">
+        <MappingFragment StoreEntitySet="Table3_Invoice_Type_Junction">
+          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_ContractsAddendumsNonExecutedTotal">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_ContractsAddendumsNonExecutedTotal">
+        <MappingFragment StoreEntitySet="View_ContractsAddendumsNonExecutedTotal">
+          <ScalarProperty Name="TotalNotExcecutedValueExcVAT_Dollar" ColumnName="TotalNotExcecutedValueExcVAT_Dollar" />
+          <ScalarProperty Name="TotalNotExcecutedValueExcVAT_Euro" ColumnName="TotalNotExcecutedValueExcVAT_Euro" />
+          <ScalarProperty Name="TotalNotExcecutedValueExcVAT_Rub" ColumnName="TotalNotExcecutedValueExcVAT_Rub" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_FrameContractsBudgetStatus">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_FrameContractsBudgetStatus">
+        <MappingFragment StoreEntitySet="View_FrameContractsBudgetStatus">
+          <ScalarProperty Name="AvailableBudgetForNewPoWithVAT" ColumnName="AvailableBudgetForNewPoWithVAT" />
+          <ScalarProperty Name="TotalPoWithVAT" ColumnName="TotalPoWithVAT" />
+          <ScalarProperty Name="BudgetWithVAT" ColumnName="BudgetWithVAT" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+          <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_BudgetChangeLog">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_BudgetChangeLog">
+        <MappingFragment StoreEntitySet="Table_BudgetChangeLog">
+          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Budget_PlannedToSpendConstraints">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Budget_PlannedToSpendConstraints">
+        <MappingFragment StoreEntitySet="Table_Budget_PlannedToSpendConstraints">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="BudgetID" ColumnName="BudgetID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_MissingApprovalsOnContractsAndAddendums" FunctionName="SQL2008_794282_mercuryModel.Store.SP_MissingApprovalsOnContractsAndAddendums">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SQL2008_794282_mercuryModel.SP_MissingApprovalsOnContractsAndAddendums_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Count_Contract" ColumnName="Count_Contract" />
+          <ScalarProperty Name="Count_Addendum" ColumnName="Count_Addendum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Table1_Project_LawyersCanEnterContract">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table1_Project_LawyersCanEnterContract">
+        <MappingFragment StoreEntitySet="Table1_Project_LawyersCanEnterContract">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BodyTexts">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.BodyText">
+        <MappingFragment StoreEntitySet="BodyText">
+          <ScalarProperty Name="Rus" ColumnName="Rus" />
+          <ScalarProperty Name="Eng" ColumnName="Eng" />
+          <ScalarProperty Name="Ref" ColumnName="Ref" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_EmailListEverybodyApprovedAddendum" FunctionName="SQL2008_794282_mercuryModel.Store.SP_EmailListEverybodyApprovedAddendum" />
+    <FunctionImportMapping FunctionImportName="SP_EmailListEverybodyApprovedContract" FunctionName="SQL2008_794282_mercuryModel.Store.SP_EmailListEverybodyApprovedContract" />
+    <FunctionImportMapping FunctionImportName="SP_EmailListLawyersApprovedAddendum" FunctionName="SQL2008_794282_mercuryModel.Store.SP_EmailListLawyersApprovedAddendum" />
+    <FunctionImportMapping FunctionImportName="SP_EmailListLawyersApprovedContract" FunctionName="SQL2008_794282_mercuryModel.Store.SP_EmailListLawyersApprovedContract" />
+    <EntitySetMapping Name="Table_Addendum_UsersApprv">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Addendum_UsersApprv">
+        <MappingFragment StoreEntitySet="Table_Addendum_UsersApprv">
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="WhenApproved" ColumnName="WhenApproved" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AddendumID" ColumnName="AddendumID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Contract_UsersApprv">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Contract_UsersApprv">
+        <MappingFragment StoreEntitySet="Table_Contract_UsersApprv">
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="WhenApproved" ColumnName="WhenApproved" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ApprovalStatusContractEF" FunctionName="SQL2008_794282_mercuryModel.Store.ApprovalStatusContractEF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SQL2008_794282_mercuryModel.ApprovalStatusContractEF_Result">
+          <ScalarProperty Name="uniqueId" ColumnName="uniqueId" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="WhenApproved" ColumnName="WhenApproved" />
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="WhoApprovedFromLawyers" ColumnName="WhoApprovedFromLawyers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ApprovalStatusContractAllApprovedEF" FunctionName="SQL2008_794282_mercuryModel.Store.ApprovalStatusContractAllApprovedEF" />
+    <FunctionImportMapping FunctionImportName="ApprovalStatusAddendumEF" FunctionName="SQL2008_794282_mercuryModel.Store.ApprovalStatusAddendumEF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SQL2008_794282_mercuryModel.ApprovalStatusAddendumEF_Result">
+          <ScalarProperty Name="uniqueId" ColumnName="uniqueId" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="AddendumID" ColumnName="AddendumID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="WhenApproved" ColumnName="WhenApproved" />
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="WhoApprovedFromLawyers" ColumnName="WhoApprovedFromLawyers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ApprovalStatusAddendumAllApprovedEF" FunctionName="SQL2008_794282_mercuryModel.Store.ApprovalStatusAddendumAllApprovedEF" />
+    <EntitySetMapping Name="View_SupplierNamesForContracts">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_SupplierNamesForContracts">
+        <MappingFragment StoreEntitySet="View_SupplierNamesForContracts">
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_ContractFilesMoveDOC">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_ContractFilesMoveDOC">
+        <MappingFragment StoreEntitySet="View_ContractFilesMoveDOC">
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="FileNameItself" ColumnName="FileNameItself" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="Path2" ColumnName="Path2" />
+          <ScalarProperty Name="CreateFolder" ColumnName="CreateFolder" />
+          <ScalarProperty Name="Path1" ColumnName="Path1" />
+          <ScalarProperty Name="LastDot" ColumnName="LastDot" />
+          <ScalarProperty Name="LastSlash" ColumnName="LastSlash" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DDLProjectsPOCreate" FunctionName="SQL2008_794282_mercuryModel.Store.sp_DDLProjectsPOCreate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SQL2008_794282_mercuryModel.sp_DDLProjectsPOCreate_Result">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="RequestedRequired" ColumnName="RequestedRequired" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Table_Required">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.Table_Required">
+        <MappingFragment StoreEntitySet="Table_Required">
+          <ScalarProperty Name="RequiredText" ColumnName="RequiredText" />
+          <ScalarProperty Name="RequiredId" ColumnName="RequiredId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DDLCostCodePOCreate" FunctionName="SQL2008_794282_mercuryModel.Store.sp_DDLCostCodePOCreate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SQL2008_794282_mercuryModel.sp_DDLCostCodePOCreate_Result">
+          <ScalarProperty Name="CostCode" ColumnName="CostCode" />
+          <ScalarProperty Name="CostCode_Description" ColumnName="CostCode_Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_DDLRequestedByPOCreate" FunctionName="SQL2008_794282_mercuryModel.Store.sp_DDLRequestedByPOCreate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SQL2008_794282_mercuryModel.sp_DDLRequestedByPOCreate_Result">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="View_WhatToBePaidRevised">
+      <EntityTypeMapping TypeName="SQL2008_794282_mercuryModel.View_WhatToBePaidRevised">
+        <MappingFragment StoreEntitySet="View_WhatToBePaidRevised">
+          <ScalarProperty Name="RubbleEuro" ColumnName="RubbleEuro" />
+          <ScalarProperty Name="RubbleDollar" ColumnName="RubbleDollar" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="LinkToInvoice" ColumnName="LinkToInvoice" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PayReqNo" ColumnName="PayReqNo" />
+          <ScalarProperty Name="WithVAT" ColumnName="WithVAT" />
+          <ScalarProperty Name="PO_Currency" ColumnName="PO_Currency" />
+          <ScalarProperty Name="Wo_VAT" ColumnName="Wo_VAT" />
+          <ScalarProperty Name="Invoice_Date" ColumnName="Invoice_Date" />
+          <ScalarProperty Name="Invoice_No" ColumnName="Invoice_No" />
+          <ScalarProperty Name="PO_No" ColumnName="PO_No" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

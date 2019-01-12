@@ -1,0 +1,81 @@
+﻿@model host_NET45_MVC.Areas.PtsWorker.Controllers.EmailGeneratorController.AddendumDetailsViewModel
+@{
+    Layout = null;
+    string localhost = PTS_App_Code_VB_Project.PTS_MERCURY.helper.Garbage.MagicString.PTSHostAdress;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddendumApprovalRequest</title>
+    <style>
+        .table_ {
+            border-style: solid;
+            border-color: black;
+            border-width: medium;
+            margin: 10px;
+            background-color: #F8F9F9;
+            color: #566573;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .header_ {
+            font-weight: bold;
+            width: 250px;
+            padding: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: 1px;
+        }
+
+        .header_gridview {
+            font-weight: bold;
+            padding: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: 1px;
+        }
+
+        .second_ {
+            width: 250px;
+            padding: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: 1px;
+        }
+
+        .second_gridview {
+            padding: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: 1px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+
+        @BodyTexts.Ref("14rJmYrfFEKaKEn+mQ+QvQ",BodyTexts.Lang.rus)
+        <br /><br />
+        @BodyTexts.Ref("MoX3FybAhUGBPcucWH7WYw",BodyTexts.Lang.rus)
+        <br /><br />
+        @BodyTexts.Ref("BHpxF9GR/E2ycv6O6UbEnQ",BodyTexts.Lang.rus) <a href="@localhost/webforms/ApprovalMatrix.aspx" target="_blank">@BodyTexts.Ref("U+ZgmScQsEGfEDI/mbwtYw",BodyTexts.Lang.rus)</a>
+        <br /><br />
+        <a href="@localhost/webforms/Addendumdetails.aspx?addendumid=@Model.AddendumDetails.AddendumID" target="_blank">@BodyTexts.Ref("BLM28kwDyE6kJIL+hdziVQ",BodyTexts.Lang.rus)</a>
+        <br /><br />
+        @BodyTexts.Ref("Nf2JLATCzUiyPyFyQo/vMA",BodyTexts.Lang.rus)
+        <br /><br />
+        @BodyTexts.Ref("rJcexh1YzU66g0RpaaAIRw",BodyTexts.Lang.rus)
+
+        <hr />
+
+        @Html.Partial("_ViewAddendumDetailsForEmailNotification", Model)
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿
+@helper UserPhoto(string username, string cssClass = "")
+{
+    <img data-rel="tooltip" data-placement="top" 
+         src="@PTS_App_Code_VB_Project.PTSMainClass.GetPhoto(username).Replace("~","")"
+         title="@(string.IsNullOrEmpty(PTS_App_Code_VB_Project.PTSMainClass.GetNameSurnameFromUserName(username)) ? username : PTS_App_Code_VB_Project.PTSMainClass.GetNameSurnameFromUserName(username))"
+         class="@(string.IsNullOrEmpty(cssClass) ? "userphoto tooltip-success" : cssClass) "
+     ></img>
+}

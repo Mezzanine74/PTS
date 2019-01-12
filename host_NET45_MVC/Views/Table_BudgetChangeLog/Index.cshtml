@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PTS_App_Code_VB_Project.PTS_MERCURY.db.Table_BudgetChangeLog>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OldValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Explanation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attachment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OldValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Explanation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attachment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

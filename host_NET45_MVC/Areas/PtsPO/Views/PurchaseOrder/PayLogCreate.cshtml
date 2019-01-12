@@ -1,0 +1,177 @@
+﻿@model IEnumerable<PTS_App_Code_VB_Project.PTS_MERCURY.db.View_WhatToBePaidRevised>
+
+@{
+    ViewBag.Title = "PayLogCreate";
+    Layout = "~/Areas/PtsPO/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    @Html.DevExpress().GetStyleSheets(
+            new StyleSheet { ExtensionType = ExtensionType.LoadingPanel },
+            new StyleSheet { ExtensionType = ExtensionType.PopupControl },
+            new StyleSheet { ExtensionType = ExtensionType.GridView }
+        )
+    @Html.DevExpress().GetScriptsEx(
+            new Script { ExtensionType = ExtensionType.LoadingPanel },
+            new Script { ExtensionType = ExtensionType.PopupControl },
+            new Script { ExtensionType = ExtensionType.GridView }
+        )
+}
+
+@Html.DevExpress().LoadingPanel(
+    settings =>
+    {
+        settings.Name = "loadingPanelmove";
+        settings.Modal = false;
+        settings.ContainerElementID = "GridViewPayLog";
+        settings.Styles.LoadingDiv.BackColor = System.Drawing.Color.White;
+    }).GetHtml()
+
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        settings.Name = "popupPayConfirm";
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.Center;
+        settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
+        settings.HeaderText = "Confirm Payment";
+        settings.Modal = true;
+
+        //settings.ClientSideEvents.Shown = "function(s,e){ PopupControlShown(s,e);}";
+        settings.SetContent(() =>
+        {
+            ViewContext.Writer.Write(Html.DevExpress().Label(lb =>
+            {
+                lb.Name = "lblMessage";
+                lb.Text = "";
+                lb.Style.Add("color", "red");
+                lb.ClientVisible = false;
+                lb.Properties.EnableClientSideAPI = true;
+            }).GetHtml());
+
+            ViewContext.Writer.Write(Html.DevExpress().Button(b =>
+            {
+                b.Name = "ButtonPay";
+                b.Text = "Pay!";
+                b.ClientVisible = false;
+                b.ClientSideEvents.Click = "function(s,e){ buttonPayClicked(s,e) }";
+
+            }).GetHtml());
+        });
+    }).GetHtml()
+
+@Html.DevExpress().FormLayout(setting =>
+{
+    setting.Name = "FormTitles";
+
+    setting.ColCount = 2;
+
+    setting.Items.AddGroupItem(set =>
+    {
+        set.ColCount = 2;
+        set.GroupBoxDecoration = GroupBoxDecoration.HeadingLine;
+        set.Caption = "Project and Dates";
+        set.Items.Add((i) =>
+        {
+            i.Width = 400;
+            i.Caption = "Project";
+            i.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write("<div id=\"inputProjects\" ></div>");
+            });
+        });
+        set.Items.Add((i) =>
+        {
+            i.Caption = "Date";
+            i.NestedExtension().DateEdit(dedit =>
+            {
+                dedit.Name = "DateSelect";
+                dedit.ClientEnabled = true;
+                //dedit.Date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                dedit.Date = new DateTime(2017, 2, 8);
+                dedit.Properties.ClientSideEvents.DateChanged = "function(s,e){onDateSelectChanged(s,e)}";
+                dedit.Properties.ClientSideEvents.Init = "function(s,e){onDateSelectInit(s,e)}";
+            });
+        });
+    });
+
+
+    setting.Items.AddGroupItem(set =>
+    {
+        set.ColCount = 5;
+        set.GroupBoxDecoration = GroupBoxDecoration.HeadingLine;
+        set.Caption = "Actions";
+        set.Items.Add((i) =>
+        {
+            i.Caption = "";
+            i.NestedExtension().Button(btn =>
+            {
+                btn.Name = "PayAll";
+                btn.Text = "Pay All";
+            });
+        });
+        set.Items.Add((i) =>
+        {
+            i.Caption = "";
+            i.NestedExtension().Button(btn =>
+            {
+                btn.Name = "PayAll2";
+                btn.Text = "Enter 1S Payment File";
+            });
+        });
+
+        set.Items.Add((i) =>
+        {
+            i.Caption = "";
+            i.NestedExtension().Button(btn =>
+            {
+                btn.Name = "PayAll3";
+                btn.Text = "Create Virtual Invoice";
+            });
+        });
+
+        set.Items.Add((i) =>
+        {
+            i.Caption = "";
+            i.NestedExtension().Button(btn =>
+            {
+                btn.Name = "PayAll4";
+                btn.Text = "Update Notes for AutoEmail";
+            });
+        });
+
+        set.Items.Add((i) =>
+        {
+            i.Caption = "";
+            i.NestedExtension().Button(btn =>
+            {
+                btn.Name = "PayAll5";
+                btn.Text = "Update Rates";
+            });
+        });
+
+    });
+
+}).GetHtml()
+
+
+@*<div style="margin-bottom:5px; vertical-align:central;">
+    <div id="inputProjects" style="width:500px; float:left; margin-right: 5px;"></div>
+
+    @Html.DevExpress().DateEdit(set =>
+    {
+        set.Name = "DateSelect";
+    }).GetHtml()
+
+    <div style="clear: both">
+    </div>
+
+</div>*@
+
+@Html.Action("GridViewPartialPayLog")
+
+
+@Html.Hidden("UserName", (string)System.Web.HttpContext.Current.User.Identity.Name)
+
+@section Scripts{
+    <script src="~/Areas/PtsPO/scripts/PurchaseOrder/PayLogCreate.js"></script>
+}

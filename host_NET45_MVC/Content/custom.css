@@ -1,0 +1,30 @@
+﻿ /*MVC Validation CSS*/
+.field-validation-error {
+    color: red;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 12px;
+    line-height: normal;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    background-color: #ffeeee !important;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}

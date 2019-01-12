@@ -1,0 +1,123 @@
+﻿@model host_NET45_MVC.Areas.PtsPO.Controllers.PurchaseOrderController.InvoiceModel
+
+@{
+    ViewBag.Title = "InvoiceCreate";
+    Layout = "~/Areas/PtsPO/Views/Shared/_Layout.cshtml";
+}
+
+@*// Add header scripts*@
+@*// ..................*@
+@*// Add header scripts*@
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "FormInvoice";
+    settings.ColCount = 2;
+
+    settings.Items.AddGroupItem(set =>
+    {
+        set.Caption = "Project and PO";
+        set.GroupBoxDecoration = GroupBoxDecoration.Box;
+        set.ColCount = 1;
+        set.ColSpan = 2;
+
+        set.Items.Add(m => m.ProjectId, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write("<div id=\"inputProjects\" ></div>");
+                ViewContext.Writer.Write(Html.HiddenFor(m => m.ProjectId).ToHtmlString());
+                ViewContext.Writer.Write(Html.ValidationMessageFor(m => m.ProjectId).ToHtmlString());
+            });
+
+        });
+
+        set.Items.Add(m => m.PO, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+
+                ViewContext.Writer.Write(Html.DevExpress().TextBox(tb =>
+                {
+                    tb.Name = "asdf";
+                }).GetHtml());
+
+                ViewContext.Writer.Write("<div id=\"inputPO\" ></div>");
+                ViewContext.Writer.Write(Html.HiddenFor(m => m.PO).ToHtmlString());
+                ViewContext.Writer.Write(Html.ValidationMessageFor(m => m.PO).ToHtmlString());
+            });
+
+        });
+    });
+
+    settings.Items.AddGroupItem(gr =>
+    {
+        gr.Caption = "grup";
+        gr.GroupBoxDecoration = GroupBoxDecoration.None;
+        gr.Paddings.Padding = 0;
+        gr.ParentContainerStyle.Paddings.Padding = 0;
+
+        gr.ColCount = 2;
+        gr.ColSpan = 2;
+
+        gr.Items.AddGroupItem(set =>
+        {
+            set.Caption = "Invoice Details";
+            set.GroupBoxDecoration = GroupBoxDecoration.Box;
+
+            set.Items.Add(m => m.InvoiceType);
+
+            set.Items.Add(m => m.InvoiceNo);
+
+            set.Items.Add(m => m.InvoiceDate);
+
+            set.Items.Add(m => m.InvoiceValueExcVAT);
+
+            set.Items.Add(m => m.InvoicePath, item =>
+            {
+                item.NestedExtension().UploadControl(uc =>
+                {
+                    uc.Name = "InvoicePath";
+                    uc.FileInputCount = 1;
+                });
+            });
+
+            set.Items.Add(m => m.InvoiceDescription);
+
+            set.Items.Add(item =>
+            {
+                item.Caption = "";
+                item.NestedExtension().Button(btn =>
+                {
+                    btn.Name = "btnSubmitInvoice";
+                    btn.Text = "Insert";
+                    btn.UseSubmitBehavior = true;
+                });
+            });
+
+        });
+
+        gr.Items.AddGroupItem(set =>
+        {
+            set.Caption = "PO History";
+            set.GroupBoxDecoration = GroupBoxDecoration.Box;
+
+            set.Items.Add(m => m.POTotalExcVAT);
+
+            set.Items.Add(m => m.TotalInvoiceExcVAT);
+
+            set.Items.Add(m => m.OutstandingExcVAT);
+        });
+
+    });
+
+}).GetHtml()
+
+
+@*Hidden Fields*@
+
+@Html.Hidden("UserName", (string)System.Web.HttpContext.Current.User.Identity.Name)
+
+@section Scripts{
+    <script src="~/Areas/PtsPO/scripts/PurchaseOrder/InvoiceCreate.js"></script>
+}

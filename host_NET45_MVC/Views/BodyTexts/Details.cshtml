@@ -1,0 +1,42 @@
+﻿@model PTS_App_Code_VB_Project.PTS_MERCURY.db.BodyText
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BodyText</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ref)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ref)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

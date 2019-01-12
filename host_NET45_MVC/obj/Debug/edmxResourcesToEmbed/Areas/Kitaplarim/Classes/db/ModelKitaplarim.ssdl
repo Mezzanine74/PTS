@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KitaplarimModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Alintilar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kitap_id" Type="int" Nullable="false" />
+    <Property Name="resim" Type="nvarchar" MaxLength="255" />
+    <Property Name="sayfa" Type="int" />
+  </EntityType>
+  <EntityType Name="Kitaplar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="yazar_id" Type="int" Nullable="false" />
+    <Property Name="kac_sayfa" Type="smallint" Nullable="false" />
+    <Property Name="baslama_gunu" Type="smalldatetime" />
+    <Property Name="bitirme_gunu" Type="smalldatetime" />
+    <Property Name="kapak_resmi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Kitaplar_hacked">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="tanitim" Type="nvarchar(max)" />
+    <Property Name="yazar_id" Type="int" Nullable="false" />
+    <Property Name="kitapismi" Type="nvarchar" MaxLength="255" />
+    <Property Name="yayinci" Type="nvarchar" MaxLength="255" />
+    <Property Name="turu" Type="nvarchar" MaxLength="255" />
+    <Property Name="linki" Type="nvarchar" MaxLength="255" />
+    <Property Name="download_tried" Type="bit" Nullable="false" />
+    <Property Name="download_failed" Type="bit" Nullable="false" />
+    <Property Name="kapak_tried" Type="bit" />
+    <Property Name="kapak_failed" Type="bit" />
+  </EntityType>
+  <EntityType Name="Okumalar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kitap_id" Type="int" Nullable="false" />
+    <Property Name="kalinan_sayfa" Type="int" Nullable="false" />
+    <Property Name="hangi_gun" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yazarlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="resmi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Yazarlar_hacked">
+    <Key>
+      <PropertyRef Name="yazar_id" />
+    </Key>
+    <Property Name="yazar_id" Type="int" Nullable="false" />
+    <Property Name="yazar" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Kitaplarim.dbo.View_Kitap_Tahmini_Bitis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Kitap_Tahmini_Bitis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="uniqueId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="min_gun" Type="smalldatetime" />
+    <Property Name="max_gun" Type="smalldatetime" />
+    <Property Name="max_page" Type="int" />
+    <Property Name="min_page" Type="int" />
+    <Property Name="date_diff" Type="int" />
+    <Property Name="page_diff" Type="int" />
+    <Property Name="average_page_per_day" Type="int" />
+    <Property Name="kac_sayfa_kaldi" Type="int" />
+    <Property Name="kac_gun_kaldi" Type="int" />
+    <Property Name="tahmini_bitis_gunu" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Kitaplarim.dbo.View_KitaplarHacked' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_KitaplarHacked">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="tanitim" Type="nvarchar(max)" />
+    <Property Name="yazar_id" Type="int" Nullable="false" />
+    <Property Name="kitapismi" Type="nvarchar" MaxLength="255" />
+    <Property Name="yayinci" Type="nvarchar" MaxLength="255" />
+    <Property Name="turu" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Kitaplarim.dbo.View_Okumalar_performans' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Okumalar_performans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="son_okuma_sayfa_araligi" Type="int" />
+    <Property Name="average_page_per_day" Type="int" />
+    <Property Name="tahmini_bitis_gunu" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Kitaplarim.dbo.View_okunan_kitaplar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_okunan_kitaplar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Kitaplarim.dbo.View_Yazar_Kitap_Sayisi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Yazar_Kitap_Sayisi">
+    <Key>
+      <PropertyRef Name="yazar_id" />
+    </Key>
+    <Property Name="yazar_id" Type="int" Nullable="false" />
+    <Property Name="yazar" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="YazarKitapSayisi" Type="int" />
+  </EntityType>
+  <Association Name="FK_Alintilar_Kitaplar">
+    <End Role="Kitaplar" Type="Self.Kitaplar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Alintilar" Type="Self.Alintilar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kitaplar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Alintilar">
+        <PropertyRef Name="kitap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kitaplar_hacked_Yazarlar_hacked">
+    <End Role="Yazarlar_hacked" Type="Self.Yazarlar_hacked" Multiplicity="1" />
+    <End Role="Kitaplar_hacked" Type="Self.Kitaplar_hacked" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yazarlar_hacked">
+        <PropertyRef Name="yazar_id" />
+      </Principal>
+      <Dependent Role="Kitaplar_hacked">
+        <PropertyRef Name="yazar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kitaplar_Yazarlar">
+    <End Role="Yazarlar" Type="Self.Yazarlar" Multiplicity="1" />
+    <End Role="Kitaplar" Type="Self.Kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yazarlar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Kitaplar">
+        <PropertyRef Name="yazar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Okumalar_Kitaplar">
+    <End Role="Kitaplar" Type="Self.Kitaplar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Okumalar" Type="Self.Okumalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kitaplar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Okumalar">
+        <PropertyRef Name="kitap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KitaplarimModelStoreContainer">
+    <EntitySet Name="Alintilar" EntityType="Self.Alintilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kitaplar" EntityType="Self.Kitaplar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kitaplar_hacked" EntityType="Self.Kitaplar_hacked" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Okumalar" EntityType="Self.Okumalar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yazarlar" EntityType="Self.Yazarlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yazarlar_hacked" EntityType="Self.Yazarlar_hacked" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_Kitap_Tahmini_Bitis" EntityType="Self.View_Kitap_Tahmini_Bitis" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Kitap_Tahmini_Bitis].[uniqueId] AS [uniqueId], 
+    [View_Kitap_Tahmini_Bitis].[id] AS [id], 
+    [View_Kitap_Tahmini_Bitis].[min_gun] AS [min_gun], 
+    [View_Kitap_Tahmini_Bitis].[max_gun] AS [max_gun], 
+    [View_Kitap_Tahmini_Bitis].[max_page] AS [max_page], 
+    [View_Kitap_Tahmini_Bitis].[min_page] AS [min_page], 
+    [View_Kitap_Tahmini_Bitis].[date_diff] AS [date_diff], 
+    [View_Kitap_Tahmini_Bitis].[page_diff] AS [page_diff], 
+    [View_Kitap_Tahmini_Bitis].[average_page_per_day] AS [average_page_per_day], 
+    [View_Kitap_Tahmini_Bitis].[kac_sayfa_kaldi] AS [kac_sayfa_kaldi], 
+    [View_Kitap_Tahmini_Bitis].[kac_gun_kaldi] AS [kac_gun_kaldi], 
+    [View_Kitap_Tahmini_Bitis].[tahmini_bitis_gunu] AS [tahmini_bitis_gunu]
+    FROM [dbo].[View_Kitap_Tahmini_Bitis] AS [View_Kitap_Tahmini_Bitis]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_KitaplarHacked" EntityType="Self.View_KitaplarHacked" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_KitaplarHacked].[id] AS [id], 
+    [View_KitaplarHacked].[tanitim] AS [tanitim], 
+    [View_KitaplarHacked].[yazar_id] AS [yazar_id], 
+    [View_KitaplarHacked].[kitapismi] AS [kitapismi], 
+    [View_KitaplarHacked].[yayinci] AS [yayinci], 
+    [View_KitaplarHacked].[turu] AS [turu]
+    FROM [dbo].[View_KitaplarHacked] AS [View_KitaplarHacked]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Okumalar_performans" EntityType="Self.View_Okumalar_performans" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Okumalar_performans].[id] AS [id], 
+    [View_Okumalar_performans].[son_okuma_sayfa_araligi] AS [son_okuma_sayfa_araligi], 
+    [View_Okumalar_performans].[average_page_per_day] AS [average_page_per_day], 
+    [View_Okumalar_performans].[tahmini_bitis_gunu] AS [tahmini_bitis_gunu]
+    FROM [dbo].[View_Okumalar_performans] AS [View_Okumalar_performans]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_okunan_kitaplar" EntityType="Self.View_okunan_kitaplar" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_okunan_kitaplar].[id] AS [id]
+    FROM [dbo].[View_okunan_kitaplar] AS [View_okunan_kitaplar]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Yazar_Kitap_Sayisi" EntityType="Self.View_Yazar_Kitap_Sayisi" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Yazar_Kitap_Sayisi].[yazar_id] AS [yazar_id], 
+    [View_Yazar_Kitap_Sayisi].[yazar] AS [yazar], 
+    [View_Yazar_Kitap_Sayisi].[YazarKitapSayisi] AS [YazarKitapSayisi]
+    FROM [dbo].[View_Yazar_Kitap_Sayisi] AS [View_Yazar_Kitap_Sayisi]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Alintilar_Kitaplar" Association="Self.FK_Alintilar_Kitaplar">
+      <End Role="Kitaplar" EntitySet="Kitaplar" />
+      <End Role="Alintilar" EntitySet="Alintilar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kitaplar_hacked_Yazarlar_hacked" Association="Self.FK_Kitaplar_hacked_Yazarlar_hacked">
+      <End Role="Yazarlar_hacked" EntitySet="Yazarlar_hacked" />
+      <End Role="Kitaplar_hacked" EntitySet="Kitaplar_hacked" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kitaplar_Yazarlar" Association="Self.FK_Kitaplar_Yazarlar">
+      <End Role="Yazarlar" EntitySet="Yazarlar" />
+      <End Role="Kitaplar" EntitySet="Kitaplar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Okumalar_Kitaplar" Association="Self.FK_Okumalar_Kitaplar">
+      <End Role="Kitaplar" EntitySet="Kitaplar" />
+      <End Role="Okumalar" EntitySet="Okumalar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

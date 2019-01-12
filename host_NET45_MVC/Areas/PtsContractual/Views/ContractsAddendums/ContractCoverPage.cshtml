@@ -1,0 +1,335 @@
+﻿@model host_NET45_MVC.Areas.PtsWorker.Controllers.EmailGeneratorController.ContractDetailsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ContractApprovalRequest</title>
+    <style type="text/css">
+
+        body {
+            height: 297mm;
+            width: 210mm;
+            /* to centre page on screen*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .table_ {
+            border-style: solid;
+            border-color: lightgray;
+            border-width: thin;
+            margin: 10px;
+            background-color: #F8F9F9;
+            color: #566573;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .header_ {
+            font-weight: bold;
+            width: 250px;
+            padding: 5px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: thin;
+        }
+
+        .header_gridview {
+            font-weight: bold;
+            padding: 5px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: thin;
+        }
+
+        .second_ {
+            width: 250px;
+            padding: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: thin;
+        }
+
+        .second_gridview {
+            padding: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: thin;
+        }
+    </style>
+
+</head>
+<body>
+    <div style="border-style:solid; border-width:thin; border-color:lightgray"> 
+
+        <h3 style="text-align:center;">@BodyTexts.Ref("7+Icky26u0KelJiKPLm6cQ", BodyTexts.Lang.rus)</h3>
+        <div style="margin-top:-50px; margin-left:180mm;"><img src="~/images/mercury.jpg" /></div> 
+
+        <table>
+            <tr>
+                <td colspan="2">
+
+                    <table class="table_">
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.ProjectNameTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.ProjectName
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.SupplierNameTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.SupplierName
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <table class="table_">
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.ContractNoTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.ContractNo
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.ContractDateTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.ContractDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.ContractValueTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.ContractValue
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.VATpercentTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.VATpercent
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="header_">
+                                @Model.ContractDetails.BudgetTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.Budget
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.ContractCurrencyTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.ContractCurrency
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.CostCodeTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.CostCode
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.PenaltiesToMercuryTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.PenaltiesToMercury
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.PenaltiesToSupplierTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.PenaltiesToSupplier
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.RequestedByTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.RequestedBy
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.ContractTypeTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.ContractType
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.ContractDescriptionTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.ContractDescription
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+                <td>
+
+                    <table class="table_">
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.StartDateTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.StartDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.FinishDateTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.FinishDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.AdvanceTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.Advance
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.InterimTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.Interim
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.ShipmentTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.Shipment
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.DeliveryTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.Delivery
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.RetentionTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.Retention
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.PenaltiesToMercuryNoteTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.PenaltiesToMercuryNote
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.PenaltiesToSupplierNoteTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.PenaltiesToSupplierNote
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.DeliveryTermsTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.DeliveryTerms
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.ContractDetails.GuaranteePeriodTitle
+                            </td>
+                            <td class="second_">
+                                @Model.ContractDetails.GuaranteePeriod
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table class="table_" cellspacing="0" border="0">
+                        <tbody>
+                            <tr>
+                                <th class="header_gridview" scope="col">@BodyTexts.Ref("sal97FKWUUyfFvfUfOtGbw", BodyTexts.Lang.rus)</th>
+                                <th class="header_gridview" scope="col">@BodyTexts.Ref("s3ecZ5CCmEqb/fEE88FWgA", BodyTexts.Lang.rus)</th>
+                                <th class="header_gridview" scope="col">@BodyTexts.Ref("IEJKYjD4SEiN3QML4oENDw", BodyTexts.Lang.rus)</th>
+                            </tr>
+
+                            @foreach (var item in Model.ApprovalStatusContractEFs)
+                            {
+                                string _true_false;
+                                if (item.Approved == 1) { _true_false = @BodyTexts.Ref("2TUx46Nv1UeQLerDF4GQjA", BodyTexts.Lang.rus); } else { _true_false = @BodyTexts.Ref("sl3la1Y+vUmYXJQRX9Mosw", BodyTexts.Lang.rus); };
+
+                                string _whoApproved = "";
+                                if (item.UserName == "lawyers") { _whoApproved = " <br/> (" + item.WhoApprovedFromLawyers + ")"; };
+
+                                <tr>
+                                    <td class="second_gridview">@item.UserName @Html.Raw(_whoApproved) </td>
+                                    <td class="second_gridview">@_true_false</td>
+                                    <td class="second_gridview">@item.WhenApproved</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+
+
+        </table>
+
+    </div>
+</body>
+</html>

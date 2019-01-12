@@ -1,0 +1,211 @@
+﻿@model host_NET45_MVC.Areas.PtsPO.Controllers.PurchaseOrderController.POModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/PtsPO/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    @Html.DevExpress().GetStyleSheets(
+        new StyleSheet { ExtensionType = ExtensionType.PopupControl },
+        new StyleSheet { ExtensionType = ExtensionType.FormLayout },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Editors })
+
+    @Html.DevExpress().GetScriptsEx(
+        new Script { ExtensionType = ExtensionType.PopupControl },
+        new Script { ExtensionType = ExtensionType.FormLayout },
+        new Script { ExtensionSuite = ExtensionSuite.Editors })
+}
+
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        settings.Name = "popupAddSupplier";
+
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.Center;
+        settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
+        settings.HeaderText = "Supplier Entry";
+        settings.Modal = true;
+        settings.PopupElementID = "AddSupplier";
+        settings.ClientSideEvents.Shown = "function(s,e){ PopupControlShown(s,e);}";
+
+        settings.SetContent(() =>
+        {
+            Html.RenderPartial("_EnterNewSupplierPartial", new host_NET45_MVC.Areas.PtsPO.Controllers.PurchaseOrderController.Table6_SupplierViewModel());
+
+        });
+    }).GetHtml()
+
+@using (Html.BeginForm("POCreate", "PurchaseOrder", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "FormPoCreate";
+    settings.ColCount = 3;
+    
+    settings.Items.AddGroupItem(setting =>
+    {
+        setting.GroupBoxDecoration = GroupBoxDecoration.Box;
+        setting.Caption = "Project and Supplier";
+        setting.ColSpan = 3;
+        setting.ColCount = 2;
+
+        setting.Items.Add(m => m.Project_ID, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write("<div id=\"inputProjects\" ></div>");
+                ViewContext.Writer.Write(Html.HiddenFor(m => m.Project_ID).ToHtmlString());
+                ViewContext.Writer.Write(Html.ValidationMessageFor(m => m.Project_ID).ToHtmlString());
+            });
+
+        });
+
+        setting.Items.Add(m => m.SupplierID, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write("<div id=\"inputSuppliers\"></div>");
+                ViewContext.Writer.Write(Html.HiddenFor(m => m.SupplierID).ToHtmlString());
+                ViewContext.Writer.Write(Html.ValidationMessageFor(m => m.SupplierID).ToHtmlString());
+            });
+
+        });
+
+        setting.Items.AddEmptyItem();
+
+        setting.Items.Add(i =>
+        {
+            i.Caption = "";
+            i.NestedExtension().Button(b =>
+            {
+                b.Name = "AddSupplier";
+                b.Text = "Add Supplier";
+            });
+        });
+
+    }
+    );
+
+    settings.Items.AddGroupItem(s =>
+    {
+        s.ColSpan = 3;
+        s.ColCount = 3;
+
+        s.Caption = "Other parameters";
+
+        s.Items.Add(i => i.Description, item =>
+        {
+            item.ColSpan = 3;
+            item.NestedExtension().Memo(m =>
+            {
+                m.ShowModelErrors = true;
+                m.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+                m.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+                m.Properties.ValidationSettings.Display = Display.Dynamic;
+                m.Height = System.Web.UI.WebControls.Unit.Pixel(100);
+                m.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+            });
+        });
+
+        s.Items.Add(i => i.PO_Date, item => {
+            item.NestedExtensionType = FormLayoutNestedExtensionItemType.DateEdit;
+            var tbSettings = (DateEditSettings)item.NestedExtensionSettings;
+            tbSettings.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Right;
+            tbSettings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+            tbSettings.Properties.ValidationSettings.Display = Display.Dynamic;
+            tbSettings.ShowModelErrors = true;
+        });
+        //s.Items.AddEmptyItem();
+
+        s.Items.Add(i => i.WhoRequested, item =>
+        {
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write("<div id=\"inputWhoRequested\" ></div>");
+                ViewContext.Writer.Write(Html.HiddenFor(m => m.WhoRequested).ToHtmlString());
+                ViewContext.Writer.Write(Html.ValidationMessageFor(m => m.WhoRequested).ToHtmlString());
+            });
+        });
+
+        s.Items.AddEmptyItem();
+
+        s.Items.Add(i => i.CostCode, item =>
+        {
+            item.ColSpan = 3;
+            item.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write("<div id=\"inputCostCode\"></div>");
+                ViewContext.Writer.Write(Html.HiddenFor(i => i.CostCode).ToHtmlString());
+                ViewContext.Writer.Write(Html.ValidationMessageFor(i => i.CostCode).ToHtmlString());
+            });
+
+        });
+
+        s.Items.Add(i => i.TotalPrice, item => {
+            item.NestedExtension().TextBox(tb =>
+            {
+                //tb.Properties.ClientSideEvents.Init = "function(e,s){if (e.GetValue() === 0) {e.SetValue('')}}";
+                tb.Properties.ClientSideEvents.Init = "function(e,s){if (e.GetValue() == '0'){e.SetValue('')}}";
+                tb.ShowModelErrors = true;
+                tb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+                tb.Properties.ValidationSettings.Display = Display.Dynamic;
+                tb.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+            });
+        });
+
+        s.Items.Add(i => i.PO_Currency, item =>
+        {
+            item.NestedExtension().ComboBox(cb =>
+            {
+                cb.Properties.TextField = "Text";
+                cb.Properties.ValueField = "Value";
+                cb.Properties.ValueType = typeof(string);
+                cb.Properties.DataSource = ViewBag.CurrencyDll;
+                cb.ShowModelErrors = true;
+                cb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+                cb.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+                cb.Properties.ValidationSettings.Display = Display.Dynamic;
+            });
+        });
+
+        s.Items.Add(i => i.VATpercent, item => {
+            item.NestedExtension().TextBox(tb =>
+            {
+                tb.Properties.ClientSideEvents.Init = "function(e,s){if (e.GetValue() == '0'){e.SetValue('')}}";
+                tb.ShowModelErrors = true;
+                tb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+                tb.Properties.ValidationSettings.Display = Display.Dynamic;
+                tb.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+            });
+        });
+
+        s.Items.Add(i =>
+        {
+            i.Caption = "";
+            i.NestedExtension().Button(se =>
+            {
+                se.Name = "myname";
+                se.UseSubmitBehavior = true;
+                se.Text = "Create";
+                se.ClientSideEvents.Click = "function(e,s){$('#inputWhoRequested').dxValidator('instance').validate();}";
+            });
+        });
+
+    });
+
+}).GetHtml()
+
+    @Html.HiddenFor(m => m.ProjectIdName)
+    @Html.HiddenFor(m => m.SupplierIDname)
+    @Html.HiddenFor(m => m.CostCodeDescription)
+    @Html.Hidden("UserName",(string)System.Web.HttpContext.Current.User.Identity.Name)
+}
+
+@section Scripts{
+    <script src="~/Areas/PtsPO/scripts/PurchaseOrder/POCreate.js"></script>
+    <script src="~/Areas/PtsPO/scripts/PurchaseOrder/_EnterNewSupplierPartial.js"></script>
+}
+
+

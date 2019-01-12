@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EssentialInfoModelStoreContainer" CdmEntityContainer="EssentialInfoEntities">
+    <EntitySetMapping Name="Level1">
+      <EntityTypeMapping TypeName="EssentialInfoModel.Level1">
+        <MappingFragment StoreEntitySet="Level1">
+          <ScalarProperty Name="level1_name" ColumnName="level1_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Level2">
+      <EntityTypeMapping TypeName="EssentialInfoModel.Level2">
+        <MappingFragment StoreEntitySet="Level2">
+          <ScalarProperty Name="level2_name" ColumnName="level2_name" />
+          <ScalarProperty Name="level1_id" ColumnName="level1_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Level3">
+      <EntityTypeMapping TypeName="EssentialInfoModel.Level3">
+        <MappingFragment StoreEntitySet="Level3">
+          <ScalarProperty Name="level3_name" ColumnName="level3_name" />
+          <ScalarProperty Name="level2_id" ColumnName="level2_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="EssentialInfoModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="tag_cloud" ColumnName="tag_cloud" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="level3_id" ColumnName="level3_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

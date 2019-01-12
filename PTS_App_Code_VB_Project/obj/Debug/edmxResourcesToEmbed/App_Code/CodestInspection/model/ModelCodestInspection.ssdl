@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CodestInspectionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Table_Activity">
+    <Key>
+      <PropertyRef Name="ActivityId" />
+    </Key>
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+    <Property Name="BuildingId" Type="int" Nullable="false" />
+    <Property Name="DisciplineId" Type="int" Nullable="false" />
+    <Property Name="SystemId" Type="int" Nullable="false" />
+    <Property Name="Activity_Layer_1Id" Type="int" Nullable="false" />
+    <Property Name="Activity_Layer_2Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Activity_Layer_1">
+    <Key>
+      <PropertyRef Name="Activity_Layer_1Id" />
+    </Key>
+    <Property Name="Activity_Layer_1Id" Type="int" Nullable="false" />
+    <Property Name="Activity_Layer_1_Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Activity_Layer_2">
+    <Key>
+      <PropertyRef Name="Activity_Layer_2Id" />
+    </Key>
+    <Property Name="Activity_Layer_2Id" Type="int" Nullable="false" />
+    <Property Name="Activity_Layer_2_Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Building">
+    <Key>
+      <PropertyRef Name="BuildingId" />
+    </Key>
+    <Property Name="BuildingId" Type="int" Nullable="false" />
+    <Property Name="BuildingName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Category_In_BoQ">
+    <Key>
+      <PropertyRef Name="CategoryInBOQId" />
+    </Key>
+    <Property Name="CategoryInBOQId" Type="int" Nullable="false" />
+    <Property Name="CategoryInBOQName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Client_Representative">
+    <Key>
+      <PropertyRef Name="ClientRepresentativeId" />
+    </Key>
+    <Property Name="ClientRepresentativeId" Type="int" Nullable="false" />
+    <Property Name="ClientRepresentativeName" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Client_Representative_Bldg_Discp">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientRepresentativeId" Type="int" Nullable="false" />
+    <Property Name="BuildingId" Type="int" Nullable="false" />
+    <Property Name="DisciplineId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Discipline">
+    <Key>
+      <PropertyRef Name="DisciplineId" />
+    </Key>
+    <Property Name="DisciplineId" Type="int" Nullable="false" />
+    <Property Name="DisciplineName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Floor">
+    <Key>
+      <PropertyRef Name="FloorId" />
+    </Key>
+    <Property Name="FloorId" Type="int" Nullable="false" />
+    <Property Name="FloorName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Inspection">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="InspectionNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkingDrawingNo" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Activity">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Client_Response">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="smalldatetime" />
+    <Property Name="Hour" Type="time" Precision="7" />
+    <Property Name="ClientRepresentativeId" Type="int" />
+    <Property Name="WhenResponded" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Initiater">
+    <Key>
+      <PropertyRef Name="InspectionInitiaterId" />
+    </Key>
+    <Property Name="InspectionInitiaterId" Type="int" Nullable="false" />
+    <Property Name="InspectionInitiaterName" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Initiater_Bldg_Discp">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InspectionInitiaterId" Type="int" Nullable="false" />
+    <Property Name="BuildingId" Type="int" Nullable="false" />
+    <Property Name="DisciplineId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Initiation">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="InspectionInitiaterId" Type="int" />
+    <Property Name="When_Initiated" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Result">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="ResultId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Result_Docs">
+    <Key>
+      <PropertyRef Name="Inspection_Result_Docs_Id" />
+    </Key>
+    <Property Name="Inspection_Result_Docs_Id" Type="int" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="DocTypeId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Result_Docs_List">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Inspection_Result_Docs_Id" Type="int" Nullable="false" />
+    <Property Name="File_Link" Type="nvarchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Inspection_Room">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_ResponseKey">
+    <Key>
+      <PropertyRef Name="ResponseId" />
+    </Key>
+    <Property Name="ResponseId" Type="int" Nullable="false" />
+    <Property Name="Response_Key" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Result">
+    <Key>
+      <PropertyRef Name="ResultId" />
+    </Key>
+    <Property Name="ResultId" Type="int" Nullable="false" />
+    <Property Name="ResultName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Result_Docs">
+    <Key>
+      <PropertyRef Name="DocTypeId" />
+    </Key>
+    <Property Name="DocTypeId" Type="int" Nullable="false" />
+    <Property Name="DocType" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Room">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="BuildingId" Type="int" Nullable="false" />
+    <Property Name="FloorId" Type="int" Nullable="false" />
+    <Property Name="RoomNoId" Type="int" Nullable="false" />
+    <Property Name="RoomNameId" Type="int" Nullable="false" />
+    <Property Name="CategoryInBOQId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Room_Name">
+    <Key>
+      <PropertyRef Name="RoomNameId" />
+    </Key>
+    <Property Name="RoomNameId" Type="int" Nullable="false" />
+    <Property Name="RoomName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Room_No">
+    <Key>
+      <PropertyRef Name="RoomNoId" />
+    </Key>
+    <Property Name="RoomNoId" Type="int" Nullable="false" />
+    <Property Name="RoomNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Supervisor">
+    <Key>
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="SupervisorId" Type="int" Nullable="false" />
+    <Property Name="SupervisorName" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Supervisor_Approval">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="SupervisorId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+    <Property Name="ResponseId" Type="int" Nullable="false" />
+    <Property Name="WhenResponded" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_Supervisor_Bldg_Discp">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupervisorId" Type="int" Nullable="false" />
+    <Property Name="BuildingId" Type="int" Nullable="false" />
+    <Property Name="DisciplineId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_System">
+    <Key>
+      <PropertyRef Name="SystemId" />
+    </Key>
+    <Property Name="SystemId" Type="int" Nullable="false" />
+    <Property Name="SystemName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Teknazor">
+    <Key>
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="TeknazorId" Type="int" Nullable="false" />
+    <Property Name="TeknazorName" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Teknazor_Approval">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="TeknazorId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+    <Property Name="ResponseId" Type="int" Nullable="false" />
+    <Property Name="WhenResponded" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Table_Teknazor_Bldg_Discp">
+    <Key>
+      <PropertyRef Name="UniqueId" />
+    </Key>
+    <Property Name="UniqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeknazorId" Type="int" Nullable="false" />
+    <Property Name="BuildingId" Type="int" Nullable="false" />
+    <Property Name="DisciplineId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_EmailsClientRepresentativesOnInspection' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_EmailsClientRepresentativesOnInspection">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="ClientRepresentativeName" />
+      <PropertyRef Name="ClientRepresentativeId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="ClientRepresentativeName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ClientRepresentativeId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_EmailsInspectionInitiaterOnInspection' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_EmailsInspectionInitiaterOnInspection">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="InspectionInitiaterName" />
+      <PropertyRef Name="InspectionInitiaterId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="InspectionInitiaterName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="InspectionInitiaterId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_EmailsSupervisorsOnInspection' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_EmailsSupervisorsOnInspection">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="SupervisorName" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="SupervisorName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="SupervisorId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_EmailsTeknazorsOnInspection' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_EmailsTeknazorsOnInspection">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="TeknazorName" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="TeknazorName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="TeknazorId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Inspection_Room_Activity_Supervisor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Inspection_Room_Activity_Supervisor">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="ActivityId" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+    <Property Name="SupervisorId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Inspection_Room_Activity_Supervisor_Response' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Inspection_Room_Activity_Supervisor_Response">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="ActivityId" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+    <Property Name="SupervisorId" Type="int" Nullable="false" />
+    <Property Name="ResponseId" Type="int" />
+    <Property Name="Response_Key" Type="nvarchar" MaxLength="50" />
+    <Property Name="WhenResponded" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Inspection_Room_Activity_Teknazor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Inspection_Room_Activity_Teknazor">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="ActivityId" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+    <Property Name="TeknazorId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Inspection_Room_Activity_Teknazor_Response' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Inspection_Room_Activity_Teknazor_Response">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="RoomId" />
+      <PropertyRef Name="ActivityId" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+    <Property Name="TeknazorId" Type="int" Nullable="false" />
+    <Property Name="ResponseId" Type="int" />
+    <Property Name="Response_Key" Type="nvarchar" MaxLength="50" />
+    <Property Name="WhenResponded" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Inspection_SupervisorApprovalStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Inspection_SupervisorApprovalStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="SupervisorName" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="SupervisorName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="SupervisorId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Inspection_SupervisorFullApprovalResponse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Inspection_SupervisorFullApprovalResponse">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="SupervisorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="SupervisorId" Type="int" Nullable="false" />
+    <Property Name="ResponseId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Inspection_TeknazorApprovalStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Inspection_TeknazorApprovalStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="TeknazorName" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="TeknazorName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="TeknazorId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Inspection_TeknazorFullApprovalResponse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Inspection_TeknazorFullApprovalResponse">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+      <PropertyRef Name="TeknazorId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="TeknazorId" Type="int" Nullable="false" />
+    <Property Name="ResponseId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_InspectionInitiated' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_InspectionInitiated">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_InspectionInitiated_AllSupervisorApproved' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_InspectionInitiated_AllSupervisorApproved">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+    <Property Name="InspectionNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved">
+    <Key>
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_InspectionInitiated_AllTeknazorApproved' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_InspectionInitiated_AllTeknazorApproved">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CodestInspection.dbo.View_Result_Docs_Restricted' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Result_Docs_Restricted">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="DocTypeId" />
+      <PropertyRef Name="DocType" />
+      <PropertyRef Name="InspectionId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocTypeId" Type="int" Nullable="false" />
+    <Property Name="DocType" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="InspectionId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Table_Client_Representative_Bldg_Discp_Table_Building">
+    <End Role="Table_Building" Type="Self.Table_Building" Multiplicity="1" />
+    <End Role="Table_Client_Representative_Bldg_Discp" Type="Self.Table_Client_Representative_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Client_Representative_Bldg_Discp">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Client_Representative_Bldg_Discp_Table_Client_Representative">
+    <End Role="Table_Client_Representative" Type="Self.Table_Client_Representative" Multiplicity="1" />
+    <End Role="Table_Client_Representative_Bldg_Discp" Type="Self.Table_Client_Representative_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Client_Representative">
+        <PropertyRef Name="ClientRepresentativeId" />
+      </Principal>
+      <Dependent Role="Table_Client_Representative_Bldg_Discp">
+        <PropertyRef Name="ClientRepresentativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Client_Representative_Bldg_Discp_Table_Discipline">
+    <End Role="Table_Discipline" Type="Self.Table_Discipline" Multiplicity="1" />
+    <End Role="Table_Client_Representative_Bldg_Discp" Type="Self.Table_Client_Representative_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Client_Representative_Bldg_Discp">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Activity">
+    <End Role="Table_Activity" Type="Self.Table_Activity" Multiplicity="1" />
+    <End Role="Table_Inspection_Activity" Type="Self.Table_Inspection_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Activity">
+        <PropertyRef Name="ActivityId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Activity">
+        <PropertyRef Name="ActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Activity_Layer_1">
+    <End Role="Table_Activity_Layer_1" Type="Self.Table_Activity_Layer_1" Multiplicity="1" />
+    <End Role="Table_Activity" Type="Self.Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Activity_Layer_1">
+        <PropertyRef Name="Activity_Layer_1Id" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="Activity_Layer_1Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Activity_Layer_2">
+    <End Role="Table_Activity_Layer_2" Type="Self.Table_Activity_Layer_2" Multiplicity="1" />
+    <End Role="Table_Activity" Type="Self.Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Activity_Layer_2">
+        <PropertyRef Name="Activity_Layer_2Id" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="Activity_Layer_2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Building">
+    <End Role="Table_Building" Type="Self.Table_Building" Multiplicity="1" />
+    <End Role="Table_Activity" Type="Self.Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Discipline">
+    <End Role="Table_Discipline" Type="Self.Table_Discipline" Multiplicity="1" />
+    <End Role="Table_Activity" Type="Self.Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_Inspection">
+    <End Role="Table_Inspection" Type="Self.Table_Inspection" Multiplicity="1" />
+    <End Role="Table_Inspection_Activity" Type="Self.Table_Inspection_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Activity">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Activity_Table_System">
+    <End Role="Table_System" Type="Self.Table_System" Multiplicity="1" />
+    <End Role="Table_Activity" Type="Self.Table_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_System">
+        <PropertyRef Name="SystemId" />
+      </Principal>
+      <Dependent Role="Table_Activity">
+        <PropertyRef Name="SystemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Client_Response_Table_Client_Representative">
+    <End Role="Table_Client_Representative" Type="Self.Table_Client_Representative" Multiplicity="0..1" />
+    <End Role="Table_Inspection_Client_Response" Type="Self.Table_Inspection_Client_Response" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Client_Representative">
+        <PropertyRef Name="ClientRepresentativeId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Client_Response">
+        <PropertyRef Name="ClientRepresentativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Client_Response_Table_Inspection">
+    <End Role="Table_Inspection" Type="Self.Table_Inspection" Multiplicity="1" />
+    <End Role="Table_Inspection_Client_Response" Type="Self.Table_Inspection_Client_Response" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Client_Response">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Building">
+    <End Role="Table_Building" Type="Self.Table_Building" Multiplicity="1" />
+    <End Role="Table_Inspection_Initiater_Bldg_Discp" Type="Self.Table_Inspection_Initiater_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiater_Bldg_Discp">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Discipline">
+    <End Role="Table_Discipline" Type="Self.Table_Discipline" Multiplicity="1" />
+    <End Role="Table_Inspection_Initiater_Bldg_Discp" Type="Self.Table_Inspection_Initiater_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiater_Bldg_Discp">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Inspection_Initiater">
+    <End Role="Table_Inspection_Initiater" Type="Self.Table_Inspection_Initiater" Multiplicity="1" />
+    <End Role="Table_Inspection_Initiater_Bldg_Discp" Type="Self.Table_Inspection_Initiater_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Initiater">
+        <PropertyRef Name="InspectionInitiaterId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiater_Bldg_Discp">
+        <PropertyRef Name="InspectionInitiaterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiation_Table_Inspection">
+    <End Role="Table_Inspection" Type="Self.Table_Inspection" Multiplicity="1" />
+    <End Role="Table_Inspection_Initiation" Type="Self.Table_Inspection_Initiation" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiation">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Initiation_Table_Inspection_Initiater">
+    <End Role="Table_Inspection_Initiater" Type="Self.Table_Inspection_Initiater" Multiplicity="0..1" />
+    <End Role="Table_Inspection_Initiation" Type="Self.Table_Inspection_Initiation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Initiater">
+        <PropertyRef Name="InspectionInitiaterId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Initiation">
+        <PropertyRef Name="InspectionInitiaterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Result_Docs_List_Table_Inspection_Result_Docs">
+    <End Role="Table_Inspection_Result_Docs" Type="Self.Table_Inspection_Result_Docs" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Table_Inspection_Result_Docs_List" Type="Self.Table_Inspection_Result_Docs_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Result_Docs">
+        <PropertyRef Name="Inspection_Result_Docs_Id" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result_Docs_List">
+        <PropertyRef Name="Inspection_Result_Docs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Result_Docs_Table_Inspection_Result">
+    <End Role="Table_Inspection_Result" Type="Self.Table_Inspection_Result" Multiplicity="1" />
+    <End Role="Table_Inspection_Result_Docs" Type="Self.Table_Inspection_Result_Docs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Result">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result_Docs">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Result_Docs_Table_Result_Docs">
+    <End Role="Table_Result_Docs" Type="Self.Table_Result_Docs" Multiplicity="1" />
+    <End Role="Table_Inspection_Result_Docs" Type="Self.Table_Inspection_Result_Docs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Result_Docs">
+        <PropertyRef Name="DocTypeId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result_Docs">
+        <PropertyRef Name="DocTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Result_Table_Inspection_Client_Response">
+    <End Role="Table_Inspection_Client_Response" Type="Self.Table_Inspection_Client_Response" Multiplicity="1" />
+    <End Role="Table_Inspection_Result" Type="Self.Table_Inspection_Result" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection_Client_Response">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Result_Table_Result">
+    <End Role="Table_Result" Type="Self.Table_Result" Multiplicity="1" />
+    <End Role="Table_Inspection_Result" Type="Self.Table_Inspection_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Result">
+        <PropertyRef Name="ResultId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Result">
+        <PropertyRef Name="ResultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Room_Table_Inspection">
+    <End Role="Table_Inspection" Type="Self.Table_Inspection" Multiplicity="1" />
+    <End Role="Table_Inspection_Room" Type="Self.Table_Inspection_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Room">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Inspection_Room_Table_Room">
+    <End Role="Table_Room" Type="Self.Table_Room" Multiplicity="1" />
+    <End Role="Table_Inspection_Room" Type="Self.Table_Inspection_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Room">
+        <PropertyRef Name="RoomId" />
+      </Principal>
+      <Dependent Role="Table_Inspection_Room">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Building">
+    <End Role="Table_Building" Type="Self.Table_Building" Multiplicity="1" />
+    <End Role="Table_Room" Type="Self.Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Category_In_BoQ">
+    <End Role="Table_Category_In_BoQ" Type="Self.Table_Category_In_BoQ" Multiplicity="1" />
+    <End Role="Table_Room" Type="Self.Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Category_In_BoQ">
+        <PropertyRef Name="CategoryInBOQId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="CategoryInBOQId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Floor">
+    <End Role="Table_Floor" Type="Self.Table_Floor" Multiplicity="1" />
+    <End Role="Table_Room" Type="Self.Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Floor">
+        <PropertyRef Name="FloorId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="FloorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Room_Name">
+    <End Role="Table_Room_Name" Type="Self.Table_Room_Name" Multiplicity="1" />
+    <End Role="Table_Room" Type="Self.Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Room_Name">
+        <PropertyRef Name="RoomNameId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="RoomNameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Room_Table_Room_No">
+    <End Role="Table_Room_No" Type="Self.Table_Room_No" Multiplicity="1" />
+    <End Role="Table_Room" Type="Self.Table_Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Room_No">
+        <PropertyRef Name="RoomNoId" />
+      </Principal>
+      <Dependent Role="Table_Room">
+        <PropertyRef Name="RoomNoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Approval_Table_Inspection">
+    <End Role="Table_Inspection" Type="Self.Table_Inspection" Multiplicity="1" />
+    <End Role="Table_Supervisor_Approval" Type="Self.Table_Supervisor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Approval">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Approval_Table_ResponseKey1">
+    <End Role="Table_ResponseKey" Type="Self.Table_ResponseKey" Multiplicity="1" />
+    <End Role="Table_Supervisor_Approval" Type="Self.Table_Supervisor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ResponseKey">
+        <PropertyRef Name="ResponseId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Approval">
+        <PropertyRef Name="ResponseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Bldg_Discp_Table_Building">
+    <End Role="Table_Building" Type="Self.Table_Building" Multiplicity="1" />
+    <End Role="Table_Supervisor_Bldg_Discp" Type="Self.Table_Supervisor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Bldg_Discp">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Bldg_Discp_Table_Discipline">
+    <End Role="Table_Discipline" Type="Self.Table_Discipline" Multiplicity="1" />
+    <End Role="Table_Supervisor_Bldg_Discp" Type="Self.Table_Supervisor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Bldg_Discp">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Supervisor_Bldg_Discp_Table_Supervisor">
+    <End Role="Table_Supervisor" Type="Self.Table_Supervisor" Multiplicity="1" />
+    <End Role="Table_Supervisor_Bldg_Discp" Type="Self.Table_Supervisor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Supervisor">
+        <PropertyRef Name="SupervisorId" />
+      </Principal>
+      <Dependent Role="Table_Supervisor_Bldg_Discp">
+        <PropertyRef Name="SupervisorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Approval_Table_Inspection">
+    <End Role="Table_Inspection" Type="Self.Table_Inspection" Multiplicity="1" />
+    <End Role="Table_Teknazor_Approval" Type="Self.Table_Teknazor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Inspection">
+        <PropertyRef Name="InspectionId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Approval">
+        <PropertyRef Name="InspectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Approval_Table_ResponseKey1">
+    <End Role="Table_ResponseKey" Type="Self.Table_ResponseKey" Multiplicity="1" />
+    <End Role="Table_Teknazor_Approval" Type="Self.Table_Teknazor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_ResponseKey">
+        <PropertyRef Name="ResponseId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Approval">
+        <PropertyRef Name="ResponseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Approval_Table_Teknazor">
+    <End Role="Table_Teknazor" Type="Self.Table_Teknazor" Multiplicity="1" />
+    <End Role="Table_Teknazor_Approval" Type="Self.Table_Teknazor_Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Teknazor">
+        <PropertyRef Name="TeknazorId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Approval">
+        <PropertyRef Name="TeknazorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Bldg_Discp_Table_Building">
+    <End Role="Table_Building" Type="Self.Table_Building" Multiplicity="1" />
+    <End Role="Table_Teknazor_Bldg_Discp" Type="Self.Table_Teknazor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Bldg_Discp">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Bldg_Discp_Table_Discipline">
+    <End Role="Table_Discipline" Type="Self.Table_Discipline" Multiplicity="1" />
+    <End Role="Table_Teknazor_Bldg_Discp" Type="Self.Table_Teknazor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Discipline">
+        <PropertyRef Name="DisciplineId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Bldg_Discp">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Teknazor_Bldg_Discp_Table_Teknazor">
+    <End Role="Table_Teknazor" Type="Self.Table_Teknazor" Multiplicity="1" />
+    <End Role="Table_Teknazor_Bldg_Discp" Type="Self.Table_Teknazor_Bldg_Discp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Teknazor">
+        <PropertyRef Name="TeknazorId" />
+      </Principal>
+      <Dependent Role="Table_Teknazor_Bldg_Discp">
+        <PropertyRef Name="TeknazorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_DeleteAllSupervisorApprovalsFromInspection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InspectionId" Type="int" Mode="In" />
+    <Parameter Name="SupervisorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteAllTable_Inspection_Result_Docs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InspectionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteAllTeknazorApprovalsFromInspection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InspectionId" Type="int" Mode="In" />
+    <Parameter Name="TeknazorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertAllSupervisorApprovalResponseToInspection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InspectionId" Type="int" Mode="In" />
+    <Parameter Name="SupervisorId" Type="int" Mode="In" />
+    <Parameter Name="ResponseId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertAllTeknazorApprovalResponseToInspection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InspectionId" Type="int" Mode="In" />
+    <Parameter Name="TeknazorId" Type="int" Mode="In" />
+    <Parameter Name="ResponseId" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="CodestInspectionModelStoreContainer">
+    <EntitySet Name="Table_Activity" EntityType="Self.Table_Activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Activity_Layer_1" EntityType="Self.Table_Activity_Layer_1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Activity_Layer_2" EntityType="Self.Table_Activity_Layer_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Building" EntityType="Self.Table_Building" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Category_In_BoQ" EntityType="Self.Table_Category_In_BoQ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Client_Representative" EntityType="Self.Table_Client_Representative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Client_Representative_Bldg_Discp" EntityType="Self.Table_Client_Representative_Bldg_Discp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Discipline" EntityType="Self.Table_Discipline" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Floor" EntityType="Self.Table_Floor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection" EntityType="Self.Table_Inspection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Activity" EntityType="Self.Table_Inspection_Activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Client_Response" EntityType="Self.Table_Inspection_Client_Response" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Initiater" EntityType="Self.Table_Inspection_Initiater" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Initiater_Bldg_Discp" EntityType="Self.Table_Inspection_Initiater_Bldg_Discp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Initiation" EntityType="Self.Table_Inspection_Initiation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Result" EntityType="Self.Table_Inspection_Result" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Result_Docs" EntityType="Self.Table_Inspection_Result_Docs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Result_Docs_List" EntityType="Self.Table_Inspection_Result_Docs_List" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Inspection_Room" EntityType="Self.Table_Inspection_Room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_ResponseKey" EntityType="Self.Table_ResponseKey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Result" EntityType="Self.Table_Result" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Result_Docs" EntityType="Self.Table_Result_Docs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Room" EntityType="Self.Table_Room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Room_Name" EntityType="Self.Table_Room_Name" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Room_No" EntityType="Self.Table_Room_No" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Supervisor" EntityType="Self.Table_Supervisor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Supervisor_Approval" EntityType="Self.Table_Supervisor_Approval" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Supervisor_Bldg_Discp" EntityType="Self.Table_Supervisor_Bldg_Discp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_System" EntityType="Self.Table_System" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Teknazor" EntityType="Self.Table_Teknazor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Teknazor_Approval" EntityType="Self.Table_Teknazor_Approval" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Teknazor_Bldg_Discp" EntityType="Self.Table_Teknazor_Bldg_Discp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_EmailsClientRepresentativesOnInspection" EntityType="Self.View_EmailsClientRepresentativesOnInspection" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_EmailsClientRepresentativesOnInspection].[Id] AS [Id], 
+[View_EmailsClientRepresentativesOnInspection].[InspectionId] AS [InspectionId], 
+[View_EmailsClientRepresentativesOnInspection].[LoweredEmail] AS [LoweredEmail], 
+[View_EmailsClientRepresentativesOnInspection].[ClientRepresentativeName] AS [ClientRepresentativeName], 
+[View_EmailsClientRepresentativesOnInspection].[ClientRepresentativeId] AS [ClientRepresentativeId]
+FROM [dbo].[View_EmailsClientRepresentativesOnInspection] AS [View_EmailsClientRepresentativesOnInspection]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_EmailsInspectionInitiaterOnInspection" EntityType="Self.View_EmailsInspectionInitiaterOnInspection" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_EmailsInspectionInitiaterOnInspection].[Id] AS [Id], 
+[View_EmailsInspectionInitiaterOnInspection].[InspectionId] AS [InspectionId], 
+[View_EmailsInspectionInitiaterOnInspection].[LoweredEmail] AS [LoweredEmail], 
+[View_EmailsInspectionInitiaterOnInspection].[InspectionInitiaterName] AS [InspectionInitiaterName], 
+[View_EmailsInspectionInitiaterOnInspection].[InspectionInitiaterId] AS [InspectionInitiaterId]
+FROM [dbo].[View_EmailsInspectionInitiaterOnInspection] AS [View_EmailsInspectionInitiaterOnInspection]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_EmailsSupervisorsOnInspection" EntityType="Self.View_EmailsSupervisorsOnInspection" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_EmailsSupervisorsOnInspection].[Id] AS [Id], 
+[View_EmailsSupervisorsOnInspection].[InspectionId] AS [InspectionId], 
+[View_EmailsSupervisorsOnInspection].[LoweredEmail] AS [LoweredEmail], 
+[View_EmailsSupervisorsOnInspection].[SupervisorName] AS [SupervisorName], 
+[View_EmailsSupervisorsOnInspection].[SupervisorId] AS [SupervisorId]
+FROM [dbo].[View_EmailsSupervisorsOnInspection] AS [View_EmailsSupervisorsOnInspection]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_EmailsTeknazorsOnInspection" EntityType="Self.View_EmailsTeknazorsOnInspection" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_EmailsTeknazorsOnInspection].[Id] AS [Id], 
+[View_EmailsTeknazorsOnInspection].[InspectionId] AS [InspectionId], 
+[View_EmailsTeknazorsOnInspection].[LoweredEmail] AS [LoweredEmail], 
+[View_EmailsTeknazorsOnInspection].[TeknazorName] AS [TeknazorName], 
+[View_EmailsTeknazorsOnInspection].[TeknazorId] AS [TeknazorId]
+FROM [dbo].[View_EmailsTeknazorsOnInspection] AS [View_EmailsTeknazorsOnInspection]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Inspection_Room_Activity_Supervisor" EntityType="Self.View_Inspection_Room_Activity_Supervisor" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Inspection_Room_Activity_Supervisor].[Id] AS [Id], 
+[View_Inspection_Room_Activity_Supervisor].[InspectionId] AS [InspectionId], 
+[View_Inspection_Room_Activity_Supervisor].[RoomId] AS [RoomId], 
+[View_Inspection_Room_Activity_Supervisor].[ActivityId] AS [ActivityId], 
+[View_Inspection_Room_Activity_Supervisor].[SupervisorId] AS [SupervisorId]
+FROM [dbo].[View_Inspection_Room_Activity_Supervisor] AS [View_Inspection_Room_Activity_Supervisor]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Inspection_Room_Activity_Supervisor_Response" EntityType="Self.View_Inspection_Room_Activity_Supervisor_Response" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Inspection_Room_Activity_Supervisor_Response].[Id] AS [Id], 
+[View_Inspection_Room_Activity_Supervisor_Response].[InspectionId] AS [InspectionId], 
+[View_Inspection_Room_Activity_Supervisor_Response].[RoomId] AS [RoomId], 
+[View_Inspection_Room_Activity_Supervisor_Response].[ActivityId] AS [ActivityId], 
+[View_Inspection_Room_Activity_Supervisor_Response].[SupervisorId] AS [SupervisorId], 
+[View_Inspection_Room_Activity_Supervisor_Response].[ResponseId] AS [ResponseId], 
+[View_Inspection_Room_Activity_Supervisor_Response].[Response_Key] AS [Response_Key], 
+[View_Inspection_Room_Activity_Supervisor_Response].[WhenResponded] AS [WhenResponded]
+FROM [dbo].[View_Inspection_Room_Activity_Supervisor_Response] AS [View_Inspection_Room_Activity_Supervisor_Response]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Inspection_Room_Activity_Teknazor" EntityType="Self.View_Inspection_Room_Activity_Teknazor" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Inspection_Room_Activity_Teknazor].[Id] AS [Id], 
+[View_Inspection_Room_Activity_Teknazor].[InspectionId] AS [InspectionId], 
+[View_Inspection_Room_Activity_Teknazor].[RoomId] AS [RoomId], 
+[View_Inspection_Room_Activity_Teknazor].[ActivityId] AS [ActivityId], 
+[View_Inspection_Room_Activity_Teknazor].[TeknazorId] AS [TeknazorId]
+FROM [dbo].[View_Inspection_Room_Activity_Teknazor] AS [View_Inspection_Room_Activity_Teknazor]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Inspection_Room_Activity_Teknazor_Response" EntityType="Self.View_Inspection_Room_Activity_Teknazor_Response" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Inspection_Room_Activity_Teknazor_Response].[Id] AS [Id], 
+[View_Inspection_Room_Activity_Teknazor_Response].[InspectionId] AS [InspectionId], 
+[View_Inspection_Room_Activity_Teknazor_Response].[RoomId] AS [RoomId], 
+[View_Inspection_Room_Activity_Teknazor_Response].[ActivityId] AS [ActivityId], 
+[View_Inspection_Room_Activity_Teknazor_Response].[TeknazorId] AS [TeknazorId], 
+[View_Inspection_Room_Activity_Teknazor_Response].[ResponseId] AS [ResponseId], 
+[View_Inspection_Room_Activity_Teknazor_Response].[Response_Key] AS [Response_Key], 
+[View_Inspection_Room_Activity_Teknazor_Response].[WhenResponded] AS [WhenResponded]
+FROM [dbo].[View_Inspection_Room_Activity_Teknazor_Response] AS [View_Inspection_Room_Activity_Teknazor_Response]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Inspection_SupervisorApprovalStatus" EntityType="Self.View_Inspection_SupervisorApprovalStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Inspection_SupervisorApprovalStatus].[Id] AS [Id], 
+[View_Inspection_SupervisorApprovalStatus].[InspectionId] AS [InspectionId], 
+[View_Inspection_SupervisorApprovalStatus].[SupervisorName] AS [SupervisorName], 
+[View_Inspection_SupervisorApprovalStatus].[Status] AS [Status], 
+[View_Inspection_SupervisorApprovalStatus].[SupervisorId] AS [SupervisorId]
+FROM [dbo].[View_Inspection_SupervisorApprovalStatus] AS [View_Inspection_SupervisorApprovalStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Inspection_SupervisorFullApprovalResponse" EntityType="Self.View_Inspection_SupervisorFullApprovalResponse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Inspection_SupervisorFullApprovalResponse].[Id] AS [Id], 
+[View_Inspection_SupervisorFullApprovalResponse].[InspectionId] AS [InspectionId], 
+[View_Inspection_SupervisorFullApprovalResponse].[SupervisorId] AS [SupervisorId], 
+[View_Inspection_SupervisorFullApprovalResponse].[ResponseId] AS [ResponseId]
+FROM [dbo].[View_Inspection_SupervisorFullApprovalResponse] AS [View_Inspection_SupervisorFullApprovalResponse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Inspection_TeknazorApprovalStatus" EntityType="Self.View_Inspection_TeknazorApprovalStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Inspection_TeknazorApprovalStatus].[Id] AS [Id], 
+[View_Inspection_TeknazorApprovalStatus].[InspectionId] AS [InspectionId], 
+[View_Inspection_TeknazorApprovalStatus].[TeknazorName] AS [TeknazorName], 
+[View_Inspection_TeknazorApprovalStatus].[Status] AS [Status], 
+[View_Inspection_TeknazorApprovalStatus].[TeknazorId] AS [TeknazorId]
+FROM [dbo].[View_Inspection_TeknazorApprovalStatus] AS [View_Inspection_TeknazorApprovalStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Inspection_TeknazorFullApprovalResponse" EntityType="Self.View_Inspection_TeknazorFullApprovalResponse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Inspection_TeknazorFullApprovalResponse].[Id] AS [Id], 
+[View_Inspection_TeknazorFullApprovalResponse].[InspectionId] AS [InspectionId], 
+[View_Inspection_TeknazorFullApprovalResponse].[TeknazorId] AS [TeknazorId], 
+[View_Inspection_TeknazorFullApprovalResponse].[ResponseId] AS [ResponseId]
+FROM [dbo].[View_Inspection_TeknazorFullApprovalResponse] AS [View_Inspection_TeknazorFullApprovalResponse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_InspectionInitiated" EntityType="Self.View_InspectionInitiated" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_InspectionInitiated].[Id] AS [Id], 
+[View_InspectionInitiated].[InspectionId] AS [InspectionId]
+FROM [dbo].[View_InspectionInitiated] AS [View_InspectionInitiated]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_InspectionInitiated_AllSupervisorApproved" EntityType="Self.View_InspectionInitiated_AllSupervisorApproved" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_InspectionInitiated_AllSupervisorApproved].[Id] AS [Id], 
+[View_InspectionInitiated_AllSupervisorApproved].[InspectionId] AS [InspectionId]
+FROM [dbo].[View_InspectionInitiated_AllSupervisorApproved] AS [View_InspectionInitiated_AllSupervisorApproved]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded" EntityType="Self.View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded].[Id] AS [Id], 
+[View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded].[InspectionId] AS [InspectionId], 
+[View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded].[InspectionNo] AS [InspectionNo]
+FROM [dbo].[View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded] AS [View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved" EntityType="Self.View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved].[Id] AS [Id], 
+[View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved].[InspectionId] AS [InspectionId]
+FROM [dbo].[View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved] AS [View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved" EntityType="Self.View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved].[InspectionId] AS [InspectionId]
+FROM [dbo].[View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved] AS [View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_InspectionInitiated_AllTeknazorApproved" EntityType="Self.View_InspectionInitiated_AllTeknazorApproved" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_InspectionInitiated_AllTeknazorApproved].[Id] AS [Id], 
+[View_InspectionInitiated_AllTeknazorApproved].[InspectionId] AS [InspectionId]
+FROM [dbo].[View_InspectionInitiated_AllTeknazorApproved] AS [View_InspectionInitiated_AllTeknazorApproved]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Result_Docs_Restricted" EntityType="Self.View_Result_Docs_Restricted" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Result_Docs_Restricted].[Id] AS [Id], 
+[View_Result_Docs_Restricted].[DocTypeId] AS [DocTypeId], 
+[View_Result_Docs_Restricted].[DocType] AS [DocType], 
+[View_Result_Docs_Restricted].[InspectionId] AS [InspectionId]
+FROM [dbo].[View_Result_Docs_Restricted] AS [View_Result_Docs_Restricted]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Table_Client_Representative_Bldg_Discp_Table_Building" Association="Self.FK_Table_Client_Representative_Bldg_Discp_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Client_Representative_Bldg_Discp" EntitySet="Table_Client_Representative_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Client_Representative_Bldg_Discp_Table_Client_Representative" Association="Self.FK_Table_Client_Representative_Bldg_Discp_Table_Client_Representative">
+      <End Role="Table_Client_Representative" EntitySet="Table_Client_Representative" />
+      <End Role="Table_Client_Representative_Bldg_Discp" EntitySet="Table_Client_Representative_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Client_Representative_Bldg_Discp_Table_Discipline" Association="Self.FK_Table_Client_Representative_Bldg_Discp_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Client_Representative_Bldg_Discp" EntitySet="Table_Client_Representative_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Activity" Association="Self.FK_Table_Inspection_Activity_Table_Activity">
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+      <End Role="Table_Inspection_Activity" EntitySet="Table_Inspection_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Activity_Layer_1" Association="Self.FK_Table_Inspection_Activity_Table_Activity_Layer_1">
+      <End Role="Table_Activity_Layer_1" EntitySet="Table_Activity_Layer_1" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Activity_Layer_2" Association="Self.FK_Table_Inspection_Activity_Table_Activity_Layer_2">
+      <End Role="Table_Activity_Layer_2" EntitySet="Table_Activity_Layer_2" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Building" Association="Self.FK_Table_Inspection_Activity_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Discipline" Association="Self.FK_Table_Inspection_Activity_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_Inspection" Association="Self.FK_Table_Inspection_Activity_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Inspection_Activity" EntitySet="Table_Inspection_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Activity_Table_System" Association="Self.FK_Table_Inspection_Activity_Table_System">
+      <End Role="Table_System" EntitySet="Table_System" />
+      <End Role="Table_Activity" EntitySet="Table_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Client_Response_Table_Client_Representative" Association="Self.FK_Table_Inspection_Client_Response_Table_Client_Representative">
+      <End Role="Table_Client_Representative" EntitySet="Table_Client_Representative" />
+      <End Role="Table_Inspection_Client_Response" EntitySet="Table_Inspection_Client_Response" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Client_Response_Table_Inspection" Association="Self.FK_Table_Inspection_Client_Response_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Inspection_Client_Response" EntitySet="Table_Inspection_Client_Response" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Building" Association="Self.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Inspection_Initiater_Bldg_Discp" EntitySet="Table_Inspection_Initiater_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Discipline" Association="Self.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Inspection_Initiater_Bldg_Discp" EntitySet="Table_Inspection_Initiater_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiater_Bldg_Discp_Table_Inspection_Initiater" Association="Self.FK_Table_Inspection_Initiater_Bldg_Discp_Table_Inspection_Initiater">
+      <End Role="Table_Inspection_Initiater" EntitySet="Table_Inspection_Initiater" />
+      <End Role="Table_Inspection_Initiater_Bldg_Discp" EntitySet="Table_Inspection_Initiater_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiation_Table_Inspection" Association="Self.FK_Table_Inspection_Initiation_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Inspection_Initiation" EntitySet="Table_Inspection_Initiation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Initiation_Table_Inspection_Initiater" Association="Self.FK_Table_Inspection_Initiation_Table_Inspection_Initiater">
+      <End Role="Table_Inspection_Initiater" EntitySet="Table_Inspection_Initiater" />
+      <End Role="Table_Inspection_Initiation" EntitySet="Table_Inspection_Initiation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Result_Docs_List_Table_Inspection_Result_Docs" Association="Self.FK_Table_Inspection_Result_Docs_List_Table_Inspection_Result_Docs">
+      <End Role="Table_Inspection_Result_Docs" EntitySet="Table_Inspection_Result_Docs" />
+      <End Role="Table_Inspection_Result_Docs_List" EntitySet="Table_Inspection_Result_Docs_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Result_Docs_Table_Inspection_Result" Association="Self.FK_Table_Inspection_Result_Docs_Table_Inspection_Result">
+      <End Role="Table_Inspection_Result" EntitySet="Table_Inspection_Result" />
+      <End Role="Table_Inspection_Result_Docs" EntitySet="Table_Inspection_Result_Docs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Result_Docs_Table_Result_Docs" Association="Self.FK_Table_Inspection_Result_Docs_Table_Result_Docs">
+      <End Role="Table_Result_Docs" EntitySet="Table_Result_Docs" />
+      <End Role="Table_Inspection_Result_Docs" EntitySet="Table_Inspection_Result_Docs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Result_Table_Inspection_Client_Response" Association="Self.FK_Table_Inspection_Result_Table_Inspection_Client_Response">
+      <End Role="Table_Inspection_Client_Response" EntitySet="Table_Inspection_Client_Response" />
+      <End Role="Table_Inspection_Result" EntitySet="Table_Inspection_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Result_Table_Result" Association="Self.FK_Table_Inspection_Result_Table_Result">
+      <End Role="Table_Result" EntitySet="Table_Result" />
+      <End Role="Table_Inspection_Result" EntitySet="Table_Inspection_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Room_Table_Inspection" Association="Self.FK_Table_Inspection_Room_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Inspection_Room" EntitySet="Table_Inspection_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Inspection_Room_Table_Room" Association="Self.FK_Table_Inspection_Room_Table_Room">
+      <End Role="Table_Room" EntitySet="Table_Room" />
+      <End Role="Table_Inspection_Room" EntitySet="Table_Inspection_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Building" Association="Self.FK_Table_Room_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Category_In_BoQ" Association="Self.FK_Table_Room_Table_Category_In_BoQ">
+      <End Role="Table_Category_In_BoQ" EntitySet="Table_Category_In_BoQ" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Floor" Association="Self.FK_Table_Room_Table_Floor">
+      <End Role="Table_Floor" EntitySet="Table_Floor" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Room_Name" Association="Self.FK_Table_Room_Table_Room_Name">
+      <End Role="Table_Room_Name" EntitySet="Table_Room_Name" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Room_Table_Room_No" Association="Self.FK_Table_Room_Table_Room_No">
+      <End Role="Table_Room_No" EntitySet="Table_Room_No" />
+      <End Role="Table_Room" EntitySet="Table_Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Approval_Table_Inspection" Association="Self.FK_Table_Supervisor_Approval_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Supervisor_Approval" EntitySet="Table_Supervisor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Approval_Table_ResponseKey1" Association="Self.FK_Table_Supervisor_Approval_Table_ResponseKey1">
+      <End Role="Table_ResponseKey" EntitySet="Table_ResponseKey" />
+      <End Role="Table_Supervisor_Approval" EntitySet="Table_Supervisor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Bldg_Discp_Table_Building" Association="Self.FK_Table_Supervisor_Bldg_Discp_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Supervisor_Bldg_Discp" EntitySet="Table_Supervisor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Bldg_Discp_Table_Discipline" Association="Self.FK_Table_Supervisor_Bldg_Discp_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Supervisor_Bldg_Discp" EntitySet="Table_Supervisor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Supervisor_Bldg_Discp_Table_Supervisor" Association="Self.FK_Table_Supervisor_Bldg_Discp_Table_Supervisor">
+      <End Role="Table_Supervisor" EntitySet="Table_Supervisor" />
+      <End Role="Table_Supervisor_Bldg_Discp" EntitySet="Table_Supervisor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Approval_Table_Inspection" Association="Self.FK_Table_Teknazor_Approval_Table_Inspection">
+      <End Role="Table_Inspection" EntitySet="Table_Inspection" />
+      <End Role="Table_Teknazor_Approval" EntitySet="Table_Teknazor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Approval_Table_ResponseKey1" Association="Self.FK_Table_Teknazor_Approval_Table_ResponseKey1">
+      <End Role="Table_ResponseKey" EntitySet="Table_ResponseKey" />
+      <End Role="Table_Teknazor_Approval" EntitySet="Table_Teknazor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Approval_Table_Teknazor" Association="Self.FK_Table_Teknazor_Approval_Table_Teknazor">
+      <End Role="Table_Teknazor" EntitySet="Table_Teknazor" />
+      <End Role="Table_Teknazor_Approval" EntitySet="Table_Teknazor_Approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Bldg_Discp_Table_Building" Association="Self.FK_Table_Teknazor_Bldg_Discp_Table_Building">
+      <End Role="Table_Building" EntitySet="Table_Building" />
+      <End Role="Table_Teknazor_Bldg_Discp" EntitySet="Table_Teknazor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Bldg_Discp_Table_Discipline" Association="Self.FK_Table_Teknazor_Bldg_Discp_Table_Discipline">
+      <End Role="Table_Discipline" EntitySet="Table_Discipline" />
+      <End Role="Table_Teknazor_Bldg_Discp" EntitySet="Table_Teknazor_Bldg_Discp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Teknazor_Bldg_Discp_Table_Teknazor" Association="Self.FK_Table_Teknazor_Bldg_Discp_Table_Teknazor">
+      <End Role="Table_Teknazor" EntitySet="Table_Teknazor" />
+      <End Role="Table_Teknazor_Bldg_Discp" EntitySet="Table_Teknazor_Bldg_Discp" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

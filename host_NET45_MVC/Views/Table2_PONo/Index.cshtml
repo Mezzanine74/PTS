@@ -1,0 +1,165 @@
+﻿@model IEnumerable<PTS_App_Code_VB_Project.PTS_MERCURY.db.Table2_PONo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PO_Currency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VATpercent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PO_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeletedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonCreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonUpdated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonDeleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FromAccess)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonApproved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Scenario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FrameContractPO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FrameContractID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Table6_Supplier.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Table7_CostCode.CostVidisionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Table1_Project.ProjectName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PO_Currency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VATpercent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PO_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeletedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonCreated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonUpdated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonDeleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromAccess)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonApproved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Scenario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FrameContractPO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FrameContractID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Table6_Supplier.SupplierName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Table7_CostCode.CostVidisionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Table1_Project.ProjectName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PO_No }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PO_No }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PO_No })
+        </td>
+    </tr>
+}
+
+</table>

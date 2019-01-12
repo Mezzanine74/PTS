@@ -1,0 +1,408 @@
+﻿@model host_NET45_MVC.Areas.PtsWorker.Controllers.EmailGeneratorController.AddendumDetailsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddendumCoverPage</title>
+    <style type="text/css">
+        body {
+            height: 297mm;
+            width: 210mm;
+            /* to centre page on screen*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .table_ {
+            border-style: solid;
+            border-color: lightgray;
+            border-width: thin;
+            margin: 10px;
+            background-color: #F8F9F9;
+            color: #566573;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .header_ {
+            font-weight: bold;
+            width: 250px;
+            padding: 5px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: thin;
+        }
+
+        .header_gridview {
+            font-weight: bold;
+            padding: 5px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: thin;
+        }
+
+        .second_ {
+            width: 250px;
+            padding: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: thin;
+        }
+
+        .second_gridview {
+            padding: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: thin;
+        }
+    </style>
+
+</head>
+<body>
+    <div style="border-style:solid; border-width:thin; border-color:lightgray">
+        <h3 style="text-align:center;">@BodyTexts.Ref("0stDCwRBIkWmkp+qMabwQA", BodyTexts.Lang.rus)</h3>
+        <div style="margin-top:-50px; margin-left:180mm;"><img src="~/images/mercury.jpg" /></div> 
+
+        <table>
+            <tr>
+                <td>
+
+                    <table class="table_">
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.ProjectNameTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.ProjectName
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.PoNoTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.PO_No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.SupplierNameTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.SupplierName
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.AddendumTypeTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.AddendumType
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <table class="table_">
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.CostCodeTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.CodeDescription
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.AddnNoTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.AddendumNo
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.AddnDateTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.AddendumDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.AddendumValueTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.AddendumValue_WithVAT
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.VATpercentTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.VATpercent
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.BudgetValueWithVATTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.Budget
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.RequestedByTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.RequestedBy
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.PenaltyToMercuryTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.Penalties
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.PenaltyToSupplierTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.PenaltiesToSupplier
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.DeliveryTermsTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.DeliveryTerms
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.CompletionDateTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.CompletionDate
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+                <td>
+
+                    <table class="table_">
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.ContractNoTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.ContractNo
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.ContractDateTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.ContractDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.ContractValueTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.ContractValue_withVAT
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.ContractCurrencyTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.ContractCurrency
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.ContractTypeTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.ContractType
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.ContractDescriptionTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.ContractDescription
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table class="table_">
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.AddnDescriptionTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.AddendumDescription
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.StartDateTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.StartDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.FinishDateTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.FinishDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.AdvanceTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.Advance
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.InterimTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.Interim
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.ShipmentTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.Shipment
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.DeliveryTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.Delivery
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.RetentionTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.Retention
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.PenallyToMercuryNoteTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.PenaltiesNote
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.PenaltyToSupplierNoteTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.PenaltiesToSupplierNote
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.GuaranteePeriodTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.GuaranteePeriod
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header_">
+                                @Model.AddendumDetails.AktOfWorkTitle
+                            </td>
+                            <td class="second_">
+                                @Model.AddendumDetails.AktOfWork
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+
+                    <table class="table_" cellspacing="0" border="0">
+                        <tbody>
+                            <tr>
+                                <th class="header_gridview" scope="col">@BodyTexts.Ref("sal97FKWUUyfFvfUfOtGbw", BodyTexts.Lang.rus)</th>
+                                <th class="header_gridview" scope="col">@BodyTexts.Ref("s3ecZ5CCmEqb/fEE88FWgA", BodyTexts.Lang.rus)</th>
+                                <th class="header_gridview" scope="col">@BodyTexts.Ref("IEJKYjD4SEiN3QML4oENDw", BodyTexts.Lang.rus)</th>
+                            </tr>
+
+                            @foreach (var item in Model.ApprovalStatusAddendumEFs)
+                            {
+                                string _true_false;
+                                if (item.Approved == 1) { _true_false = @BodyTexts.Ref("2TUx46Nv1UeQLerDF4GQjA", BodyTexts.Lang.rus); } else { _true_false = @BodyTexts.Ref("sl3la1Y+vUmYXJQRX9Mosw", BodyTexts.Lang.rus); };
+
+                                string _whoApproved = "";
+                                if (item.UserName == "lawyers") { _whoApproved = " <br/> (" + item.WhoApprovedFromLawyers + ")"; };
+
+                                <tr>
+                                    <td class="second_gridview">@item.UserName @Html.Raw(_whoApproved) </td>
+                                    <td class="second_gridview">@_true_false</td>
+                                    <td class="second_gridview">@item.WhenApproved</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

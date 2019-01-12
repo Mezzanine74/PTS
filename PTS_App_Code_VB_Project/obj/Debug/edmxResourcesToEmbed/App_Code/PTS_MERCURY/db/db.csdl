@@ -1,0 +1,2327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SQL2008_794282_mercuryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SQL2008_794282_mercuryEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetPoNoFromMakerNewGeneration" ReturnType="Collection(String)">
+      <Parameter Name="ProjectID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="aspnet_Membership" EntityType="SQL2008_794282_mercuryModel.aspnet_Membership" />
+    <EntitySet Name="aspnet_Roles" EntityType="SQL2008_794282_mercuryModel.aspnet_Roles" />
+    <EntitySet Name="aspnet_Users" EntityType="SQL2008_794282_mercuryModel.aspnet_Users" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="SQL2008_794282_mercuryModel.aspnet_UsersInRoles" />
+    <EntitySet Name="Table_Addendum_UserRemarks" EntityType="SQL2008_794282_mercuryModel.Table_Addendum_UserRemarks" />
+    <EntitySet Name="Table_Addendums_ClientAdditional" EntityType="SQL2008_794282_mercuryModel.Table_Addendums_ClientAdditional" />
+    <EntitySet Name="Table_Approval_PositionEmployee" EntityType="SQL2008_794282_mercuryModel.Table_Approval_PositionEmployee" />
+    <EntitySet Name="Table_Approval_Scenario" EntityType="SQL2008_794282_mercuryModel.Table_Approval_Scenario" />
+    <EntitySet Name="Table_Approval_Scn_Prj_Users" EntityType="SQL2008_794282_mercuryModel.Table_Approval_Scn_Prj_Users" />
+    <EntitySet Name="Table_Approval_UserPositionPrjJunction" EntityType="SQL2008_794282_mercuryModel.Table_Approval_UserPositionPrjJunction" />
+    <EntitySet Name="Table_Approval_UserRolePrjectJunction" EntityType="SQL2008_794282_mercuryModel.Table_Approval_UserRolePrjectJunction" />
+    <EntitySet Name="Table_ApprUserExcpAccessToActiveUsers" EntityType="SQL2008_794282_mercuryModel.Table_ApprUserExcpAccessToActiveUsers" />
+    <EntitySet Name="Table_Contract_Addendum_TimeLimitApprovals" EntityType="SQL2008_794282_mercuryModel.Table_Contract_Addendum_TimeLimitApprovals" />
+    <EntitySet Name="Table_Contract_CommentsRead" EntityType="SQL2008_794282_mercuryModel.Table_Contract_CommentsRead" />
+    <EntitySet Name="Table_Contract_ProjectIDforClient" EntityType="SQL2008_794282_mercuryModel.Table_Contract_ProjectIDforClient" />
+    <EntitySet Name="Table_ContractControlExceptional" EntityType="SQL2008_794282_mercuryModel.Table_ContractControlExceptional" />
+    <EntitySet Name="Table_Contracts_ClientAdditional" EntityType="SQL2008_794282_mercuryModel.Table_Contracts_ClientAdditional" />
+    <EntitySet Name="Table_Contracts_UserRemarks" EntityType="SQL2008_794282_mercuryModel.Table_Contracts_UserRemarks" />
+    <EntitySet Name="Table_Delivery_MatchingIndexes" EntityType="SQL2008_794282_mercuryModel.Table_Delivery_MatchingIndexes" />
+    <EntitySet Name="Table_PaymentRequest_OverHeadCheck" EntityType="SQL2008_794282_mercuryModel.Table_PaymentRequest_OverHeadCheck" />
+    <EntitySet Name="Table_PO_Akt" EntityType="SQL2008_794282_mercuryModel.Table_PO_Akt" />
+    <EntitySet Name="Table_PO_Akt_To_Nak" EntityType="SQL2008_794282_mercuryModel.Table_PO_Akt_To_Nak" />
+    <EntitySet Name="Table_PO_Nakladnaya" EntityType="SQL2008_794282_mercuryModel.Table_PO_Nakladnaya" />
+    <EntitySet Name="Table_Survey_OfficeParty" EntityType="SQL2008_794282_mercuryModel.Table_Survey_OfficeParty" />
+    <EntitySet Name="Table_UserPhotos" EntityType="SQL2008_794282_mercuryModel.Table_UserPhotos" />
+    <EntitySet Name="Table1_ProjectInsurCertf" EntityType="SQL2008_794282_mercuryModel.Table1_ProjectInsurCertf" />
+    <EntitySet Name="Table3_Invoice" EntityType="SQL2008_794282_mercuryModel.Table3_Invoice" />
+    <EntitySet Name="Table3_Invoice_AdditionalApprovalProjectUserMatrix" EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_AdditionalApprovalProjectUserMatrix" />
+    <EntitySet Name="Table3_Invoice_AdditionalUserApprovals" EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_AdditionalUserApprovals" />
+    <EntitySet Name="Table3_Invoice_PDF" EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_PDF" />
+    <EntitySet Name="Table3_Invoice_PRrequestToPM" EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_PRrequestToPM" />
+    <EntitySet Name="Table4_PaymentRequest" EntityType="SQL2008_794282_mercuryModel.Table4_PaymentRequest" />
+    <EntitySet Name="Table5_PayLog" EntityType="SQL2008_794282_mercuryModel.Table5_PayLog" />
+    <EntitySet Name="Table6_Supplier" EntityType="SQL2008_794282_mercuryModel.Table6_Supplier" />
+    <EntitySet Name="Table_Contract_Offers" EntityType="SQL2008_794282_mercuryModel.Table_Contract_Offers" />
+    <EntitySet Name="Table_Contract_User_Junction" EntityType="SQL2008_794282_mercuryModel.Table_Contract_User_Junction" />
+    <EntitySet Name="Table_Contracts_Common" EntityType="SQL2008_794282_mercuryModel.Table_Contracts_Common" />
+    <EntitySet Name="Table1_InsurPolicyDocs" EntityType="SQL2008_794282_mercuryModel.Table1_InsurPolicyDocs" />
+    <EntitySet Name="Table6_SupplierDetails" EntityType="SQL2008_794282_mercuryModel.Table6_SupplierDetails" />
+    <EntitySet Name="AddendumMissingApprovalBreakdowns" EntityType="SQL2008_794282_mercuryModel.AddendumMissingApprovalBreakdown" />
+    <EntitySet Name="ContractMissingApprovalBreakdowns" EntityType="SQL2008_794282_mercuryModel.ContractMissingApprovalBreakdown" />
+    <EntitySet Name="Notf_AddendumCommentsFromToWhomMatrix" EntityType="SQL2008_794282_mercuryModel.Notf_AddendumCommentsFromToWhomMatrix" />
+    <EntitySet Name="Notf_AddendumCommentsUnRead" EntityType="SQL2008_794282_mercuryModel.Notf_AddendumCommentsUnRead" />
+    <EntitySet Name="Notf_ContractCommentsFromToWhomMatrix" EntityType="SQL2008_794282_mercuryModel.Notf_ContractCommentsFromToWhomMatrix" />
+    <EntitySet Name="Notf_ContractCommentsUnRead" EntityType="SQL2008_794282_mercuryModel.Notf_ContractCommentsUnRead" />
+    <EntitySet Name="View_CheckTolerance" EntityType="SQL2008_794282_mercuryModel.View_CheckTolerance" />
+    <EntitySet Name="View_AddendumDetails" EntityType="SQL2008_794282_mercuryModel.View_AddendumDetails" />
+    <EntitySet Name="View_ContractDetails" EntityType="SQL2008_794282_mercuryModel.View_ContractDetails" />
+    <EntitySet Name="View_GetFullUserNameFromUserName" EntityType="SQL2008_794282_mercuryModel.View_GetFullUserNameFromUserName" />
+    <EntitySet Name="View_PaymentRequestApprovalStatus" EntityType="SQL2008_794282_mercuryModel.View_PaymentRequestApprovalStatus" />
+    <EntitySet Name="View_PendingListRev1" EntityType="SQL2008_794282_mercuryModel.View_PendingListRev1" />
+    <AssociationSet Name="FK__aspnet_Me__UserI__6D9742D9" Association="SQL2008_794282_mercuryModel.FK__aspnet_Me__UserI__6D9742D9">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__7849DB76" Association="SQL2008_794282_mercuryModel.FK__aspnet_Me__UserI__7849DB76">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__753864A1" Association="SQL2008_794282_mercuryModel.FK__aspnet_Us__RoleI__753864A1">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__7FEAFD3E" Association="SQL2008_794282_mercuryModel.FK__aspnet_Us__RoleI__7FEAFD3E">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__00DF2177" Association="SQL2008_794282_mercuryModel.FK__aspnet_Us__UserI__00DF2177">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__762C88DA" Association="SQL2008_794282_mercuryModel.FK__aspnet_Us__UserI__762C88DA">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee" Association="SQL2008_794282_mercuryModel.FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee">
+      <End Role="Table_Approval_PositionEmployee" EntitySet="Table_Approval_PositionEmployee" />
+      <End Role="Table_Approval_UserPositionPrjJunction" EntitySet="Table_Approval_UserPositionPrjJunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario" Association="SQL2008_794282_mercuryModel.FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario">
+      <End Role="Table_Approval_Scenario" EntitySet="Table_Approval_Scenario" />
+      <End Role="Table_Approval_Scn_Prj_Users" EntitySet="Table_Approval_Scn_Prj_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya" Association="SQL2008_794282_mercuryModel.FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya">
+      <End Role="Table_PO_Nakladnaya" EntitySet="Table_PO_Nakladnaya" />
+      <End Role="Table_PO_Akt_To_Nak" EntitySet="Table_PO_Akt_To_Nak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice_PDF_Table3_Invoice" Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice_PDF_Table3_Invoice">
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+      <End Role="Table3_Invoice_PDF" EntitySet="Table3_Invoice_PDF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice_PRrequestToPM_Table3_Invoice" Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice_PRrequestToPM_Table3_Invoice">
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+      <End Role="Table3_Invoice_PRrequestToPM" EntitySet="Table3_Invoice_PRrequestToPM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table4_PaymentRequest_Table3_Invoice" Association="SQL2008_794282_mercuryModel.FK_Table4_PaymentRequest_Table3_Invoice">
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+      <End Role="Table4_PaymentRequest" EntitySet="Table4_PaymentRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table5_PayLog_Table4_PaymentRequest_" Association="SQL2008_794282_mercuryModel.FK_Table5_PayLog_Table4_PaymentRequest_">
+      <End Role="Table4_PaymentRequest" EntitySet="Table4_PaymentRequest" />
+      <End Role="Table5_PayLog" EntitySet="Table5_PayLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table6_SupplierDetails_Table6_Supplier" Association="SQL2008_794282_mercuryModel.FK_Table6_SupplierDetails_Table6_Supplier">
+      <End Role="Table6_Supplier" EntitySet="Table6_Supplier" />
+      <End Role="Table6_SupplierDetails" EntitySet="Table6_SupplierDetails" />
+    </AssociationSet>
+    <EntitySet Name="Table7_CostDivision" EntityType="SQL2008_794282_mercuryModel.Table7_CostDivision" />
+    <EntitySet Name="Table7_CostDivision2" EntityType="SQL2008_794282_mercuryModel.Table7_CostDivision2" />
+    <EntitySet Name="View_CostCodeSummary0" EntityType="SQL2008_794282_mercuryModel.View_CostCodeSummary0" />
+    <EntitySet Name="Table_Budget" EntityType="SQL2008_794282_mercuryModel.Table_Budget" />
+    <EntitySet Name="Table2_PONo" EntityType="SQL2008_794282_mercuryModel.Table2_PONo" />
+    <EntitySet Name="Table7_CostCode" EntityType="SQL2008_794282_mercuryModel.Table7_CostCode" />
+    <AssociationSet Name="FK_Table_Budget_Table7_CostCode" Association="SQL2008_794282_mercuryModel.FK_Table_Budget_Table7_CostCode">
+      <End Role="Table7_CostCode" EntitySet="Table7_CostCode" />
+      <End Role="Table_Budget" EntitySet="Table_Budget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_PO_Akt_Table2_PONo" Association="SQL2008_794282_mercuryModel.FK_Table_PO_Akt_Table2_PONo">
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+      <End Role="Table_PO_Akt" EntitySet="Table_PO_Akt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_PO_Nakladnaya_Table2_PONo" Association="SQL2008_794282_mercuryModel.FK_Table_PO_Nakladnaya_Table2_PONo">
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+      <End Role="Table_PO_Nakladnaya" EntitySet="Table_PO_Nakladnaya" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table2_PONo__Table6_Supplier_" Association="SQL2008_794282_mercuryModel.FK_Table2_PONo__Table6_Supplier_">
+      <End Role="Table6_Supplier" EntitySet="Table6_Supplier" />
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table2_PONo_Table7_CostCode" Association="SQL2008_794282_mercuryModel.FK_Table2_PONo_Table7_CostCode">
+      <End Role="Table7_CostCode" EntitySet="Table7_CostCode" />
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice__Table2_PONo_" Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice__Table2_PONo_">
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table7_CostCode_Table7_CostDivision" Association="SQL2008_794282_mercuryModel.FK_Table7_CostCode_Table7_CostDivision">
+      <End Role="Table7_CostDivision" EntitySet="Table7_CostDivision" />
+      <End Role="Table7_CostCode" EntitySet="Table7_CostCode" />
+    </AssociationSet>
+    <EntitySet Name="Table_Addendum_UsersApprv_IgnoreUser" EntityType="SQL2008_794282_mercuryModel.Table_Addendum_UsersApprv_IgnoreUser" />
+    <EntitySet Name="Table_Contract_UsersApprv_IgnoreUser" EntityType="SQL2008_794282_mercuryModel.Table_Contract_UsersApprv_IgnoreUser" />
+    <EntitySet Name="Table_Addendums" EntityType="SQL2008_794282_mercuryModel.Table_Addendums" />
+    <EntitySet Name="Table_Contracts" EntityType="SQL2008_794282_mercuryModel.Table_Contracts" />
+    <AssociationSet Name="FK_Table_Addendums_UserRemarks_Table_Addendums" Association="SQL2008_794282_mercuryModel.FK_Table_Addendums_UserRemarks_Table_Addendums">
+      <End Role="Table_Addendums" EntitySet="Table_Addendums" />
+      <End Role="Table_Addendum_UserRemarks" EntitySet="Table_Addendum_UserRemarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Addendums_ClientAdditional_Table_Addendums" Association="SQL2008_794282_mercuryModel.FK_Table_Addendums_ClientAdditional_Table_Addendums">
+      <End Role="Table_Addendums" EntitySet="Table_Addendums" />
+      <End Role="Table_Addendums_ClientAdditional" EntitySet="Table_Addendums_ClientAdditional" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Addendums_Table_Contracts" Association="SQL2008_794282_mercuryModel.FK_Table_Addendums_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Addendums" EntitySet="Table_Addendums" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contract_ProjectIDforClient_Table_Contracts" Association="SQL2008_794282_mercuryModel.FK_Table_Contract_ProjectIDforClient_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contract_ProjectIDforClient" EntitySet="Table_Contract_ProjectIDforClient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contract_Offers_Table_Contracts" Association="SQL2008_794282_mercuryModel.FK_Table_Contract_Offers_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contract_Offers" EntitySet="Table_Contract_Offers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contracts_ClientAdditional_Table_Contracts" Association="SQL2008_794282_mercuryModel.FK_Table_Contracts_ClientAdditional_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contracts_ClientAdditional" EntitySet="Table_Contracts_ClientAdditional" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contracts_Common_Table_Contracts" Association="SQL2008_794282_mercuryModel.FK_Table_Contracts_Common_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contracts_Common" EntitySet="Table_Contracts_Common" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contracts_Table6_Supplier" Association="SQL2008_794282_mercuryModel.FK_Table_Contracts_Table6_Supplier">
+      <End Role="Table6_Supplier" EntitySet="Table6_Supplier" />
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contracts_UserRemarks_Table_Contracts" Association="SQL2008_794282_mercuryModel.FK_Table_Contracts_UserRemarks_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contracts_UserRemarks" EntitySet="Table_Contracts_UserRemarks" />
+    </AssociationSet>
+    <EntitySet Name="Table1_Project" EntityType="SQL2008_794282_mercuryModel.Table1_Project" />
+    <AssociationSet Name="FK_Table_Budget_Table1_Project" Association="SQL2008_794282_mercuryModel.FK_Table_Budget_Table1_Project">
+      <End Role="Table1_Project" EntitySet="Table1_Project" />
+      <End Role="Table_Budget" EntitySet="Table_Budget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table1_ProjectInsurCertf_Table1_Project" Association="SQL2008_794282_mercuryModel.FK_Table1_ProjectInsurCertf_Table1_Project">
+      <End Role="Table1_Project" EntitySet="Table1_Project" />
+      <End Role="Table1_ProjectInsurCertf" EntitySet="Table1_ProjectInsurCertf" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table2_PONo__Table1_Project_" Association="SQL2008_794282_mercuryModel.FK_Table2_PONo__Table1_Project_">
+      <End Role="Table1_Project" EntitySet="Table1_Project" />
+      <End Role="Table2_PONo" EntitySet="Table2_PONo" />
+    </AssociationSet>
+    <FunctionImport Name="sp_FrameContractBudgetPoDetails" ReturnType="Collection(SQL2008_794282_mercuryModel.sp_FrameContractBudgetPoDetails_Result1)">
+      <Parameter Name="FrameContractId" Mode="In" Type="Int32" />
+      <Parameter Name="ToleranceLimit" Mode="In" Type="Decimal" />
+      <Parameter Name="OldValue" Mode="In" Type="Decimal" />
+      <Parameter Name="NewValue" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <EntitySet Name="Table_Contracts_IgnoreSearchFeed" EntityType="SQL2008_794282_mercuryModel.Table_Contracts_IgnoreSearchFeed" />
+    <EntitySet Name="Table_SupplierType" EntityType="SQL2008_794282_mercuryModel.Table_SupplierType" />
+    <EntitySet Name="Table_SupplierType_Junction" EntityType="SQL2008_794282_mercuryModel.Table_SupplierType_Junction" />
+    <EntitySet Name="Table_SupplierType_Tags" EntityType="SQL2008_794282_mercuryModel.Table_SupplierType_Tags" />
+    <AssociationSet Name="FK_Table_SupplierType_Junction_Table_SupplierType" Association="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Junction_Table_SupplierType">
+      <End Role="Table_SupplierType" EntitySet="Table_SupplierType" />
+      <End Role="Table_SupplierType_Junction" EntitySet="Table_SupplierType_Junction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_SupplierType_Tags_Table_SupplierType" Association="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Tags_Table_SupplierType">
+      <End Role="Table_SupplierType" EntitySet="Table_SupplierType" />
+      <End Role="Table_SupplierType_Tags" EntitySet="Table_SupplierType_Tags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_SupplierType_Junction_Table6_Supplier" Association="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Junction_Table6_Supplier">
+      <End Role="Table6_Supplier" EntitySet="Table6_Supplier" />
+      <End Role="Table_SupplierType_Junction" EntitySet="Table_SupplierType_Junction" />
+    </AssociationSet>
+    <EntitySet Name="Table8_ExchangeRates" EntityType="SQL2008_794282_mercuryModel.Table8_ExchangeRates" />
+    <AssociationSet Name="FK_Table5_PayLog_Table8_ExchangeRates" Association="SQL2008_794282_mercuryModel.FK_Table5_PayLog_Table8_ExchangeRates">
+      <End Role="Table8_ExchangeRates" EntitySet="Table8_ExchangeRates" />
+      <End Role="Table5_PayLog" EntitySet="Table5_PayLog" />
+    </AssociationSet>
+    <EntitySet Name="View_Contract_Addendum_NotApprovedPersonsForEmailNotification" EntityType="SQL2008_794282_mercuryModel.View_Contract_Addendum_NotApprovedPersonsForEmailNotification" />
+    <EntitySet Name="Table3_Invoice_Type" EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_Type" />
+    <EntitySet Name="Table3_Invoice_Type_Junction" EntityType="SQL2008_794282_mercuryModel.Table3_Invoice_Type_Junction" />
+    <AssociationSet Name="FK_Table3_Invoice_Type_Junction_Table3_Invoice" Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice_Type_Junction_Table3_Invoice">
+      <End Role="Table3_Invoice" EntitySet="Table3_Invoice" />
+      <End Role="Table3_Invoice_Type_Junction" EntitySet="Table3_Invoice_Type_Junction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type" Association="SQL2008_794282_mercuryModel.FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type">
+      <End Role="Table3_Invoice_Type" EntitySet="Table3_Invoice_Type" />
+      <End Role="Table3_Invoice_Type_Junction" EntitySet="Table3_Invoice_Type_Junction" />
+    </AssociationSet>
+    <EntitySet Name="View_ContractsAddendumsNonExecutedTotal" EntityType="SQL2008_794282_mercuryModel.View_ContractsAddendumsNonExecutedTotal" />
+    <EntitySet Name="View_FrameContractsBudgetStatus" EntityType="SQL2008_794282_mercuryModel.View_FrameContractsBudgetStatus" />
+    <EntitySet Name="Table_BudgetChangeLog" EntityType="SQL2008_794282_mercuryModel.Table_BudgetChangeLog" />
+    <EntitySet Name="Table_Budget_PlannedToSpendConstraints" EntityType="SQL2008_794282_mercuryModel.Table_Budget_PlannedToSpendConstraints" />
+    <FunctionImport Name="SP_MissingApprovalsOnContractsAndAddendums" ReturnType="Collection(SQL2008_794282_mercuryModel.SP_MissingApprovalsOnContractsAndAddendums_Result)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Table1_Project_LawyersCanEnterContract" EntityType="SQL2008_794282_mercuryModel.Table1_Project_LawyersCanEnterContract" />
+    <EntitySet Name="BodyTexts" EntityType="SQL2008_794282_mercuryModel.BodyText" />
+    <FunctionImport Name="SP_EmailListEverybodyApprovedAddendum" ReturnType="Collection(String)">
+      <Parameter Name="ContractId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EmailListEverybodyApprovedContract" ReturnType="Collection(String)">
+      <Parameter Name="ContractId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EmailListLawyersApprovedAddendum" ReturnType="Collection(String)">
+      <Parameter Name="AddendumId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EmailListLawyersApprovedContract" ReturnType="Collection(String)">
+      <Parameter Name="ContractId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Table_Addendum_UsersApprv" EntityType="SQL2008_794282_mercuryModel.Table_Addendum_UsersApprv" />
+    <EntitySet Name="Table_Contract_UsersApprv" EntityType="SQL2008_794282_mercuryModel.Table_Contract_UsersApprv" />
+    <AssociationSet Name="FK_Table_Addendum_UsersApprv_Table_Addendum" Association="SQL2008_794282_mercuryModel.FK_Table_Addendum_UsersApprv_Table_Addendum">
+      <End Role="Table_Addendums" EntitySet="Table_Addendums" />
+      <End Role="Table_Addendum_UsersApprv" EntitySet="Table_Addendum_UsersApprv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Contract_UsersApprv_Table_Contracts" Association="SQL2008_794282_mercuryModel.FK_Table_Contract_UsersApprv_Table_Contracts">
+      <End Role="Table_Contracts" EntitySet="Table_Contracts" />
+      <End Role="Table_Contract_UsersApprv" EntitySet="Table_Contract_UsersApprv" />
+    </AssociationSet>
+    <FunctionImport Name="ApprovalStatusContractEF" ReturnType="Collection(SQL2008_794282_mercuryModel.ApprovalStatusContractEF_Result)">
+      <Parameter Name="ContractID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ApprovalStatusContractAllApprovedEF" ReturnType="Collection(Int32)">
+      <Parameter Name="ContractID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ApprovalStatusAddendumEF" ReturnType="Collection(SQL2008_794282_mercuryModel.ApprovalStatusAddendumEF_Result)">
+      <Parameter Name="AddendumId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ApprovalStatusAddendumAllApprovedEF" ReturnType="Collection(Int32)">
+      <Parameter Name="AddendumId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="View_SupplierNamesForContracts" EntityType="SQL2008_794282_mercuryModel.View_SupplierNamesForContracts" />
+    <EntitySet Name="View_ContractFilesMoveDOC" EntityType="SQL2008_794282_mercuryModel.View_ContractFilesMoveDOC" />
+    <FunctionImport Name="sp_DDLProjectsPOCreate" ReturnType="Collection(SQL2008_794282_mercuryModel.sp_DDLProjectsPOCreate_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Table_Required" EntityType="SQL2008_794282_mercuryModel.Table_Required" />
+    <FunctionImport Name="sp_DDLCostCodePOCreate" ReturnType="Collection(SQL2008_794282_mercuryModel.sp_DDLCostCodePOCreate_Result)">
+      <Parameter Name="ProjectID" Mode="In" Type="Int32" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DDLRequestedByPOCreate" ReturnType="Collection(SQL2008_794282_mercuryModel.sp_DDLRequestedByPOCreate_Result)">
+      <Parameter Name="ProjectID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="View_WhatToBePaidRevised" EntityType="SQL2008_794282_mercuryModel.View_WhatToBePaidRevised" />
+  </EntityContainer>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password_text" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Users" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Me__UserI__6D9742D9" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users1" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Me__UserI__7849DB76" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_UsersInRoles" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Us__RoleI__753864A1" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInRoles1" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Us__RoleI__7FEAFD3E" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="flag" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="AccessToAllProjects" Type="Boolean" />
+    <Property Name="SendEmailPaymentReq" Type="Boolean" />
+    <Property Name="SendEmailApproval" Type="Boolean" />
+    <Property Name="SendEmailContract" Type="Boolean" />
+    <Property Name="SendEmailPayments" Type="Boolean" />
+    <Property Name="SendEmailDailyReport" Type="Boolean" />
+    <Property Name="SendEmailWeeklyProjectSummary" Type="Boolean" />
+    <Property Name="SendEmailPendingFollow" Type="Boolean" />
+    <Property Name="SendEmailPaymentsSinceJan" Type="Boolean" />
+    <Property Name="SendEmailClientContracts" Type="Boolean" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="Vote_Xmas" Type="Boolean" />
+    <Property Name="Vote_Time" Type="DateTime" Precision="3" />
+    <Property Name="SendInvitation" Type="Boolean" />
+    <Property Name="PasswordKnown" Type="Boolean" />
+    <Property Name="ApproveFramePo" Type="Boolean" />
+    <Property Name="ContractGirlApprovalEmail" Type="Boolean" />
+    <Property Name="Position" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorizedForExceptionalApprove" Type="Boolean" />
+    <Property Name="AuthorizedForPaymentRequest" Type="Boolean" />
+    <Property Name="SendNotificationInsuranceUpdate" Type="Boolean" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Me__UserI__6D9742D9" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Membership1" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Me__UserI__7849DB76" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_UsersInRoles" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Us__UserI__00DF2177" FromRole="aspnet_Users" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInRoles1" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Us__UserI__762C88DA" FromRole="aspnet_Users" ToRole="aspnet_UsersInRoles" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Us__RoleI__753864A1" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Roles1" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Us__RoleI__7FEAFD3E" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Us__UserI__00DF2177" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users1" Relationship="SQL2008_794282_mercuryModel.FK__aspnet_Us__UserI__762C88DA" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="Table_Addendum_UserRemarks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddendumID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_Addendums" Relationship="SQL2008_794282_mercuryModel.FK_Table_Addendums_UserRemarks_Table_Addendums" FromRole="Table_Addendum_UserRemarks" ToRole="Table_Addendums" />
+  </EntityType>
+  <EntityType Name="Table_Addendums_ClientAdditional">
+    <Key>
+      <PropertyRef Name="AddendumID" />
+    </Key>
+    <Property Name="AddendumID" Type="Int32" Nullable="false" />
+    <Property Name="CompletionDate" Type="DateTime" Precision="3" />
+    <Property Name="AktOfWork" Type="Boolean" Nullable="false" />
+    <Property Name="LinkToAktOfWork" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="AktOfWorkWhen" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_Addendums" Relationship="SQL2008_794282_mercuryModel.FK_Table_Addendums_ClientAdditional_Table_Addendums" FromRole="Table_Addendums_ClientAdditional" ToRole="Table_Addendums" />
+  </EntityType>
+  <EntityType Name="Table_Approval_PositionEmployee">
+    <Key>
+      <PropertyRef Name="PositionID" />
+    </Key>
+    <Property Name="PositionID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PositionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rank" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Table_Approval_UserPositionPrjJunction" Relationship="SQL2008_794282_mercuryModel.FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee" FromRole="Table_Approval_PositionEmployee" ToRole="Table_Approval_UserPositionPrjJunction" />
+  </EntityType>
+  <EntityType Name="Table_Approval_Scenario">
+    <Key>
+      <PropertyRef Name="Scenario" />
+    </Key>
+    <Property Name="Scenario" Type="Int16" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Approval_Scn_Prj_Users" Relationship="SQL2008_794282_mercuryModel.FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario" FromRole="Table_Approval_Scenario" ToRole="Table_Approval_Scn_Prj_Users" />
+  </EntityType>
+  <EntityType Name="Table_Approval_Scn_Prj_Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Scenario" Type="Int16" Nullable="false" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="ToleratedDay" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Approval_Scenario" Relationship="SQL2008_794282_mercuryModel.FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario" FromRole="Table_Approval_Scn_Prj_Users" ToRole="Table_Approval_Scenario" />
+  </EntityType>
+  <EntityType Name="Table_Approval_UserPositionPrjJunction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PositionID" Type="Int16" Nullable="false" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Table_Approval_PositionEmployee" Relationship="SQL2008_794282_mercuryModel.FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee" FromRole="Table_Approval_UserPositionPrjJunction" ToRole="Table_Approval_PositionEmployee" />
+  </EntityType>
+  <EntityType Name="Table_Approval_UserRolePrjectJunction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_ApprUserExcpAccessToActiveUsers">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contract_Addendum_TimeLimitApprovals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ContractId" Type="Int32" Nullable="false" />
+    <Property Name="AddendumId" Type="Int32" Nullable="false" />
+    <Property Name="ActionTime" Type="DateTime" Precision="0" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Action" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_Contract_CommentsRead">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_Or_A" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="id_comment" Type="Int32" Nullable="false" />
+    <Property Name="FromWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ReadWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="WhenRead" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Table_Contract_ProjectIDforClient">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Table_Contracts" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contract_ProjectIDforClient_Table_Contracts" FromRole="Table_Contract_ProjectIDforClient" ToRole="Table_Contracts" />
+  </EntityType>
+  <EntityType Name="Table_ContractControlExceptional">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contracts_ClientAdditional">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="CompletionDate" Type="DateTime" Precision="0" />
+    <Property Name="AktOfWork" Type="Boolean" Nullable="false" />
+    <Property Name="LinkToAktOfWork" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="AktOfWorkWhen" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_Contracts" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contracts_ClientAdditional_Table_Contracts" FromRole="Table_Contracts_ClientAdditional" ToRole="Table_Contracts" />
+  </EntityType>
+  <EntityType Name="Table_Contracts_UserRemarks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_Contracts" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contracts_UserRemarks_Table_Contracts" FromRole="Table_Contracts_UserRemarks" ToRole="Table_Contracts" />
+  </EntityType>
+  <EntityType Name="Table_Delivery_MatchingIndexes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PTS_Or_1S" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Index_PTS_Or_1S" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_PaymentRequest_OverHeadCheck">
+    <Key>
+      <PropertyRef Name="PayReqNo" />
+    </Key>
+    <Property Name="PayReqNo" Type="Int32" Nullable="false" />
+    <Property Name="WhoChecked" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="256" FixedLength="true" Unicode="true" />
+    <Property Name="WhenChecked" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Table_PO_Akt">
+    <Key>
+      <PropertyRef Name="ID_Akt" />
+    </Key>
+    <Property Name="ID_Akt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PO_No" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="AktNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Akt_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Akt_Rub_WithVAT" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="SF" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="payreqno" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table2_PONo" Relationship="SQL2008_794282_mercuryModel.FK_Table_PO_Akt_Table2_PONo" FromRole="Table_PO_Akt" ToRole="Table2_PONo" />
+    <Property Name="PDF" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_PO_Akt_To_Nak">
+    <Key>
+      <PropertyRef Name="ID_Akt_To_Nak" />
+    </Key>
+    <Property Name="ID_Akt_To_Nak" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Nak" Type="Int32" Nullable="false" />
+    <Property Name="AktNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Akt_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Akt_Rub_WithVAT" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="payreqno" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_PO_Nakladnaya" Relationship="SQL2008_794282_mercuryModel.FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya" FromRole="Table_PO_Akt_To_Nak" ToRole="Table_PO_Nakladnaya" />
+  </EntityType>
+  <EntityType Name="Table_PO_Nakladnaya">
+    <Key>
+      <PropertyRef Name="ID_Nak" />
+    </Key>
+    <Property Name="ID_Nak" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PO_No" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="Inv_ContrNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NakNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nak_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nak_Rub_WithVAT" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="SF" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="payreqno" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_PO_Akt_To_Nak" Relationship="SQL2008_794282_mercuryModel.FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya" FromRole="Table_PO_Nakladnaya" ToRole="Table_PO_Akt_To_Nak" />
+    <NavigationProperty Name="Table2_PONo" Relationship="SQL2008_794282_mercuryModel.FK_Table_PO_Nakladnaya_Table2_PONo" FromRole="Table_PO_Nakladnaya" ToRole="Table2_PONo" />
+    <Property Name="PDF" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_Survey_OfficeParty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Name_Surname_Russian" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Pass" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Response" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="0" />
+    <Property Name="LastLogIn" Type="DateTime" Precision="0" />
+    <Property Name="MoneyCanAfford" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_UserPhotos">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table1_ProjectInsurCertf">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="InsuranceStart" Type="DateTime" Precision="0" />
+    <Property Name="InsuranceFinish" Type="DateTime" Precision="0" />
+    <Property Name="DocumentReference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table1_Project" Relationship="SQL2008_794282_mercuryModel.FK_Table1_ProjectInsurCertf_Table1_Project" FromRole="Table1_ProjectInsurCertf" ToRole="Table1_Project" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice_No" Type="String" Nullable="false" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="Invoice_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PO_No" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="InvoiceValue" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="DeadlineToPay" Type="DateTime" Precision="0" />
+    <Property Name="Notes" Type="String" MaxLength="160" FixedLength="true" Unicode="true" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonUpdated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonDeleted" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="FromAccess" Type="Int32" />
+    <Property Name="ContractReference" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Scenario" Type="Int16" />
+    <NavigationProperty Name="Table3_Invoice_PDF" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice_PDF_Table3_Invoice" FromRole="Table3_Invoice" ToRole="Table3_Invoice_PDF" />
+    <NavigationProperty Name="Table3_Invoice_PRrequestToPM" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice_PRrequestToPM_Table3_Invoice" FromRole="Table3_Invoice" ToRole="Table3_Invoice_PRrequestToPM" />
+    <NavigationProperty Name="Table4_PaymentRequest" Relationship="SQL2008_794282_mercuryModel.FK_Table4_PaymentRequest_Table3_Invoice" FromRole="Table3_Invoice" ToRole="Table4_PaymentRequest" />
+    <NavigationProperty Name="Table2_PONo" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice__Table2_PONo_" FromRole="Table3_Invoice" ToRole="Table2_PONo" />
+    <NavigationProperty Name="Table3_Invoice_Type_Junction" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice_Type_Junction_Table3_Invoice" FromRole="Table3_Invoice" ToRole="Table3_Invoice_Type_Junction" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_AdditionalApprovalProjectUserMatrix">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int16" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_AdditionalUserApprovals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="WhenApproved" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_PDF">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="LinkPDF" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table3_Invoice" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice_PDF_Table3_Invoice" FromRole="Table3_Invoice_PDF" ToRole="Table3_Invoice" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_PRrequestToPM">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="SiteReqNo" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="WhoRequested" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovedOrNot" Type="Boolean" Nullable="false" />
+    <Property Name="WhenApproved" Type="DateTime" Precision="0" />
+    <Property Name="WhoApproved" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PayReqDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table3_Invoice" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice_PRrequestToPM_Table3_Invoice" FromRole="Table3_Invoice_PRrequestToPM" ToRole="Table3_Invoice" />
+  </EntityType>
+  <EntityType Name="Table4_PaymentRequest">
+    <Key>
+      <PropertyRef Name="PayReqNo" />
+    </Key>
+    <Property Name="PayReqNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteRecordNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="ActivityCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="PayReqDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Notes" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="LinkToInvoice" Type="String" MaxLength="90" FixedLength="true" Unicode="true" />
+    <Property Name="Urgency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Approved" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="PersonApprove" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LastAction" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonUpdated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonDeleted" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="FromAccess" Type="Int32" />
+    <Property Name="AttachmentChange" Type="Boolean" />
+    <Property Name="AttachmentChangeWhen" Type="DateTime" Precision="0" />
+    <Property Name="PersonChangedAttachment" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentTerm" Type="DateTime" Precision="0" />
+    <Property Name="AttachmentExist" Type="Boolean" />
+    <Property Name="PersonResponsibleID" Type="Int16" />
+    <Property Name="Transport" Type="Boolean" />
+    <Property Name="ContractReference" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Priority" Type="Int16" />
+    <Property Name="ToList" Type="Boolean" />
+    <Property Name="ApproveNewGen" Type="Boolean" />
+    <Property Name="PrintPDF" Type="Boolean" />
+    <NavigationProperty Name="Table3_Invoice" Relationship="SQL2008_794282_mercuryModel.FK_Table4_PaymentRequest_Table3_Invoice" FromRole="Table4_PaymentRequest" ToRole="Table3_Invoice" />
+    <NavigationProperty Name="Table5_PayLog" Relationship="SQL2008_794282_mercuryModel.FK_Table5_PayLog_Table4_PaymentRequest_" FromRole="Table4_PaymentRequest" ToRole="Table5_PayLog" />
+  </EntityType>
+  <EntityType Name="Table5_PayLog">
+    <Key>
+      <PropertyRef Name="PayReqNo" />
+    </Key>
+    <Property Name="PayReqNo" Type="Int32" Nullable="false" />
+    <Property Name="FinanceNo" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="Currency" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="RubbleDollar" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="RubbleEuro" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonUpdated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonDeleted" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Nakladnaya" Type="Boolean" Nullable="false" />
+    <Property Name="Nakladnaya_EnteredWhen" Type="DateTime" Precision="0" />
+    <Property Name="Akt" Type="Boolean" Nullable="false" />
+    <Property Name="Akt_EnteredWhen" Type="DateTime" Precision="0" />
+    <Property Name="ShotFaktura" Type="Boolean" Nullable="false" />
+    <Property Name="ShotFaktura_EnteredWhen" Type="DateTime" Precision="0" />
+    <Property Name="Var1Required" Type="Boolean" Nullable="false" />
+    <Property Name="Nak_Akt_Notes" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <Property Name="StatusNote" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="GetCollection" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="CollectedValue" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="CollectionHistory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FromAccess" Type="Int32" />
+    <NavigationProperty Name="Table4_PaymentRequest" Relationship="SQL2008_794282_mercuryModel.FK_Table5_PayLog_Table4_PaymentRequest_" FromRole="Table5_PayLog" ToRole="Table4_PaymentRequest" />
+    <NavigationProperty Name="Table8_ExchangeRates" Relationship="SQL2008_794282_mercuryModel.FK_Table5_PayLog_Table8_ExchangeRates" FromRole="Table5_PayLog" ToRole="Table8_ExchangeRates" />
+  </EntityType>
+  <EntityType Name="Table6_Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="FaxNumber1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="FaxNumber2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="WebAdress" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+    <Property Name="VAT_Free" Type="Boolean" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="FromAccess" Type="Int32" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Discount" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentTerms" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="CreditAmount" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Client" Type="Boolean" />
+    <NavigationProperty Name="Table6_SupplierDetails" Relationship="SQL2008_794282_mercuryModel.FK_Table6_SupplierDetails_Table6_Supplier" FromRole="Table6_Supplier" ToRole="Table6_SupplierDetails" />
+    <NavigationProperty Name="Table2_PONo" Relationship="SQL2008_794282_mercuryModel.FK_Table2_PONo__Table6_Supplier_" FromRole="Table6_Supplier" ToRole="Table2_PONo" />
+    <NavigationProperty Name="Table_Contracts" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contracts_Table6_Supplier" FromRole="Table6_Supplier" ToRole="Table_Contracts" />
+    <NavigationProperty Name="Table_SupplierType_Junction" Relationship="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Junction_Table6_Supplier" FromRole="Table6_Supplier" ToRole="Table_SupplierType_Junction" />
+    <Property Name="SupplierNameEng" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_Contract_Offers">
+    <Key>
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="OfferValueWithVAT" />
+      <PropertyRef Name="Currency" />
+      <PropertyRef Name="Attachment" />
+    </Key>
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="OfferValueWithVAT" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="Currency" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Attachment" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Contracts" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contract_Offers_Table_Contracts" FromRole="Table_Contract_Offers" ToRole="Table_Contracts" />
+  </EntityType>
+  <EntityType Name="Table_Contract_User_Junction">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_Contracts_Common">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_Contracts" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contracts_Common_Table_Contracts" FromRole="Table_Contracts_Common" ToRole="Table_Contracts" />
+  </EntityType>
+  <EntityType Name="Table1_InsurPolicyDocs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="InsrPolicyDoc1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InsrPolicyDoc2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InsrPolicyDoc3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InsrPolicyDoc4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table6_SupplierDetails">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="SupplierAdressDetails_ENG" />
+      <PropertyRef Name="SupplierAdressDetails_RUS" />
+      <PropertyRef Name="SupplierBankDetails_ENG" />
+      <PropertyRef Name="SupplierBankDetails_RUS" />
+    </Key>
+    <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="SupplierAdressDetails_ENG" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierAdressDetails_RUS" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierBankDetails_ENG" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierBankDetails_RUS" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table6_Supplier" Relationship="SQL2008_794282_mercuryModel.FK_Table6_SupplierDetails_Table6_Supplier" FromRole="Table6_SupplierDetails" ToRole="Table6_Supplier" />
+  </EntityType>
+  <EntityType Name="AddendumMissingApprovalBreakdown">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="AddendumID" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="AddendumID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContractMissingApprovalBreakdown">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Notf_AddendumCommentsFromToWhomMatrix">
+    <Key>
+      <PropertyRef Name="C_or_A" />
+      <PropertyRef Name="C_or_A_id" />
+      <PropertyRef Name="id_comment" />
+      <PropertyRef Name="FromWho" />
+      <PropertyRef Name="ForWho" />
+    </Key>
+    <Property Name="C_or_A" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="C_or_A_id" Type="Int32" Nullable="false" />
+    <Property Name="id_comment" Type="Int32" Nullable="false" />
+    <Property Name="FromWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ForWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Notf_AddendumCommentsUnRead">
+    <Key>
+      <PropertyRef Name="C_or_A" />
+      <PropertyRef Name="C_or_A_id" />
+      <PropertyRef Name="id_comment" />
+      <PropertyRef Name="FromWho" />
+      <PropertyRef Name="ForWho" />
+    </Key>
+    <Property Name="C_or_A" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="C_or_A_id" Type="Int32" Nullable="false" />
+    <Property Name="id_comment" Type="Int32" Nullable="false" />
+    <Property Name="FromWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ForWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Notf_ContractCommentsFromToWhomMatrix">
+    <Key>
+      <PropertyRef Name="C_or_A" />
+      <PropertyRef Name="C_or_A_id" />
+      <PropertyRef Name="id_comment" />
+      <PropertyRef Name="FromWho" />
+      <PropertyRef Name="ForWho" />
+    </Key>
+    <Property Name="C_or_A" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="C_or_A_id" Type="Int32" Nullable="false" />
+    <Property Name="id_comment" Type="Int32" Nullable="false" />
+    <Property Name="FromWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ForWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Notf_ContractCommentsUnRead">
+    <Key>
+      <PropertyRef Name="C_or_A" />
+      <PropertyRef Name="C_or_A_id" />
+      <PropertyRef Name="id_comment" />
+      <PropertyRef Name="FromWho" />
+      <PropertyRef Name="ForWho" />
+    </Key>
+    <Property Name="C_or_A" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="C_or_A_id" Type="Int32" Nullable="false" />
+    <Property Name="id_comment" Type="Int32" Nullable="false" />
+    <Property Name="FromWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ForWho" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_CheckTolerance">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="AddendumId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="Scenario" />
+      <PropertyRef Name="C_Now" />
+      <PropertyRef Name="ToleratedDay" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="AddendumId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="Scenario" Type="Int16" Nullable="false" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="C_Now" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ToleratedDay" Type="Int32" Nullable="false" />
+    <Property Name="DayDiff" Type="Int32" />
+    <Property Name="CheckTolerance" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_AddendumDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="AddendumID" />
+      <PropertyRef Name="ProjectNameTitle" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="PoNoTitle" />
+      <PropertyRef Name="SupplierNameTitle" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="AddendumTypeTitle" />
+      <PropertyRef Name="ContractNoTitle" />
+      <PropertyRef Name="ContractDateTitle" />
+      <PropertyRef Name="ContractValueTitle" />
+      <PropertyRef Name="ContractCurrencyTitle" />
+      <PropertyRef Name="ContractTypeTitle" />
+      <PropertyRef Name="ContractType" />
+      <PropertyRef Name="ContractDescriptionTitle" />
+      <PropertyRef Name="ContractDescription" />
+      <PropertyRef Name="CostCodeTitle" />
+      <PropertyRef Name="AddnNoTitle" />
+      <PropertyRef Name="AddendumNo" />
+      <PropertyRef Name="AddnDateTitle" />
+      <PropertyRef Name="AddendumValueTitle" />
+      <PropertyRef Name="VATpercentTitle" />
+      <PropertyRef Name="BudgetValueWithVATTitle" />
+      <PropertyRef Name="RequestedByTitle" />
+      <PropertyRef Name="PenaltyToMercuryTitle" />
+      <PropertyRef Name="Penalties" />
+      <PropertyRef Name="PenaltyToSupplierTitle" />
+      <PropertyRef Name="PenaltiesToSupplier" />
+      <PropertyRef Name="DeliveryTermsTitle" />
+      <PropertyRef Name="AddnDescriptionTitle" />
+      <PropertyRef Name="AddendumDescription" />
+      <PropertyRef Name="StartDateTitle" />
+      <PropertyRef Name="FinishDateTitle" />
+      <PropertyRef Name="AdvanceTitle" />
+      <PropertyRef Name="InterimTitle" />
+      <PropertyRef Name="ShipmentTitle" />
+      <PropertyRef Name="DeliveryTitle" />
+      <PropertyRef Name="RetentionTitle" />
+      <PropertyRef Name="PenallyToMercuryNoteTitle" />
+      <PropertyRef Name="PenaltyToSupplierNoteTitle" />
+      <PropertyRef Name="GuaranteePeriodTitle" />
+      <PropertyRef Name="CreationInfo" />
+      <PropertyRef Name="CompletionDateTitle" />
+      <PropertyRef Name="AktOfWorkTitle" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="AddendumID" Type="Int32" Nullable="false" />
+    <Property Name="ProjectNameTitle" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PoNoTitle" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="PO_No" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="SupplierNameTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AddendumTypeTitle" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="AddendumType" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ContractNoTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="ContractNo" Type="String" MaxLength="65" FixedLength="true" Unicode="true" />
+    <Property Name="ContractDateTitle" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ContractDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContractValueTitle" Type="String" Nullable="false" MaxLength="27" FixedLength="false" Unicode="true" />
+    <Property Name="ContractValue_withVAT" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ContractCurrencyTitle" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="true" />
+    <Property Name="ContractCurrency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ContractTypeTitle" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="ContractType" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ContractDescriptionTitle" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="true" />
+    <Property Name="ContractDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="true" Unicode="true" />
+    <Property Name="CostCodeTitle" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="CodeDescription" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="AddnNoTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="AddendumNo" Type="String" Nullable="false" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="AddnDateTitle" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="AddendumDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AddendumValueTitle" Type="String" Nullable="false" MaxLength="27" FixedLength="false" Unicode="true" />
+    <Property Name="AddendumValue_WithVAT" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="VATpercentTitle" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="VATpercent" Type="Int16" />
+    <Property Name="BudgetValueWithVATTitle" Type="String" Nullable="false" MaxLength="21" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="RequestedByTitle" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="RequestedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PenaltyToMercuryTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="Penalties" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltyToSupplierTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToSupplier" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryTermsTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryTerms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddnDescriptionTitle" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="true" />
+    <Property Name="AddendumDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="true" Unicode="true" />
+    <Property Name="StartDateTitle" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FinishDateTitle" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="FinishDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AdvanceTitle" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="Advance" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="InterimTitle" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Interim" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ShipmentTitle" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Shipment" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryTitle" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="RetentionTitle" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Retention" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="PenallyToMercuryNoteTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltyToSupplierNoteTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToSupplierNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GuaranteePeriodTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="GuaranteePeriod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreationInfo" Type="String" Nullable="false" MaxLength="322" FixedLength="false" Unicode="true" />
+    <Property Name="CompletionDateTitle" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CompletionDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AktOfWorkTitle" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="AktOfWork" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_ContractDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="ProjectNameTitle" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="SupplierNameTitle" />
+      <PropertyRef Name="ContractNoTitle" />
+      <PropertyRef Name="ContractDateTitle" />
+      <PropertyRef Name="ContractValueTitle" />
+      <PropertyRef Name="VATpercent" />
+      <PropertyRef Name="VATpercentTitle" />
+      <PropertyRef Name="BudgetTitle" />
+      <PropertyRef Name="ContractCurrencyTitle" />
+      <PropertyRef Name="CostCodeTitle" />
+      <PropertyRef Name="PenaltiesToMercuryTitle" />
+      <PropertyRef Name="PenaltiesToSupplierTitle" />
+      <PropertyRef Name="RequestedByTitle" />
+      <PropertyRef Name="ContractType" />
+      <PropertyRef Name="ContractTypeTitle" />
+      <PropertyRef Name="ContractDescription" />
+      <PropertyRef Name="ContractDescriptionTitle" />
+      <PropertyRef Name="StartDateTitle" />
+      <PropertyRef Name="FinishDateTitle" />
+      <PropertyRef Name="Advance" />
+      <PropertyRef Name="AdvanceTitle" />
+      <PropertyRef Name="Interim" />
+      <PropertyRef Name="InterimTitle" />
+      <PropertyRef Name="Shipment" />
+      <PropertyRef Name="ShipmentTitle" />
+      <PropertyRef Name="Delivery" />
+      <PropertyRef Name="DeliveryTitle" />
+      <PropertyRef Name="Retention" />
+      <PropertyRef Name="RetentionTitle" />
+      <PropertyRef Name="PenaltiesToMercuryNoteTitle" />
+      <PropertyRef Name="PenaltiesToSupplierNoteTitle" />
+      <PropertyRef Name="DeliveryTermsTitle" />
+      <PropertyRef Name="GuaranteePeriodTitle" />
+      <PropertyRef Name="CreationInfo" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="ProjectName" Type="String" MaxLength="153" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectNameTitle" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="SupplierNameTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="ContractNo" Type="String" MaxLength="65" FixedLength="true" Unicode="true" />
+    <Property Name="ContractNoTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="ContractDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContractDateTitle" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ContractValue" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ContractValueTitle" Type="String" Nullable="false" MaxLength="27" FixedLength="false" Unicode="true" />
+    <Property Name="VATpercent" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="VATpercentTitle" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="BudgetTitle" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="ContractCurrency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ContractCurrencyTitle" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="true" />
+    <Property Name="CostCode" Type="String" MaxLength="233" FixedLength="false" Unicode="true" />
+    <Property Name="CostCodeTitle" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToMercury" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToMercuryTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToSupplier" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToSupplierTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="RequestedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="RequestedByTitle" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ContractType" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ContractTypeTitle" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="ContractDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="true" Unicode="true" />
+    <Property Name="ContractDescriptionTitle" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StartDateTitle" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="FinishDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FinishDateTitle" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="Advance" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="AdvanceTitle" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Interim" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="InterimTitle" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Shipment" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ShipmentTitle" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryTitle" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Retention" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="RetentionTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToMercuryNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToMercuryNoteTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToSupplierNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToSupplierNoteTitle" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryTerms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryTermsTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="GuaranteePeriod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GuaranteePeriodTitle" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="CreationInfo" Type="String" Nullable="false" MaxLength="322" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_GetFullUserNameFromUserName">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="UserNameSurnameFromEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="View_PaymentRequestApprovalStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="InvoiceID" />
+      <PropertyRef Name="ApprovedOrNot" />
+      <PropertyRef Name="Position" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ApprovalRequiredPersons" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="ApprovedOrNot" Type="Int32" Nullable="false" />
+    <Property Name="Position" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_PendingListRev1">
+    <Key>
+      <PropertyRef Name="PayReqDate" />
+      <PropertyRef Name="Invoice_Date" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="PO_No" />
+      <PropertyRef Name="PayReqNo" />
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PayReqDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Urgency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Invoice_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Invoice_No" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SiteRecordNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PO_Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="453" FixedLength="false" Unicode="true" />
+    <Property Name="LinkToInvoice" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="Approved" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="PersonApprove" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AttachmentChange" Type="Boolean" />
+    <Property Name="AttachmentChangeWhen" Type="DateTime" Precision="0" />
+    <Property Name="PersonChangedAttachment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AttachmentExist" Type="Boolean" />
+    <Property Name="PoTotalWithVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalPaidWithVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalBalanceWithVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="OrderCurrency" Type="Int32" />
+    <Property Name="PendingWithVAT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Diff_Paid_Collect" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="Percantage_To_Paid" Type="Decimal" Precision="38" Scale="6" />
+    <Property Name="PO_No" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="BalanceAfterPending" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="PayReqNo" Type="Int32" Nullable="false" />
+    <Property Name="ApproveNewGen" Type="Boolean" />
+    <Property Name="PrintPDF" Type="Boolean" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedByPaymentRequest" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__UserI__6D9742D9">
+    <End Type="SQL2008_794282_mercuryModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__7849DB76">
+    <End Type="SQL2008_794282_mercuryModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__753864A1">
+    <End Type="SQL2008_794282_mercuryModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.aspnet_UsersInRoles" Role="aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__7FEAFD3E">
+    <End Type="SQL2008_794282_mercuryModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.aspnet_UsersInRoles" Role="aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__00DF2177">
+    <End Type="SQL2008_794282_mercuryModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.aspnet_UsersInRoles" Role="aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__762C88DA">
+    <End Type="SQL2008_794282_mercuryModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.aspnet_UsersInRoles" Role="aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Approval_UserPositionPrjJunction_Table_Approval_PositionEmployee">
+    <End Type="SQL2008_794282_mercuryModel.Table_Approval_PositionEmployee" Role="Table_Approval_PositionEmployee" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_Approval_UserPositionPrjJunction" Role="Table_Approval_UserPositionPrjJunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Approval_PositionEmployee">
+        <PropertyRef Name="PositionID" />
+      </Principal>
+      <Dependent Role="Table_Approval_UserPositionPrjJunction">
+        <PropertyRef Name="PositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Approval_Scn_Prj_Users_Table_Approval_Scenario">
+    <End Type="SQL2008_794282_mercuryModel.Table_Approval_Scenario" Role="Table_Approval_Scenario" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_Approval_Scn_Prj_Users" Role="Table_Approval_Scn_Prj_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Approval_Scenario">
+        <PropertyRef Name="Scenario" />
+      </Principal>
+      <Dependent Role="Table_Approval_Scn_Prj_Users">
+        <PropertyRef Name="Scenario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_PO_Akt_To_Nak_Table_PO_Nakladnaya">
+    <End Type="SQL2008_794282_mercuryModel.Table_PO_Nakladnaya" Role="Table_PO_Nakladnaya" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_PO_Akt_To_Nak" Role="Table_PO_Akt_To_Nak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_PO_Nakladnaya">
+        <PropertyRef Name="ID_Nak" />
+      </Principal>
+      <Dependent Role="Table_PO_Akt_To_Nak">
+        <PropertyRef Name="ID_Nak" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice_PDF_Table3_Invoice">
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice" Role="Table3_Invoice" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice_PDF" Role="Table3_Invoice_PDF" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Table3_Invoice_PDF">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice_PRrequestToPM_Table3_Invoice">
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice" Role="Table3_Invoice" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice_PRrequestToPM" Role="Table3_Invoice_PRrequestToPM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Table3_Invoice_PRrequestToPM">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table4_PaymentRequest_Table3_Invoice">
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice" Role="Table3_Invoice" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table4_PaymentRequest" Role="Table4_PaymentRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Table4_PaymentRequest">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table5_PayLog_Table4_PaymentRequest_">
+    <End Type="SQL2008_794282_mercuryModel.Table4_PaymentRequest" Role="Table4_PaymentRequest" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table5_PayLog" Role="Table5_PayLog" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table4_PaymentRequest">
+        <PropertyRef Name="PayReqNo" />
+      </Principal>
+      <Dependent Role="Table5_PayLog">
+        <PropertyRef Name="PayReqNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table6_SupplierDetails_Table6_Supplier">
+    <End Type="SQL2008_794282_mercuryModel.Table6_Supplier" Role="Table6_Supplier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table6_SupplierDetails" Role="Table6_SupplierDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Table6_SupplierDetails">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Table7_CostDivision">
+    <Key>
+      <PropertyRef Name="CostVidisionID" />
+    </Key>
+    <Property Name="CostVidisionID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CostDivisionDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="CostDivision2ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table7_CostCode" Relationship="SQL2008_794282_mercuryModel.FK_Table7_CostCode_Table7_CostDivision" FromRole="Table7_CostDivision" ToRole="Table7_CostCode" />
+  </EntityType>
+  <EntityType Name="Table7_CostDivision2">
+    <Key>
+      <PropertyRef Name="CostDivision2ID" />
+    </Key>
+    <Property Name="CostDivision2ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CostDivision2Description" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_CostCodeSummary0">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="CostCodeAlias" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CostCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CostCode1" Type="String" MaxLength="233" FixedLength="false" Unicode="true" />
+    <Property Name="CostCode2" Type="String" MaxLength="233" FixedLength="false" Unicode="true" />
+    <Property Name="TotalDollarPendingExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalEuroPendingExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalRublePendingExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalDollarPaidExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalEuroPaidExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalRublePaidExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalPoTotalDollarExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalPoTotalEuroExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalPoTotalRubleExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalBalanceDollarExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalBalanceEuroExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalBalanceRubleExcVAT" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalCollectedDocDollarExcVAT" Type="Decimal" Precision="38" Scale="6" />
+    <Property Name="TotalCollectedDocEuroExcVAT" Type="Decimal" Precision="38" Scale="6" />
+    <Property Name="TotalCollectedDocRubleExcVAT" Type="Decimal" Precision="38" Scale="6" />
+  </EntityType>
+  <EntityType Name="Table_Budget">
+    <Key>
+      <PropertyRef Name="BudgetID" />
+    </Key>
+    <Property Name="BudgetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="CostCode" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Budget" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="PlannedToSpend" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="PlannedToSpendCO" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="Currency" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="UpdatedPlannedRevenue" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="OriginalBOQ" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="VCO" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="CostToGoBOQ" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="CostToGoVCO" Type="Decimal" Precision="11" Scale="2" />
+    <NavigationProperty Name="Table7_CostCode" Relationship="SQL2008_794282_mercuryModel.FK_Table_Budget_Table7_CostCode" FromRole="Table_Budget" ToRole="Table7_CostCode" />
+    <Property Type="Decimal" Name="Recovery" Precision="11" Scale="2" />
+    <NavigationProperty Name="Table1_Project" Relationship="SQL2008_794282_mercuryModel.FK_Table_Budget_Table1_Project" FromRole="Table_Budget" ToRole="Table1_Project" />
+    <Property Name="OriginalSelling" Type="Decimal" Precision="11" Scale="2" />
+  </EntityType>
+  <EntityType Name="Table2_PONo">
+    <Key>
+      <PropertyRef Name="PO_No" />
+    </Key>
+    <Property Name="PO_No" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="Project_ID" Type="Int16" Nullable="false" />
+    <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="290" FixedLength="true" Unicode="true" />
+    <Property Name="TotalPrice" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="PO_Currency" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="VATpercent" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="CostCode" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PO_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonUpdated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonDeleted" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="FromAccess" Type="Int16" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="PersonApproved" Type="String" MaxLength="21" FixedLength="true" Unicode="true" />
+    <Property Name="RequestedBy" Type="String" MaxLength="21" FixedLength="true" Unicode="true" />
+    <Property Name="CO" Type="Boolean" Nullable="false" />
+    <Property Name="Scenario" Type="Int16" Nullable="false" />
+    <Property Name="FrameContractPO" Type="Boolean" Nullable="false" />
+    <Property Name="FrameContractID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_PO_Akt" Relationship="SQL2008_794282_mercuryModel.FK_Table_PO_Akt_Table2_PONo" FromRole="Table2_PONo" ToRole="Table_PO_Akt" />
+    <NavigationProperty Name="Table_PO_Nakladnaya" Relationship="SQL2008_794282_mercuryModel.FK_Table_PO_Nakladnaya_Table2_PONo" FromRole="Table2_PONo" ToRole="Table_PO_Nakladnaya" />
+    <NavigationProperty Name="Table6_Supplier" Relationship="SQL2008_794282_mercuryModel.FK_Table2_PONo__Table6_Supplier_" FromRole="Table2_PONo" ToRole="Table6_Supplier" />
+    <NavigationProperty Name="Table7_CostCode" Relationship="SQL2008_794282_mercuryModel.FK_Table2_PONo_Table7_CostCode" FromRole="Table2_PONo" ToRole="Table7_CostCode" />
+    <NavigationProperty Name="Table3_Invoice" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice__Table2_PONo_" FromRole="Table2_PONo" ToRole="Table3_Invoice" />
+    <NavigationProperty Name="Table1_Project" Relationship="SQL2008_794282_mercuryModel.FK_Table2_PONo__Table1_Project_" FromRole="Table2_PONo" ToRole="Table1_Project" />
+  </EntityType>
+  <EntityType Name="Table7_CostCode">
+    <Key>
+      <PropertyRef Name="CostCode" />
+    </Key>
+    <Property Name="CostCode" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="CostVidisionID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeDescription" Type="String" Nullable="false" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="DataCenter" Type="Boolean" />
+    <Property Name="FromAccess" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table_Budget" Relationship="SQL2008_794282_mercuryModel.FK_Table_Budget_Table7_CostCode" FromRole="Table7_CostCode" ToRole="Table_Budget" />
+    <NavigationProperty Name="Table2_PONo" Relationship="SQL2008_794282_mercuryModel.FK_Table2_PONo_Table7_CostCode" FromRole="Table7_CostCode" ToRole="Table2_PONo" />
+    <NavigationProperty Name="Table7_CostDivision" Relationship="SQL2008_794282_mercuryModel.FK_Table7_CostCode_Table7_CostDivision" FromRole="Table7_CostCode" ToRole="Table7_CostDivision" />
+  </EntityType>
+  <Association Name="FK_Table_Budget_Table7_CostCode">
+    <End Type="SQL2008_794282_mercuryModel.Table7_CostCode" Role="Table7_CostCode" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_Budget" Role="Table_Budget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table7_CostCode">
+        <PropertyRef Name="CostCode" />
+      </Principal>
+      <Dependent Role="Table_Budget">
+        <PropertyRef Name="CostCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_PO_Akt_Table2_PONo">
+    <End Type="SQL2008_794282_mercuryModel.Table2_PONo" Role="Table2_PONo" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_PO_Akt" Role="Table_PO_Akt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table2_PONo">
+        <PropertyRef Name="PO_No" />
+      </Principal>
+      <Dependent Role="Table_PO_Akt">
+        <PropertyRef Name="PO_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_PO_Nakladnaya_Table2_PONo">
+    <End Type="SQL2008_794282_mercuryModel.Table2_PONo" Role="Table2_PONo" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_PO_Nakladnaya" Role="Table_PO_Nakladnaya" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table2_PONo">
+        <PropertyRef Name="PO_No" />
+      </Principal>
+      <Dependent Role="Table_PO_Nakladnaya">
+        <PropertyRef Name="PO_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table2_PONo__Table6_Supplier_">
+    <End Type="SQL2008_794282_mercuryModel.Table6_Supplier" Role="Table6_Supplier" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table2_PONo" Role="Table2_PONo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Table2_PONo">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table2_PONo_Table7_CostCode">
+    <End Type="SQL2008_794282_mercuryModel.Table7_CostCode" Role="Table7_CostCode" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table2_PONo" Role="Table2_PONo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table7_CostCode">
+        <PropertyRef Name="CostCode" />
+      </Principal>
+      <Dependent Role="Table2_PONo">
+        <PropertyRef Name="CostCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice__Table2_PONo_">
+    <End Type="SQL2008_794282_mercuryModel.Table2_PONo" Role="Table2_PONo" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice" Role="Table3_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table2_PONo">
+        <PropertyRef Name="PO_No" />
+      </Principal>
+      <Dependent Role="Table3_Invoice">
+        <PropertyRef Name="PO_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table7_CostCode_Table7_CostDivision">
+    <End Type="SQL2008_794282_mercuryModel.Table7_CostDivision" Role="Table7_CostDivision" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table7_CostCode" Role="Table7_CostCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table7_CostDivision">
+        <PropertyRef Name="CostVidisionID" />
+      </Principal>
+      <Dependent Role="Table7_CostCode">
+        <PropertyRef Name="CostVidisionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Table_Addendum_UsersApprv_IgnoreUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddendumID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_Contract_UsersApprv_IgnoreUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_Addendums">
+    <Key>
+      <PropertyRef Name="AddendumID" />
+    </Key>
+    <Property Name="AddendumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="PO_No" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="AddendumNo" Type="String" Nullable="false" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="AddendumDate" Type="DateTime" Precision="0" />
+    <Property Name="AddendumValue_woVAT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="AddendumValue_WithVAT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="VATpercent" Type="Int16" />
+    <Property Name="AddendumDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="true" Unicode="true" />
+    <Property Name="CostCode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="AddendumLinkToTemplatefile_DOC" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="AddendumSignBySupplier" Type="Boolean" />
+    <Property Name="AddendumSignByMercury" Type="Boolean" />
+    <Property Name="AddendumCollectionBySupplier" Type="Boolean" />
+    <Property Name="AddendumGivenTo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AddendumLinkToPDFcopy" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="AddendumArchivedByMercury" Type="Boolean" />
+    <Property Name="AddendumRetention" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="AddendumNote" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonUpdated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonDeleted" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="AttachmentExist" Type="Boolean" />
+    <Property Name="NewGeneration" Type="Boolean" />
+    <Property Name="RequestedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Penalties" Type="Boolean" Nullable="false" />
+    <Property Name="PenaltiesNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToSupplier" Type="Boolean" Nullable="false" />
+    <Property Name="PenaltiesToSupplierNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BudgetLinkToPDF" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Advance" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Interim" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Shipment" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Delivery" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="FinishDate" Type="DateTime" Precision="0" />
+    <Property Name="DeliveryTerms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GuaranteePeriod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddendumTypes" Type="Int16" Nullable="false" />
+    <Property Name="Scenario" Type="Int16" Nullable="false" />
+    <Property Name="POexecuted" Type="Boolean" Nullable="false" />
+    <Property Name="Exceptional" Type="Boolean" />
+    <NavigationProperty Name="Table_Addendum_UserRemarks" Relationship="SQL2008_794282_mercuryModel.FK_Table_Addendums_UserRemarks_Table_Addendums" FromRole="Table_Addendums" ToRole="Table_Addendum_UserRemarks" />
+    <NavigationProperty Name="Table_Addendums_ClientAdditional" Relationship="SQL2008_794282_mercuryModel.FK_Table_Addendums_ClientAdditional_Table_Addendums" FromRole="Table_Addendums" ToRole="Table_Addendums_ClientAdditional" />
+    <NavigationProperty Name="Table_Contracts" Relationship="SQL2008_794282_mercuryModel.FK_Table_Addendums_Table_Contracts" FromRole="Table_Addendums" ToRole="Table_Contracts" />
+    <NavigationProperty Name="Table_Addendum_UsersApprv" Relationship="SQL2008_794282_mercuryModel.FK_Table_Addendum_UsersApprv_Table_Addendum" FromRole="Table_Addendums" ToRole="Table_Addendum_UsersApprv" />
+    <Property Name="AddendumLinkToTemplatefile_DOCBackUp" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="AddendumLinkToPDFcopyBackUp" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_Contracts">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="PO_No" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="ContractNo" Type="String" MaxLength="65" FixedLength="true" Unicode="true" />
+    <Property Name="ContractDate" Type="DateTime" Precision="0" />
+    <Property Name="ContractValue_woVAT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ContractValue_withVAT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="VATpercent" Type="Int16" />
+    <Property Name="CostCode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="ContractCurrency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="ContractDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="true" Unicode="true" />
+    <Property Name="ContractType" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LinkToTemplatefile_DOC" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="SentToSupplier" Type="Boolean" />
+    <Property Name="SignBySupplier" Type="Boolean" />
+    <Property Name="SignByMercury" Type="Boolean" />
+    <Property Name="CollectionBySupplier" Type="Boolean" />
+    <Property Name="ContractGivenTo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="LinkToPDFcopy" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="ArchivedByMercury" Type="Boolean" />
+    <Property Name="CreatedBy" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="DateTime" Precision="0" />
+    <Property Name="PersonCreated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonUpdated" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PersonDeleted" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="RequestedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Retention" Type="Decimal" Precision="3" Scale="1" />
+    <Property Name="Note" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="AttachmentExist" Type="Boolean" />
+    <Property Name="Scenario" Type="Int16" Nullable="false" />
+    <Property Name="Penalties" Type="Boolean" Nullable="false" />
+    <Property Name="PenaltiesNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PenaltiesToSupplier" Type="Boolean" Nullable="false" />
+    <Property Name="PenaltiesToSupplierNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BudgetLinkToPDF" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Advance" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Interim" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Shipment" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Delivery" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="FinishDate" Type="DateTime" Precision="0" />
+    <Property Name="DeliveryTerms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GuaranteePeriod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nominated" Type="Boolean" Nullable="false" />
+    <Property Name="FrameContract" Type="Boolean" Nullable="false" />
+    <Property Name="POexecuted" Type="Boolean" Nullable="false" />
+    <Property Name="Exceptional" Type="Boolean" />
+    <Property Name="NominatedApprovedByESTM" Type="Int16" Nullable="false" />
+    <Property Name="NominatedWhenApprovedByESTM" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Table_Addendums" Relationship="SQL2008_794282_mercuryModel.FK_Table_Addendums_Table_Contracts" FromRole="Table_Contracts" ToRole="Table_Addendums" />
+    <NavigationProperty Name="Table_Contract_ProjectIDforClient" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contract_ProjectIDforClient_Table_Contracts" FromRole="Table_Contracts" ToRole="Table_Contract_ProjectIDforClient" />
+    <NavigationProperty Name="Table_Contract_Offers" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contract_Offers_Table_Contracts" FromRole="Table_Contracts" ToRole="Table_Contract_Offers" />
+    <NavigationProperty Name="Table_Contracts_ClientAdditional" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contracts_ClientAdditional_Table_Contracts" FromRole="Table_Contracts" ToRole="Table_Contracts_ClientAdditional" />
+    <NavigationProperty Name="Table_Contracts_Common" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contracts_Common_Table_Contracts" FromRole="Table_Contracts" ToRole="Table_Contracts_Common" />
+    <NavigationProperty Name="Table6_Supplier" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contracts_Table6_Supplier" FromRole="Table_Contracts" ToRole="Table6_Supplier" />
+    <NavigationProperty Name="Table_Contracts_UserRemarks" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contracts_UserRemarks_Table_Contracts" FromRole="Table_Contracts" ToRole="Table_Contracts_UserRemarks" />
+    <NavigationProperty Name="Table_Contract_UsersApprv" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contract_UsersApprv_Table_Contracts" FromRole="Table_Contracts" ToRole="Table_Contract_UsersApprv" />
+    <Property Name="LinkToTemplatefile_DOCBackUp" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="LinkToPDFcopyBackUp" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Table_Addendums_UserRemarks_Table_Addendums">
+    <End Type="SQL2008_794282_mercuryModel.Table_Addendums" Role="Table_Addendums" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Addendum_UserRemarks" Role="Table_Addendum_UserRemarks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Addendums">
+        <PropertyRef Name="AddendumID" />
+      </Principal>
+      <Dependent Role="Table_Addendum_UserRemarks">
+        <PropertyRef Name="AddendumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Addendums_ClientAdditional_Table_Addendums">
+    <End Type="SQL2008_794282_mercuryModel.Table_Addendums" Role="Table_Addendums" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Addendums_ClientAdditional" Role="Table_Addendums_ClientAdditional" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Addendums">
+        <PropertyRef Name="AddendumID" />
+      </Principal>
+      <Dependent Role="Table_Addendums_ClientAdditional">
+        <PropertyRef Name="AddendumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Addendums_Table_Contracts">
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts" Role="Table_Contracts" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_Addendums" Role="Table_Addendums" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Addendums">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contract_ProjectIDforClient_Table_Contracts">
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts" Role="Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Contract_ProjectIDforClient" Role="Table_Contract_ProjectIDforClient" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contract_ProjectIDforClient">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contract_Offers_Table_Contracts">
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts" Role="Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Contract_Offers" Role="Table_Contract_Offers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contract_Offers">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contracts_ClientAdditional_Table_Contracts">
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts" Role="Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts_ClientAdditional" Role="Table_Contracts_ClientAdditional" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contracts_ClientAdditional">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contracts_Common_Table_Contracts">
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts" Role="Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts_Common" Role="Table_Contracts_Common" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contracts_Common">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contracts_Table6_Supplier">
+    <End Type="SQL2008_794282_mercuryModel.Table6_Supplier" Role="Table6_Supplier" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts" Role="Table_Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Table_Contracts">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contracts_UserRemarks_Table_Contracts">
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts" Role="Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts_UserRemarks" Role="Table_Contracts_UserRemarks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contracts_UserRemarks">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_FrameContractBudgetPoDetails_Result">
+    <Property Type="Decimal" Name="Budget" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="TotalPO" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="PercentTotalPO_To_Budget" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Boolean" Name="BudgetAboutToExceedWarning" Nullable="true" />
+    <Property Type="Boolean" Name="BudgetExceeded" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Table1_Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ProjectManager" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ProjectAdress" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PM_email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="CurrentStatus" Type="Boolean" Nullable="false" />
+    <Property Name="UpdatedBy" Type="DateTime" Precision="0" />
+    <Property Name="FromAccess" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Report" Type="Boolean" />
+    <Property Name="BackUpRequired" Type="Boolean" />
+    <Property Name="InsuranceStart" Type="DateTime" Precision="0" />
+    <Property Name="InsuranceFinish" Type="DateTime" Precision="0" />
+    <Property Name="POcreate" Type="Boolean" />
+    <Property Name="CompletionDate" Type="DateTime" Precision="0" />
+    <Property Name="ContractCurrency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ContractAmount" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="Margin" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="NakladnayaEnabled" Type="Boolean" />
+    <Property Name="BackColor" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+    <Property Name="ForeColor" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+    <Property Name="PendingSummary" Type="Boolean" />
+    <Property Name="ApproveRequired" Type="Boolean" />
+    <Property Name="RequestedRequired" Type="Boolean" />
+    <Property Name="DontShowContractPoAssistance" Type="Boolean" />
+    <Property Name="ChangeOrderSignedExcVAT" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="SendEmailsNonZeroBalance" Type="Boolean" />
+    <Property Name="NewGeneration" Type="Boolean" />
+    <Property Name="Logo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NewPoPolicy" Type="Boolean" />
+    <Property Name="PoMakerNewGeneration" Type="Boolean" Nullable="false" />
+    <Property Name="PR_Coverpage_Approval_Allowed" Type="Boolean" Nullable="false" />
+    <Property Name="PR_Coverpage_Approval_Compulsory" Type="Boolean" Nullable="false" />
+    <Property Name="PM_SignaturesLink" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="AutoCCApproval" Type="Boolean" />
+    <Property Name="ExtraApprovalIfNoSignedClientContract" Type="Boolean" Nullable="false" />
+    <Property Name="BudgetEmailControl" Type="Boolean" Nullable="false" />
+    <Property Name="FrameBudgetEmailControl" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Table_Budget" Relationship="SQL2008_794282_mercuryModel.FK_Table_Budget_Table1_Project" FromRole="Table1_Project" ToRole="Table_Budget" />
+    <NavigationProperty Name="Table1_ProjectInsurCertf" Relationship="SQL2008_794282_mercuryModel.FK_Table1_ProjectInsurCertf_Table1_Project" FromRole="Table1_Project" ToRole="Table1_ProjectInsurCertf" />
+    <NavigationProperty Name="Table2_PONo" Relationship="SQL2008_794282_mercuryModel.FK_Table2_PONo__Table1_Project_" FromRole="Table1_Project" ToRole="Table2_PONo" />
+  </EntityType>
+  <Association Name="FK_Table_Budget_Table1_Project">
+    <End Type="SQL2008_794282_mercuryModel.Table1_Project" Role="Table1_Project" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_Budget" Role="Table_Budget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Table_Budget">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table1_ProjectInsurCertf_Table1_Project">
+    <End Type="SQL2008_794282_mercuryModel.Table1_Project" Role="Table1_Project" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table1_ProjectInsurCertf" Role="Table1_ProjectInsurCertf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Table1_ProjectInsurCertf">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table2_PONo__Table1_Project_">
+    <End Type="SQL2008_794282_mercuryModel.Table1_Project" Role="Table1_Project" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table2_PONo" Role="Table2_PONo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table1_Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Table2_PONo">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_FrameContractBudgetPoDetails_Result1">
+    <Property Type="Decimal" Name="Budget" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="TotalPO" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="PercentTotalPO_To_Budget" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Boolean" Name="BudgetAboutToExceedWarning" Nullable="true" />
+    <Property Type="Boolean" Name="BudgetExceeded" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Table_Contracts_IgnoreSearchFeed">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_SupplierType">
+    <Key>
+      <PropertyRef Name="SupplierTypeId" />
+    </Key>
+    <Property Name="SupplierTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierDiscipline" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Table_SupplierType_Junction" Relationship="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Junction_Table_SupplierType" FromRole="Table_SupplierType" ToRole="Table_SupplierType_Junction" />
+    <NavigationProperty Name="Table_SupplierType_Tags" Relationship="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Tags_Table_SupplierType" FromRole="Table_SupplierType" ToRole="Table_SupplierType_Tags" />
+  </EntityType>
+  <EntityType Name="Table_SupplierType_Junction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="SupplierTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_SupplierType" Relationship="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Junction_Table_SupplierType" FromRole="Table_SupplierType_Junction" ToRole="Table_SupplierType" />
+    <NavigationProperty Name="Table6_Supplier" Relationship="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Junction_Table6_Supplier" FromRole="Table_SupplierType_Junction" ToRole="Table6_Supplier" />
+  </EntityType>
+  <EntityType Name="Table_SupplierType_Tags">
+    <Key>
+      <PropertyRef Name="TagId" />
+    </Key>
+    <Property Name="TagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagSourceIndex" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SourceType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_SupplierType" Relationship="SQL2008_794282_mercuryModel.FK_Table_SupplierType_Tags_Table_SupplierType" FromRole="Table_SupplierType_Tags" ToRole="Table_SupplierType" />
+  </EntityType>
+  <Association Name="FK_Table_SupplierType_Junction_Table_SupplierType">
+    <End Type="SQL2008_794282_mercuryModel.Table_SupplierType" Role="Table_SupplierType" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_SupplierType_Junction" Role="Table_SupplierType_Junction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_SupplierType">
+        <PropertyRef Name="SupplierTypeId" />
+      </Principal>
+      <Dependent Role="Table_SupplierType_Junction">
+        <PropertyRef Name="SupplierTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_SupplierType_Tags_Table_SupplierType">
+    <End Type="SQL2008_794282_mercuryModel.Table_SupplierType" Role="Table_SupplierType" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table_SupplierType_Tags" Role="Table_SupplierType_Tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_SupplierType">
+        <PropertyRef Name="SupplierTypeId" />
+      </Principal>
+      <Dependent Role="Table_SupplierType_Tags">
+        <PropertyRef Name="SupplierTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_SupplierType_Junction_Table6_Supplier">
+    <End Type="SQL2008_794282_mercuryModel.Table6_Supplier" Role="Table6_Supplier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_SupplierType_Junction" Role="Table_SupplierType_Junction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table6_Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Table_SupplierType_Junction">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Table8_ExchangeRates">
+    <Key>
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="RubbleDollar" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="RubbleEuro" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <NavigationProperty Name="Table5_PayLog" Relationship="SQL2008_794282_mercuryModel.FK_Table5_PayLog_Table8_ExchangeRates" FromRole="Table8_ExchangeRates" ToRole="Table5_PayLog" />
+  </EntityType>
+  <Association Name="FK_Table5_PayLog_Table8_ExchangeRates">
+    <End Type="SQL2008_794282_mercuryModel.Table8_ExchangeRates" Role="Table8_ExchangeRates" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table5_PayLog" Role="Table5_PayLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table8_ExchangeRates">
+        <PropertyRef Name="Date" />
+      </Principal>
+      <Dependent Role="Table5_PayLog">
+        <PropertyRef Name="PaymentDate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_Contract_Addendum_NotApprovedPersonsForEmailNotification">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Count_Contract" />
+      <PropertyRef Name="Count_Addendum" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Count_Contract" Type="Int32" Nullable="false" />
+    <Property Name="Count_Addendum" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_Type">
+    <Key>
+      <PropertyRef Name="Type_id" />
+    </Key>
+    <Property Name="Type_id" Type="Int32" Nullable="false" />
+    <Property Name="Type_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Table3_Invoice_Type_Junction" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type" FromRole="Table3_Invoice_Type" ToRole="Table3_Invoice_Type_Junction" />
+  </EntityType>
+  <EntityType Name="Table3_Invoice_Type_Junction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="Type_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table3_Invoice" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice_Type_Junction_Table3_Invoice" FromRole="Table3_Invoice_Type_Junction" ToRole="Table3_Invoice" />
+    <NavigationProperty Name="Table3_Invoice_Type" Relationship="SQL2008_794282_mercuryModel.FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type" FromRole="Table3_Invoice_Type_Junction" ToRole="Table3_Invoice_Type" />
+  </EntityType>
+  <Association Name="FK_Table3_Invoice_Type_Junction_Table3_Invoice">
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice" Role="Table3_Invoice" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice_Type_Junction" Role="Table3_Invoice_Type_Junction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Table3_Invoice_Type_Junction">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table3_Invoice_Type_Junction_Table3_Invoice_Type">
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice_Type" Role="Table3_Invoice_Type" Multiplicity="1" />
+    <End Type="SQL2008_794282_mercuryModel.Table3_Invoice_Type_Junction" Role="Table3_Invoice_Type_Junction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table3_Invoice_Type">
+        <PropertyRef Name="Type_id" />
+      </Principal>
+      <Dependent Role="Table3_Invoice_Type_Junction">
+        <PropertyRef Name="Type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_ContractsAddendumsNonExecutedTotal">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="CostCode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="TotalNotExcecutedValueExcVAT_Rub" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalNotExcecutedValueExcVAT_Euro" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalNotExcecutedValueExcVAT_Dollar" Type="Decimal" Precision="38" Scale="2" />
+  </EntityType>
+  <EntityType Name="View_FrameContractsBudgetStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ContractID" />
+      <PropertyRef Name="BudgetWithVAT" />
+      <PropertyRef Name="TotalPoWithVAT" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="SupplierName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContractNo" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+    <Property Name="ContractDate" Type="DateTime" Precision="0" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="BudgetWithVAT" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="TotalPoWithVAT" Type="Decimal" Nullable="false" Precision="38" Scale="2" />
+    <Property Name="AvailableBudgetForNewPoWithVAT" Type="Decimal" Precision="38" Scale="2" />
+  </EntityType>
+  <EntityType Name="Table_BudgetChangeLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int16" Nullable="false" />
+    <Property Name="CostCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OldValue" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="NewValue" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="Explanation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Attachment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Table_Budget_PlannedToSpendConstraints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BudgetID" Type="Int32" Nullable="false" />
+    <Property Name="TimeStamp" Type="DateTime" Precision="0" />
+  </EntityType>
+  <ComplexType Name="SP_MissingApprovalsOnContractsAndAddendums_Result">
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Count_Contract" Nullable="false" />
+    <Property Type="Int32" Name="Count_Addendum" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Table1_Project_LawyersCanEnterContract">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BodyText">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ref" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Eng" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table_Addendum_UsersApprv">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddendumID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="WhenApproved" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Exception" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Table_Addendums" Relationship="SQL2008_794282_mercuryModel.FK_Table_Addendum_UsersApprv_Table_Addendum" FromRole="Table_Addendum_UsersApprv" ToRole="Table_Addendums" />
+  </EntityType>
+  <EntityType Name="Table_Contract_UsersApprv">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="WhenApproved" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Exception" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Table_Contracts" Relationship="SQL2008_794282_mercuryModel.FK_Table_Contract_UsersApprv_Table_Contracts" FromRole="Table_Contract_UsersApprv" ToRole="Table_Contracts" />
+  </EntityType>
+  <Association Name="FK_Table_Addendum_UsersApprv_Table_Addendum">
+    <End Type="SQL2008_794282_mercuryModel.Table_Addendums" Role="Table_Addendums" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Addendum_UsersApprv" Role="Table_Addendum_UsersApprv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Addendums">
+        <PropertyRef Name="AddendumID" />
+      </Principal>
+      <Dependent Role="Table_Addendum_UsersApprv">
+        <PropertyRef Name="AddendumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Contract_UsersApprv_Table_Contracts">
+    <End Type="SQL2008_794282_mercuryModel.Table_Contracts" Role="Table_Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SQL2008_794282_mercuryModel.Table_Contract_UsersApprv" Role="Table_Contract_UsersApprv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_Contracts">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Table_Contract_UsersApprv">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="ApprovalStatusContractEF_Result">
+    <Property Type="Guid" Name="uniqueId" Nullable="false" />
+    <Property Type="Int32" Name="ContractID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+    <Property Type="Int32" Name="Approved" Nullable="false" />
+    <Property Type="DateTime" Name="WhenApproved" Nullable="true" Precision="16" />
+    <Property Type="Boolean" Name="Exception" Nullable="true" />
+    <Property Type="Int32" Name="Rank" Nullable="false" />
+    <Property Type="String" Name="WhoApprovedFromLawyers" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <ComplexType Name="ApprovalStatusAddendumEF_Result">
+    <Property Type="Guid" Name="uniqueId" Nullable="false" />
+    <Property Type="Int32" Name="ContractID" Nullable="false" />
+    <Property Type="Int32" Name="AddendumID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+    <Property Type="Int32" Name="Approved" Nullable="false" />
+    <Property Type="DateTime" Name="WhenApproved" Nullable="true" Precision="16" />
+    <Property Type="Boolean" Name="Exception" Nullable="true" />
+    <Property Type="Int32" Name="Rank" Nullable="false" />
+    <Property Type="String" Name="WhoApprovedFromLawyers" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <EntityType Name="View_SupplierNamesForContracts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="SupplierID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_ContractFilesMoveDOC">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="LastSlash" Type="Int32" />
+    <Property Name="LastDot" Type="Int32" />
+    <Property Name="Path1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreateFolder" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Path2" Type="String" MaxLength="501" FixedLength="false" Unicode="true" />
+    <Property Name="extension" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FileNameItself" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <ComplexType Name="sp_DDLProjectsPOCreate_Result">
+    <Property Type="Int16" Name="ProjectID" Nullable="false" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="58" />
+    <Property Type="Boolean" Name="RequestedRequired" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Table_Required">
+    <Key>
+      <PropertyRef Name="RequiredId" />
+    </Key>
+    <Property Name="RequiredId" Type="Int32" Nullable="false" />
+    <Property Name="RequiredText" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="sp_DDLCostCodePOCreate_Result">
+    <Property Type="String" Name="CostCode" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CostCode_Description" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <ComplexType Name="sp_DDLRequestedByPOCreate_Result">
+    <Property Type="String" Name="username" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="NameSurname" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <EntityType Name="View_WhatToBePaidRevised">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Invoice_Date" />
+      <PropertyRef Name="PayReqNo" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="RubbleDollar" />
+      <PropertyRef Name="RubbleEuro" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SupplierName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="453" FixedLength="false" Unicode="true" />
+    <Property Name="PO_No" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Invoice_No" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Invoice_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Wo_VAT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PO_Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="WithVAT" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PayReqNo" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LinkToInvoice" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="Approved" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ProjectID" Type="Int16" Nullable="false" />
+    <Property Name="RubbleDollar" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="RubbleEuro" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+  </EntityType>
+</Schema>

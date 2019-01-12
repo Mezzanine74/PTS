@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CodestInspectionModelStoreContainer" CdmEntityContainer="CodestInspectionEntities">
+    <FunctionImportMapping FunctionImportName="sp_DeleteAllSupervisorApprovalsFromInspection" FunctionName="CodestInspectionModel.Store.sp_DeleteAllSupervisorApprovalsFromInspection" />
+    <FunctionImportMapping FunctionImportName="sp_InsertAllSupervisorApprovalResponseToInspection" FunctionName="CodestInspectionModel.Store.sp_InsertAllSupervisorApprovalResponseToInspection" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteAllTeknazorApprovalsFromInspection" FunctionName="CodestInspectionModel.Store.sp_DeleteAllTeknazorApprovalsFromInspection" />
+    <FunctionImportMapping FunctionImportName="sp_InsertAllTeknazorApprovalResponseToInspection" FunctionName="CodestInspectionModel.Store.sp_InsertAllTeknazorApprovalResponseToInspection" />
+    <EntitySetMapping Name="Table_Activity">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Activity">
+        <MappingFragment StoreEntitySet="Table_Activity">
+          <ScalarProperty Name="Activity_Layer_2Id" ColumnName="Activity_Layer_2Id" />
+          <ScalarProperty Name="Activity_Layer_1Id" ColumnName="Activity_Layer_1Id" />
+          <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+          <ScalarProperty Name="DisciplineId" ColumnName="DisciplineId" />
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Activity_Layer_1">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Activity_Layer_1">
+        <MappingFragment StoreEntitySet="Table_Activity_Layer_1">
+          <ScalarProperty Name="Activity_Layer_1_Name" ColumnName="Activity_Layer_1_Name" />
+          <ScalarProperty Name="Activity_Layer_1Id" ColumnName="Activity_Layer_1Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Activity_Layer_2">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Activity_Layer_2">
+        <MappingFragment StoreEntitySet="Table_Activity_Layer_2">
+          <ScalarProperty Name="Activity_Layer_2_Name" ColumnName="Activity_Layer_2_Name" />
+          <ScalarProperty Name="Activity_Layer_2Id" ColumnName="Activity_Layer_2Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Building">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Building">
+        <MappingFragment StoreEntitySet="Table_Building">
+          <ScalarProperty Name="BuildingName" ColumnName="BuildingName" />
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Category_In_BoQ">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Category_In_BoQ">
+        <MappingFragment StoreEntitySet="Table_Category_In_BoQ">
+          <ScalarProperty Name="CategoryInBOQName" ColumnName="CategoryInBOQName" />
+          <ScalarProperty Name="CategoryInBOQId" ColumnName="CategoryInBOQId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Discipline">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Discipline">
+        <MappingFragment StoreEntitySet="Table_Discipline">
+          <ScalarProperty Name="DisciplineName" ColumnName="DisciplineName" />
+          <ScalarProperty Name="DisciplineId" ColumnName="DisciplineId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Floor">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Floor">
+        <MappingFragment StoreEntitySet="Table_Floor">
+          <ScalarProperty Name="FloorName" ColumnName="FloorName" />
+          <ScalarProperty Name="FloorId" ColumnName="FloorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Activity">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Activity">
+        <MappingFragment StoreEntitySet="Table_Inspection_Activity">
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Room">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Room">
+        <MappingFragment StoreEntitySet="Table_Inspection_Room">
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_ResponseKey">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_ResponseKey">
+        <MappingFragment StoreEntitySet="Table_ResponseKey">
+          <ScalarProperty Name="Response_Key" ColumnName="Response_Key" />
+          <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Room">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Room">
+        <MappingFragment StoreEntitySet="Table_Room">
+          <ScalarProperty Name="CategoryInBOQId" ColumnName="CategoryInBOQId" />
+          <ScalarProperty Name="RoomNameId" ColumnName="RoomNameId" />
+          <ScalarProperty Name="RoomNoId" ColumnName="RoomNoId" />
+          <ScalarProperty Name="FloorId" ColumnName="FloorId" />
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Room_Name">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Room_Name">
+        <MappingFragment StoreEntitySet="Table_Room_Name">
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="RoomNameId" ColumnName="RoomNameId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Room_No">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Room_No">
+        <MappingFragment StoreEntitySet="Table_Room_No">
+          <ScalarProperty Name="RoomNo" ColumnName="RoomNo" />
+          <ScalarProperty Name="RoomNoId" ColumnName="RoomNoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Supervisor">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Supervisor">
+        <MappingFragment StoreEntitySet="Table_Supervisor">
+          <ScalarProperty Name="SupervisorName" ColumnName="SupervisorName" />
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Supervisor_Approval">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Supervisor_Approval">
+        <MappingFragment StoreEntitySet="Table_Supervisor_Approval">
+          <ScalarProperty Name="WhenResponded" ColumnName="WhenResponded" />
+          <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Supervisor_Bldg_Discp">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Supervisor_Bldg_Discp">
+        <MappingFragment StoreEntitySet="Table_Supervisor_Bldg_Discp">
+          <ScalarProperty Name="DisciplineId" ColumnName="DisciplineId" />
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_System">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_System">
+        <MappingFragment StoreEntitySet="Table_System">
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Teknazor">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Teknazor">
+        <MappingFragment StoreEntitySet="Table_Teknazor">
+          <ScalarProperty Name="TeknazorName" ColumnName="TeknazorName" />
+          <ScalarProperty Name="TeknazorId" ColumnName="TeknazorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Teknazor_Approval">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Teknazor_Approval">
+        <MappingFragment StoreEntitySet="Table_Teknazor_Approval">
+          <ScalarProperty Name="WhenResponded" ColumnName="WhenResponded" />
+          <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="TeknazorId" ColumnName="TeknazorId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Teknazor_Bldg_Discp">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Teknazor_Bldg_Discp">
+        <MappingFragment StoreEntitySet="Table_Teknazor_Bldg_Discp">
+          <ScalarProperty Name="DisciplineId" ColumnName="DisciplineId" />
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+          <ScalarProperty Name="TeknazorId" ColumnName="TeknazorId" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Inspection_Room_Activity_Supervisor">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Inspection_Room_Activity_Supervisor">
+        <MappingFragment StoreEntitySet="View_Inspection_Room_Activity_Supervisor">
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Inspection_Room_Activity_Supervisor_Response">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Inspection_Room_Activity_Supervisor_Response">
+        <MappingFragment StoreEntitySet="View_Inspection_Room_Activity_Supervisor_Response">
+          <ScalarProperty Name="WhenResponded" ColumnName="WhenResponded" />
+          <ScalarProperty Name="Response_Key" ColumnName="Response_Key" />
+          <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Inspection_Room_Activity_Teknazor">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Inspection_Room_Activity_Teknazor">
+        <MappingFragment StoreEntitySet="View_Inspection_Room_Activity_Teknazor">
+          <ScalarProperty Name="TeknazorId" ColumnName="TeknazorId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Inspection_Room_Activity_Teknazor_Response">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Inspection_Room_Activity_Teknazor_Response">
+        <MappingFragment StoreEntitySet="View_Inspection_Room_Activity_Teknazor_Response">
+          <ScalarProperty Name="WhenResponded" ColumnName="WhenResponded" />
+          <ScalarProperty Name="Response_Key" ColumnName="Response_Key" />
+          <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
+          <ScalarProperty Name="TeknazorId" ColumnName="TeknazorId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Inspection_SupervisorApprovalStatus">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Inspection_SupervisorApprovalStatus">
+        <MappingFragment StoreEntitySet="View_Inspection_SupervisorApprovalStatus">
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SupervisorName" ColumnName="SupervisorName" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Inspection_SupervisorFullApprovalResponse">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Inspection_SupervisorFullApprovalResponse">
+        <MappingFragment StoreEntitySet="View_Inspection_SupervisorFullApprovalResponse">
+          <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Inspection_TeknazorApprovalStatus">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Inspection_TeknazorApprovalStatus">
+        <MappingFragment StoreEntitySet="View_Inspection_TeknazorApprovalStatus">
+          <ScalarProperty Name="TeknazorId" ColumnName="TeknazorId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TeknazorName" ColumnName="TeknazorName" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Inspection_TeknazorFullApprovalResponse">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Inspection_TeknazorFullApprovalResponse">
+        <MappingFragment StoreEntitySet="View_Inspection_TeknazorFullApprovalResponse">
+          <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
+          <ScalarProperty Name="TeknazorId" ColumnName="TeknazorId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_InspectionInitiated">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_InspectionInitiated">
+        <MappingFragment StoreEntitySet="View_InspectionInitiated">
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_InspectionInitiated_AllSupervisorApproved">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_InspectionInitiated_AllSupervisorApproved">
+        <MappingFragment StoreEntitySet="View_InspectionInitiated_AllSupervisorApproved">
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_InspectionInitiated_AllTeknazorApproved">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_InspectionInitiated_AllTeknazorApproved">
+        <MappingFragment StoreEntitySet="View_InspectionInitiated_AllTeknazorApproved">
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection">
+        <MappingFragment StoreEntitySet="Table_Inspection">
+          <ScalarProperty Name="WorkingDrawingNo" ColumnName="WorkingDrawingNo" />
+          <ScalarProperty Name="InspectionNo" ColumnName="InspectionNo" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Client_Representative">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Client_Representative">
+        <MappingFragment StoreEntitySet="Table_Client_Representative">
+          <ScalarProperty Name="ClientRepresentativeName" ColumnName="ClientRepresentativeName" />
+          <ScalarProperty Name="ClientRepresentativeId" ColumnName="ClientRepresentativeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Client_Representative_Bldg_Discp">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Client_Representative_Bldg_Discp">
+        <MappingFragment StoreEntitySet="Table_Client_Representative_Bldg_Discp">
+          <ScalarProperty Name="DisciplineId" ColumnName="DisciplineId" />
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+          <ScalarProperty Name="ClientRepresentativeId" ColumnName="ClientRepresentativeId" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Client_Response">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Client_Response">
+        <MappingFragment StoreEntitySet="Table_Inspection_Client_Response">
+          <ScalarProperty Name="WhenResponded" ColumnName="WhenResponded" />
+          <ScalarProperty Name="ClientRepresentativeId" ColumnName="ClientRepresentativeId" />
+          <ScalarProperty Name="Hour" ColumnName="Hour" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Initiater">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Initiater">
+        <MappingFragment StoreEntitySet="Table_Inspection_Initiater">
+          <ScalarProperty Name="InspectionInitiaterName" ColumnName="InspectionInitiaterName" />
+          <ScalarProperty Name="InspectionInitiaterId" ColumnName="InspectionInitiaterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Initiater_Bldg_Discp">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Initiater_Bldg_Discp">
+        <MappingFragment StoreEntitySet="Table_Inspection_Initiater_Bldg_Discp">
+          <ScalarProperty Name="DisciplineId" ColumnName="DisciplineId" />
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+          <ScalarProperty Name="InspectionInitiaterId" ColumnName="InspectionInitiaterId" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Initiation">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Initiation">
+        <MappingFragment StoreEntitySet="Table_Inspection_Initiation">
+          <ScalarProperty Name="When_Initiated" ColumnName="When_Initiated" />
+          <ScalarProperty Name="InspectionInitiaterId" ColumnName="InspectionInitiaterId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved">
+        <MappingFragment StoreEntitySet="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorNotApproved">
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved">
+        <MappingFragment StoreEntitySet="View_InspectionInitiated_AllSupervisorNotApproved_AllTeknazorNotApproved">
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_EmailsClientRepresentativesOnInspection">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_EmailsClientRepresentativesOnInspection">
+        <MappingFragment StoreEntitySet="View_EmailsClientRepresentativesOnInspection">
+          <ScalarProperty Name="ClientRepresentativeId" ColumnName="ClientRepresentativeId" />
+          <ScalarProperty Name="ClientRepresentativeName" ColumnName="ClientRepresentativeName" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_EmailsInspectionInitiaterOnInspection">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_EmailsInspectionInitiaterOnInspection">
+        <MappingFragment StoreEntitySet="View_EmailsInspectionInitiaterOnInspection">
+          <ScalarProperty Name="InspectionInitiaterId" ColumnName="InspectionInitiaterId" />
+          <ScalarProperty Name="InspectionInitiaterName" ColumnName="InspectionInitiaterName" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_EmailsSupervisorsOnInspection">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_EmailsSupervisorsOnInspection">
+        <MappingFragment StoreEntitySet="View_EmailsSupervisorsOnInspection">
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="SupervisorName" ColumnName="SupervisorName" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_EmailsTeknazorsOnInspection">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_EmailsTeknazorsOnInspection">
+        <MappingFragment StoreEntitySet="View_EmailsTeknazorsOnInspection">
+          <ScalarProperty Name="TeknazorId" ColumnName="TeknazorId" />
+          <ScalarProperty Name="TeknazorName" ColumnName="TeknazorName" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded">
+        <MappingFragment StoreEntitySet="View_InspectionInitiated_AllSupervisorApproved_AllTeknazorApproved_ClientNotResponded">
+          <ScalarProperty Name="InspectionNo" ColumnName="InspectionNo" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Result">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Result">
+        <MappingFragment StoreEntitySet="Table_Inspection_Result">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ResultId" ColumnName="ResultId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Result">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Result">
+        <MappingFragment StoreEntitySet="Table_Result">
+          <ScalarProperty Name="ResultName" ColumnName="ResultName" />
+          <ScalarProperty Name="ResultId" ColumnName="ResultId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Result_Docs">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Result_Docs">
+        <MappingFragment StoreEntitySet="Table_Result_Docs">
+          <ScalarProperty Name="DocType" ColumnName="DocType" />
+          <ScalarProperty Name="DocTypeId" ColumnName="DocTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Result_Docs">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Result_Docs">
+        <MappingFragment StoreEntitySet="Table_Inspection_Result_Docs">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="DocTypeId" ColumnName="DocTypeId" />
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="Inspection_Result_Docs_Id" ColumnName="Inspection_Result_Docs_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_Inspection_Result_Docs_List">
+      <EntityTypeMapping TypeName="CodestInspectionModel.Table_Inspection_Result_Docs_List">
+        <MappingFragment StoreEntitySet="Table_Inspection_Result_Docs_List">
+          <ScalarProperty Name="File_Link" ColumnName="File_Link" />
+          <ScalarProperty Name="Inspection_Result_Docs_Id" ColumnName="Inspection_Result_Docs_Id" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Result_Docs_Restricted">
+      <EntityTypeMapping TypeName="CodestInspectionModel.View_Result_Docs_Restricted">
+        <MappingFragment StoreEntitySet="View_Result_Docs_Restricted">
+          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
+          <ScalarProperty Name="DocType" ColumnName="DocType" />
+          <ScalarProperty Name="DocTypeId" ColumnName="DocTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DeleteAllTable_Inspection_Result_Docs" FunctionName="CodestInspectionModel.Store.sp_DeleteAllTable_Inspection_Result_Docs" />
+  </EntityContainerMapping>
+</Mapping>

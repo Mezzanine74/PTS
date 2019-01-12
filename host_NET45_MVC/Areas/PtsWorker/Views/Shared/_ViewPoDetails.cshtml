@@ -1,0 +1,26 @@
+﻿@model host_NET45_MVC.Areas.PtsWorker.Controllers.EmailGeneratorController.PoDetailsViewModel
+
+<h3>@BodyTexts.Ref("TzpGeLgpYkKq15O+NXDm8g", BodyTexts.Lang.rus)</h3>
+<table cellspacing="0" cellpadding="3" rules="all" border="1" >
+    <tbody>
+        <tr bgcolor="LightSkyBlue">
+            <th scope="col" width="80">@BodyTexts.Ref("8Qk7CwYx602HnGK3yFfqDg", BodyTexts.Lang.rus)</th>
+            <th scope="col" width="150">@BodyTexts.Ref("WCc0K46nMU6P4KVjfJyRyQ", BodyTexts.Lang.rus)</th>
+            <th scope="col" width="250">@BodyTexts.Ref("mWVv/Gkf90+3DjgnlKVwkA", BodyTexts.Lang.rus)</th>
+            <th scope="col" width="150">@BodyTexts.Ref("r+VN3Mr590ebGmoXICCgzw", BodyTexts.Lang.rus)</th>
+            <th scope="col">@BodyTexts.Ref("mB+gkXNFaEegQ/Gm8GRgsA", BodyTexts.Lang.rus)</th>
+            <th scope="col">@BodyTexts.Ref("DRxz9Xf+t0eaV5QG5fqMGg", BodyTexts.Lang.rus)</th>
+            <th scope="col" width="100">@BodyTexts.Ref("NAj9o3T+rE6Hj5GiOFkGuw", BodyTexts.Lang.rus)</th>
+        </tr>
+        <tr bgcolor="GhostWhite">
+            <td width="80">@Model.PoNo</td>
+            <td width="150">@Model.Supplier</td>
+            <td width="250">@Model.Description</td>
+            <td align="right" width="150">@Model.PoTotalWithVAT</td>
+            <td>@Model.Currency</td>
+            <td>@Model.VAT</td>
+            <td width="100">@Model.CostCode</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VisitorsLogModelStoreContainer" CdmEntityContainer="VisitorsLogEntities">
+    <EntitySetMapping Name="Table_VisitorLogs">
+      <EntityTypeMapping TypeName="VisitorsLogModel.Table_VisitorLogs">
+        <MappingFragment StoreEntitySet="Table_VisitorLogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="VisitTime" ColumnName="VisitTime" />
+          <ScalarProperty Name="IpAdress" ColumnName="IpAdress" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BrowserType" ColumnName="BrowserType" />
+          <ScalarProperty Name="BrowserPlatform" ColumnName="BrowserPlatform" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,1621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A2D50E8-15D9-4017-A1CE-F63D07A1EA27}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>host_NET45_MVC</RootNamespace>
+    <AssemblyName>PTS_MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Mvc5.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExtreme.AspNet.Mvc">
+      <HintPath>lib\DevExtreme\DevExtreme.AspNet.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\DevExtremeBundleConfig.cs" />
+    <Compile Include="Areas\CustomExtensionFactory.cs" />
+    <Compile Include="Areas\PtsPO\Controllers\JSONController.cs" />
+    <Compile Include="Areas\PtsPO\Controllers\PurchaseOrderController.cs" />
+    <Compile Include="Areas\PtsPO\Helper\DDL_CurrencyHelper.cs" />
+    <Compile Include="Areas\PtsPO\PtsPOAreaRegistration.cs" />
+    <Compile Include="webforms\_1.aspx.cs">
+      <DependentUpon>_1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\_1.aspx.designer.cs">
+      <DependentUpon>_1.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Admin\StyleAdmin.css" />
+    <Content Include="App_Code\AutoComplete.cs">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="App_Code\Viewstate\PageViewStateServices.cs" />
+    <Content Include="App_Code\Viewstate\SamplePageAdapter.cs" />
+    <Content Include="App_Code\Viewstate\SamplePageStatePersister.cs" />
+    <Content Include="App_Code\WebFormCommon.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\PtsContractual\Controllers\ContractsAddendumsController.cs" />
+    <Compile Include="Areas\PtsContractual\Controllers\_BaseController.cs" />
+    <Compile Include="Areas\PtsContractual\PtsContractualAreaRegistration.cs" />
+    <Compile Include="Areas\PtsWorker\Controllers\EmailGeneratorController.cs" />
+    <Compile Include="Areas\PtsWorker\Controllers\_BaseController.cs" />
+    <Compile Include="Areas\PtsWorker\PtsWorkerAreaRegistration.cs" />
+    <Compile Include="Controllers\BodyTextsController.cs" />
+    <Compile Include="Controllers\PageMethodsController.cs" />
+    <Compile Include="Controllers\ReportsViewController.cs" />
+    <Compile Include="Controllers\Table2_PONoController.cs" />
+    <Compile Include="Controllers\Table_BudgetChangeLogController.cs" />
+    <Compile Include="Controllers\UserRemarksController.cs" />
+    <Compile Include="Controllers\_BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Areas\PtsPO\scripts\PurchaseOrder\PayLogCreate.js" />
+    <Content Include="Areas\PtsPO\scripts\PurchaseOrder\PaymentRequestCreate.js" />
+    <Content Include="Areas\PtsPO\scripts\PurchaseOrder\InvoiceCreate.js" />
+    <Content Include="Areas\PtsPO\scripts\PurchaseOrder\POCreate.js" />
+    <Content Include="Areas\PtsPO\scripts\PurchaseOrder\_EnterNewSupplierPartial.js" />
+    <Content Include="Content\custom.css" />
+    <Content Include="bin\DevExpress.Charts.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.CodeParser.v17.1.dll" />
+    <Content Include="bin\DevExpress.Data.v17.1.dll" />
+    <Content Include="bin\DevExpress.Data.v17.1.xml" />
+    <Content Include="bin\DevExpress.DataAccess.v17.1.dll" />
+    <Content Include="bin\DevExpress.DataAccess.v17.1.xml" />
+    <Content Include="bin\DevExpress.Office.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Office.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.Pdf.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Pdf.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.PivotGrid.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.PivotGrid.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.Printing.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Printing.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.RichEdit.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.RichEdit.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.Sparkline.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Sparkline.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.SpellChecker.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Spreadsheet.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.Spreadsheet.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.Utils.v17.1.dll" />
+    <Content Include="bin\DevExpress.Utils.v17.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxHtmlEditor.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxHtmlEditor.v17.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxPivotGrid.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxPivotGrid.v17.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxRichEdit.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxRichEdit.v17.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxScheduler.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxScheduler.v17.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxSpellChecker.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxSpellChecker.v17.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxSpreadsheet.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxSpreadsheet.v17.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxThemes.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxTreeList.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxTreeList.v17.1.xml" />
+    <Content Include="bin\DevExpress.Web.Mvc5.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.Resources.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.v17.1.dll" />
+    <Content Include="bin\DevExpress.Web.v17.1.xml" />
+    <Content Include="bin\DevExpress.Xpo.v17.1.dll" />
+    <Content Include="bin\DevExpress.Xpo.v17.1.xml" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.1.dll" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.1.Web.dll" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.1.Web.xml" />
+    <Content Include="bin\DevExpress.XtraGauges.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.XtraGauges.v17.1.Core.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.1.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v17.1.Web.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v17.1.Web.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.1.xml" />
+    <Content Include="bin\DevExpress.XtraScheduler.v17.1.Core.dll" />
+    <Content Include="bin\DevExpress.XtraScheduler.v17.1.Core.xml" />
+    <Content Include="Content\dx.android5.light.css" />
+    <Content Include="Content\dx.common.css" />
+    <Content Include="Content\dx.contrast.compact.css" />
+    <Content Include="Content\dx.contrast.css" />
+    <Content Include="Content\dx.dark.compact.css" />
+    <Content Include="Content\dx.dark.css" />
+    <Content Include="Content\dx.ios7.default.css" />
+    <Content Include="Content\dx.light.compact.css" />
+    <Content Include="Content\dx.light.css" />
+    <Content Include="Content\dx.spa.css" />
+    <Content Include="Content\dx.win10.black.css" />
+    <Content Include="Content\dx.win10.white.css" />
+    <Content Include="Content\dx.win8.black.css" />
+    <Content Include="Content\dx.win8.white.css" />
+    <Content Include="Content\layouts\Desktop\DesktopLayout.css" />
+    <Content Include="Content\layouts\Desktop\DesktopLayout.html" />
+    <Content Include="Content\layouts\Desktop\DesktopLayout.js" />
+    <Content Include="Content\layouts\Empty\EmptyLayout.css" />
+    <Content Include="Content\layouts\Empty\EmptyLayout.html" />
+    <Content Include="Content\layouts\Empty\EmptyLayout.js" />
+    <Content Include="Content\layouts\Popup\PopupLayout.css" />
+    <Content Include="Content\layouts\Popup\PopupLayout.html" />
+    <Content Include="Content\layouts\Popup\PopupLayout.js" />
+    <Content Include="readme_deploymentStrategy.txt" />
+    <Content Include="Scripts\aspnet\dx.aspnet.data.js" />
+    <Content Include="Scripts\aspnet\dx.aspnet.mvc.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr.min.js" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\event.min.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\supplemental.min.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="Content\icons\dxiconsios.woff" />
+    <Content Include="Content\icons\dxiconsios.ttf" />
+    <Content Include="Content\icons\dxicons.woff" />
+    <Content Include="Content\icons\dxicons.ttf" />
+    <Content Include="Areas\PtsContractual\Views\web.config" />
+    <Content Include="Areas\PtsContractual\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\PtsContractual\Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\cldr\unresolved.min.js" />
+    <Content Include="Scripts\dx.all.debug.js" />
+    <Content Include="Scripts\dx.all.js" />
+    <Content Include="Scripts\dx.mobile.debug.js" />
+    <Content Include="Scripts\dx.mobile.js" />
+    <Content Include="Scripts\globalize.min.js" />
+    <Content Include="Scripts\globalize\currency.min.js" />
+    <Content Include="Scripts\globalize\date.min.js" />
+    <Content Include="Scripts\globalize\message.min.js" />
+    <Content Include="Scripts\globalize\number.min.js" />
+    <Content Include="Areas\PtsContractual\Views\ContractsAddendums\AddendumCoverPage.cshtml" />
+    <Content Include="Areas\PtsContractual\Views\ContractsAddendums\ContractCoverPage.cshtml" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\localization\dx.all.de.js" />
+    <Content Include="Scripts\localization\dx.all.ja.js" />
+    <Content Include="Scripts\localization\dx.all.ru.js" />
+    <Content Include="Scripts\localization\dx.mobile.de.js" />
+    <Content Include="Scripts\localization\dx.mobile.ja.js" />
+    <Content Include="Scripts\localization\dx.mobile.ru.js" />
+    <Content Include="webforms\_1.aspx" />
+    <Content Include="Areas\PtsPO\Views\web.config" />
+    <Content Include="Areas\PtsPO\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\PtsPO\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\PtsPO\Views\PurchaseOrder\POCreate.cshtml" />
+    <Content Include="Areas\PtsPO\Views\PurchaseOrder\_EnterNewSupplierPartial.cshtml" />
+    <Content Include="Areas\PtsPO\Views\PurchaseOrder\__EnterNewSupplierPartial.cshtml" />
+    <Content Include="Areas\PtsPO\Views\PurchaseOrder\InvoiceCreate.cshtml" />
+    <Content Include="Areas\PtsPO\Views\PurchaseOrder\PaymentRequestCreate.cshtml" />
+    <Content Include="Areas\PtsPO\Views\PurchaseOrder\PayLogCreate.cshtml" />
+    <Content Include="Areas\PtsPO\Views\PurchaseOrder\_GridViewPartialPayLog.cshtml" />
+    <Content Include="Areas\PtsPO\Views\PurchaseOrder\Main.cshtml" />
+    <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Scripts\devextreme-localization\dx.messages.de.js" />
+    <Content Include="Scripts\devextreme-localization\dx.messages.en.js" />
+    <Content Include="Scripts\devextreme-localization\dx.messages.ja.js" />
+    <Content Include="Scripts\devextreme-localization\dx.messages.ru.js" />
+    <Content Include="Scripts\devextreme-localization\dx.web.de.js" />
+    <Content Include="Scripts\devextreme-localization\dx.web.ja.js" />
+    <Content Include="Scripts\devextreme-localization\dx.web.ru.js" />
+    <Content Include="Scripts\dx.aspnet.mvc.js" />
+    <Content Include="Scripts\dx.viz-web.debug.js" />
+    <Content Include="Scripts\dx.viz-web.js" />
+    <Content Include="Scripts\dx.viz.debug.js" />
+    <Content Include="Scripts\dx.viz.js" />
+    <Content Include="Scripts\dx.web.debug.js" />
+    <Content Include="Scripts\dx.web.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
+    <Content Include="Scripts\globalize\unit.js" />
+    <Content Include="Scripts\jquery-2.2.3.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.js" />
+    <Content Include="Scripts\jszip.js" />
+    <Content Include="Scripts\jszip.min.js" />
+    <Content Include="Scripts\vectormap-data\africa.js" />
+    <Content Include="Scripts\vectormap-data\canada.js" />
+    <Content Include="Scripts\vectormap-data\eurasia.js" />
+    <Content Include="Scripts\vectormap-data\europe.js" />
+    <Content Include="Scripts\vectormap-data\usa.js" />
+    <Content Include="Scripts\vectormap-data\world.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.debug.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.node.js" />
+    <Content Include="webforms\1StoPTS_summary.aspx" />
+    <Content Include="webforms\1StoPTS_summary.aspx.vb" />
+    <Content Include="webforms\AccessDenied.aspx" />
+    <Content Include="webforms\AccessDenied.aspx.vb" />
+    <Content Include="webforms\AddendumClientData.aspx" />
+    <Content Include="webforms\AddendumClientData.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\AddendumDetails.aspx" />
+    <Content Include="webforms\AddendumDetails.aspx.vb" />
+    <Content Include="webforms\addendumenter.aspx" />
+    <Content Include="webforms\addendumenter.aspx.vb" />
+    <Content Include="webforms\addendumenterNew.aspx" />
+    <Content Include="webforms\addendumenterNew.aspx.vb" />
+    <Content Include="webforms\Admin\Contractview.aspx" />
+    <Content Include="webforms\Admin\Contractview.aspx.vb" />
+    <Content Include="webforms\Admin\Default.aspx" />
+    <Content Include="webforms\Admin\Default.aspx.vb" />
+    <Content Include="webforms\Admin\index.html" />
+    <Content Include="webforms\Admin\StyleAdmin.css" />
+    <Content Include="webforms\Admin\test.html" />
+    <Content Include="webforms\AdvancePayments.aspx" />
+    <Content Include="webforms\AdvancePayments.aspx.vb" />
+    <Content Include="webforms\ApprovalMatrix.aspx" />
+    <Content Include="webforms\ApprovalMatrix.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\ApprovalMatrix2.aspx" />
+    <Content Include="webforms\ApprovalMatrix2.aspx.vb" />
+    <Content Include="webforms\ApprovalMatrixCheckTolerance.aspx" />
+    <Content Include="webforms\ApprovalMatrixCheckTolerance.aspx.vb" />
+    <Content Include="webforms\ApprovalMatrixNotification.aspx" />
+    <Content Include="webforms\ApprovalMatrixNotification.aspx.vb" />
+    <Content Include="webforms\AutoComplete.asmx" />
+    <Content Include="webforms\BalanceForeignCurrency.aspx" />
+    <Content Include="webforms\BalanceForeignCurrency.aspx.vb" />
+    <Content Include="webforms\BalanceOnDifferentCurrencies.aspx" />
+    <Content Include="webforms\BalanceOnDifferentCurrencies.aspx.vb" />
+    <Content Include="webforms\BannedBrowser.aspx" />
+    <Content Include="webforms\BannedBrowser.aspx.vb" />
+    <Content Include="webforms\BannedPo.aspx" />
+    <Content Include="webforms\BannedPo.aspx.vb" />
+    <Content Include="webforms\boq.aspx" />
+    <Content Include="webforms\boq.aspx.vb" />
+    <Content Include="webforms\Certification.aspx" />
+    <Content Include="webforms\Certification.aspx.vb" />
+    <Content Include="webforms\CertificationEditDocument.aspx" />
+    <Content Include="webforms\CertificationEditDocument.aspx.vb" />
+    <Content Include="webforms\CertificationEditInvoice.aspx" />
+    <Content Include="webforms\CertificationEditInvoice.aspx.vb" />
+    <Content Include="webforms\CertificationEditPayment.aspx" />
+    <Content Include="webforms\CertificationEditPayment.aspx.vb" />
+    <Content Include="webforms\CertificationEnterDocument.aspx" />
+    <Content Include="webforms\CertificationEnterDocument.aspx.vb" />
+    <Content Include="webforms\CertificationEnterInvoice.aspx" />
+    <Content Include="webforms\CertificationEnterInvoice.aspx.vb" />
+    <Content Include="webforms\CertificationEnterPayment.aspx" />
+    <Content Include="webforms\CertificationEnterPayment.aspx.vb" />
+    <Content Include="webforms\CertificationOverView.aspx" />
+    <Content Include="webforms\CertificationOverView.aspx.vb" />
+    <Content Include="webforms\Clients.aspx" />
+    <Content Include="webforms\Clients.aspx.vb" />
+    <Content Include="webforms\ClosePo.aspx" />
+    <Content Include="webforms\ClosePo.aspx.vb" />
+    <Content Include="webforms\comment.aspx" />
+    <Content Include="webforms\comment.aspx.vb" />
+    <Content Include="webforms\commentsOncostReport.aspx" />
+    <Content Include="webforms\commentsOncostReport.aspx.vb" />
+    <Content Include="webforms\ComparePo.aspx" />
+    <Content Include="webforms\ComparePo.aspx.vb" />
+    <Content Include="webforms\ContractAddendumClientNotification.aspx" />
+    <Content Include="webforms\ContractAddendumClientNotification.aspx.vb" />
+    <Content Include="webforms\ContractAddendumPaymentKC.aspx" />
+    <Content Include="webforms\ContractAddendumPaymentKC.aspx.vb" />
+    <Content Include="webforms\ContractAddendums.aspx" />
+    <Content Include="webforms\ContractAddendums.aspx.vb" />
+    <Content Include="webforms\ContractBrkdwn.aspx" />
+    <Content Include="webforms\ContractBrkdwn.aspx.vb" />
+    <Content Include="webforms\ContractClientData.aspx" />
+    <Content Include="webforms\ContractClientData.aspx.vb" />
+    <Content Include="webforms\ContractDetails.aspx" />
+    <Content Include="webforms\ContractDetails.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\contractenter.aspx" />
+    <Content Include="webforms\contractenter.aspx.vb" />
+    <Content Include="webforms\ContractenterNew.aspx" />
+    <Content Include="webforms\ContractenterNew.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\ContractList.aspx" />
+    <Content Include="webforms\ContractList.aspx.vb" />
+    <Content Include="webforms\contractnotes.aspx" />
+    <Content Include="webforms\contractnotes.aspx.vb" />
+    <Content Include="webforms\ContractPaymentTerms.aspx" />
+    <Content Include="webforms\ContractPaymentTerms.aspx.vb" />
+    <Content Include="webforms\Contractview.aspx" />
+    <Content Include="webforms\Contractview.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\Contractview2.aspx" />
+    <Content Include="webforms\Contractview2.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\CostReport.aspx" />
+    <Content Include="webforms\CostReport.aspx.vb" />
+    <Content Include="webforms\CostReportBackups.aspx" />
+    <Content Include="webforms\CostReportBackups.aspx.vb" />
+    <Content Include="webforms\CostReportEdit.aspx" />
+    <Content Include="webforms\CostReportEdit.aspx.vb" />
+    <Content Include="webforms\CreateVirtualPo.aspx" />
+    <Content Include="webforms\CreateVirtualPo.aspx.vb" />
+    <Content Include="webforms\DailyReportToPatrick.aspx" />
+    <Content Include="webforms\DailyReportToPatrick.aspx.vb" />
+    <Content Include="webforms\Default.aspx" />
+    <Content Include="webforms\Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\DeliveryDocBrkdwnByProjectCostCode.aspx" />
+    <Content Include="webforms\DeliveryDocBrkdwnByProjectCostCode.aspx.vb" />
+    <Content Include="webforms\DeliveryPackingList.aspx" />
+    <Content Include="webforms\DeliveryPackingList.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\DeliveryPackingListEmail.aspx" />
+    <Content Include="webforms\DeliveryPackingListEmail.aspx.vb" />
+    <Content Include="webforms\DeliveryReport.aspx" />
+    <Content Include="webforms\DeliveryReport.aspx.vb" />
+    <Content Include="webforms\editinvoice.aspx" />
+    <Content Include="webforms\editinvoice.aspx.vb" />
+    <Content Include="webforms\editpaylog.aspx" />
+    <Content Include="webforms\editpaylog.aspx.vb" />
+    <Content Include="webforms\editpaymentreq.aspx" />
+    <Content Include="webforms\editpaymentreq.aspx.vb" />
+    <Content Include="webforms\editpo.aspx" />
+    <Content Include="webforms\editpo.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\EditSupplier.aspx" />
+    <Content Include="webforms\EditSupplier.aspx.vb" />
+    <Content Include="webforms\EnterAllInOne.aspx" />
+    <Content Include="webforms\EnterAllInOne.aspx.vb" />
+    <Content Include="webforms\EnterAllInOneCreateRegularPO.aspx" />
+    <Content Include="webforms\EnterAllInOneCreateRegularPO.aspx.vb" />
+    <Content Include="webforms\Error.aspx" />
+    <Content Include="webforms\Error.aspx.vb" />
+    <Content Include="webforms\FeedDailyReportToPat.aspx" />
+    <Content Include="webforms\FeedDailyReportToPat.aspx.vb" />
+    <Content Include="webforms\FeedOlgaFile.aspx" />
+    <Content Include="webforms\FeedOlgaFile.aspx.vb" />
+    <Content Include="webforms\FeedTamasFile.aspx" />
+    <Content Include="webforms\FeedTamasFile.aspx.vb" />
+    <Content Include="webforms\FeedTamasValidation.aspx" />
+    <Content Include="webforms\FeedTamasValidation.aspx.vb" />
+    <Content Include="webforms\FileSizeReport.aspx" />
+    <Content Include="webforms\FileSizeReport.aspx.vb" />
+    <Content Include="webforms\findfile.aspx" />
+    <Content Include="webforms\findfile.aspx.vb" />
+    <Content Include="webforms\fixrates.aspx" />
+    <Content Include="webforms\fixrates.aspx.vb" />
+    <Content Include="webforms\folderoptimization.aspx" />
+    <Content Include="webforms\folderoptimization.aspx.vb" />
+    <Content Include="webforms\FollowUpReport.aspx" />
+    <Content Include="webforms\FollowUpReport.aspx.vb" />
+    <Content Include="webforms\FollowUpReport2.aspx" />
+    <Content Include="webforms\FollowUpReport2.aspx.vb" />
+    <Content Include="webforms\FollowUpReport2_sub.aspx" />
+    <Content Include="webforms\FollowUpReport2_sub.aspx.vb" />
+    <Content Include="webforms\FollowUpReportBackup2.aspx" />
+    <Content Include="webforms\FollowUpReportBackup2.aspx.vb" />
+    <Content Include="webforms\FollowUpReportBySupplierExcVAT.aspx" />
+    <Content Include="webforms\FollowUpReportBySupplierExcVAT.aspx.vb" />
+    <Content Include="webforms\FollowUpReportBySupplierProjectExcVAT.aspx" />
+    <Content Include="webforms\FollowUpReportBySupplierProjectExcVAT.aspx.vb" />
+    <Content Include="webforms\FollowUpReportBySupplierProjectWithVAT.aspx" />
+    <Content Include="webforms\FollowUpReportBySupplierProjectWithVAT.aspx.vb" />
+    <Content Include="webforms\FollowUpReportBySupplierWithVAT.aspx" />
+    <Content Include="webforms\FollowUpReportBySupplierWithVAT.aspx.vb" />
+    <Content Include="webforms\FollowUpReportSub.aspx" />
+    <Content Include="webforms\FollowUpReportSub.aspx.vb" />
+    <Content Include="webforms\FollowUpReportSubSupplierByExcVAT.aspx" />
+    <Content Include="webforms\FollowUpReportSubSupplierByExcVAT.aspx.vb" />
+    <Content Include="webforms\FollowUpReportSubSupplierByWithVAT.aspx" />
+    <Content Include="webforms\FollowUpReportSubSupplierByWithVAT.aspx.vb" />
+    <Content Include="webforms\FollowUpReportSubWithVAT.aspx" />
+    <Content Include="webforms\FollowUpReportSubWithVAT.aspx.vb" />
+    <Content Include="webforms\FollowUpReportWithVAT.aspx" />
+    <Content Include="webforms\FollowUpReportWithVAT.aspx.vb" />
+    <Content Include="webforms\FollowUsers.aspx" />
+    <Content Include="webforms\FollowUsers.aspx.vb" />
+    <Content Include="webforms\FX_Dollar.aspx" />
+    <Content Include="webforms\FX_Dollar.aspx.vb" />
+    <Content Include="webforms\IntAudit.aspx" />
+    <Content Include="webforms\IntAudit.aspx.vb" />
+    <Content Include="webforms\invoicedefine.aspx" />
+    <Content Include="webforms\invoicedefine.aspx.vb" />
+    <Content Include="webforms\JTI.aspx" />
+    <Content Include="webforms\JTI.aspx.vb" />
+    <Content Include="webforms\kpiChangeExcel.aspx" />
+    <Content Include="webforms\kpiChangeExcel.aspx.vb" />
+    <Content Include="webforms\KPIs.aspx" />
+    <Content Include="webforms\KPIs.aspx.vb" />
+    <Content Include="webforms\KPIs_add.aspx" />
+    <Content Include="webforms\KPIs_add.aspx.vb" />
+    <Content Include="webforms\links.aspx" />
+    <Content Include="webforms\links.aspx.vb" />
+    <Content Include="webforms\Login.aspx" />
+    <Content Include="webforms\Login.aspx.vb" />
+    <Content Include="webforms\MakeHistoryForFollowUp.aspx" />
+    <Content Include="webforms\MakeHistoryForFollowUp.aspx.vb" />
+    <Content Include="webforms\MakeHistoryForFollowUpKAtya.aspx" />
+    <Content Include="webforms\MakeHistoryForFollowUpKAtya.aspx.vb" />
+    <Content Include="webforms\ManageProjects.aspx" />
+    <Content Include="webforms\ManageProjects.aspx.vb" />
+    <Content Include="webforms\MatchBryanToPo.aspx" />
+    <Content Include="webforms\MatchBryanToPo.aspx.vb" />
+    <Content Include="webforms\MenuControl.ascx" />
+    <Content Include="webforms\MenuControl.ascx.vb" />
+    <Content Include="webforms\MissingDocs.aspx" />
+    <Content Include="webforms\MissingDocs.aspx.vb" />
+    <Content Include="webforms\Monitoring.aspx" />
+    <Content Include="webforms\Monitoring.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\Nakladnaya.aspx" />
+    <Content Include="webforms\Nakladnaya.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\Notifications.aspx" />
+    <Content Include="webforms\Notifications.aspx.vb" />
+    <Content Include="webforms\open_po.aspx" />
+    <Content Include="webforms\open_po.aspx.vb" />
+    <Content Include="webforms\PackingListToday.aspx" />
+    <Content Include="webforms\PackingListToday.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\paylog.aspx" />
+    <Content Include="webforms\paylog.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\Paymentrequest.aspx" />
+    <Content Include="webforms\Paymentrequest.aspx.vb" />
+    <Content Include="webforms\PaymentrequestSplitInvoices.aspx" />
+    <Content Include="webforms\PaymentrequestSplitInvoices.aspx.vb" />
+    <Content Include="webforms\Payments.aspx" />
+    <Content Include="webforms\Payments.aspx.vb" />
+    <Content Include="webforms\PaymentsCheck.aspx" />
+    <Content Include="webforms\PaymentsCheck.aspx.vb" />
+    <Content Include="webforms\PaymentsNotes.aspx" />
+    <Content Include="webforms\PaymentsNotes.aspx.vb" />
+    <Content Include="webforms\PaymentsSendEmail.aspx" />
+    <Content Include="webforms\PaymentsSendEmail.aspx.vb" />
+    <Content Include="webforms\PaymentTerms.aspx" />
+    <Content Include="webforms\PaymentTerms.aspx.vb" />
+    <Content Include="webforms\PaymentTermsPDF.aspx" />
+    <Content Include="webforms\PaymentTermsPDF.aspx.vb" />
+    <Content Include="webforms\Pendinglist.aspx" />
+    <Content Include="webforms\Pendinglist.aspx.vb" />
+    <Content Include="webforms\PendingSummaryByProject.aspx" />
+    <Content Include="webforms\PendingSummaryByProject.aspx.vb" />
+    <Content Include="webforms\po.aspx" />
+    <Content Include="webforms\po.aspx.vb" />
+    <Content Include="webforms\poApprovalFrame.aspx" />
+    <Content Include="webforms\poApprovalFrame.aspx.vb" />
+    <Content Include="webforms\PObreakdown.aspx" />
+    <Content Include="webforms\PObreakdown.aspx.vb" />
+    <Content Include="webforms\PObreakdownByPo.aspx" />
+    <Content Include="webforms\PObreakdownByPo.aspx.vb" />
+    <Content Include="webforms\PoBreakdownFor1SReconsoliation.aspx" />
+    <Content Include="webforms\PoBreakdownFor1SReconsoliation.aspx.vb" />
+    <Content Include="webforms\pocreate.aspx" />
+    <Content Include="webforms\pocreate.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\pocreateNew.aspx" />
+    <Content Include="webforms\pocreateNew.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\podetails.aspx" />
+    <Content Include="webforms\podetails.aspx.vb" />
+    <Content Include="webforms\POdetailsForEmail.ascx" />
+    <Content Include="webforms\POdetailsForEmail.ascx.vb" />
+    <Content Include="webforms\POforeignCurrency.aspx" />
+    <Content Include="webforms\POforeignCurrency.aspx.vb" />
+    <Content Include="webforms\PoRequest.aspx" />
+    <Content Include="webforms\PoRequest.aspx.vb" />
+    <Content Include="webforms\POsub.aspx" />
+    <Content Include="webforms\POsub.aspx.vb" />
+    <Content Include="webforms\POsubEdit.aspx" />
+    <Content Include="webforms\POsubEdit.aspx.vb" />
+    <Content Include="webforms\POs_To_Check.aspx" />
+    <Content Include="webforms\POs_To_Check.aspx.vb" />
+    <Content Include="webforms\PO_Versus_DeliveryDocs.aspx" />
+    <Content Include="webforms\PO_Versus_DeliveryDocs.aspx.vb" />
+    <Content Include="webforms\PRN_coverpage.aspx" />
+    <Content Include="webforms\PRN_coverpage.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\PRN_priority.aspx" />
+    <Content Include="webforms\PRN_priority.aspx.vb" />
+    <Content Include="webforms\ProcurementTeam.aspx" />
+    <Content Include="webforms\ProcurementTeam.aspx.vb" />
+    <Content Include="webforms\ProgressMeasurementMonitor.aspx" />
+    <Content Include="webforms\ProgressMeasurementMonitor.aspx.vb" />
+    <Content Include="webforms\ProjectBalanceBreakdown.aspx" />
+    <Content Include="webforms\ProjectBalanceBreakdown.aspx.vb" />
+    <Content Include="webforms\projects.aspx" />
+    <Content Include="webforms\projects.aspx.vb" />
+    <Content Include="webforms\projectsII.aspx" />
+    <Content Include="webforms\projectsII.aspx.vb" />
+    <Content Include="webforms\ProjectWeeklySummaryEmail.aspx" />
+    <Content Include="webforms\ProjectWeeklySummaryEmail.aspx.vb" />
+    <Content Include="webforms\PR_PMapproval.aspx" />
+    <Content Include="webforms\PR_PMapproval.aspx.vb" />
+    <Content Include="webforms\PTS_1S.aspx" />
+    <Content Include="webforms\PTS_1S.aspx.vb" />
+    <Content Include="webforms\PTS_1S_DataEntry.aspx" />
+    <Content Include="webforms\PTS_1S_DataEntry.aspx.vb" />
+    <Content Include="webforms\PTS_1S_DeliveryDocComparison.aspx" />
+    <Content Include="webforms\PTS_1S_DeliveryDocComparison.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\PTS_1S_DeliveryDocComparisonAlfaProjects.aspx" />
+    <Content Include="webforms\PTS_1S_DeliveryDocComparisonAlfaProjects.aspx.vb" />
+    <Content Include="webforms\PTS_1S_DeliveryDocComparisonGrid.aspx" />
+    <Content Include="webforms\PTS_1S_DeliveryDocComparisonGrid.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="webforms\PTS_1S_DeliverySearchPTSEntry.aspx" />
+    <Content Include="webforms\PTS_1S_DeliverySearchPTSEntry.aspx.vb" />
+    <Content Include="webforms\PTS_1S_ProjectSummaryComparison.aspx" />
+    <Content Include="webforms\PTS_1S_ProjectSummaryComparison.aspx.vb" />
+    <Content Include="webforms\PTS_1S_sum.aspx" />
+    <Content Include="webforms\PTS_1S_sum.aspx.vb" />
+    <Content Include="webforms\QuestionareChart.aspx" />
+    <Content Include="webforms\QuestionareChart.aspx.vb" />
+    <Content Include="webforms\questionnaire_EIM.aspx" />
+    <Content Include="webforms\questionnaire_EIM.aspx.vb" />
+    <Content Include="webforms\questionnaire_EIM2.aspx" />
+    <Content Include="webforms\questionnaire_EIM2.aspx.vb" />
+    <Content Include="webforms\s.aspx" />
+    <Content Include="webforms\s.aspx.vb" />
+    <Content Include="webforms\SalaryBreakdown.aspx" />
+    <Content Include="webforms\SalaryBreakdown.aspx.vb" />
+    <Content Include="webforms\ScheduledWorks_DataBaseBackUp.aspx" />
+    <Content Include="webforms\ScheduledWorks_DataBaseBackUp.aspx.vb" />
+    <Content Include="webforms\SearchContracts.aspx" />
+    <Content Include="webforms\SearchContracts.aspx.vb" />
+    <Content Include="webforms\SearchContractsFeed.aspx" />
+    <Content Include="webforms\SearchContractsFeed.aspx.vb" />
+    <Content Include="webforms\SearchContractsFeed2.aspx" />
+    <Content Include="webforms\SearchContractsFeed2.aspx.vb" />
+    <Content Include="webforms\SearchContractsFeedSupplierDetails.aspx" />
+    <Content Include="webforms\SearchContractsFeedSupplierDetails.aspx.vb" />
+    <Content Include="webforms\SearchContractsInspectErrors.aspx" />
+    <Content Include="webforms\SearchContractsInspectErrors.aspx.vb" />
+    <Content Include="webforms\SearchContractsNotEnteredItems.aspx" />
+    <Content Include="webforms\SearchContractsNotEnteredItems.aspx.vb" />
+    <Content Include="webforms\SearchInvoice.aspx" />
+    <Content Include="webforms\SearchInvoice.aspx.vb" />
+    <Content Include="webforms\SelectPOContractsAddendumsForStas.aspx" />
+    <Content Include="webforms\SelectPOContractsAddendumsForStas.aspx.vb" />
+    <Content Include="webforms\showFile.aspx" />
+    <Content Include="webforms\showFile.aspx.vb" />
+    <Content Include="webforms\showKPIs.aspx" />
+    <Content Include="webforms\showKPIs.aspx.vb" />
+    <Content Include="webforms\SubPoList.aspx" />
+    <Content Include="webforms\SubPoList.aspx.vb" />
+    <Content Include="webforms\SupplierDetails.aspx" />
+    <Content Include="webforms\SupplierDetails.aspx.vb" />
+    <Content Include="webforms\SupplierPoTotalsPerYear.aspx" />
+    <Content Include="webforms\SupplierPoTotalsPerYear.aspx.vb" />
+    <Content Include="webforms\SuppliersByType.aspx" />
+    <Content Include="webforms\SuppliersByType.aspx.vb" />
+    <Content Include="webforms\usercontrolpanel.aspx" />
+    <Content Include="webforms\usercontrolpanel.aspx.vb" />
+    <Content Include="webforms\VirtualPOs.aspx" />
+    <Content Include="webforms\VirtualPOs.aspx.vb" />
+    <Content Include="webforms\Vote.aspx" />
+    <Content Include="webforms\Vote.aspx.vb" />
+    <Content Include="webforms\WebUserControl_AddendumEmailBody.ascx" />
+    <Content Include="webforms\WebUserControl_AddendumEmailBody.ascx.vb" />
+    <Content Include="webforms\WebUserControl_ContractEmailBody.ascx" />
+    <Content Include="webforms\WebUserControl_ContractEmailBody.ascx.vb" />
+    <Content Include="webforms\WebUserControl_MonitoringExcelOutput.ascx" />
+    <Content Include="webforms\WebUserControl_MonitoringExcelOutput.ascx.vb" />
+    <Content Include="webforms\WebUserControl_PopupMessage.ascx" />
+    <Content Include="webforms\WebUserControl_PopupMessage.ascx.vb" />
+    <Content Include="webforms\WebUserControl_PTS1Scomparison.ascx" />
+    <Content Include="webforms\WebUserControl_PTS1Scomparison.ascx.vb" />
+    <Content Include="webforms\z.aspx" />
+    <Content Include="webforms\z.aspx.vb" />
+    <Content Include="webforms\_s.aspx" />
+    <Content Include="webforms\_s.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\avatars\avatar.png" />
+    <Content Include="assets\avatars\avatar1.png" />
+    <Content Include="assets\avatars\avatar2.png" />
+    <Content Include="assets\avatars\avatar3.png" />
+    <Content Include="assets\avatars\avatar4.png" />
+    <Content Include="assets\avatars\avatar5.png" />
+    <Content Include="assets\avatars\profile-pic.jpg" />
+    <Content Include="assets\avatars\user.jpg" />
+    <Content Include="assets\css\ace-fonts.css" />
+    <Content Include="assets\css\ace-ie.css" />
+    <Content Include="assets\css\ace-part2.css" />
+    <Content Include="assets\css\ace-rtl.css" />
+    <Content Include="assets\css\ace-skins.css" />
+    <Content Include="assets\css\ace.css" />
+    <Content Include="assets\css\ace.onpage-help.css" />
+    <Content Include="assets\css\bootstrap-datetimepicker.css" />
+    <Content Include="assets\css\bootstrap-duallistbox.css" />
+    <Content Include="assets\css\bootstrap-editable.css" />
+    <Content Include="assets\css\bootstrap-image-gallery.css" />
+    <Content Include="assets\css\bootstrap-multiselect.css" />
+    <Content Include="assets\css\bootstrap-timepicker.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\chosen-sprite%402x.png" />
+    <Content Include="assets\css\chosen-sprite.png" />
+    <Content Include="assets\css\chosen.css" />
+    <Content Include="assets\css\colorbox.css" />
+    <Content Include="assets\css\colorpicker.css" />
+    <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\datepicker.css" />
+    <Content Include="assets\css\daterangepicker.css" />
+    <Content Include="assets\css\dropzone.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\fullcalendar.css" />
+    <Content Include="assets\css\fullcalendar.print.css" />
+    <Content Include="assets\css\images\border.png" />
+    <Content Include="assets\css\images\border1.png" />
+    <Content Include="assets\css\images\border2.png" />
+    <Content Include="assets\css\images\controls.png" />
+    <Content Include="assets\css\images\ie6\borderBottomCenter.png" />
+    <Content Include="assets\css\images\ie6\borderBottomLeft.png" />
+    <Content Include="assets\css\images\ie6\borderBottomRight.png" />
+    <Content Include="assets\css\images\ie6\borderMiddleLeft.png" />
+    <Content Include="assets\css\images\ie6\borderMiddleRight.png" />
+    <Content Include="assets\css\images\ie6\borderTopCenter.png" />
+    <Content Include="assets\css\images\ie6\borderTopLeft.png" />
+    <Content Include="assets\css\images\ie6\borderTopRight.png" />
+    <Content Include="assets\css\images\loading.gif" />
+    <Content Include="assets\css\images\loading_background.png" />
+    <Content Include="assets\css\images\meteorshower.jpg" />
+    <Content Include="assets\css\images\meteorshower2.jpg" />
+    <Content Include="assets\css\images\overlay.png" />
+    <Content Include="assets\css\images\pattern.jpg" />
+    <Content Include="assets\css\images\pattern.png" />
+    <Content Include="assets\css\images\spritemap%402x.png" />
+    <Content Include="assets\css\images\spritemap.png" />
+    <Content Include="assets\css\img\alpha.png" />
+    <Content Include="assets\css\img\hue.png" />
+    <Content Include="assets\css\img\saturation.png" />
+    <Content Include="assets\css\jquery-ui.css" />
+    <Content Include="assets\css\jquery-ui.custom.css" />
+    <Content Include="assets\css\jquery.gritter.css" />
+    <Content Include="assets\css\pace.css" />
+    <Content Include="assets\css\prettify.css" />
+    <Content Include="assets\css\select2-spinner.gif" />
+    <Content Include="assets\css\select2.css" />
+    <Content Include="assets\css\select2.png" />
+    <Content Include="assets\css\select2x2.png" />
+    <Content Include="assets\css\ui.jqgrid.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\back_disabled.png" />
+    <Content Include="assets\images\back_enabled.png" />
+    <Content Include="assets\images\back_enabled_hover.png" />
+    <Content Include="assets\images\email1.png" />
+    <Content Include="assets\images\email2.png" />
+    <Content Include="assets\images\email3.png" />
+    <Content Include="assets\images\email4.png" />
+    <Content Include="assets\images\forward_disabled.png" />
+    <Content Include="assets\images\forward_enabled.png" />
+    <Content Include="assets\images\forward_enabled_hover.png" />
+    <Content Include="assets\images\gallery\image-1.jpg" />
+    <Content Include="assets\images\gallery\image-2.jpg" />
+    <Content Include="assets\images\gallery\image-3.jpg" />
+    <Content Include="assets\images\gallery\image-4.jpg" />
+    <Content Include="assets\images\gallery\image-5.jpg" />
+    <Content Include="assets\images\gallery\image-6.jpg" />
+    <Content Include="assets\images\gallery\thumb-1.jpg" />
+    <Content Include="assets\images\gallery\thumb-2.jpg" />
+    <Content Include="assets\images\gallery\thumb-3.jpg" />
+    <Content Include="assets\images\gallery\thumb-4.jpg" />
+    <Content Include="assets\images\gallery\thumb-5.jpg" />
+    <Content Include="assets\images\gallery\thumb-6.jpg" />
+    <Content Include="assets\images\sort_asc.png" />
+    <Content Include="assets\images\sort_asc_disabled.png" />
+    <Content Include="assets\images\sort_both.png" />
+    <Content Include="assets\images\sort_desc.png" />
+    <Content Include="assets\images\sort_desc_disabled.png" />
+    <Content Include="assets\images\spritemap%402x.png" />
+    <Content Include="assets\images\spritemap.png" />
+    <Content Include="assets\img\clear.png" />
+    <Content Include="assets\img\glyphicons-halflings-white.png" />
+    <Content Include="assets\img\glyphicons-halflings.png" />
+    <Content Include="assets\img\loading.gif" />
+    <Content Include="assets\js\ace-elements.js" />
+    <Content Include="assets\js\ace-extra.js" />
+    <Content Include="assets\js\ace.js" />
+    <Content Include="assets\js\ace\ace.ajax-content.js" />
+    <Content Include="assets\js\ace\ace.auto-container.js" />
+    <Content Include="assets\js\ace\ace.auto-padding.js" />
+    <Content Include="assets\js\ace\ace.js" />
+    <Content Include="assets\js\ace\ace.onpage-help.js" />
+    <Content Include="assets\js\ace\ace.searchbox-autocomplete.js" />
+    <Content Include="assets\js\ace\ace.settings-rtl.js" />
+    <Content Include="assets\js\ace\ace.settings-skin.js" />
+    <Content Include="assets\js\ace\ace.settings.js" />
+    <Content Include="assets\js\ace\ace.sidebar-scroll-1.js" />
+    <Content Include="assets\js\ace\ace.sidebar-scroll-2.js" />
+    <Content Include="assets\js\ace\ace.sidebar.js" />
+    <Content Include="assets\js\ace\ace.submenu-hover.js" />
+    <Content Include="assets\js\ace\ace.touch-drag.js" />
+    <Content Include="assets\js\ace\ace.widget-box.js" />
+    <Content Include="assets\js\ace\ace.widget-on-reload.js" />
+    <Content Include="assets\js\ace\elements.aside.js" />
+    <Content Include="assets\js\ace\elements.colorpicker.js" />
+    <Content Include="assets\js\ace\elements.fileinput.js" />
+    <Content Include="assets\js\ace\elements.onpage-help.js" />
+    <Content Include="assets\js\ace\elements.scroller.js" />
+    <Content Include="assets\js\ace\elements.spinner.js" />
+    <Content Include="assets\js\ace\elements.treeview.js" />
+    <Content Include="assets\js\ace\elements.typeahead.js" />
+    <Content Include="assets\js\ace\elements.wizard.js" />
+    <Content Include="assets\js\ace\elements.wysiwyg.js" />
+    <Content Include="assets\js\additional-methods.js" />
+    <Content Include="assets\js\bootbox.js" />
+    <Content Include="assets\js\bootstrap-colorpicker.js" />
+    <Content Include="assets\js\bootstrap-image-gallery.js" />
+    <Content Include="assets\js\bootstrap-multiselect.js" />
+    <Content Include="assets\js\bootstrap-tag.js" />
+    <Content Include="assets\js\bootstrap-wysiwyg.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\chosen.jquery.js" />
+    <Content Include="assets\js\dataTables\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="assets\js\dataTables\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="assets\js\dataTables\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="assets\js\dataTables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.bootstrap.js" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="assets\js\date-time\bootstrap-datepicker.js" />
+    <Content Include="assets\js\date-time\bootstrap-datetimepicker.js" />
+    <Content Include="assets\js\date-time\bootstrap-timepicker.js" />
+    <Content Include="assets\js\date-time\daterangepicker.js" />
+    <Content Include="assets\js\date-time\moment.js" />
+    <Content Include="assets\js\dropzone.js" />
+    <Content Include="assets\js\excanvas.js" />
+    <Content Include="assets\js\flot\jquery.flot.js" />
+    <Content Include="assets\js\flot\jquery.flot.pie.js" />
+    <Content Include="assets\js\flot\jquery.flot.resize.js" />
+    <Content Include="assets\js\fuelux\fuelux.spinner.js" />
+    <Content Include="assets\js\fuelux\fuelux.tree.js" />
+    <Content Include="assets\js\fuelux\fuelux.wizard.js" />
+    <Content Include="assets\js\fullcalendar.js" />
+    <Content Include="assets\js\html5shiv.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ar.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-bg.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-bg1251.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-cat.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-cn.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-cs.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-da.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-de.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-dk.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-el.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-en.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-es.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-fa.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-fi.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-fr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-gl.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-he.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-hr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-hr1250.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-hu.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-id.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-is.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-it.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ja.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-kr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-lt.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-mne.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-nl.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-no.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-pl.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-pt-br.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-pt.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ro.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ru.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-sk.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-sr-latin.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-sr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-sv.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-th.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-tr.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-tw.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-ua.js" />
+    <Content Include="assets\js\jqGrid\i18n\grid.locale-vi.js" />
+    <Content Include="assets\js\jqGrid\jquery.jqGrid.src.js" />
+    <Content Include="assets\js\jquery-ui.custom.js" />
+    <Content Include="assets\js\jquery-ui.js" />
+    <Content Include="assets\js\jquery.autosize.js" />
+    <Content Include="assets\js\jquery.bootstrap-duallistbox.js" />
+    <Content Include="assets\js\jquery.colorbox.js" />
+    <Content Include="assets\js\jquery.easypiechart.js" />
+    <Content Include="assets\js\jquery.gritter.js" />
+    <Content Include="assets\js\jquery.hotkeys.js" />
+    <Content Include="assets\js\jquery.inputlimiter.1.3.1.js" />
+    <Content Include="assets\js\jquery.js" />
+    <Content Include="assets\js\jquery.knob.js" />
+    <Content Include="assets\js\jquery.maskedinput.js" />
+    <Content Include="assets\js\jquery.mobile.custom.js" />
+    <Content Include="assets\js\jquery.mousewheel.js" />
+    <Content Include="assets\js\jquery.nestable.js" />
+    <Content Include="assets\js\jquery.raty.js" />
+    <Content Include="assets\js\jquery.slimscroll.js" />
+    <Content Include="assets\js\jquery.sparkline.js" />
+    <Content Include="assets\js\jquery.ui.touch-punch.js" />
+    <Content Include="assets\js\jquery.validate.js" />
+    <Content Include="assets\js\jquery1x.js" />
+    <Content Include="assets\js\markdown\bootstrap-markdown.js" />
+    <Content Include="assets\js\markdown\markdown.js" />
+    <Content Include="assets\js\markdown\to-markdown.js" />
+    <Content Include="assets\js\pace.js" />
+    <Content Include="assets\js\prettify.js" />
+    <Content Include="assets\js\pts_scripts.js" />
+    <Content Include="assets\js\respond.js" />
+    <Content Include="assets\js\select2.js" />
+    <Content Include="assets\js\spin.js" />
+    <Content Include="assets\js\typeahead.jquery.js" />
+    <Content Include="assets\js\x-editable\ace-editable.js" />
+    <Content Include="assets\js\x-editable\bootstrap-editable.js" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\AjaxControlToolkit.pdb" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\ar\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\cs\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\de\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\es\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\fr\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\he\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\hi\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\it\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\ja\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\ko\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.xml" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\nl\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\PTS_App_Code_VB_Project.dll" />
+    <Content Include="bin\PTS_App_Code_VB_Project.pdb" />
+    <Content Include="bin\PTS_App_Code_VB_Project.xml" />
+    <Content Include="bin\PTS_MVC.dll" />
+    <Content Include="bin\PTS_MVC.pdb" />
+    <Content Include="bin\pt\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\ru\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Web.Cors.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Http.Cors.dll" />
+    <Content Include="bin\System.Web.Http.Cors.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\tr-TR\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\zh-CHS\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\zh-CHT\AjaxControlToolkit.resources.dll" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\webusercontrols\WebUserControlCheckBoxBoostrap.ascx" />
+    <Content Include="Content\webusercontrols\WebUserControlCheckBoxBoostrap.ascx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Content\webusercontrols\WebUserControlPhotoGalleryImage.ascx" />
+    <Content Include="Content\webusercontrols\WebUserControlPhotoGalleryImage.ascx.vb" />
+    <Content Include="Content\webusercontrols\WebUserControlUserPhoto.ascx" />
+    <Content Include="Content\webusercontrols\WebUserControlUserPhoto.ascx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Empty.master.vb" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll" />
+    <Content Include="packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.pdb" />
+    <Content Include="packages\bootstrap.3.0.0\Content\Content\bootstrap-theme.css" />
+    <Content Include="packages\bootstrap.3.0.0\Content\Content\bootstrap-theme.min.css" />
+    <Content Include="packages\bootstrap.3.0.0\Content\Content\bootstrap.css" />
+    <Content Include="packages\bootstrap.3.0.0\Content\Content\bootstrap.min.css" />
+    <Content Include="packages\bootstrap.3.0.0\Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="packages\bootstrap.3.0.0\Content\Scripts\bootstrap.js" />
+    <Content Include="packages\bootstrap.3.0.0\Content\Scripts\bootstrap.min.js" />
+    <Content Include="packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.1.1\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.1.1\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.1.1\tools\about_EntityFramework.help.txt" />
+    <Content Include="packages\EntityFramework.6.1.1\tools\EntityFramework.PowerShell.dll" />
+    <Content Include="packages\EntityFramework.6.1.1\tools\EntityFramework.PowerShell.Utility.dll" />
+    <Content Include="packages\EntityFramework.6.1.1\tools\migrate.exe" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.1.3\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\about_EntityFramework.help.txt" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.PowerShell.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.PowerShell.Utility.dll" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\migrate.exe" />
+    <None Include="packages\jQuery.1.10.2\Content\Scripts\jquery-1.10.2-vsdoc.js" />
+    <Content Include="packages\jQuery.1.10.2\Content\Scripts\jquery-1.10.2.js" />
+    <Content Include="packages\jQuery.1.10.2\Content\Scripts\jquery-1.10.2.min.js" />
+    <None Include="packages\jQuery.1.10.2\Tools\jquery-1.10.2.intellisense.js" />
+    <None Include="packages\jQuery.Validation.1.11.1\Content\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="packages\jQuery.Validation.1.11.1\Content\Scripts\jquery.validate.js" />
+    <Content Include="packages\jQuery.Validation.1.11.1\Content\Scripts\jquery.validate.min.js" />
+    <Content Include="packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.xml" />
+    <Content Include="packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll" />
+    <Content Include="packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\system.web.optimization.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\portable-wp8%252Bnetcore45%252Bnet45%252Bwp81%252Bwpa81\System.Net.Http.Formatting.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\portable-wp8%252Bnetcore45%252Bnet45%252Bwp81%252Bwpa81\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.xml" />
+    <Content Include="packages\Microsoft.jQuery.Unobtrusive.Validation.3.2.2\Content\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="packages\Microsoft.jQuery.Unobtrusive.Validation.3.2.2\Content\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="packages\Modernizr.2.6.2\Content\Scripts\modernizr-2.6.2.js" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Respond.1.2.0\content\Scripts\respond.js" />
+    <Content Include="packages\Respond.1.2.0\content\Scripts\respond.min.js" />
+    <Content Include="packages\WebGrease.1.5.2\lib\WebGrease.dll" />
+    <Content Include="packages\WebGrease.1.5.2\tools\WG.exe" />
+    <Content Include="Pages\PTS\EmailBodies\AutoApprovalByPTSAddendum.aspx" />
+    <Content Include="Pages\PTS\EmailBodies\AutoApprovalByPTSAddendum.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\EmailBodies\AutoApprovalByPTSContract.aspx" />
+    <Content Include="Pages\PTS\EmailBodies\AutoApprovalByPTSContract.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\EmailBodies\PoDetails.aspx" />
+    <Content Include="Pages\PTS\EmailBodies\PoDetails.aspx.vb" />
+    <Content Include="Pages\PTS\PageMethods\ApprovalMatrix.aspx" />
+    <Content Include="Pages\PTS\PageMethods\ApprovalMatrix.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\PageMethods\Table_Contracts_IgnoreSearchFeed.aspx" />
+    <Content Include="Pages\PTS\PageMethods\Table_Contracts_IgnoreSearchFeed.aspx.vb" />
+    <Content Include="Pages\PTS\PageMethods\Table_SupplierType.aspx" />
+    <Content Include="Pages\PTS\PageMethods\Table_SupplierType.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\PageMethods\Table_SupplierType_Tags.aspx" />
+    <Content Include="Pages\PTS\PageMethods\Table_SupplierType_Tags.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table1_Project.aspx" />
+    <Content Include="Pages\PTS\Table1_Project.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table3_Invoice_AdditionalApprovalProjectUserMatrix.aspx" />
+    <Content Include="Pages\PTS\Table3_Invoice_AdditionalApprovalProjectUserMatrix.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table3_Invoice_AdditionalUserApprovals.aspx" />
+    <Content Include="Pages\PTS\Table3_Invoice_AdditionalUserApprovals.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table7_CostCode.aspx" />
+    <Content Include="Pages\PTS\Table7_CostCode.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table7_CostDivision.aspx" />
+    <Content Include="Pages\PTS\Table7_CostDivision.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table7_CostDivision2.aspx" />
+    <Content Include="Pages\PTS\Table7_CostDivision2.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table_Addendum_UsersApprv_IgnoreUser.aspx" />
+    <Content Include="Pages\PTS\Table_Addendum_UsersApprv_IgnoreUser.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table_Budget.aspx" />
+    <Content Include="Pages\PTS\Table_Budget.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\Table_Contract_UsersApprv_IgnoreUser.aspx" />
+    <Content Include="Pages\PTS\Table_Contract_UsersApprv_IgnoreUser.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\UserControls\WebUserControlAddendumDetails.ascx" />
+    <Content Include="Pages\PTS\UserControls\WebUserControlAddendumDetails.ascx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\UserControls\WebUserControlContractDetails.ascx" />
+    <Content Include="Pages\PTS\UserControls\WebUserControlContractDetails.ascx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Pages\PTS\_ListOfTables.aspx" />
+    <Content Include="Pages\PTS\_ListOfTables.aspx.vb" />
+    <Content Include="Pages\Webforms\_empty.aspx" />
+    <Content Include="Pages\Webforms\_empty.aspx.vb" />
+    <Content Include="assets\css\less\ace-features.less" />
+    <Content Include="assets\css\less\ace-nav.less" />
+    <Content Include="assets\css\less\ace-responsive.less" />
+    <Content Include="assets\css\less\ace-rtl.less" />
+    <Content Include="assets\css\less\ace.less" />
+    <Content Include="assets\css\less\basic.less" />
+    <Content Include="assets\css\less\bootstrap\alerts.less" />
+    <Content Include="assets\css\less\bootstrap\badges.less" />
+    <Content Include="assets\css\less\bootstrap\bootstrap.less" />
+    <Content Include="assets\css\less\bootstrap\breadcrumbs.less" />
+    <Content Include="assets\css\less\bootstrap\button-groups.less" />
+    <Content Include="assets\css\less\bootstrap\buttons.less" />
+    <Content Include="assets\css\less\bootstrap\carousel.less" />
+    <Content Include="assets\css\less\bootstrap\close.less" />
+    <Content Include="assets\css\less\bootstrap\code.less" />
+    <Content Include="assets\css\less\bootstrap\component-animations.less" />
+    <Content Include="assets\css\less\bootstrap\dropdowns.less" />
+    <Content Include="assets\css\less\bootstrap\forms.less" />
+    <Content Include="assets\css\less\bootstrap\glyphicons.less" />
+    <Content Include="assets\css\less\bootstrap\grid.less" />
+    <Content Include="assets\css\less\bootstrap\input-groups.less" />
+    <Content Include="assets\css\less\bootstrap\jumbotron.less" />
+    <Content Include="assets\css\less\bootstrap\labels.less" />
+    <Content Include="assets\css\less\bootstrap\list-group.less" />
+    <Content Include="assets\css\less\bootstrap\media.less" />
+    <Content Include="assets\css\less\bootstrap\mixins.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\alerts.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\background-variant.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\border-radius.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\buttons.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\center-block.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\clearfix.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\forms.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\gradients.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\grid-framework.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\grid.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\hide-text.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\image.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\labels.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\list-group.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\nav-divider.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\opacity.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\pagination.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\panels.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\progress-bar.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\reset-filter.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\resize.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\size.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\tab-focus.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\table-row.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\text-overflow.less" />
+    <Content Include="assets\css\less\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="assets\css\less\bootstrap\modals.less" />
+    <Content Include="assets\css\less\bootstrap\navbar.less" />
+    <Content Include="assets\css\less\bootstrap\navs.less" />
+    <Content Include="assets\css\less\bootstrap\normalize.less" />
+    <Content Include="assets\css\less\bootstrap\pager.less" />
+    <Content Include="assets\css\less\bootstrap\pagination.less" />
+    <Content Include="assets\css\less\bootstrap\panels.less" />
+    <Content Include="assets\css\less\bootstrap\popovers.less" />
+    <Content Include="assets\css\less\bootstrap\print.less" />
+    <Content Include="assets\css\less\bootstrap\progress-bars.less" />
+    <Content Include="assets\css\less\bootstrap\responsive-embed.less" />
+    <Content Include="assets\css\less\bootstrap\responsive-utilities.less" />
+    <Content Include="assets\css\less\bootstrap\scaffolding.less" />
+    <Content Include="assets\css\less\bootstrap\tables.less" />
+    <Content Include="assets\css\less\bootstrap\theme.less" />
+    <Content Include="assets\css\less\bootstrap\thumbnails.less" />
+    <Content Include="assets\css\less\bootstrap\tooltip.less" />
+    <Content Include="assets\css\less\bootstrap\type.less" />
+    <Content Include="assets\css\less\bootstrap\utilities.less" />
+    <Content Include="assets\css\less\bootstrap\variables.less" />
+    <Content Include="assets\css\less\bootstrap\wells.less" />
+    <Content Include="assets\css\less\breadcrumbs.less" />
+    <Content Include="assets\css\less\bs3-reset.less" />
+    <Content Include="assets\css\less\buttons.less" />
+    <Content Include="assets\css\less\dropdown.less" />
+    <Content Include="assets\css\less\dropdown\colorpicker.less" />
+    <Content Include="assets\css\less\dropdown\navbar-dropdown.less" />
+    <Content Include="assets\css\less\dropdown\navbar-tabbed-dropdown.less" />
+    <Content Include="assets\css\less\ext\bootstrap-tag.less" />
+    <Content Include="assets\css\less\fonts-rel.less" />
+    <Content Include="assets\css\less\fonts.less" />
+    <Content Include="assets\css\less\footer.less" />
+    <Content Include="assets\css\less\form.less" />
+    <Content Include="assets\css\less\form\checkbox.less" />
+    <Content Include="assets\css\less\form\file.less" />
+    <Content Include="assets\css\less\gallery.less" />
+    <Content Include="assets\css\less\general.less" />
+    <Content Include="assets\css\less\icon-animated.less" />
+    <Content Include="assets\css\less\infobox.less" />
+    <Content Include="assets\css\less\items.less" />
+    <Content Include="assets\css\less\label-badge.less" />
+    <Content Include="assets\css\less\mixins.less" />
+    <Content Include="assets\css\less\modal.less" />
+    <Content Include="assets\css\less\navbar\collapsible.less" />
+    <Content Include="assets\css\less\navbar\navbar-menu-form.less" />
+    <Content Include="assets\css\less\navbar\toggle-button.less" />
+    <Content Include="assets\css\less\navbar\user-buttons-move-down.less" />
+    <Content Include="assets\css\less\navbar\user-buttons.less" />
+    <Content Include="assets\css\less\navbar\user-dropdown-position.less" />
+    <Content Include="assets\css\less\navbar\user-menu.less" />
+    <Content Include="assets\css\less\onpage-help.less" />
+    <Content Include="assets\css\less\other.less" />
+    <Content Include="assets\css\less\page.error.less" />
+    <Content Include="assets\css\less\page.inbox.less" />
+    <Content Include="assets\css\less\page.invoice.less" />
+    <Content Include="assets\css\less\page.login.less" />
+    <Content Include="assets\css\less\page.pricing.less" />
+    <Content Include="assets\css\less\page.profile.less" />
+    <Content Include="assets\css\less\page.timeline.less" />
+    <Content Include="assets\css\less\print.less" />
+    <Content Include="assets\css\less\progressbar.less" />
+    <Content Include="assets\css\less\scroll.less" />
+    <Content Include="assets\css\less\searchbox.less" />
+    <Content Include="assets\css\less\sidebar.less" />
+    <Content Include="assets\css\less\sidebar\active.less" />
+    <Content Include="assets\css\less\sidebar\compact.less" />
+    <Content Include="assets\css\less\sidebar\ff_fix.less" />
+    <Content Include="assets\css\less\sidebar\highlight.less" />
+    <Content Include="assets\css\less\sidebar\horizontal.less" />
+    <Content Include="assets\css\less\sidebar\hover.less" />
+    <Content Include="assets\css\less\sidebar\min.less" />
+    <Content Include="assets\css\less\sidebar\multiple.less" />
+    <Content Include="assets\css\less\sidebar\old-toggle-button.less" />
+    <Content Include="assets\css\less\sidebar\responsive-1.less" />
+    <Content Include="assets\css\less\sidebar\responsive-2.less" />
+    <Content Include="assets\css\less\sidebar\responsive-3.less" />
+    <Content Include="assets\css\less\sidebar\shortcuts-toggle.less" />
+    <Content Include="assets\css\less\sidebar\sidebar-fixed.less" />
+    <Content Include="assets\css\less\sidebar\sub-arrow.less" />
+    <Content Include="assets\css\less\skins\empty.less" />
+    <Content Include="assets\css\less\skins\no-skin.less" />
+    <Content Include="assets\css\less\skins\skin-1.less" />
+    <Content Include="assets\css\less\skins\skin-2.less" />
+    <Content Include="assets\css\less\skins\skin-3.less" />
+    <Content Include="assets\css\less\skins\skins.less" />
+    <Content Include="assets\css\less\tab-accordion.less" />
+    <Content Include="assets\css\less\tables.less" />
+    <Content Include="assets\css\less\thirdparty-calendar.less" />
+    <Content Include="assets\css\less\thirdparty-chosen.less" />
+    <Content Include="assets\css\less\thirdparty-colorbox.less" />
+    <Content Include="assets\css\less\thirdparty-dataTables.less" />
+    <Content Include="assets\css\less\thirdparty-date.less" />
+    <Content Include="assets\css\less\thirdparty-dropzone.less" />
+    <Content Include="assets\css\less\thirdparty-duallist-multiselect.less" />
+    <Content Include="assets\css\less\thirdparty-editable.less" />
+    <Content Include="assets\css\less\thirdparty-fuelux.less" />
+    <Content Include="assets\css\less\thirdparty-gritter.less" />
+    <Content Include="assets\css\less\thirdparty-jqgrid.less" />
+    <Content Include="assets\css\less\thirdparty-jquery-ui.less" />
+    <Content Include="assets\css\less\thirdparty-nestable.less" />
+    <Content Include="assets\css\less\thirdparty-raty.less" />
+    <Content Include="assets\css\less\thirdparty-select2.less" />
+    <Content Include="assets\css\less\thirdparty-slider.less" />
+    <Content Include="assets\css\less\thirdparty-typeahead.less" />
+    <Content Include="assets\css\less\thirdparty-wysiwyg.less" />
+    <Content Include="assets\css\less\tooltip-popover.less" />
+    <Content Include="assets\css\less\utility.less" />
+    <Content Include="assets\css\less\variables.less" />
+    <Content Include="assets\css\less\widget.less" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\OpenSans-300.woff" />
+    <Content Include="assets\fonts\OpenSans-400.woff" />
+    <Content Include="assets\fonts\readme" />
+    <Content Include="assets\js\ace\readme" />
+    <Content Include="assets\js\ace\scripts.json" />
+    <Content Include="Scripts\KnockoutScripts\bodyTextsModels.js" />
+    <Content Include="Scripts\KnockoutScripts\userCommentsApprMatrx.js" />
+    <Content Include="Scripts\Webforms\contractview.js" />
+    <Content Include="SiteCertificate.master.vb" />
+    <Content Include="Empty.master" />
+    <Content Include="App_Code\HtmlCustomHelpers.cshtml" />
+    <Content Include="App_Browsers\App.Browser" />
+    <Content Include="Pages\PTS\GenericHandler\TaggingSuppliers.ashx" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\AddendumApprovalRequest.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\ContractApprovalRequest.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\DisagreementOnAddendum.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\DisagreementOnAddendumRemoved.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\DisagreementOnContract.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\DisagreementOnContractRemoved.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\EverybodyApprovedAddendum.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\EverybodyApprovedContract.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\FrameContractApproved.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\LawyersApprovedAddendum.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\LawyersApprovedContract.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\POHasBeenRaised.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\POHasBeenRaisedForAddendum.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\POHasBeenUpdated.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\EmailGenerator\ZeroValueAddendum.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\Shared\RejectionCommentsAddendum.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\Shared\RejectionCommentsContract.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\Shared\_ViewAddendumDetailsForEmailNotification.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\Shared\_ViewContractDetailsForEmailNotification.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\Shared\_ViewPoDetails.cshtml" />
+    <Content Include="Areas\PtsWorker\Views\web.config" />
+    <Content Include="bin\PTS_MVC.dll.config" />
+    <Content Include="packages\Antlr.3.4.1.9004\Antlr.3.4.1.9004.nupkg" />
+    <Content Include="packages\bootstrap.3.0.0\bootstrap.3.0.0.nupkg" />
+    <Content Include="packages\bootstrap.3.0.0\Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages\bootstrap.3.0.0\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="packages\bootstrap.3.0.0\Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="packages\EntityFramework.6.1.1\content\App.config.transform" />
+    <Content Include="packages\EntityFramework.6.1.1\content\Web.config.transform" />
+    <Content Include="packages\EntityFramework.6.1.1\EntityFramework.6.1.1.nupkg" />
+    <Content Include="packages\EntityFramework.6.1.1\tools\EntityFramework.psd1" />
+    <Content Include="packages\EntityFramework.6.1.1\tools\EntityFramework.psm1" />
+    <Content Include="packages\EntityFramework.6.1.1\tools\init.ps1" />
+    <Content Include="packages\EntityFramework.6.1.1\tools\install.ps1" />
+    <Content Include="packages\EntityFramework.6.1.3\content\App.config.transform" />
+    <Content Include="packages\EntityFramework.6.1.3\content\Web.config.transform" />
+    <Content Include="packages\EntityFramework.6.1.3\EntityFramework.6.1.3.nupkg" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.psd1" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.psm1" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\init.ps1" />
+    <Content Include="packages\EntityFramework.6.1.3\tools\install.ps1" />
+    <Content Include="packages\jQuery.1.10.2\Content\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="packages\jQuery.1.10.2\jQuery.1.10.2.nupkg" />
+    <Content Include="packages\jQuery.1.10.2\Tools\common.ps1" />
+    <Content Include="packages\jQuery.1.10.2\Tools\install.ps1" />
+    <Content Include="packages\jQuery.1.10.2\Tools\uninstall.ps1" />
+    <Content Include="packages\jQuery.Validation.1.11.1\jQuery.Validation.1.11.1.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.Cors.5.2.3\Microsoft.AspNet.Cors.5.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\Content\Web.config.install.xdt" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\Content\Web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\Microsoft.AspNet.Mvc.5.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.Razor.3.2.3\Microsoft.AspNet.Razor.3.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.1.3\Microsoft.AspNet.Web.Optimization.1.1.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.5.2.2\Microsoft.AspNet.WebApi.5.2.2.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.5.2.3\Microsoft.AspNet.WebApi.5.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.2\Microsoft.AspNet.WebApi.Client.5.2.2.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.5.2.3\Microsoft.AspNet.WebApi.Client.5.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.2\Content\web.config.transform" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.2\Microsoft.AspNet.WebApi.Core.5.2.2.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.3\Content\web.config.transform" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.5.2.3\Microsoft.AspNet.WebApi.Core.5.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Cors.5.2.3\Microsoft.AspNet.WebApi.Cors.5.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\Microsoft.AspNet.WebApi.WebHost.5.2.2.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\Microsoft.AspNet.WebApi.WebHost.5.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\Content\Web.config.install.xdt" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\Content\Web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\Microsoft.AspNet.WebPages.3.2.3.nupkg" />
+    <Content Include="packages\Microsoft.jQuery.Unobtrusive.Validation.3.2.2\Microsoft.jQuery.Unobtrusive.Validation.3.2.2.nupkg" />
+    <Content Include="packages\Microsoft.Web.Infrastructure.1.0.0.0\Microsoft.Web.Infrastructure.1.0.0.0.nupkg" />
+    <Content Include="packages\Modernizr.2.6.2\Modernizr.2.6.2.nupkg" />
+    <Content Include="packages\Modernizr.2.6.2\Tools\common.ps1" />
+    <Content Include="packages\Modernizr.2.6.2\Tools\install.ps1" />
+    <Content Include="packages\Modernizr.2.6.2\Tools\uninstall.ps1" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\Newtonsoft.Json.6.0.4.nupkg" />
+    <Content Include="packages\Newtonsoft.Json.6.0.4\tools\install.ps1" />
+    <Content Include="packages\repositories.config" />
+    <Content Include="packages\Respond.1.2.0\Respond.1.2.0.nupkg" />
+    <Content Include="packages\WebGrease.1.5.2\tools\install.ps1" />
+    <Content Include="packages\WebGrease.1.5.2\tools\uninstall.ps1" />
+    <Content Include="packages\WebGrease.1.5.2\WebGrease.1.5.2.nupkg" />
+    <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Site.master.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Site.master" />
+    <Content Include="SiteCertificate.master" />
+    <Content Include="Views\Table2_PONo\Create.cshtml" />
+    <Content Include="Views\Table2_PONo\Delete.cshtml" />
+    <Content Include="Views\Table2_PONo\Details.cshtml" />
+    <Content Include="Views\Table2_PONo\Edit.cshtml" />
+    <Content Include="Views\Table2_PONo\Index.cshtml" />
+    <Content Include="Views\Monitoring\Index.cshtml" />
+    <Content Include="Views\Table_BudgetChangeLog\Create.cshtml" />
+    <Content Include="Views\Table_BudgetChangeLog\Delete.cshtml" />
+    <Content Include="Views\Table_BudgetChangeLog\Details.cshtml" />
+    <Content Include="Views\Table_BudgetChangeLog\Edit.cshtml" />
+    <Content Include="Views\Table_BudgetChangeLog\Index.cshtml" />
+    <Content Include="Views\BodyTexts\Create.cshtml" />
+    <Content Include="Views\BodyTexts\Delete.cshtml" />
+    <Content Include="Views\BodyTexts\Details.cshtml" />
+    <Content Include="Views\BodyTexts\Edit.cshtml" />
+    <Content Include="Views\BodyTexts\Index.cshtml" />
+    <Content Include="Views\ReportsView\View_FrameContractsBudgetStatus.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\SiteMapHTML.cshtml" />
+    <Content Include="Views\Table_BudgetChangeLog\Files\RE  Frame Contract Budgets.msg" />
+    <Content Include="Views\View_FrameContractsBudgetStatus\Create.cshtml" />
+    <Content Include="Views\View_FrameContractsBudgetStatus\Delete.cshtml" />
+    <Content Include="Views\View_FrameContractsBudgetStatus\Details.cshtml" />
+    <Content Include="Views\View_FrameContractsBudgetStatus\Edit.cshtml" />
+    <Content Include="Views\View_FrameContractsBudgetStatus\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\PtsContractual\Models\" />
+    <Folder Include="Areas\PtsPO\Models\" />
+    <Folder Include="Areas\PtsPO\styles\" />
+    <Folder Include="Areas\PtsPO\Views\JSON\" />
+    <Folder Include="Areas\PtsWorker\Helper\" />
+    <Folder Include="Areas\PtsWorker\Models\" />
+    <Folder Include="CONTRACT\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PTS_App_Code_VB_Project\PTS_App_Code_VB_Project.vbproj">
+      <Project>{1ea9e8a6-c92c-49cc-b848-7bc1e26eecf6}</Project>
+      <Name>PTS_App_Code_VB_Project</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2961</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2961/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties DismissedDevExtremeVersion="18.2.3.18348" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

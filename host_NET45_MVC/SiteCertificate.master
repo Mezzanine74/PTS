@@ -1,0 +1,153 @@
+<%@ Master Language="VB" CodeFile="SiteCertificate.master.vb" Inherits="SiteCertificate" %>
+<%@ Register src="MenuControl.ascx" tagname="MenuControl" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="Keywords" content="Procurement Tracking System" />
+    <meta name="Keywords" content="Developed by Savas Karaduman" />
+    <meta name="Description" content="PTS is business solution for construction companies in Russia, designed as Web application powered by ASP.NET and SQL Server 2008." />
+    <meta name="copyright" content="Copyright (c) 2012 Savas Karaduman. All rights reserved." />
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+    <link href="style_html5reset-1.6.1.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="Scripts/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="Scripts/sticky.full.js"></script>
+<link rel="stylesheet" href="sticky.full.css" type="text/css" />
+
+
+<link rel="stylesheet" type="text/css" href="style_jkmegamenu.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="Scripts/jkmegamenu.js">
+  /***********************************************
+  * jQuery Mega Menu- by JavaScript Kit (www.javascriptkit.com)
+  * This notice must stay intact for usage
+  * Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+  ***********************************************/
+</script>
+<script type="text/javascript">
+  //jkmegamenu.definemenu("anchorid", "menuid", "mouseover|click")
+  jkmegamenu.definemenu("megaanchor", "megamenu1", "click")
+</script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=155441837999989";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+        <div id="topContent">
+
+            <div style="text-align: left; float: left;">
+            <asp:LoginName ID="LoginName" runat="server" CssClass="UserNameOnMaster" 
+                    FormatString="Welcome, {0} " />
+                    
+            <br />
+            <asp:LoginStatus ID="LoginStatus" runat="server" CssClass="LoginStatus" 
+                    ForeColor="Black" />
+
+            <br />
+            <br />
+                          <uc1:MenuControl ID="MenuControl1" runat="server" />
+
+            </div>
+            <div style="float: right;">
+            <asp:ImageButton ID="ImageButtonMaster" runat="server" 
+            PostBackUrl="Default.aspx" ImageUrl="~/Images/TopContent_Logo.PNG"
+             CausesValidation="False" />
+             </div>
+        </div>
+    
+       <asp:Panel ID="AspPanel" runat="server" >
+        <div id="mainContent">
+            <asp:ContentPlaceHolder id="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+       </asp:Panel>
+
+       <asp:Panel ID="PanelShowBrowserError" runat="server" visible="false">
+          <div style="text-align: center; width: 100%">
+             <br /><br /><br /><br />
+            <img alt="" src="~/images/BrowserMessage.png" />
+            <br /><br />
+	    <hr/>
+            <img alt="" src="~/images/Mercury.tif" />
+          </div>
+        </asp:Panel>
+
+            <div id="leftContent">
+
+                <asp:TreeView ID="TreeView1" runat="server" CssClass="FontSiteMap">
+                    <Nodes>
+                        <asp:TreeNode NavigateUrl="~/Certification.aspx" Text="HOME" Value="HOME"></asp:TreeNode>
+                        <asp:TreeNode Text="ENTER" Value="ENTER">
+                            <asp:TreeNode NavigateUrl="~/CertificationEnterDocument.aspx" Text="Doc" Value="Document" ImageUrl="~/Images/Cerf_Document.png"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/CertificationEnterInvoice.aspx" Text="Invoice" Value="Invoice" ImageUrl="~/Images/Cerf_Invoice.png"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/CertificationEnterPayment.aspx" Text="Payment" Value="Payment" ImageUrl="~/Images/Cerf_Payment.png"></asp:TreeNode>
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="EDIT" Value="EDIT">
+                            <asp:TreeNode NavigateUrl="~/CertificationEditDocument.aspx" Text="Doc" Value="Document" ImageUrl="~/Images/Cerf_Document_Edit.png"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/CertificationEditInvoice.aspx" Text="Invoice" Value="Invoice" ImageUrl="~/Images/Cerf_Invoice_Edit.png"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/CertificationEditPayment.aspx" Text="Payment" Value="Payment" ImageUrl="~/Images/Cerf_Payment_Edit.png"></asp:TreeNode>
+                        </asp:TreeNode>
+                    </Nodes>
+                </asp:TreeView>
+
+            </div>
+        <div id="footerContent">
+        </div>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX THIS CODE FOLLOW USER  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+
+    <asp:SqlDataSource ID="SqlDataSourceFollowUsers" runat="server"
+    ConnectionString="<%$ ConnectionStrings:MERCURYConnectionStringVisitorsLog %>" 
+    InsertCommand=" INSERT INTO [Table_VisitorLogs]
+           ([UserName],[VisitTime],[IpAdress],[PageName],[Country], [BrowserType], [BrowserPlatform])
+     VALUES
+           (@UserName,@VisitTime, @IpAdress, @PageName, @Country, @BrowserType, @BrowserPlatform)"
+           >
+        <InsertParameters>
+            <asp:Parameter Name="UserName" Type="String"/>
+            <asp:Parameter Name="PageName" Type="String"/>
+            <asp:Parameter Name="VisitTime" />
+            <asp:Parameter Name="IpAdress" Type="String"/>
+            <asp:Parameter Name="Country" Type="String"/>
+            <asp:Parameter Name="BrowserType" Type="String"/>
+            <asp:Parameter Name="BrowserPlatform" Type="String"/>
+        </InsertParameters>
+     </asp:SqlDataSource>
+
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX //THIS CODE FOLLOW USER  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+        
+    </form>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11067821-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

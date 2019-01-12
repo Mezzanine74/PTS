@@ -1,0 +1,139 @@
+﻿@model host_NET45_MVC.Areas.PtsPO.Controllers.PurchaseOrderController.POModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/PtsPO/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    @Html.DevExpress().GetStyleSheets(
+        new StyleSheet { ExtensionType = ExtensionType.NavBar},
+        new StyleSheet { ExtensionType = ExtensionType.Menu })
+
+    @Html.DevExpress().GetScriptsEx(
+        new Script { ExtensionType = ExtensionType.NavBar },
+        new Script { ExtensionType = ExtensionType.Menu })
+
+    <style type="text/css">
+        .dxnb-item.dxnb-link {
+            border: 0px !important;
+            border-color: white !important;
+            border-image: none !important;
+            border-image-width: 0px !important;
+        }
+
+        .dxnb-content.dxnb-left{
+            border: 0px !important;
+            border-color: white !important;
+            border-image: none !important;
+            border-image-width: 0px !important;
+        }
+    </style>
+}
+
+<table>
+    <tr>
+        <td style="vertical-align: top; padding-right:15px;">
+            @Html.DevExpress().NavBar(NvSetting =>
+       {
+           NvSetting.Name = "PO";
+           NvSetting.ShowGroupHeaders = false;
+
+           NvSetting.Styles.Item.BackColor = System.Drawing.Color.FromArgb(248, 249, 249);
+           NvSetting.Styles.Item.Border.BorderStyle = System.Web.UI.WebControls.BorderStyle.NotSet;
+           NvSetting.EnableHotTrack = true;
+
+
+
+           NvSetting.Groups.Add(group =>
+           {
+               group.Text = "Purchase Orders";
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+           });
+       }).GetHtml()
+        </td>
+        <td style="vertical-align: top; padding-right:15px;">
+            @Html.DevExpress().NavBar(NvSetting =>
+       {
+           NvSetting.Name = "Contracts";
+           NvSetting.ShowGroupHeaders = false;
+           NvSetting.Groups.Add(group =>
+           {
+               group.Text = "Contracts";
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+           });
+       }).GetHtml()
+
+            @Html.DevExpress().NavBar(NvSetting =>
+       {
+           NvSetting.Name = "Reports2";
+           NvSetting.ShowGroupHeaders = false;
+           NvSetting.Groups.Add(group =>
+           {
+               group.Text = "Contracts";
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+           });
+       }).GetHtml()
+        </td>
+        <td style="vertical-align: top; padding-right:15px;">
+            @Html.DevExpress().NavBar(NvSetting =>
+       {
+           NvSetting.Name = "Reports";
+           NvSetting.ShowGroupHeaders = false;
+           NvSetting.Groups.Add(group =>
+           {
+               group.Text = "Reports";
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+               group.Items.Add("Create PO").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Invoice").Image.IconID = "businessobjects_boorderitem_32x32";
+               group.Items.Add("Create Payment Request").Image.IconID = "businessobjects_botask_32x32";
+
+           });
+       }).GetHtml()
+        </td>
+    </tr>
+</table>
+
+
+
+@section Scripts{
+
+}
+
+

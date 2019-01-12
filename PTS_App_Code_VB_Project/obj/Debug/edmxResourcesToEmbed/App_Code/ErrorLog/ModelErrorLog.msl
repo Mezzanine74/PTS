@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_ErrorLogModelStoreContainer" CdmEntityContainer="DB_ErrorLogEntities">
+    <EntitySetMapping Name="Table_ErrorLog">
+      <EntityTypeMapping TypeName="DB_ErrorLogModel.Table_ErrorLog">
+        <MappingFragment StoreEntitySet="Table_ErrorLog">
+          <ScalarProperty Name="ip_adress" ColumnName="ip_adress" />
+          <ScalarProperty Name="ErrorTime" ColumnName="ErrorTime" />
+          <ScalarProperty Name="ErrorHTML" ColumnName="ErrorHTML" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,50 @@
+﻿@model PTS_App_Code_VB_Project.PTS_MERCURY.db.View_FrameContractsBudgetStatus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>View_FrameContractsBudgetStatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvailableBudgetForNewPoWithVAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableBudgetForNewPoWithVAT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

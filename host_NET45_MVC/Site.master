@@ -1,0 +1,251 @@
+﻿<%@ Master Language="VB" CodeFile="Site.master.vb" Inherits="Site" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head id="Head1" runat="server">
+
+        <meta name="application-name" content="PTS" />
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+        <title>P T S | Procurement Tracking System</title>
+
+<%--		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />--%>
+
+        <meta name="author" content="Savas Karaduman" />
+        <meta name="description" content="PTS is business solution for construction companies in Russia, designed as Web application powered by ASP.NET and SQL Server 2008." />
+        <meta name="keywords" content="" />
+        <meta name="Keywords" content="Procurement Tracking System" />
+        <meta name="Keywords" content="Developed by Savas Karaduman" />
+        <meta name="copyright" content="Copyright (c) 2012 Savas Karaduman. All rights reserved." />
+
+        <%--Order of CSS files very important. Dont change order.--%>
+
+		<!-- bootstrap & fontawesome -->
+
+		<link rel="stylesheet" href="/assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="/assets/css/font-awesome.css" />
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- page specific plugin styles, THIS IS IMPORTANT -->
+		<link rel="stylesheet" href="/assets/css/jquery-ui.custom.css" />
+        <link rel="stylesheet" href="/assets/css/jquery.gritter.css"  />
+		<link rel="stylesheet" href="/assets/css/datepicker.css" />
+        <link rel="stylesheet" href="/assets/css/daterangepicker.css" />
+		<link rel="stylesheet" href="/assets/css/bootstrap-timepicker.css" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="/assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="/assets/css/ace.css" />
+
+        <!-- Custom CSS -->
+		<link rel="stylesheet" href="/assets/css/custom.css" />
+
+        <link href="/Content/dx.common.css" rel="stylesheet" />
+        <link href="/Content/dx.light.css" rel="stylesheet" />
+
+        <!-- Custom CSS -->
+
+    		<!-- ace settings handler -->
+		<script src="/assets/js/ace-extra.js"></script>
+
+        <script src="/Scripts/jquery-2.2.3.js"></script>
+
+<%--        <script type="text/javascript">window.jQuery || document.write("<script src='/assets/js/jquery.js'>" + "<" + "/script>");</script>--%>
+    
+<%--		<script type="text/javascript">
+		    if ('ontouchstart' in document.documentElement) document.write("<script src='/assets/js/jquery.mobile.custom.js'>" + "<" + "/script>");
+		</script>--%>
+
+		<script src="/assets/js/bootstrap.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<script src="/assets/js/jquery-ui.custom.js"></script>
+		<script src="/assets/js/jquery.ui.touch-punch.js"></script>
+		<script src="/assets/js/bootbox.js"></script>
+		<script src="/assets/js/jquery.easypiechart.js"></script>
+		<script src="/assets/js/jquery.gritter.js"></script>
+		<script src="/assets/js/spin.js"></script>
+        <script src="/assets/js/date-time/moment.js"></script>
+        <script src="/assets/js/date-time/daterangepicker.js"></script>
+		<script src="/assets/js/date-time/bootstrap-datepicker.js"></script>
+		<script src="/assets/js/date-time/bootstrap-timepicker.js"></script>
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="/assets/css/ace.onpage-help.css" />
+<%--		<link rel="stylesheet" href="/docs/assets/js/themes/sunburst.css" />--%>
+
+<%--		<script type="text/javascript"> ace.vars['base'] = '..'; </script>--%>
+		<script type="text/javascript"> ace.vars['base'] = '/'; </script>
+		<script src="/assets/js/ace/elements.onpage-help.js"></script>
+		<script src="/assets/js/ace/ace.onpage-help.js"></script>
+
+		<!-- PTS common scripts -->
+        <script src="/assets/js/pts_scripts.js"></script>
+
+        <script src="/Scripts/dx.web.js"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</head>
+<body class="no-skin">
+    <form id="form1" runat="server" >
+
+    <div>
+        <asp:ToolkitScriptManager ID="ScriptManager1" runat="server" />
+    </div>
+
+		<div id="navbar" class="navbar yamm navbar-fixed-top">
+			<script type="text/javascript">
+			    try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+<%--				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>--%>
+
+				<div class="navbar-header pull-left" >
+					<a href="/webforms/default.aspx" class="navbar-brand" id="ptslink" runat="server">
+						<small>
+							<i class="fa fa-leaf"></i>
+							P T S
+						</small>
+					</a>
+				</div>
+
+                <ul class="nav navbar-nav pull-left" id="sitemap" runat="server">
+                    <li>
+                        <a id="SpanSiteMap" class="cursor_pointer"><%= BodyTexts.Ref("0eiO698aQU2wO16RkR6dVA")%></a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav pull-left" id="Ul1" runat="server" style="width:150px; margin-left:10px;">
+                    <li>
+                        <div id="google_translate_element" style="height:20px !important;"></div>
+                        <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                                new google.translate.TranslateElement(
+                                    {
+                                        pageLanguage: 'en', includedLanguages: 'en,ru',
+                                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                                    }, 'google_translate_element');
+                            }
+                        </script>
+                        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav pull-left" id="Ul2" runat="server" style="margin-left:20px;">
+                    <li>
+                        <asp:DropDownList ID="ddl_lang" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_lang_SelectedIndexChanged">
+                            <asp:ListItem Text="EN" Value="eng"></asp:ListItem>
+                            <asp:ListItem Text="RU" Value="rus"></asp:ListItem>
+                        </asp:DropDownList>
+                    </li>
+                </ul>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                                <usercontrol:ImageUserPhoto ID="ImageUser" runat="server" CssClass="nav-user-photo" />
+								<span class="user-info">
+									<small><%= BodyTexts.Ref("iER4Zo5OAUmLaPtuUWwu8Q")%>,</small>
+                                    <asp:Literal ID="LiteralWho" runat="server" Text="..."></asp:Literal>
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+								<li>
+									<a href="usercontrolpanel.aspx">
+										<i class="ace-icon fa fa-cog"></i>
+										<%= BodyTexts.Ref("W3y4dVY8V0Oya+6a0Qt9cA")%>
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+                                    <asp:LoginStatus ID="LoginStatus" runat="server" />
+										
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="main-container" id="main-container">
+
+			<div class="main-content">
+				<div class="page-content">
+					<div class="row">
+						<div class="col-xs-12">
+                                <asp:ContentPlaceHolder id="MainContent" runat="server" >
+
+
+                                </asp:ContentPlaceHolder>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX THIS CODE FOLLOW USER  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+
+    <asp:SqlDataSource ID="SqlDataSourceFollowUsers" runat="server"
+    ConnectionString="<%$ ConnectionStrings:MERCURYConnectionStringVisitorsLog %>" 
+    InsertCommand=" INSERT INTO [Table_VisitorLogs]
+           ([UserName],[VisitTime],[IpAdress],[PageName],[Country], [BrowserType], [BrowserPlatform])
+     VALUES
+           (@UserName,@VisitTime, @IpAdress, @PageName, @Country, @BrowserType, @BrowserPlatform)"
+           >
+        <InsertParameters>
+            <asp:Parameter Name="UserName" Type="String"/>
+            <asp:Parameter Name="PageName" Type="String"/>
+            <asp:Parameter Name="VisitTime" />
+            <asp:Parameter Name="IpAdress" Type="String"/>
+            <asp:Parameter Name="Country" Type="String"/>
+            <asp:Parameter Name="BrowserType" Type="String"/>
+            <asp:Parameter Name="BrowserPlatform" Type="String"/>
+        </InsertParameters>
+     </asp:SqlDataSource>
+
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX //THIS CODE FOLLOW USER  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+    <%-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --%>
+
+
+    </form>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+    <script src="/assets/js/sitemap.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,90 @@
+﻿@model host_NET45_MVC.Areas.PtsPO.Controllers.PurchaseOrderController.Table6_SupplierViewModel
+
+@using (Ajax.BeginForm("_EnterNewSupplierPartial", "PurchaseOrder",
+new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "_partialResultFormSupplierEnter",
+    LoadingElementId = "loadingPanelFormSupplierEnter",
+    OnBegin = "loadingPanelFormSupplierEnter.Show();",
+    OnSuccess = "doOnSuccess()"
+},
+new
+{
+// removed. it cause wrong alignment in formlayout. because it should have different name from FormLayou.Name
+//id = "FormSupplierEnter"
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.DevExpress().FormLayout(s =>
+{
+    s.Name = "FormSupplierEnter";
+    s.ColCount = 2;
+
+    s.Items.AddGroupItem(gs =>
+    {
+        gs.ColCount = 2;
+        gs.GroupBoxDecoration = GroupBoxDecoration.Box;
+        gs.Caption = "Enter New Supplier";
+
+        gs.Items.Add(data => data.SupplierIDEnter, item =>
+        {
+            item.Caption = "Supplier INN";
+            item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+            var tbSettings = (TextBoxSettings)item.NestedExtensionSettings;
+            tbSettings.Properties.ClientInstanceName = "SupplierIDentry";
+            tbSettings.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Right;
+            tbSettings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+            tbSettings.Properties.ValidationSettings.Display = Display.Dynamic;
+            tbSettings.ShowModelErrors = true;
+        });
+
+        gs.Items.Add(item =>
+        {
+            item.Caption = "IP";
+            item.NestedExtension().CheckBox(cb =>
+            {
+                cb.Name = "cb";
+            });
+        });
+
+        gs.Items.Add(data => data.SupplierName, item =>
+        {
+            item.Caption = "Supplier Name";
+            item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+            var tbSettings = (TextBoxSettings)item.NestedExtensionSettings;
+            tbSettings.Properties.ClientInstanceName = "SupplierNameentry";
+            tbSettings.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Right;
+            tbSettings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+            tbSettings.Properties.ValidationSettings.Display = Display.Dynamic;
+            tbSettings.ShowModelErrors = true;
+        }); gs.Items.AddEmptyItem();
+
+        gs.Items.Add(item =>
+        {
+            item.Caption = "";
+            item.NestedExtension().Button(bt =>
+            {
+                bt.Name = "btn";
+                bt.Text = "Enter";
+                bt.UseSubmitBehavior = true;
+            });
+        });
+
+    });
+
+}).GetHtml()
+
+
+}
+
+@Html.Partial("__EnterNewSupplierPartial", Model)
+
+@Html.DevExpress().LoadingPanel(
+    settings =>
+    {
+        settings.Name = "loadingPanelFormSupplierEnter";
+        settings.Modal = false;
+        settings.ContainerElementID = "FormSupplierEnter";
+        settings.Styles.LoadingDiv.BackColor = System.Drawing.Color.White;
+    }).GetHtml()

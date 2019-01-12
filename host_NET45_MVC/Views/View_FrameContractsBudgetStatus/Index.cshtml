@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PTS_App_Code_VB_Project.PTS_MERCURY.db.View_FrameContractsBudgetStatus>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableBudgetForNewPoWithVAT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvailableBudgetForNewPoWithVAT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

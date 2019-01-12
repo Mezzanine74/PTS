@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EssentialInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EssentialInfoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Level1" EntityType="EssentialInfoModel.Level1" />
+    <EntitySet Name="Level2" EntityType="EssentialInfoModel.Level2" />
+    <EntitySet Name="Level3" EntityType="EssentialInfoModel.Level3" />
+    <EntitySet Name="Posts" EntityType="EssentialInfoModel.Post" />
+    <AssociationSet Name="FK_Level2_Level1" Association="EssentialInfoModel.FK_Level2_Level1">
+      <End Role="Level1" EntitySet="Level1" />
+      <End Role="Level2" EntitySet="Level2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Level3_Level2" Association="EssentialInfoModel.FK_Level3_Level2">
+      <End Role="Level2" EntitySet="Level2" />
+      <End Role="Level3" EntitySet="Level3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_Level3" Association="EssentialInfoModel.FK_Posts_Level3">
+      <End Role="Level3" EntitySet="Level3" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Level1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="level1_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Level2" Relationship="EssentialInfoModel.FK_Level2_Level1" FromRole="Level1" ToRole="Level2" />
+  </EntityType>
+  <EntityType Name="Level2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="level1_id" Type="Int32" Nullable="false" />
+    <Property Name="level2_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Level1" Relationship="EssentialInfoModel.FK_Level2_Level1" FromRole="Level2" ToRole="Level1" />
+    <NavigationProperty Name="Level3" Relationship="EssentialInfoModel.FK_Level3_Level2" FromRole="Level2" ToRole="Level3" />
+  </EntityType>
+  <EntityType Name="Level3">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="level2_id" Type="Int32" Nullable="false" />
+    <Property Name="level3_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Level2" Relationship="EssentialInfoModel.FK_Level3_Level2" FromRole="Level3" ToRole="Level2" />
+    <NavigationProperty Name="Posts" Relationship="EssentialInfoModel.FK_Posts_Level3" FromRole="Level3" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="level3_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tag_cloud" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Level3" Relationship="EssentialInfoModel.FK_Posts_Level3" FromRole="Post" ToRole="Level3" />
+  </EntityType>
+  <Association Name="FK_Level2_Level1">
+    <End Type="EssentialInfoModel.Level1" Role="Level1" Multiplicity="1" />
+    <End Type="EssentialInfoModel.Level2" Role="Level2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Level1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Level2">
+        <PropertyRef Name="level1_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Level3_Level2">
+    <End Type="EssentialInfoModel.Level2" Role="Level2" Multiplicity="1" />
+    <End Type="EssentialInfoModel.Level3" Role="Level3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Level2">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Level3">
+        <PropertyRef Name="level2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_Level3">
+    <End Type="EssentialInfoModel.Level3" Role="Level3" Multiplicity="1" />
+    <End Type="EssentialInfoModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Level3">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="level3_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
