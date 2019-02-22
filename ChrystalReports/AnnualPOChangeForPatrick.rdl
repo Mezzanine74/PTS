@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Report5</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>SteelBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Height>0.36in</Height>
+        <Width>5in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="matrix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="textbox3">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>textbox3</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <ColSpan>2</ColSpan>
+                  <RowSpan>2</RowSpan>
+                </CellContents>
+              </TablixCornerCell>
+              <TablixCornerCell />
+            </TablixCornerRow>
+            <TablixCornerRow>
+              <TablixCornerCell />
+              <TablixCornerCell />
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.21in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!OverallPoTotalEuroExcVAT.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                  <DataElementOutput>Output</DataElementOutput>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_Rank">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Rank.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Rank.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>0.21in</Size>
+                <CellContents>
+                  <Textbox Name="Rank">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Rank.Value</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Rank</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#6e9eca</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="matrix1_DayOfRun">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!DayOfRun.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!DayOfRun.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.21in</Size>
+                    <CellContents>
+                      <Textbox Name="DayOfRun">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!DayOfRun.Value</Value>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Format>d</Format>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>DayOfRun</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>SlateGray</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <DataElementOutput>Output</DataElementOutput>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+              <DataElementOutput>Output</DataElementOutput>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_ProjectName">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ProjectName.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!ProjectName.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>1.83333in</Size>
+                <CellContents>
+                  <Textbox Name="ProjectName">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!ProjectName.Value</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>ProjectName</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#6e9eca</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="matrix1_ProjectID">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ProjectID.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!ProjectID.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.63542in</Size>
+                    <CellContents>
+                      <Textbox Name="ProjectID">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!ProjectID.Value</Value>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>ProjectID</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>SlateGray</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <DataElementOutput>Output</DataElementOutput>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+              <DataElementOutput>Output</DataElementOutput>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.36in</Top>
+        <Height>0.63in</Height>
+        <Width>3.46875in</Width>
+        <ZIndex>1</ZIndex>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>0.99in</Height>
+    <Style />
+  </Body>
+  <Width>5in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>08a34b62-37ea-4061-8493-6db6b513cee3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT * FROM (
+SELECT *,  0 AS Rank FROM (
+-- THIS IS END OF YEARS
+SELECT     RTRIM(dbo.Table1_Project.ProjectName) AS ProjectName, dbo.Table_FollowUpReportSummary.ProjectID, 
+                      dbo.Table_FollowUpReportSummary.OverallPoTotalEuroExcVAT, dbo.Table_FollowUpReportSummary.DayOfRun
+FROM         dbo.Table_FollowUpReportSummary INNER JOIN
+                      dbo.Table1_Project ON dbo.Table_FollowUpReportSummary.ProjectID = dbo.Table1_Project.ProjectID
+WHERE     (dbo.Table_FollowUpReportSummary.DayOfRun 
+IN 
+(CONVERT(DATETIME, '2010-12-31 00:00:00', 102), 
+ CONVERT(DATETIME, '2011-12-31 00:00:00', 102), 
+ CONVERT(DATETIME, '2012-12-31 00:00:00', 102), 
+ CONVERT(DATETIME, '2013-12-31 00:00:00', 102),
+ CONVERT(DATETIME, '2014-12-31 00:00:00', 102),
+ CONVERT(DATETIME, '2015-12-31 00:00:00', 102),
+ CONVERT(DATETIME, '2016-12-31 00:00:00', 102),
+ CONVERT(DATETIME, '2017-12-31 00:00:00', 102),
+ CONVERT(DATETIME, '2018-12-31 00:00:00', 102)
+ ))
+
+UNION ALL
+
+-- THIS IS THE LAST RECORD OF CURRENT YEAR
+SELECT     RTRIM(dbo.Table1_Project.ProjectName) AS ProjectName, dbo.Table_FollowUpReportSummary.ProjectID, 
+                      dbo.Table_FollowUpReportSummary.OverallPoTotalEuroExcVAT, dbo.Table_FollowUpReportSummary.DayOfRun
+FROM         dbo.Table_FollowUpReportSummary INNER JOIN
+                      dbo.Table1_Project ON dbo.Table_FollowUpReportSummary.ProjectID = dbo.Table1_Project.ProjectID
+WHERE     (dbo.Table_FollowUpReportSummary.DayOfRun = (SELECT MAX(dbo.Table_FollowUpReportSummary.DayOfRun) FROM dbo.Table_FollowUpReportSummary))
+) AS AnnualPOInEuro
+
+
+
+UNION ALL
+
+
+
+SELECT     AnnualPOInEuro.ProjectName, AnnualPOInEuro.ProjectID,
+                      ISNULL(AnnualPOInEuro.OverallPoTotalEuroExcVAT,0) - ISNULL(AnnualPOInEuroPlusOneYear.OverallPoTotalEuroExcVAT,0) AS Difference,  AnnualPOInEuro.DayOfRun,  1 AS Rank
+FROM         (SELECT     RTRIM(dbo.Table1_Project.ProjectName) AS ProjectName, dbo.Table_FollowUpReportSummary.ProjectID, 
+                                              dbo.Table_FollowUpReportSummary.OverallPoTotalEuroExcVAT, dbo.Table_FollowUpReportSummary.DayOfRun
+                       FROM          dbo.Table_FollowUpReportSummary INNER JOIN
+                                              dbo.Table1_Project ON dbo.Table_FollowUpReportSummary.ProjectID = dbo.Table1_Project.ProjectID
+                       WHERE      (dbo.Table_FollowUpReportSummary.DayOfRun IN (CONVERT(DATETIME, '2010-12-31 00:00:00', 102), CONVERT(DATETIME, '2011-12-31 00:00:00', 102), 
+                                              CONVERT(DATETIME, '2012-12-31 00:00:00', 102), CONVERT(DATETIME, '2013-12-31 00:00:00', 102), CONVERT(DATETIME, '2014-12-31 00:00:00', 102), 
+                                              CONVERT(DATETIME, '2015-12-31 00:00:00', 102), CONVERT(DATETIME, '2016-12-31 00:00:00', 102), CONVERT(DATETIME, '2017-12-31 00:00:00', 102), 
+                                              CONVERT(DATETIME, '2018-12-31 00:00:00', 102)))
+                       UNION ALL
+                       SELECT     RTRIM(Table1_Project_1.ProjectName) AS ProjectName, Table_FollowUpReportSummary_2.ProjectID, 
+                                             Table_FollowUpReportSummary_2.OverallPoTotalEuroExcVAT, Table_FollowUpReportSummary_2.DayOfRun
+                       FROM         dbo.Table_FollowUpReportSummary AS Table_FollowUpReportSummary_2 INNER JOIN
+                                             dbo.Table1_Project AS Table1_Project_1 ON Table_FollowUpReportSummary_2.ProjectID = Table1_Project_1.ProjectID
+                       WHERE     (Table_FollowUpReportSummary_2.DayOfRun =
+                                                 (SELECT     MAX(DayOfRun) AS Expr1
+                                                   FROM          dbo.Table_FollowUpReportSummary AS Table_FollowUpReportSummary_1))) AS AnnualPOInEuro INNER JOIN
+                          (SELECT     ProjectName, ProjectID, OverallPoTotalEuroExcVAT, (CASE WHEN DayOfRun =
+                                                       (SELECT     DATEADD(year, - 1, (DATEADD(yy, DATEDIFF(yy, 0,
+                                                                                    (SELECT     MAX(DayOfRun)
+                                                                                      FROM          dbo.Table_FollowUpReportSummary)) + 1, - 1)))) THEN
+                                                       (SELECT     MAX(DayOfRun)
+                                                         FROM          dbo.Table_FollowUpReportSummary) WHEN DayOfRun =
+                                                       (SELECT     MAX(DayOfRun)
+                                                         FROM          dbo.Table_FollowUpReportSummary) THEN DayOfRun ELSE DATEADD(year, 1, DayOfRun) END) AS DayOfRunPlusOneYear
+                            FROM          (SELECT     RTRIM(Table1_Project_2.ProjectName) AS ProjectName, Table_FollowUpReportSummary_3.ProjectID, 
+                                                                           Table_FollowUpReportSummary_3.OverallPoTotalEuroExcVAT, Table_FollowUpReportSummary_3.DayOfRun
+                                                    FROM          dbo.Table_FollowUpReportSummary AS Table_FollowUpReportSummary_3 INNER JOIN
+                                                                           dbo.Table1_Project AS Table1_Project_2 ON Table_FollowUpReportSummary_3.ProjectID = Table1_Project_2.ProjectID
+                                                    WHERE      (Table_FollowUpReportSummary_3.DayOfRun IN (CONVERT(DATETIME, '2010-12-31 00:00:00', 102), CONVERT(DATETIME, 
+                                                                           '2011-12-31 00:00:00', 102), CONVERT(DATETIME, '2012-12-31 00:00:00', 102), CONVERT(DATETIME, '2013-12-31 00:00:00', 102), 
+                                                                           CONVERT(DATETIME, '2014-12-31 00:00:00', 102), CONVERT(DATETIME, '2015-12-31 00:00:00', 102), CONVERT(DATETIME, 
+                                                                           '2016-12-31 00:00:00', 102), CONVERT(DATETIME, '2017-12-31 00:00:00', 102), CONVERT(DATETIME, '2018-12-31 00:00:00', 102)))
+                                                    UNION ALL
+                                                    SELECT     RTRIM(Table1_Project_1.ProjectName) AS ProjectName, Table_FollowUpReportSummary_2.ProjectID, 
+                                                                          Table_FollowUpReportSummary_2.OverallPoTotalEuroExcVAT, Table_FollowUpReportSummary_2.DayOfRun
+                                                    FROM         dbo.Table_FollowUpReportSummary AS Table_FollowUpReportSummary_2 INNER JOIN
+                                                                          dbo.Table1_Project AS Table1_Project_1 ON Table_FollowUpReportSummary_2.ProjectID = Table1_Project_1.ProjectID
+                                                    WHERE     (Table_FollowUpReportSummary_2.DayOfRun =
+                                                                              (SELECT     MAX(DayOfRun) AS Expr1
+                                                                                FROM          dbo.Table_FollowUpReportSummary AS Table_FollowUpReportSummary_1))) AS AnnualPOInEuro_1) 
+                      AS AnnualPOInEuroPlusOneYear ON AnnualPOInEuro.DayOfRun = AnnualPOInEuroPlusOneYear.DayOfRunPlusOneYear AND 
+                      AnnualPOInEuro.ProjectName = AnnualPOInEuroPlusOneYear.ProjectName AND AnnualPOInEuro.ProjectID = AnnualPOInEuroPlusOneYear.ProjectID
+) AS Source</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ProjectName">
+          <DataField>ProjectName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProjectID">
+          <DataField>ProjectID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="OverallPoTotalEuroExcVAT">
+          <DataField>OverallPoTotalEuroExcVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DayOfRun">
+          <DataField>DayOfRun</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Rank">
+          <DataField>Rank</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>7d180a7b-b3d5-4c74-b8be-d088ba4969d2</rd:ReportID>
+</Report>

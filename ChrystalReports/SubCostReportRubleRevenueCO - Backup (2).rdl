@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:DataSourceID>20fbee58-8a0c-4056-ada3-cbc7326eaaac</rd:DataSourceID>
+      <DataSourceReference>DataSource1</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>245df1d2-e7c1-4484-994e-26747d8bfe82</rd:ReportID>
+  <Width>5in</Width>
+  <Body>
+    <Height>0.79in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>SubCostReportRubleRevenueCO</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <Table Name="table1">
+        <Top>0.36in</Top>
+        <Style />
+        <Header>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Value>Description</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Value>Figures</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.22in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Description">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Description</rd:DefaultName>
+                      <Value>=Fields!Description.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Figures">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Figures</rd:DefaultName>
+                      <Value>=Fields!Figures.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.21in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+        </TableColumns>
+        <DataSetName>DataSet1</DataSetName>
+      </Table>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Figures">
+          <DataField>Figures</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>DECLARE @ProjectID int
+DECLARE @OriginalContractValueExcVAT numeric(11,2)
+DECLARE @AddendumSignedExcVAT numeric(11,2)
+DECLARE @ChangeOrderSignedExcVAT numeric(11,2)
+DECLARE @TotalRevenueExcVAT numeric(11,2)
+DECLARE @TotalCostExcVAT numeric(11,2)
+DECLARE @MarginExcVAT numeric(11,2)
+DECLARE @MarginPercent numeric(11,2)
+
+SET @OriginalContractValueExcVAT =
+	(
+	-- Original Contract Value
+	SELECT (case when [ContractAmount] IS null then 0 else [ContractAmount] end) AS OriginalContractValueExcVAT  FROM [Table1_Project]  WHERE ProjectID = @ProjectID
+	)
+
+SET @AddendumSignedExcVAT =
+	(
+	-- Addendum Signed
+	SELECT     SUM(CASE WHEN AddendumAmount IS NULL THEN 0 ELSE AddendumAmount END) AS Expr1
+	FROM         dbo.Table1_Project LEFT OUTER JOIN
+						  dbo.Table_ProjectAddendum ON dbo.Table1_Project.ProjectID = dbo.Table_ProjectAddendum.ProjectID
+	WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+	)
+
+SET @ChangeOrderSignedExcVAT =
+	(
+	-- Change Order
+	SELECT case when [ChangeOrderSignedExcVAT] is null then 0 else [ChangeOrderSignedExcVAT] end FROM [Table1_Project]  WHERE ProjectID = @ProjectID
+	)
+
+SET @TotalRevenueExcVAT =
+	@OriginalContractValueExcVAT + @AddendumSignedExcVAT + @ChangeOrderSignedExcVAT
+
+SET @TotalCostExcVAT =
+	(
+	SELECT 
+	(
+	SELECT     
+	SUM(CASE 
+		WHEN Table1_Project.ContractCurrency = N'Rub' THEN ([PoTotalRubleExcVAT])
+		WHEN Table1_Project.ContractCurrency = N'Euro' THEN ([PoTotalEuroExcVAT])
+		WHEN Table1_Project.ContractCurrency = N'Dollar' THEN ([PoTotalDollarExcVAT])
+		END ) AS TotalCostExcVAT
+	FROM         dbo.Table1_Project INNER JOIN
+						  dbo.Table2_PONo ON dbo.Table1_Project.ProjectID = dbo.Table2_PONo.Project_ID INNER JOIN
+						  dbo.View_QryW3 ON dbo.Table2_PONo.PO_No = dbo.View_QryW3.PO_No
+	WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)) AS TotalCostExcVAT		
+	)
+	
+SET @MarginExcVAT =	@TotalRevenueExcVAT - @TotalCostExcVAT
+
+IF (@TotalRevenueExcVAT = 0)
+	SET @MarginPercent = 0
+ELSE
+	SET @MarginPercent = @MarginExcVAT / @TotalRevenueExcVAT * 100
+
+SELECT N'Original Contract Value Exc. VAT' AS Description, @OriginalContractValueExcVAT  as Figures
+UNION ALL
+SELECT N'Addendum Signed Exc. VAT', @AddendumSignedExcVAT 
+UNION ALL
+SELECT N'Change Order Signed Exc. VAT', @ChangeOrderSignedExcVAT 
+UNION ALL
+SELECT N'Total Revenue Exc. VAT', @TotalRevenueExcVAT 
+UNION ALL
+SELECT N'Total Cost Exc. VAT', @TotalCostExcVAT 
+UNION ALL
+SELECT N'Margin Exc. VAT', @MarginExcVAT 
+UNION ALL
+SELECT N'Margin %', @MarginPercent</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

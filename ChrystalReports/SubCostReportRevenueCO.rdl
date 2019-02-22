@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <rd:DataSourceID>03c42c57-c21a-4b11-af0b-53952b4899a2</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Figures">
+          <DataField>Figures</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>DECLARE @TotalValidatedCostValueExcVAT numeric(11,2)
+DECLARE @TotalForecastValueExcVAT numeric(11,2)
+DECLARE @CurrencyOfContract nvarChar(10)
+DECLARE @OriginalContractValueExcVAT numeric(11,2)
+DECLARE @AddendumSignedExcVAT numeric(11,2)
+DECLARE @ChangeOrderSignedExcVAT numeric(11,2)
+DECLARE @TotalRevenueExcVAT numeric(11,2)
+DECLARE @TotalCostExcVAT numeric(11,2)
+DECLARE @MarginExcVAT numeric(11,2)
+DECLARE @MarginPercent numeric(11,2)
+DECLARE @OriginalMarginPercent numeric(11,2)
+
+SET @CurrencyOfContract = (
+SELECT     RTRIM(ContractCurrency) AS ContractCurrency
+FROM         dbo.Table1_Project
+WHERE     (ProjectID = @ProjectID)
+)
+
+-- FIND TOTAL VALIDATED COST (BOQ + Change ORder )
+IF @CurrencyOfContract = N'Rub'
+BEGIN
+SET @TotalValidatedCostValueExcVAT = 
+	(
+		SELECT sum(case when [Budget] IS null then 0 else Budget end)
+			 + sum(case when [VCO] IS null then 0 else VCO end)
+		FROM [Table_Budget]
+		WHERE Currency= N'Rub'
+	)
+END
+
+IF @CurrencyOfContract = N'Dollar'
+BEGIN
+SET @TotalValidatedCostValueExcVAT = 
+	(
+		SELECT sum(case when [Budget] IS null then 0 else Budget end)
+			 + sum(case when [VCO] IS null then 0 else VCO end)
+		FROM [Table_Budget]
+		WHERE Currency= N'Dollar'
+	)
+END
+
+IF @CurrencyOfContract = N'Euro'
+BEGIN
+SET @TotalValidatedCostValueExcVAT = 
+	(
+		SELECT sum(case when [Budget] IS null then 0 else Budget end)
+			 + sum(case when [VCO] IS null then 0 else VCO end)
+		FROM [Table_Budget]
+		WHERE Currency= N'Euro'
+	)
+END
+
+
+-- FIND TOTAL FORECAST
+
+IF @CurrencyOfContract = N'Rub'
+BEGIN
+SET @TotalForecastValueExcVAT = (
+
+					SELECT 
+					sum([PoTotalRubleExcVAT])
+					+sum([CostToGoBOQ])
+					+sum([PoCOTotalRubleExcVAT])
+					+sum([CostToGoVCO])
+					FROM (
+					SELECT     
+					dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.PoTotalRubleExcVAT, CASE WHEN CostToGoBOQ IS NULL
+					THEN 0 ELSE CostToGoBOQ END AS CostToGoBOQ, dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.PoCOTotalRubleExcVAT,
+					CASE WHEN CostToGoVCO IS NULL THEN 0 ELSE CostToGoVCO END AS CostToGoVCO, dbo.Table1_Project.ProjectID
+					FROM         dbo.View_CountOfCommentOnBudget RIGHT OUTER JOIN
+					dbo.Table_Budget ON dbo.View_CountOfCommentOnBudget.BudgetID = dbo.Table_Budget.BudgetID RIGHT OUTER JOIN
+					dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO INNER JOIN
+					dbo.Table7_CostCode ON dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.CostCode = dbo.Table7_CostCode.CostCode INNER JOIN
+					dbo.Table1_Project ON dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+					dbo.Table7_CostDivision ON dbo.Table7_CostCode.CostVidisionID = dbo.Table7_CostDivision.CostVidisionID ON
+					dbo.Table_Budget.Currency = dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.Currency AND
+					dbo.Table_Budget.ProjectID = dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.CostCode LEFT OUTER JOIN
+					dbo.Table_ProgressPercent ON dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.ProjectID = dbo.Table_ProgressPercent.ProjectID AND
+					dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.CostCode = dbo.Table_ProgressPercent.CostCode
+					WHERE     (dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.ProjectID = @ProjectID)
+
+					UNION ALL
+
+					SELECT     0 AS PoTotal, CASE WHEN CostToGoBOQ IS NULL
+					THEN 0 ELSE CostToGoBOQ END AS CostToGoBOQ, 0 AS POcoTotal, CASE WHEN CostToGoVCO IS NULL
+					THEN 0 ELSE CostToGoVCO END AS CostToGoVCO, dbo.Table1_Project.ProjectID
+					FROM         dbo.Table7_CostCode INNER JOIN
+					dbo.Table_Budget ON dbo.Table7_CostCode.CostCode = dbo.Table_Budget.CostCode INNER JOIN
+					dbo.Table1_Project ON dbo.Table_Budget.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+					dbo.View_CountOfCommentOnBudget ON dbo.Table_Budget.BudgetID = dbo.View_CountOfCommentOnBudget.BudgetID LEFT OUTER JOIN
+					dbo.Table7_CostDivision ON dbo.Table7_CostCode.CostVidisionID = dbo.Table7_CostDivision.CostVidisionID LEFT OUTER JOIN
+					dbo.Table_ProgressPercent ON dbo.Table_Budget.ProjectID = dbo.Table_ProgressPercent.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.Table_ProgressPercent.CostCode LEFT OUTER JOIN
+					dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO ON
+					dbo.Table_Budget.ProjectID = dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.CostCode
+					WHERE     (dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.ProjectID IS NULL) AND (dbo.Table_Budget.Currency = N'Rub') AND
+					(dbo.View_Qry_TotalPendingOrderPerCostCodeRubleREVFinal3CO.CostCode IS NULL) AND (dbo.Table_Budget.ProjectID = @ProjectID) AND
+					(dbo.Table_Budget.CostCode NOT IN
+					(SELECT     dbo.Table2_PONo.CostCode
+					FROM          dbo.Table2_PONo INNER JOIN
+					(SELECT     PO_No, SUM(TotalPrice) AS TotalPrice
+					FROM          dbo.Table2_PONo_Sub
+					GROUP BY PO_No) AS DataSource117 ON DataSource117.PO_No = dbo.Table2_PONo.PO_No AND
+					dbo.Table2_PONo.TotalPrice = DataSource117.TotalPrice
+					WHERE      (dbo.Table2_PONo.Project_ID = @ProjectID)
+					GROUP BY dbo.Table2_PONo.CostCode))
+					) AS DataSource1
+					)
+END
+	
+IF @CurrencyOfContract = N'Dollar'
+BEGIN
+SET @TotalForecastValueExcVAT = (
+
+					SELECT 
+					sum([PoTotalDollarExcVAT])
+					+sum([CostToGoBOQ])
+					+sum([PoCOTotalDollarExcVAT])
+					+sum([CostToGoVCO])
+					FROM (
+					SELECT     
+					dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.PoTotalDollarExcVAT, CASE WHEN CostToGoBOQ IS NULL
+					THEN 0 ELSE CostToGoBOQ END AS CostToGoBOQ, dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.PoCOTotalDollarExcVAT,
+					CASE WHEN CostToGoVCO IS NULL THEN 0 ELSE CostToGoVCO END AS CostToGoVCO, dbo.Table1_Project.ProjectID
+					FROM         dbo.View_CountOfCommentOnBudget RIGHT OUTER JOIN
+					dbo.Table_Budget ON dbo.View_CountOfCommentOnBudget.BudgetID = dbo.Table_Budget.BudgetID RIGHT OUTER JOIN
+					dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO INNER JOIN
+					dbo.Table7_CostCode ON dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.CostCode = dbo.Table7_CostCode.CostCode INNER JOIN
+					dbo.Table1_Project ON dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+					dbo.Table7_CostDivision ON dbo.Table7_CostCode.CostVidisionID = dbo.Table7_CostDivision.CostVidisionID ON
+					dbo.Table_Budget.Currency = dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.Currency AND
+					dbo.Table_Budget.ProjectID = dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.CostCode LEFT OUTER JOIN
+					dbo.Table_ProgressPercent ON dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.ProjectID = dbo.Table_ProgressPercent.ProjectID AND
+					dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.CostCode = dbo.Table_ProgressPercent.CostCode
+					WHERE     (dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.ProjectID = @ProjectID)
+
+					UNION ALL
+
+					SELECT     0 AS PoTotal, CASE WHEN CostToGoBOQ IS NULL
+					THEN 0 ELSE CostToGoBOQ END AS CostToGoBOQ, 0 AS POcoTotal, CASE WHEN CostToGoVCO IS NULL
+					THEN 0 ELSE CostToGoVCO END AS CostToGoVCO, dbo.Table1_Project.ProjectID
+					FROM         dbo.Table7_CostCode INNER JOIN
+					dbo.Table_Budget ON dbo.Table7_CostCode.CostCode = dbo.Table_Budget.CostCode INNER JOIN
+					dbo.Table1_Project ON dbo.Table_Budget.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+					dbo.View_CountOfCommentOnBudget ON dbo.Table_Budget.BudgetID = dbo.View_CountOfCommentOnBudget.BudgetID LEFT OUTER JOIN
+					dbo.Table7_CostDivision ON dbo.Table7_CostCode.CostVidisionID = dbo.Table7_CostDivision.CostVidisionID LEFT OUTER JOIN
+					dbo.Table_ProgressPercent ON dbo.Table_Budget.ProjectID = dbo.Table_ProgressPercent.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.Table_ProgressPercent.CostCode LEFT OUTER JOIN
+					dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO ON
+					dbo.Table_Budget.ProjectID = dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.CostCode
+					WHERE     (dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.ProjectID IS NULL) AND (dbo.Table_Budget.Currency = N'Dollar') AND
+					(dbo.View_Qry_TotalPendingOrderPerCostCodeDollarREVFinal3CO.CostCode IS NULL) AND (dbo.Table_Budget.ProjectID = @ProjectID) AND
+					(dbo.Table_Budget.CostCode NOT IN
+					(SELECT     dbo.Table2_PONo.CostCode
+					FROM          dbo.Table2_PONo INNER JOIN
+					(SELECT     PO_No, SUM(TotalPrice) AS TotalPrice
+					FROM          dbo.Table2_PONo_Sub
+					GROUP BY PO_No) AS DataSource117 ON DataSource117.PO_No = dbo.Table2_PONo.PO_No AND
+					dbo.Table2_PONo.TotalPrice = DataSource117.TotalPrice
+					WHERE      (dbo.Table2_PONo.Project_ID = @ProjectID)
+					GROUP BY dbo.Table2_PONo.CostCode))
+					) AS DataSource1
+					)
+END
+
+IF @CurrencyOfContract = N'Euro'
+BEGIN
+SET @TotalForecastValueExcVAT = (
+
+					SELECT 
+					sum([PoTotalEuroExcVAT])
+					+sum([CostToGoBOQ])
+					+sum([PoCOTotalEuroExcVAT])
+					+sum([CostToGoVCO])
+					FROM (
+					SELECT     
+					dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.PoTotalEuroExcVAT, CASE WHEN CostToGoBOQ IS NULL
+					THEN 0 ELSE CostToGoBOQ END AS CostToGoBOQ, dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.PoCOTotalEuroExcVAT,
+					CASE WHEN CostToGoVCO IS NULL THEN 0 ELSE CostToGoVCO END AS CostToGoVCO, dbo.Table1_Project.ProjectID
+					FROM         dbo.View_CountOfCommentOnBudget RIGHT OUTER JOIN
+					dbo.Table_Budget ON dbo.View_CountOfCommentOnBudget.BudgetID = dbo.Table_Budget.BudgetID RIGHT OUTER JOIN
+					dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO INNER JOIN
+					dbo.Table7_CostCode ON dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.CostCode = dbo.Table7_CostCode.CostCode INNER JOIN
+					dbo.Table1_Project ON dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+					dbo.Table7_CostDivision ON dbo.Table7_CostCode.CostVidisionID = dbo.Table7_CostDivision.CostVidisionID ON
+					dbo.Table_Budget.Currency = dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.Currency AND
+					dbo.Table_Budget.ProjectID = dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.CostCode LEFT OUTER JOIN
+					dbo.Table_ProgressPercent ON dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.ProjectID = dbo.Table_ProgressPercent.ProjectID AND
+					dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.CostCode = dbo.Table_ProgressPercent.CostCode
+					WHERE     (dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.ProjectID = @ProjectID)
+
+					UNION ALL
+
+					SELECT     0 AS PoTotal, CASE WHEN CostToGoBOQ IS NULL
+					THEN 0 ELSE CostToGoBOQ END AS CostToGoBOQ, 0 AS POcoTotal, CASE WHEN CostToGoVCO IS NULL
+					THEN 0 ELSE CostToGoVCO END AS CostToGoVCO, dbo.Table1_Project.ProjectID
+					FROM         dbo.Table7_CostCode INNER JOIN
+					dbo.Table_Budget ON dbo.Table7_CostCode.CostCode = dbo.Table_Budget.CostCode INNER JOIN
+					dbo.Table1_Project ON dbo.Table_Budget.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+					dbo.View_CountOfCommentOnBudget ON dbo.Table_Budget.BudgetID = dbo.View_CountOfCommentOnBudget.BudgetID LEFT OUTER JOIN
+					dbo.Table7_CostDivision ON dbo.Table7_CostCode.CostVidisionID = dbo.Table7_CostDivision.CostVidisionID LEFT OUTER JOIN
+					dbo.Table_ProgressPercent ON dbo.Table_Budget.ProjectID = dbo.Table_ProgressPercent.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.Table_ProgressPercent.CostCode LEFT OUTER JOIN
+					dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO ON
+					dbo.Table_Budget.ProjectID = dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.ProjectID AND
+					dbo.Table_Budget.CostCode = dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.CostCode
+					WHERE     (dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.ProjectID IS NULL) AND (dbo.Table_Budget.Currency = N'Euro') AND
+					(dbo.View_Qry_TotalPendingOrderPerCostCodeEuroREVFinal3CO.CostCode IS NULL) AND (dbo.Table_Budget.ProjectID = @ProjectID) AND
+					(dbo.Table_Budget.CostCode NOT IN
+					(SELECT     dbo.Table2_PONo.CostCode
+					FROM          dbo.Table2_PONo INNER JOIN
+					(SELECT     PO_No, SUM(TotalPrice) AS TotalPrice
+					FROM          dbo.Table2_PONo_Sub
+					GROUP BY PO_No) AS DataSource117 ON DataSource117.PO_No = dbo.Table2_PONo.PO_No AND
+					dbo.Table2_PONo.TotalPrice = DataSource117.TotalPrice
+					WHERE      (dbo.Table2_PONo.Project_ID = @ProjectID)
+					GROUP BY dbo.Table2_PONo.CostCode))
+					) AS DataSource1
+					)
+END
+
+-------------------------------------------------------------
+
+SET @OriginalContractValueExcVAT =
+	(
+	-- Original Contract Value
+	SELECT (case when [ContractAmount] IS null then 0 else [ContractAmount] end) AS OriginalContractValueExcVAT  FROM [Table1_Project]  WHERE ProjectID = @ProjectID
+	)
+
+SET @AddendumSignedExcVAT =
+	(
+	-- Addendum Signed
+	SELECT     SUM(CASE WHEN AddendumAmount IS NULL THEN 0 ELSE AddendumAmount END) AS Expr1
+	FROM         dbo.Table1_Project LEFT OUTER JOIN
+						  dbo.Table_ProjectAddendum ON dbo.Table1_Project.ProjectID = dbo.Table_ProjectAddendum.ProjectID
+	WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+	)
+
+SET @ChangeOrderSignedExcVAT =
+	(
+	-- Change Order
+	SELECT case when [ChangeOrderSignedExcVAT] is null then 0 else [ChangeOrderSignedExcVAT] end FROM [Table1_Project]  WHERE ProjectID = @ProjectID
+	)
+
+SET @TotalRevenueExcVAT =
+	@OriginalContractValueExcVAT + @AddendumSignedExcVAT + @ChangeOrderSignedExcVAT
+
+SET @MarginExcVAT =	@TotalRevenueExcVAT - @TotalForecastValueExcVAT
+
+IF (@TotalRevenueExcVAT = 0)
+	SET @MarginPercent = 0
+ELSE
+	SET @MarginPercent = @MarginExcVAT / @TotalRevenueExcVAT * 100
+
+
+IF (@OriginalContractValueExcVAT = 0)
+	SET @OriginalMarginPercent = 0
+ELSE
+SET @OriginalMarginPercent =
+	(@OriginalContractValueExcVAT - @TotalValidatedCostValueExcVAT) / @OriginalContractValueExcVAT * 100
+
+
+SELECT N'Original Contract Value' AS Description, @OriginalContractValueExcVAT  as Figures
+UNION ALL
+SELECT N'Addendum Signed', @AddendumSignedExcVAT 
+UNION ALL
+SELECT N'Change Order Signed', @ChangeOrderSignedExcVAT 
+UNION ALL
+SELECT N'Total Revenue', @TotalRevenueExcVAT 
+UNION ALL
+SELECT N'Total Forecast', @TotalForecastValueExcVAT
+UNION ALL
+SELECT N'Current Margin', @MarginExcVAT 
+UNION ALL
+SELECT N'Current Margin %', @MarginPercent
+UNION ALL
+SELECT N'Original Margin %', @OriginalMarginPercent</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProjectID">
+            <Value>=Parameters!ProjectID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.75in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.63542in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.875in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>All Exc. VAT</Value>
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Color>Red</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Color>=IIF(Fields!Figures.Value &lt; 0 ,"Red","Blck")</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>=IIF(Fields!Figures.Value &lt; 0 ,"Red","Black")</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.235in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Description">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Description.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Description</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightSkyBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Color>=IIF(Fields!Figures.Value &lt; 0 ,"Red","Blck")</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#d4eeff</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Figures1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Figures.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0;(#,0)</Format>
+                                <Color>=IIF(Fields!Figures.Value &lt; 0 ,"Red","Black")</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Figures1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#d4eeff</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="table1_Details_Group">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Height>0.485in</Height>
+        <Width>3.26042in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>0.485in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="ProjectID">
+      <DataType>String</DataType>
+      <Prompt>Project ID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>15.98959in</Width>
+  <Page>
+    <InteractiveHeight>0in</InteractiveHeight>
+    <InteractiveWidth>0in</InteractiveWidth>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>34ad24f0-6269-43e6-b1ed-63f0b43afd02</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

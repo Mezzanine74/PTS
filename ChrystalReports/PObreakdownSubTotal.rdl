@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <rd:DataSourceID>1acac7e5-3ac9-4697-9ec7-23673265be25</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="POtotalWithVAT">
+          <DataField>POtotalWithVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="PO_Currency">
+          <DataField>PO_Currency</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PaidToDate">
+          <DataField>PaidToDate</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Os">
+          <DataField>Os</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalCollectedDocsWithVat">
+          <DataField>TotalCollectedDocsWithVat</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>If @Currency = N'ALL' AND @SupplierID = N'ALL'
+SELECT     TOP (100) PERCENT N'ALL CURRENCY''' AS PO_Currency, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.PoTotalRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.PoTotalDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.PoTotalEuroWithVAT
+                       END) AS POtotalWithVAT, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.RublePaidWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.DollarPaidWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.EuroPaidWithVAT
+                       END) AS PaidToDate, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.BalanceRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.BalanceDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.BalanceEuroWithVAT
+                       END) AS Os, 
+                      SUM((CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.PoTotalRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.PoTotalDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.PoTotalEuroWithVAT
+                       END) * dbo.View_PO_TotalCollectedDocsCoeff.Coeff) AS TotalCollectedDocsWithVat
+FROM         dbo.View_QryW3_WithVAT INNER JOIN
+                      dbo.Table2_PONo ON dbo.View_QryW3_WithVAT.PO_No = dbo.Table2_PONo.PO_No INNER JOIN
+                      dbo.Table1_Project ON dbo.Table2_PONo.Project_ID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+                      dbo.View_PO_TotalCollectedDocsCoeff ON dbo.Table2_PONo.PO_No = dbo.View_PO_TotalCollectedDocsCoeff.PO_No
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+GROUP BY dbo.Table1_Project.ProjectID
+
+If @Currency = N'ALL' AND @SupplierID &lt;&gt; N'ALL'
+SELECT     TOP (100) PERCENT N'ALL CURRENCY''' AS PO_Currency, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.PoTotalRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.PoTotalDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.PoTotalEuroWithVAT
+                       END) AS POtotalWithVAT, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.RublePaidWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.DollarPaidWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.EuroPaidWithVAT
+                       END) AS PaidToDate, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.BalanceRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.BalanceDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.BalanceEuroWithVAT
+                       END) AS Os, 
+                      SUM((CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.PoTotalRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.PoTotalDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.PoTotalEuroWithVAT
+                       END) * dbo.View_PO_TotalCollectedDocsCoeff.Coeff) AS TotalCollectedDocsWithVat
+FROM         dbo.View_QryW3_WithVAT INNER JOIN
+                      dbo.Table2_PONo ON dbo.View_QryW3_WithVAT.PO_No = dbo.Table2_PONo.PO_No INNER JOIN
+                      dbo.Table1_Project ON dbo.Table2_PONo.Project_ID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+                      dbo.View_PO_TotalCollectedDocsCoeff ON dbo.Table2_PONo.PO_No = dbo.View_PO_TotalCollectedDocsCoeff.PO_No
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID) AND (dbo.Table2_PONo.SupplierID = @SupplierID)
+GROUP BY dbo.Table1_Project.ProjectID
+
+If @Currency &lt;&gt; N'ALL' AND @SupplierID = N'ALL'
+SELECT     TOP (100) PERCENT dbo.Table2_PONo.PO_Currency, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.PoTotalRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.PoTotalDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.PoTotalEuroWithVAT
+                       END) AS POtotalWithVAT, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.RublePaidWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.DollarPaidWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.EuroPaidWithVAT
+                       END) AS PaidToDate, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.BalanceRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.BalanceDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.BalanceEuroWithVAT
+                       END) AS Os, 
+                      SUM((CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.PoTotalRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.PoTotalDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.PoTotalEuroWithVAT
+                       END) * dbo.View_PO_TotalCollectedDocsCoeff.Coeff) AS TotalCollectedDocsWithVat
+FROM         dbo.View_QryW3_WithVAT INNER JOIN
+                      dbo.Table2_PONo ON dbo.View_QryW3_WithVAT.PO_No = dbo.Table2_PONo.PO_No INNER JOIN
+                      dbo.Table1_Project ON dbo.Table2_PONo.Project_ID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+                      dbo.View_PO_TotalCollectedDocsCoeff ON dbo.Table2_PONo.PO_No = dbo.View_PO_TotalCollectedDocsCoeff.PO_No
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+GROUP BY dbo.Table2_PONo.PO_Currency
+HAVING      (dbo.Table2_PONo.PO_Currency LIKE N'%' + @Currency + N'%')
+
+
+If @Currency &lt;&gt; N'ALL' AND @SupplierID &lt;&gt; N'ALL'
+SELECT     TOP (100) PERCENT dbo.Table2_PONo.PO_Currency, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.PoTotalRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.PoTotalDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.PoTotalEuroWithVAT
+                       END) AS POtotalWithVAT, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.RublePaidWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.DollarPaidWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.EuroPaidWithVAT
+                       END) AS PaidToDate, 
+                      SUM(CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.BalanceRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.BalanceDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.BalanceEuroWithVAT
+                       END) AS Os, 
+                      SUM((CASE WHEN dbo.Table2_PONo.PO_Currency = N'Rub' THEN dbo.View_QryW3_WithVAT.PoTotalRubleWithVAT WHEN dbo.Table2_PONo.PO_Currency
+                       = N'Dollar' THEN dbo.View_QryW3_WithVAT.PoTotalDollarWithVAT WHEN dbo.Table2_PONo.PO_Currency = N'Euro' THEN dbo.View_QryW3_WithVAT.PoTotalEuroWithVAT
+                       END) * dbo.View_PO_TotalCollectedDocsCoeff.Coeff) AS TotalCollectedDocsWithVat
+FROM         dbo.View_QryW3_WithVAT INNER JOIN
+                      dbo.Table2_PONo ON dbo.View_QryW3_WithVAT.PO_No = dbo.Table2_PONo.PO_No INNER JOIN
+                      dbo.Table1_Project ON dbo.Table2_PONo.Project_ID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+                      dbo.View_PO_TotalCollectedDocsCoeff ON dbo.Table2_PONo.PO_No = dbo.View_PO_TotalCollectedDocsCoeff.PO_No
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID) AND (dbo.Table2_PONo.SupplierID = @SupplierID)
+GROUP BY dbo.Table2_PONo.PO_Currency
+HAVING      (dbo.Table2_PONo.PO_Currency LIKE N'%' + @Currency + N'%')</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProjectID">
+            <Value>=Parameters!ProjectID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Currency">
+            <Value>=Parameters!Currency.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SupplierID">
+            <Value>=Parameters!SupplierID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.73958in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.22042in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="PO_Currency">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PO_Currency.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>PO_Currency</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="POtotalWithVAT">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Fields!POtotalWithVAT.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>POtotalWithVAT</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="PaidToDate">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Fields!PaidToDate.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>PaidToDate</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Os">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Fields!Os.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Os</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TotalCollectedDocsWithVat">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Fields!TotalCollectedDocsWithVat.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TotalCollectedDocsWithVat</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Height>0.22042in</Height>
+        <Width>10.73958in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>0.22042in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="ProjectID">
+      <DataType>String</DataType>
+      <Prompt>Project ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Currency">
+      <DataType>String</DataType>
+      <Prompt>Currency</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SupplierID">
+      <DataType>String</DataType>
+      <Prompt>Supplier ID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>10.73958in</Width>
+  <Page>
+    <InteractiveHeight>0in</InteractiveHeight>
+    <InteractiveWidth>0in</InteractiveWidth>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>4696076e-239d-46be-9f51-808b6d43112b</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

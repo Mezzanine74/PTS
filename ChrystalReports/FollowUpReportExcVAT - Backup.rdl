@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:DataSourceID>0a6edbdc-02a6-4cc0-8719-befb1241bfa9</rd:DataSourceID>
+      <DataSourceReference>DataSource1</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>86363306-f75f-464b-b424-5aede34ac31a</rd:ReportID>
+  <Width>8in</Width>
+  <Body>
+    <Height>0.79in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>FollowUpReportExcVAT</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <Table Name="table1">
+        <Top>0.36in</Top>
+        <Style />
+        <Header>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Value>Cost Code1</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Value>Cost Code2</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Value>Total Po Total Exc VAT</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Value>Total Paid Exc VAT</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Value>Total Balance Exc VAT</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Value>Total Pending Exc VAT</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Value>Total Done PO</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Value>Total Partial PO</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.22in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CostCode1">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>CostCode1</rd:DefaultName>
+                      <Value>=Fields!CostCode1.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CostCode2">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>CostCode2</rd:DefaultName>
+                      <Value>=Fields!CostCode2.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalPoTotalExcVAT">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>TotalPoTotalExcVAT</rd:DefaultName>
+                      <Value>=Fields!TotalPoTotalExcVAT.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalPaidExcVAT">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>TotalPaidExcVAT</rd:DefaultName>
+                      <Value>=Fields!TotalPaidExcVAT.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalBalanceExcVAT">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>TotalBalanceExcVAT</rd:DefaultName>
+                      <Value>=Fields!TotalBalanceExcVAT.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalPendingExcVAT">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>TotalPendingExcVAT</rd:DefaultName>
+                      <Value>=Fields!TotalPendingExcVAT.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalDonePO">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>TotalDonePO</rd:DefaultName>
+                      <Value>=Fields!TotalDonePO.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalPartialPO">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>TotalPartialPO</rd:DefaultName>
+                      <Value>=Fields!TotalPartialPO.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.21in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+        </TableColumns>
+        <DataSetName>DataSet1</DataSetName>
+      </Table>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="CostCode1">
+          <DataField>CostCode1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CostCode2">
+          <DataField>CostCode2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VATpaid">
+          <DataField>VATpaid</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OutstandingVAT">
+          <DataField>OutstandingVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="VATRecovered">
+          <DataField>VATRecovered</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalPendingExcVAT">
+          <DataField>TotalPendingExcVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalPaidExcVAT">
+          <DataField>TotalPaidExcVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalPoTotalExcVAT">
+          <DataField>TotalPoTotalExcVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalBalanceExcVAT">
+          <DataField>TotalBalanceExcVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalDonePO">
+          <DataField>TotalDonePO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalPartialPO">
+          <DataField>TotalPartialPO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>DECLARE @ProjectType nvarChar(20) 
+
+SET @ProjectType = (SELECT Type FROM Table1_Project WHERE ProjectID = @ProjectID)
+
+IF @Currency = N'Rub' AND @ProjectType = N'DataCenter'
+-- RUBLE dataCenter
+SELECT dbo.View_CostCodeSummary0_DCC.CostCode1, dbo.View_CostCodeSummary0_DCC.CostCode2, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.VATpaidRuble) AS VATpaid, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.OutstandingVATRuble) AS OutstandingVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.VATRecoveredRuble) AS VATRecovered, dbo.View_CostCodeSummary0_DCC.TotalRublePendingExcVAT AS TotalPendingExcVAT, 
+                      dbo.View_CostCodeSummary0_DCC.TotalRublePaidExcVAT AS TotalPaidExcVAT, dbo.View_CostCodeSummary0_DCC.TotalPoTotalRubleExcVAT AS TotalPoTotalExcVAT, 
+                      dbo.View_CostCodeSummary0_DCC.TotalBalanceRubleExcVAT AS TotalBalanceExcVAT, dbo.View_CostCodeSummary0_DCC.TotalDoneRublePO AS TotalDonePO, 
+                      dbo.View_CostCodeSummary0_DCC.TotalPartialRublePO AS TotalPartialPO
+FROM         dbo.View_CostCodeSummary0_DCC RIGHT OUTER JOIN
+                      dbo.View_DCcostCodeTitle ON dbo.View_CostCodeSummary0_DCC.CostCodeAlias = dbo.View_DCcostCodeTitle.CostCode AND 
+                      dbo.View_CostCodeSummary0_DCC.ProjectID = dbo.View_DCcostCodeTitle.ProjectID RIGHT OUTER JOIN
+                      dbo.View_CostCodeSummary2 RIGHT OUTER JOIN
+                      dbo.Table1_Project ON dbo.View_CostCodeSummary2.ProjectID = dbo.Table1_Project.ProjectID ON 
+                      dbo.View_DCcostCodeTitle.ProjectID = dbo.Table1_Project.ProjectID
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+ORDER BY dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0_DCC.CostCode1
+
+IF @Currency = N'Dollar' AND @ProjectType = N'DataCenter'
+-- DOLLAR dataCenter
+SELECT dbo.View_CostCodeSummary0_DCC.CostCode1, dbo.View_CostCodeSummary0_DCC.CostCode2, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.VATpaidDollar) AS VATpaid, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.OutstandingVATDollar) AS OutstandingVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.VATRecoveredDollar) AS VATRecovered, dbo.View_CostCodeSummary0_DCC.TotalDollarPendingExcVAT AS TotalPendingExcVAT, 
+                      dbo.View_CostCodeSummary0_DCC.TotalDollarPaidExcVAT AS TotalPaidExcVAT, dbo.View_CostCodeSummary0_DCC.TotalPoTotalDollarExcVAT AS TotalPoTotalExcVAT, 
+                      dbo.View_CostCodeSummary0_DCC.TotalBalanceDollarExcVAT AS TotalBalanceExcVAT, dbo.View_CostCodeSummary0_DCC.TotalDoneDollarPO AS TotalDonePO, 
+                      dbo.View_CostCodeSummary0_DCC.TotalPartialDollarPO AS TotalPartialPO
+FROM         dbo.View_CostCodeSummary0_DCC RIGHT OUTER JOIN
+                      dbo.View_DCcostCodeTitle ON dbo.View_CostCodeSummary0_DCC.CostCodeAlias = dbo.View_DCcostCodeTitle.CostCode AND 
+                      dbo.View_CostCodeSummary0_DCC.ProjectID = dbo.View_DCcostCodeTitle.ProjectID RIGHT OUTER JOIN
+                      dbo.View_CostCodeSummary2 RIGHT OUTER JOIN
+                      dbo.Table1_Project ON dbo.View_CostCodeSummary2.ProjectID = dbo.Table1_Project.ProjectID ON 
+                      dbo.View_DCcostCodeTitle.ProjectID = dbo.Table1_Project.ProjectID
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+ORDER BY dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0_DCC.CostCode1
+
+IF @Currency = N'Euro' AND @ProjectType = N'DataCenter'
+-- EURO dataCenter
+SELECT dbo.View_CostCodeSummary0_DCC.CostCode1, dbo.View_CostCodeSummary0_DCC.CostCode2, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.VATpaidEuro) AS VATpaid, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.OutstandingVATEuro) AS OutstandingVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.VATRecoveredEuro) AS VATRecovered, dbo.View_CostCodeSummary0_DCC.TotalEuroPendingExcVAT AS TotalPendingExcVAT, 
+                      dbo.View_CostCodeSummary0_DCC.TotalEuroPaidExcVAT AS TotalPaidExcVAT, dbo.View_CostCodeSummary0_DCC.TotalPoTotalEuroExcVAT AS TotalPoTotalExcVAT, 
+                      dbo.View_CostCodeSummary0_DCC.TotalBalanceEuroExcVAT AS TotalBalanceExcVAT, dbo.View_CostCodeSummary0_DCC.TotalDoneEuroPO AS TotalDonePO, 
+                      dbo.View_CostCodeSummary0_DCC.TotalPartialEuroPO AS TotalPartialPO
+FROM         dbo.View_CostCodeSummary0_DCC RIGHT OUTER JOIN
+                      dbo.View_DCcostCodeTitle ON dbo.View_CostCodeSummary0_DCC.CostCodeAlias = dbo.View_DCcostCodeTitle.CostCode AND 
+                      dbo.View_CostCodeSummary0_DCC.ProjectID = dbo.View_DCcostCodeTitle.ProjectID RIGHT OUTER JOIN
+                      dbo.View_CostCodeSummary2 RIGHT OUTER JOIN
+                      dbo.Table1_Project ON dbo.View_CostCodeSummary2.ProjectID = dbo.Table1_Project.ProjectID ON 
+                      dbo.View_DCcostCodeTitle.ProjectID = dbo.Table1_Project.ProjectID
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+ORDER BY dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0_DCC.CostCode1
+
+-- RUBLE FitOut
+IF @Currency = N'Rub' AND @ProjectType = N'FitOut'
+SELECT  dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0.CostCode1, dbo.View_CostCodeSummary0.CostCode2, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary0.TotalRublePendingExcVAT) AS TotalPendingExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalRublePaidExcVAT) AS TotalPaidExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalPoTotalRubleExcVAT) AS TotalPoTotalExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalBalanceRubleExcVAT) AS TotalBalanceExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.VATpaidRuble) AS VATpaid, CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.OutstandingVATRuble) 
+                      AS OutstandingVAT, CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.VATRecoveredRuble) AS VATRecovered, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary0.TotalDoneRublePO) AS TotalDonePO, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalPartialRublePO) AS TotalPartialPO
+FROM         dbo.View_CostCodeSummary2 RIGHT OUTER JOIN
+                      dbo.Table1_Project ON dbo.View_CostCodeSummary2.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+                      dbo.View_CostCodeSummary0 ON dbo.Table1_Project.ProjectID = dbo.View_CostCodeSummary0.ProjectID
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+ORDER BY dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0.CostCode1
+
+-- DOLLAR FitOut
+IF @Currency = N'Dollar' AND @ProjectType = N'FitOut'
+SELECT  dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0.CostCode1, dbo.View_CostCodeSummary0.CostCode2, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary0.TotalDollarPendingExcVAT) AS TotalPendingExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalDollarPaidExcVAT) AS TotalPaidExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalPoTotalDollarExcVAT) AS TotalPoTotalExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalBalanceDollarExcVAT) AS TotalBalanceExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.VATpaidDollar) AS VATpaid, CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.OutstandingVATDollar) 
+                      AS OutstandingVAT, CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.VATRecoveredDollar) AS VATRecovered, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary0.TotalDoneDollarPO) AS TotalDonePO, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalPartialDollarPO) AS TotalPartialPO
+FROM         dbo.View_CostCodeSummary2 RIGHT OUTER JOIN
+                      dbo.Table1_Project ON dbo.View_CostCodeSummary2.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+                      dbo.View_CostCodeSummary0 ON dbo.Table1_Project.ProjectID = dbo.View_CostCodeSummary0.ProjectID
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+ORDER BY dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0.CostCode1
+
+-- Euro FitOut
+IF @Currency = N'Euro' AND @ProjectType = N'FitOut'
+SELECT  dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0.CostCode1, dbo.View_CostCodeSummary0.CostCode2, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary0.TotalEuroPendingExcVAT) AS TotalPendingExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalEuroPaidExcVAT) AS TotalPaidExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalPoTotalEuroExcVAT) AS TotalPoTotalExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalBalanceEuroExcVAT) AS TotalBalanceExcVAT, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary2.VATpaidEuro) AS VATpaid, CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.OutstandingVATEuro) 
+                      AS OutstandingVAT, CONVERT(decimal(12, 2), dbo.View_CostCodeSummary2.VATRecoveredEuro) AS VATRecovered, 
+                      CONVERT(decimal(12, 2), dbo.View_CostCodeSummary0.TotalDoneEuroPO) AS TotalDonePO, CONVERT(decimal(12, 2), 
+                      dbo.View_CostCodeSummary0.TotalPartialEuroPO) AS TotalPartialPO
+FROM         dbo.View_CostCodeSummary2 RIGHT OUTER JOIN
+                      dbo.Table1_Project ON dbo.View_CostCodeSummary2.ProjectID = dbo.Table1_Project.ProjectID LEFT OUTER JOIN
+                      dbo.View_CostCodeSummary0 ON dbo.Table1_Project.ProjectID = dbo.View_CostCodeSummary0.ProjectID
+WHERE     (dbo.Table1_Project.ProjectID = @ProjectID)
+ORDER BY dbo.Table1_Project.ProjectID, dbo.View_CostCodeSummary0.CostCode1</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <QueryParameters>
+          <QueryParameter Name="@ProjectID">
+            <Value>=Parameters!ProjectID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Currency">
+            <Value>=Parameters!Currency.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="ProjectID">
+      <DataType>String</DataType>
+      <Prompt>Project ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Currency">
+      <DataType>String</DataType>
+      <Prompt>Currency</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

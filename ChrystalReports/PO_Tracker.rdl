@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <rd:DataSourceID>5959a9e7-52e6-4c28-8310-eaea47102e41</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="ProjectName">
+          <DataField>ProjectName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT        RTRIM(ProjectName) AS ProjectName
+FROM            Table1_Project
+WHERE        (ProjectID = @ProjectID)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProjectID">
+            <Value>=Parameters!ProjectID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Fields>
+        <Field Name="Year_Month">
+          <DataField>Year_Month</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT        LEFT(@YearMonth, 4) + '-' + DATENAME(month, CONVERT(DATETIME, LEFT(@YearMonth, 4) + ' - ' + SUBSTRING(@YearMonth, 5, 2) + '-01 00:00:00', 102)) 
+                         AS Year_Month</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@YearMonth">
+            <Value>=Parameters!YearMonth.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Subreport Name="Subreport1">
+        <ReportName>ReportPoTracker</ReportName>
+        <Parameters>
+          <Parameter Name="ProjectID">
+            <Value>=Parameters!ProjectID.Value</Value>
+          </Parameter>
+          <Parameter Name="YearMonth">
+            <Value>=Parameters!YearMonth.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>1.10583cm</Top>
+        <Left>2.41118cm</Left>
+        <Height>0.3937in</Height>
+        <Width>8.77cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="Subreport3">
+        <ReportName>ProjectDetail</ReportName>
+        <Parameters>
+          <Parameter Name="ProjectID">
+            <Value>=Parameters!ProjectID.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Left>0.29104cm</Left>
+        <Height>0.3937in</Height>
+        <Width>2.23479cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="Subreport4">
+        <ReportName>ProjectForecastDetails</ReportName>
+        <Parameters>
+          <Parameter Name="ProjectID">
+            <Value>=Parameters!ProjectID.Value</Value>
+          </Parameter>
+          <Parameter Name="YearMonth">
+            <Value>=Parameters!YearMonth.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>1.10583cm</Top>
+        <Height>0.95896cm</Height>
+        <Width>2.23479cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="ProjectName">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ProjectName.Value, "DataSet1")</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ProjectName</rd:DefaultName>
+        <Left>2.70222cm</Left>
+        <Height>0.5cm</Height>
+        <Width>4.1357cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Year_Month.Value, "DataSet2")</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Left>7.96681cm</Left>
+        <Height>0.5cm</Height>
+        <Width>3.21437cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>0.82907in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="ProjectID">
+      <DataType>Integer</DataType>
+      <Prompt>ProjectID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="YearMonth">
+      <DataType>String</DataType>
+      <Prompt>YearMonth</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>4.40204in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <rd:ReportID>a69d8f72-21b3-4d6f-ac8c-9d678609b9d5</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+</Report>

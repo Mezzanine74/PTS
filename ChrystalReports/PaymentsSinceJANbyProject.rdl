@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="matrix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="textbox3">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>="TOTAL PAYMENTS SINCE "+Cstr(year(Today()))+" IN EURO WITH VAT "</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>textbox3</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <ColSpan>2</ColSpan>
+                </CellContents>
+              </TablixCornerCell>
+              <TablixCornerCell />
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.21in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!EuroPaidWithVAT.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                  <DataElementOutput>Output</DataElementOutput>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_Month_Text">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Month_Text.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Month_Text.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>0.21in</Size>
+                <CellContents>
+                  <Textbox Name="Month_Text">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Mid(Fields!Month_Text.Value,3,Len(Fields!Month_Text.Value)-2)</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Month_Text</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#6e9eca</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_ProjectName">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ProjectName.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!ProjectName.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>1.82292in</Size>
+                <CellContents>
+                  <Textbox Name="ProjectName">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!ProjectName.Value</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>ProjectName</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#6e9eca</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="matrix1_SupplierName">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!SupplierName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!SupplierName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>3.08333in</Size>
+                    <CellContents>
+                      <Textbox Name="SupplierName">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!SupplierName.Value</Value>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>SupplierName</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>SlateGray</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                    <ToggleItem>ProjectName</ToggleItem>
+                  </Visibility>
+                  <DataElementOutput>Output</DataElementOutput>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+              <DataElementOutput>Output</DataElementOutput>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <DataSetName>DataSet1</DataSetName>
+        <Height>0.42in</Height>
+        <Width>5.90625in</Width>
+        <Style />
+      </Tablix>
+      <Subreport Name="Subreport1">
+        <ReportName>PaymentsSinceJAN_subReport</ReportName>
+        <Top>0.41958in</Top>
+        <Height>3in</Height>
+        <Width>3in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+    </ReportItems>
+    <Height>3.41958in</Height>
+    <Style />
+  </Body>
+  <Width>5.90625in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>dc6d48f2-6ff4-4a1b-8d06-8479569f922e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>DECLARE @PaymentDate smalldatetime
+SET @PaymentDate = (SELECT DATEADD(YEAR, DATEDIFF(YEAR, 0, GETDATE()), 0))
+
+SELECT     TOP (100) PERCENT RTRIM(dbo.Table1_Project.ProjectName) AS ProjectName, RTRIM(dbo.Table6_Supplier.SupplierName) AS SupplierName, 
+                      SUM(dbo.View_QryW2_PoDetail_WithVAT.EuroPaidWithVAT) AS EuroPaidWithVAT,
+                      CASE WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 1 THEN N'01JAN' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 2 THEN N'02FEB' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 3 THEN N'03MARCH' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 4 THEN N'04APR' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 5 THEN N'05MAY' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 6 THEN N'06JUNE' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 7 THEN N'07JULY' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 8 THEN N'08AUG' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 9 THEN N'09SEPT' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 10 THEN N'10OCT' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 11 THEN N'11NOV' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 12 THEN N'12DEC' END AS Month_Text
+FROM         dbo.Table5_PayLog INNER JOIN
+                      dbo.Table4_PaymentRequest ON dbo.Table5_PayLog.PayReqNo = dbo.Table4_PaymentRequest.PayReqNo INNER JOIN
+                      dbo.Table3_Invoice ON dbo.Table4_PaymentRequest.InvoiceID = dbo.Table3_Invoice.InvoiceID INNER JOIN
+                      dbo.View_QryW2_PoDetail_WithVAT ON dbo.Table3_Invoice.InvoiceID = dbo.View_QryW2_PoDetail_WithVAT.InvoiceID INNER JOIN
+                      dbo.Table2_PONo ON dbo.Table3_Invoice.PO_No = dbo.Table2_PONo.PO_No INNER JOIN
+                      dbo.Table6_Supplier ON dbo.Table2_PONo.SupplierID = dbo.Table6_Supplier.SupplierID INNER JOIN
+                      dbo.Table1_Project ON dbo.Table2_PONo.Project_ID = dbo.Table1_Project.ProjectID
+WHERE     (dbo.Table2_PONo.CostCode &lt;&gt; N'001') AND (dbo.Table5_PayLog.PaymentDate &gt;= @PaymentDate)
+GROUP BY RTRIM(dbo.Table1_Project.ProjectName), RTRIM(dbo.Table6_Supplier.SupplierName), MONTH(dbo.Table5_PayLog.PaymentDate), 
+                      CASE WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 1 THEN N'JAN' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 2 THEN N'FEB' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 3 THEN N'MARCH' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 4 THEN N'APR' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 5 THEN N'MAY' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 6 THEN N'JUNE' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 7 THEN N'JULY' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 8 THEN N'AUG' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 9 THEN N'SEPT' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 10 THEN N'OCT' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 11 THEN N'NOV' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 12 THEN N'DEC' END</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ProjectName">
+          <DataField>ProjectName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SupplierName">
+          <DataField>SupplierName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EuroPaidWithVAT">
+          <DataField>EuroPaidWithVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Month_Text">
+          <DataField>Month_Text</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>91c03841-57e3-4145-bbf0-6f0814b00107</rd:ReportID>
+</Report>

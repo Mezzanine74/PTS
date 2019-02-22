@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:DataSourceID>72c3b4d6-c96f-4686-9085-6d101ef2a36f</rd:DataSourceID>
+      <DataSourceReference>DataSource1</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>8730941e-7de0-4e39-9c6c-317faecf9e0e</rd:ReportID>
+  <Width>5in</Width>
+  <Body>
+    <Height>0.99in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>PaymentsSinceJAN</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <Matrix Name="matrix1">
+        <Top>0.36in</Top>
+        <RowGroupings>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_ProjectName">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ProjectName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!ProjectName.Value</SortExpression>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="ProjectName">
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
+                    <BackgroundColor>#6e9eca</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>ProjectName</rd:DefaultName>
+                  <Value>=Fields!ProjectName.Value</Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                  <Width>1in</Width>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_SupplierName">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SupplierName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!SupplierName.Value</SortExpression>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="SupplierName">
+                  <Style>
+                    <Color>White</Color>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <BackgroundColor>SlateGray</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>SupplierName</rd:DefaultName>
+                  <Value>=Fields!SupplierName.Value</Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                  <Width>1in</Width>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+        </RowGroupings>
+        <MatrixRows>
+          <MatrixRow>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="textbox2">
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <BorderColor>
+                        <Default>LightGrey</Default>
+                      </BorderColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                    <rd:DefaultName>textbox2</rd:DefaultName>
+                    <Value>=Sum(Fields!EuroPaidWithVAT.Value)</Value>
+                    <CanGrow>true</CanGrow>
+                    <Height>0.21in</Height>
+                    <Width>1in</Width>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+            <Height>0.21in</Height>
+          </MatrixRow>
+        </MatrixRows>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox3">
+              <Style>
+                <FontFamily>Tahoma</FontFamily>
+                <FontSize>10pt</FontSize>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <BorderColor>
+                  <Default>LightGrey</Default>
+                </BorderColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+              <rd:DefaultName>textbox3</rd:DefaultName>
+              <Value>
+              </Value>
+              <CanGrow>true</CanGrow>
+              <Height>0.21in</Height>
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <DataSetName>DataSet1</DataSetName>
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="matrix1_month">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!month.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!month.Value</SortExpression>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="month">
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
+                    <BackgroundColor>#6e9eca</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>month</rd:DefaultName>
+                  <Value>=Fields!month.Value</Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                  <Width>1in</Width>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.21in</Height>
+          </ColumnGrouping>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="matrix1_Month_Text">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Month_Text.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!Month_Text.Value</SortExpression>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="Month_Text">
+                  <Style>
+                    <Color>White</Color>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <BackgroundColor>SlateGray</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>Month_Text</rd:DefaultName>
+                  <Value>=Fields!Month_Text.Value</Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                  <Width>1in</Width>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.21in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+      </Matrix>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="ProjectName">
+          <DataField>ProjectName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SupplierName">
+          <DataField>SupplierName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EuroPaidWithVAT">
+          <DataField>EuroPaidWithVAT</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="month">
+          <DataField>month</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Month_Text">
+          <DataField>Month_Text</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT     TOP (100) PERCENT RTRIM(dbo.Table1_Project.ProjectName) AS ProjectName, RTRIM(dbo.Table6_Supplier.SupplierName) AS SupplierName, 
+                      SUM(dbo.View_QryW2_PoDetail_WithVAT.EuroPaidWithVAT) AS EuroPaidWithVAT, MONTH(dbo.Table5_PayLog.PaymentDate) AS month, 
+                      CASE WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 1 THEN N'JAN' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 2 THEN N'FEB' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 3 THEN N'MARCH' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 4 THEN N'APR' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 5 THEN N'MAY' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 6 THEN N'JUNE' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 7 THEN N'JULY' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 8 THEN N'AUG' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 9 THEN N'SEPT' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 10 THEN N'OCT' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 11 THEN N'NOV' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 12 THEN N'DEC' END AS Month_Text
+FROM         dbo.Table5_PayLog INNER JOIN
+                      dbo.Table4_PaymentRequest ON dbo.Table5_PayLog.PayReqNo = dbo.Table4_PaymentRequest.PayReqNo INNER JOIN
+                      dbo.Table3_Invoice ON dbo.Table4_PaymentRequest.InvoiceID = dbo.Table3_Invoice.InvoiceID INNER JOIN
+                      dbo.View_QryW2_PoDetail_WithVAT ON dbo.Table3_Invoice.InvoiceID = dbo.View_QryW2_PoDetail_WithVAT.InvoiceID INNER JOIN
+                      dbo.Table2_PONo ON dbo.Table3_Invoice.PO_No = dbo.Table2_PONo.PO_No INNER JOIN
+                      dbo.Table6_Supplier ON dbo.Table2_PONo.SupplierID = dbo.Table6_Supplier.SupplierID INNER JOIN
+                      dbo.Table1_Project ON dbo.Table2_PONo.Project_ID = dbo.Table1_Project.ProjectID
+WHERE     (dbo.Table2_PONo.CostCode &lt;&gt; N'001') AND (dbo.Table5_PayLog.PaymentDate &gt;= @PaymentDate)
+GROUP BY RTRIM(dbo.Table1_Project.ProjectName), RTRIM(dbo.Table6_Supplier.SupplierName), MONTH(dbo.Table5_PayLog.PaymentDate), 
+                      CASE WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 1 THEN N'JAN' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 2 THEN N'FEB' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 3 THEN N'MARCH' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 4 THEN N'APR' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 5 THEN N'MAY' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 6 THEN N'JUNE' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 7 THEN N'JULY' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 8 THEN N'AUG' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 9 THEN N'SEPT' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) 
+                      = 10 THEN N'OCT' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 11 THEN N'NOV' WHEN MONTH(dbo.Table5_PayLog.PaymentDate) = 12 THEN N'DEC' END</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <QueryParameters>
+          <QueryParameter Name="@PaymentDate">
+            <Value>=Parameters!PaymentDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="PaymentDate">
+      <DataType>String</DataType>
+      <Prompt>Payment Date</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

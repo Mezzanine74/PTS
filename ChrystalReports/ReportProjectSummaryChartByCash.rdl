@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <rd:DataSourceID>9f72906a-699a-4567-9dfc-d11140882674</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="ProjectName">
+          <DataField>ProjectName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompletionDate">
+          <DataField>CompletionDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ContractCurrency">
+          <DataField>ContractCurrency</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentContractValue">
+          <DataField>CurrentContractValue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ForecastProfit">
+          <DataField>ForecastProfit</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CurrentSpend">
+          <DataField>CurrentSpend</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CashIn">
+          <DataField>CashIn</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CurrentContractValue_Minus_CurrentSpend">
+          <DataField>CurrentContractValue_Minus_CurrentSpend</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT     TOP (100) PERCENT
+-- Project Name ------------------------------------------------------------------------------------------------------------------------------
+ RTRIM(ProjectName) AS ProjectName
+-- Completion Date  --------------------------------------------------------------------------------------------------------------------------
+ , CompletionDate
+-- Contract Currency  --------------------------------------------------------------------------------------------------------------------------
+ , RTRIM(ContractCurrency) AS ContractCurrency
+-- Current Contract Value----------------------------------------------------------------------------------------------------------------------
+ , CASE WHEN
+                          (SELECT     SUM(AddendumAmount) AS TotalAddendum
+                            FROM          dbo.Table_ProjectAddendum
+                            WHERE      (Table_ProjectAddendum.ProjectID = dbo.Table1_Project.ProjectID)) IS NULL THEN 0 ELSE
+                          (SELECT     SUM(AddendumAmount) AS TotalAddendum
+                            FROM          dbo.Table_ProjectAddendum
+                            WHERE      (Table_ProjectAddendum.ProjectID = dbo.Table1_Project.ProjectID)) END + ContractAmount AS CurrentContractValue
+-- FORECAST_MARGIN = MarginBefore1PerSnagging / 100 * Current Contract Value_--------------------------------------------------------------------
+ , Margin / 100 * (CASE WHEN
+                          (SELECT     SUM(AddendumAmount) AS TotalAddendum
+                            FROM          dbo.Table_ProjectAddendum
+                            WHERE      (Table_ProjectAddendum.ProjectID = dbo.Table1_Project.ProjectID)) IS NULL THEN 0 ELSE
+                          (SELECT     SUM(AddendumAmount) AS TotalAddendum
+                            FROM          dbo.Table_ProjectAddendum
+                            WHERE      (Table_ProjectAddendum.ProjectID = dbo.Table1_Project.ProjectID)) END + ContractAmount) AS ForecastProfit
+-- Current Spend----------------------------------------------------------------------------------------------------------------------
+ ,                        (SELECT     CASE WHEN rtrim(Table1_Project.ContractCurrency) = 'Rub' THEN OverallRublePaidExcVAT WHEN rtrim(Table1_Project.ContractCurrency) 
+                                                   = 'Dollar' THEN OverallDollarPaidExcVAT WHEN rtrim(Table1_Project.ContractCurrency) = 'Euro' THEN OverallEuroPaidExcVAT END AS Spend
+                            FROM          dbo.Table_FollowUpReportSummary
+                            WHERE      (DayOfRun = CONVERT(datetime, CONVERT(nchar(4), YEAR(GETDATE())) + '-' + CASE WHEN len(rtrim(CONVERT(nchar(2), Month(GETDATE())))) 
+                                                   = 2 THEN rtrim(CONVERT(nchar(2), Month(GETDATE()))) ELSE '0' + rtrim(CONVERT(nchar(2), Month(GETDATE()))) 
+                                                   END + '-' + CASE WHEN len(rtrim(CONVERT(nchar(2), Day(GETDATE())))) = 2 THEN rtrim(CONVERT(nchar(2), Day(GETDATE()))) 
+                                                   ELSE '0' + rtrim(CONVERT(nchar(2), Day(GETDATE()))) END + ' 00:00:00')) AND (ProjectID = dbo.Table1_Project.ProjectID)) AS CurrentSpend
+-- CurrentContractValue - TotalSpend -------------------------------------------------------------------------------------------------
+, 			(CASE WHEN
+                          (SELECT     SUM(AddendumAmount) AS TotalAddendum
+                            FROM          dbo.Table_ProjectAddendum
+                            WHERE      (Table_ProjectAddendum.ProjectID = dbo.Table1_Project.ProjectID)) IS NULL THEN 0 ELSE
+                          (SELECT     SUM(AddendumAmount) AS TotalAddendum
+                            FROM          dbo.Table_ProjectAddendum
+                            WHERE      (Table_ProjectAddendum.ProjectID = dbo.Table1_Project.ProjectID)) END + ContractAmount) - (SELECT     CASE WHEN rtrim(Table1_Project.ContractCurrency) = 'Rub' THEN OverallRublePaidExcVAT WHEN rtrim(Table1_Project.ContractCurrency) 
+                                                   = 'Dollar' THEN OverallDollarPaidExcVAT WHEN rtrim(Table1_Project.ContractCurrency) = 'Euro' THEN OverallEuroPaidExcVAT END AS Spend
+                            FROM          dbo.Table_FollowUpReportSummary
+                            WHERE      (DayOfRun = CONVERT(datetime, CONVERT(nchar(4), YEAR(GETDATE())) + '-' + CASE WHEN len(rtrim(CONVERT(nchar(2), Month(GETDATE())))) 
+                                                   = 2 THEN rtrim(CONVERT(nchar(2), Month(GETDATE()))) ELSE '0' + rtrim(CONVERT(nchar(2), Month(GETDATE()))) 
+                                                   END + '-' + CASE WHEN len(rtrim(CONVERT(nchar(2), Day(GETDATE())))) = 2 THEN rtrim(CONVERT(nchar(2), Day(GETDATE()))) 
+                                                   ELSE '0' + rtrim(CONVERT(nchar(2), Day(GETDATE()))) END + ' 00:00:00')) AND (ProjectID = dbo.Table1_Project.ProjectID)) AS CurrentContractValue_Minus_CurrentSpend
+-- CASH IN----------------------------------------------------------------------------------------------------------------------
+,			(CASE  WHEN (SELECT SUM(CashInAmount) AS TotalCashIn
+			FROM         dbo.Table_ProjectCashIn 
+			WHERE     (ProjectID = dbo.Table1_Project.ProjectID) AND (CashInDate &lt; CONVERT(datetime, CONVERT(nchar(4), YEAR(GETDATE())) + '-' + CASE WHEN len(rtrim(CONVERT(nchar(2), Month(GETDATE())))) 
+                                                   = 2 THEN rtrim(CONVERT(nchar(2), Month(GETDATE()))) ELSE '0' + rtrim(CONVERT(nchar(2), Month(GETDATE()))) 
+                                                   END + '-' + CASE WHEN len(rtrim(CONVERT(nchar(2), Day(GETDATE())))) = 2 THEN rtrim(CONVERT(nchar(2), Day(GETDATE()))) 
+                                                   ELSE '0' + rtrim(CONVERT(nchar(2), Day(GETDATE()))) END + ' 00:00:00')))
+			IS NULL THEN 0
+			ELSE (SELECT SUM(CashInAmount) AS TotalCashIn
+			FROM         dbo.Table_ProjectCashIn 
+			WHERE     (ProjectID = dbo.Table1_Project.ProjectID) AND (CashInDate &lt; CONVERT(datetime, CONVERT(nchar(4), YEAR(GETDATE())) + '-' + CASE WHEN len(rtrim(CONVERT(nchar(2), Month(GETDATE())))) 
+                                                   = 2 THEN rtrim(CONVERT(nchar(2), Month(GETDATE()))) ELSE '0' + rtrim(CONVERT(nchar(2), Month(GETDATE()))) 
+                                                   END + '-' + CASE WHEN len(rtrim(CONVERT(nchar(2), Day(GETDATE())))) = 2 THEN rtrim(CONVERT(nchar(2), Day(GETDATE()))) 
+                                                   ELSE '0' + rtrim(CONVERT(nchar(2), Day(GETDATE()))) END + ' 00:00:00'))) END) AS CashIn
+-- FROM ---
+FROM         dbo.Table1_Project
+WHERE     (ContractCurrency IS NOT NULL) AND (ContractAmount IS NOT NULL) AND (dbo.Table1_Project.ProjectID=@ProjectID)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProjectID">
+            <Value>=Parameters!ProjectID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Chart Name="Chart1">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Current Contract Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Current Contract Value</Label>
+            </ChartMember>
+            <ChartMember>
+              <Label>Current Spend</Label>
+            </ChartMember>
+            <ChartMember>
+              <Label>Cash In</Label>
+            </ChartMember>
+            <ChartMember>
+              <Label>Current Contract Value Minus Current Spend</Label>
+            </ChartMember>
+            <ChartMember>
+              <Label>Forecast Profit</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="IDCurrentContractValue">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=(Fields!CurrentContractValue.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <Format>0.0 %</Format>
+                    </Style>
+                    <Label>= Fields!CurrentContractValue.Value / Fields!CurrentContractValue.Value</Label>
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+            <ChartSeries Name="CurrentSpend">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=(Fields!CurrentSpend.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <Format>0.0 %</Format>
+                    </Style>
+                    <Label>=Fields!CurrentSpend.Value/Fields!CurrentContractValue.Value</Label>
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+            <ChartSeries Name="CashIn">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=(Fields!CashIn.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <Format>0.0 %</Format>
+                    </Style>
+                    <Label>=Fields!CashIn.Value/Fields!CurrentContractValue.Value</Label>
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+            <ChartSeries Name="CurrentContractValue_Minus_CurrentSpend">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=(Fields!CurrentContractValue_Minus_CurrentSpend.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <Format>0.0 %</Format>
+                    </Style>
+                    <Label>=Fields!CurrentContractValue_Minus_CurrentSpend.Value/Fields!CurrentContractValue.Value</Label>
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+            <ChartSeries Name="ForecastProfit">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=(Fields!ForecastProfit.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <Format>0.0 %</Format>
+                    </Style>
+                    <Label>=Fields!ForecastProfit.Value/Fields!CurrentContractValue.Value</Label>
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <Format>#,0;(#,0)</Format>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>=Fields!ContractCurrency.Value + " Exc. VAT"</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>=Fields!CurrentContractValue.Value * 1.05</Maximum>
+                <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <ChartLegends>
+          <ChartLegend Name="Default">
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontSize>7pt</FontSize>
+            </Style>
+            <ChartLegendTitle>
+              <Caption />
+              <Style>
+                <FontSize>8pt</FontSize>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </ChartLegendTitle>
+            <AutoFitTextDisabled>true</AutoFitTextDisabled>
+            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+          </ChartLegend>
+        </ChartLegends>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>=Fields!ProjectName.Value</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontSize>9pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>DataSet1</DataSetName>
+        <Height>3.14583in</Height>
+        <Width>5.76042in</Width>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
+    </ReportItems>
+    <Height>3.14583in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="ProjectID">
+      <DataType>String</DataType>
+      <Prompt>Project ID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>5.76042in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>43ba5c16-d6ef-4927-a6ae-4163b2b06304</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>
